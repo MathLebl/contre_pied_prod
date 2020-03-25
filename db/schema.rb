@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_25_161509) do
+ActiveRecord::Schema.define(version: 2020_03_25_161953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "style"
+    t.string "image"
+    t.string "video"
+    t.string "deezer"
+    t.string "spotify"
+    t.string "youtube"
+    t.string "insta"
+    t.string "twitter"
+    t.string "slug"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_artists_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "category"
+    t.text "description"
+    t.date "date"
+    t.time "time_table"
+    t.string "location"
+    t.bigint "artist_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artist_id"], name: "index_events_on_artist_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +59,7 @@ ActiveRecord::Schema.define(version: 2020_03_25_161509) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "artists", "users"
+  add_foreign_key "events", "artists"
+  add_foreign_key "events", "users"
 end
