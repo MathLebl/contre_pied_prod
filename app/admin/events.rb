@@ -5,7 +5,7 @@ ActiveAdmin.register Event do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :category, :description, :date, :time_table, :location, :artist_id, :user_id
+  permit_params :category, :description, :date, :time_table, :location, :artist_id, :user_id
   #
   # or
   #
@@ -14,5 +14,5 @@ ActiveAdmin.register Event do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end
