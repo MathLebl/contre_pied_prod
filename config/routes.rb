@@ -6,10 +6,11 @@ Rails.application.routes.draw do
       get :enfant
     end
   end
-  resources :events, only: [:index,] do
+  resources :events, only: [:index, :show] do
   end
 
   get 'about', to: 'pages#about'
+  get 'legals', to: 'pages#legals'
   root to: 'pages#home'
 
   ActiveAdmin.routes(self)
