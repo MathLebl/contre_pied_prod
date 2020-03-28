@@ -5,7 +5,7 @@ ActiveAdmin.register Artist do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :youtube, :insta, :twitter, :slug, :user_id
+  permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :youtube, :insta, :twitter, :slug, :user_id, :category
   #
   # or
   #
