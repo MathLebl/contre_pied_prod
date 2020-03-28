@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :artists, only: [:index, :show] do
     collection do
-      get :category
+      get :concert
+      get :spectacle
+      get :enfant
     end
   end
   resources :events, only: [:index,] do
