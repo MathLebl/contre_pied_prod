@@ -1,2 +1,12 @@
-<h1>Artists#show</h1>
-<p>Find me in app/views/artists/show.html.erb</p>
+<div class="container">
+
+  <h1><%= @artist.name %></h1>
+  <img src="<%= @artist.image %>" style="width: 26rem; height: 26rem;" alt="...">
+  <p><%= @artist.description %></p>
+  <h6><%= @artist.style %></h6>
+  <div class="container">
+    <table class="table table-sm table-dark">
+      <%= render 'events/event-table' %>
+    </table>
+  </div>
+</div>
