@@ -6,7 +6,7 @@ puts 'Creating 10 fake SpecArtists...'
     name:    Faker::Movies::StarWars.character,
     description: Faker::Lorem.paragraph,
     style: Faker::Movies::StarWars.planet,
-    category:  "spectacle",
+    category:  "theatre",
     user_id: 1,
     image: "https://images.unsplash.com/photo-1571173069043-82a7a13cee9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   )
