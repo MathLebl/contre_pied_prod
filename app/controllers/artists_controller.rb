@@ -6,6 +6,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @events = Event.where(artist_id: @artist.id)
   end
 
   def enfant
