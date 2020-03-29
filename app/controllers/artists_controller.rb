@@ -12,8 +12,8 @@ class ArtistsController < ApplicationController
     @artists = Artist.where(category: "enfant")
   end
 
-  def spectacle
-     @artists = Artist.where(category: "spectacle")
+  def theatre
+     @artists = Artist.where(category: "theatre")
   end
 
   def concert
