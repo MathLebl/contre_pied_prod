@@ -10,14 +10,17 @@ class ArtistsController < ApplicationController
 
   def enfant
     @artists = Artist.where(category: "enfant")
+    @events = Event.where(category: "enfant")
   end
 
   def theatre
      @artists = Artist.where(category: "theatre")
+     @events = Event.where(category: "theatre")
   end
 
   def concert
      @artists = Artist.where(category: "concert")
+     @events = Event.where(category: "concert")
   end
 
   private
