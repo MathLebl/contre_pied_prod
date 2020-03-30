@@ -1,7 +1,7 @@
 require 'faker'
 
-puts 'Creating 12 fake Events...'
-4.times do
+puts 'Creating 45 fake Events...'
+15.times do
   event = Event.new(
     date: Faker::Date.forward,
     category:  "enfant",
@@ -12,7 +12,7 @@ puts 'Creating 12 fake Events...'
   event.save!
 end
 
-4.times do
+15.times do
   event = Event.new(
     date: Faker::Date.forward,
     category:  "concert",
@@ -23,7 +23,7 @@ end
   event.save!
 end
 
-4.times do
+15.times do
   event = Event.new(
     date: Faker::Date.forward,
     category:  "theatre",
