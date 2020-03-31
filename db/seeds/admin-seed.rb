@@ -1,6 +1,6 @@
 require 'faker'
 
-puts 'Creating an Admin'
+puts 'Creating Admins'
 
 user = User.new(
   email: "leblond.mathieu@gmail.com",
@@ -9,4 +9,11 @@ user = User.new(
   )
 user.save!
 
-puts 'Admin done'
+user = User.new(
+  email: "h.yeshe@gmail.com",
+  admin: true,
+  password: "tototo"
+  )
+user.save!
+
+puts 'Admins done'
