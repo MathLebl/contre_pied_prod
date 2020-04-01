@@ -3,4 +3,5 @@ class Artist < ApplicationRecord
   has_many :events
 
   validates :name, presence: true
+  validates :category, inclusion: { in: ["Theatre", "Concert", "Enfant"] }
 end
