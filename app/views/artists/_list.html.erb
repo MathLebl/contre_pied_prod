@@ -1,18 +1,15 @@
-<div class="container">
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 mb-5">
+<div class="wraper-list">
+  <div class="cards-list">
     <% @artists.each do |artist|%>
-      <div class="col">
-        <div class="card m-3" style="width: 20rem; height: 26rem;">
+        <div class="card-category-list">
      <%= link_to artist_path(artist) do %>
-          <img src="<%= artist.image %>" class="card-img-top" alt="...">
+          <img src="<%= artist.image %>" class="artist-image" alt="...">
           <div class="card-body">
             <h5 class="card-title"><%= artist.name %></h5>
-            <p class="card-text"><%= artist.description %></p>
-            <h6 class="card-title"><%= artist.style %></h6>
+            <!-- <h6 class="card-title"><%= artist.style %></h6> -->
           </div>
      <% end %>
         </div>
-      </div>
     <% end %>
   </div>
 </div>
