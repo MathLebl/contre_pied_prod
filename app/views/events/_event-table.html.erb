@@ -1,7 +1,7 @@
   <tbody>
     <% @events.each do |event|%>
     <tr>
-      <td><%= event.date %></td>
+      <td><%= l event.date %></td>
       <td><%= event.artist.name %></td>
       <td><%= event.location %></td>
     </tr>
