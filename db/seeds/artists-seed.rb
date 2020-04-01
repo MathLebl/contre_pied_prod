@@ -6,7 +6,7 @@ puts 'Creating 10 fake SpecArtists...'
     name:    Faker::Movies::StarWars.character,
     description: Faker::Lorem.paragraph,
     style: Faker::Movies::StarWars.planet,
-    category:  "theatre",
+    category:  "Theatre",
     user_id: 1,
     image: "https://images.unsplash.com/photo-1571173069043-82a7a13cee9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   )
@@ -19,7 +19,7 @@ puts 'Creating 10 fake ConcertArtists...'
     name:    Faker::Music.band,
     description: Faker::Lorem.paragraph,
     style: Faker::Music.genre,
-    category:  "concert",
+    category:  "Concert",
     user_id: 1,
         image: "https://images.unsplash.com/photo-1529354235303-cc42f23d767a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   )
@@ -32,7 +32,7 @@ puts 'Creating 10 fake EnfantArtists...'
     name:    Faker::Movies::HarryPotter.character,
     description: Faker::Lorem.paragraph,
     style: Faker::Movies::HarryPotter.house,
-    category:  "enfant",
+    category:  "Enfant",
     user_id: 1,
         image: "https://images.unsplash.com/photo-1472711795975-42c5b4ee828c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   )
@@ -40,3 +40,5 @@ puts 'Creating 10 fake EnfantArtists...'
 end
 
 puts "Artists done"
+
+
