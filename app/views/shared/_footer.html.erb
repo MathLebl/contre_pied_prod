@@ -1,13 +1,15 @@
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.facebook.com/contrepiedproductions/"><i class="fab fa-facebook-f"></i></a>
     <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <%= mail_to "contact@polipedia.fr" do %>
+      <i class="far fa-envelope"></i>
+    <% end %>
   </div>
   <div class="footer-tabs">
-    <a href="#">Mentions Légales</a>
-    <a href="#">A Propos</a>
-    <a href="#">Agenda</a>
+    <%= link_to "Mentions Légales", legals_path %>
+    <%= link_to "À Propos", about_path %>
+    <%= link_to "Agenda", artists_path %>
   </div>
 </div>

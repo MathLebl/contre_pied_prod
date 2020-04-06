@@ -6,21 +6,21 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    @events = Event.where(artist_id: @artist.id)
+    @events = Event.where(artist_id: @artist.id).order('date ASC')
   end
 
   def jeune_publique
-    @artists = Artist.where(category: "jeune publique")
+    @artists = Artist.where(category: "Jeune Publique")
     @events = Event.where(category: "jeune publique").order('date ASC')
   end
 
   def theatre
-     @artists = Artist.where(category: "theatre")
+     @artists = Artist.where(category: "Theatre")
      @events = Event.where(category: "theatre").order('date ASC')
   end
 
   def concert
-     @artists = Artist.where(category: "concert")
+     @artists = Artist.where(category: "Concert")
      @events = Event.where(category: "concert").order('date ASC')
   end
 

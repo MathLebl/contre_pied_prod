@@ -1,0 +1,88 @@
+.wraper-list-jp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards-list-jp {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin: 30px 0 30px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card-category-list-jp {
+  height: 340px;
+  width: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F8E0DA;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  position: relative;
+  text-decoration: none;
+}
+
+.card-category-list-jp .artist-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
+.card-category-list-jp .card-body-jp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  border: 5px solid #F8E0DA;
+  border-radius: 50px;
+  background-color: #FFF9F0;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards-list-jp {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards-list-jp {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards-list-jp {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards-list-jp {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards-list-jp {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
