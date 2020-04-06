@@ -9,9 +9,9 @@ class ArtistsController < ApplicationController
     @events = Event.where(artist_id: @artist.id)
   end
 
-  def enfant
-    @artists = Artist.where(category: "enfant")
-    @events = Event.where(category: "enfant").order('date ASC')
+  def jeune_publique
+    @artists = Artist.where(category: "jeune publique")
+    @events = Event.where(category: "jeune publique").order('date ASC')
   end
 
   def theatre

@@ -4,7 +4,7 @@ puts 'Creating 45 fake Events...'
 15.times do
   event = Event.new(
     date: Faker::Date.forward,
-    category:  "enfant",
+    category:  "jeune publique",
     user_id: 1,
     artist_id: Random.rand(21..30),
     location: "Le Théatre de La Vie quie joue"

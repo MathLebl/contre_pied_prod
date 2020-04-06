@@ -11,8 +11,8 @@ class ArtistsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get enfant" do
-    get artists_enfant_url
+  test "should get jeune publqie" do
+    get artists_jeune_publique_url
     assert_response :success
   end
 

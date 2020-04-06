@@ -1,6 +1,6 @@
 require 'faker'
 
-puts 'Creating 10 fake SpecArtists...'
+puts 'Creating 10 fake Théatre Artists...'
 10.times do
   artist = Artist.new(
     name:    Faker::Movies::StarWars.character,
@@ -13,7 +13,7 @@ puts 'Creating 10 fake SpecArtists...'
   artist.save!
 end
 
-puts 'Creating 10 fake ConcertArtists...'
+puts 'Creating 10 fake Concert Artists...'
 10.times do
   artist = Artist.new(
     name:    Faker::Music.band,
@@ -26,13 +26,13 @@ puts 'Creating 10 fake ConcertArtists...'
   artist.save!
 end
 
-puts 'Creating 10 fake EnfantArtists...'
+puts 'Creating 10 fake Jeune Publique Artists...'
 10.times do
   artist = Artist.new(
     name:    Faker::Movies::HarryPotter.character,
     description: Faker::Lorem.paragraph,
     style: Faker::Movies::HarryPotter.house,
-    category:  "Enfant",
+    category:  "Jeune Publique",
     user_id: 1,
         image: "https://images.unsplash.com/photo-1472711795975-42c5b4ee828c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   )

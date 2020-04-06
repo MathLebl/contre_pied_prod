@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     collection do
       get :concert
       get :theatre
-      get :enfant
+      get :jeune_publique
     end
   end
   resources :events, only: [:index, :show] do
