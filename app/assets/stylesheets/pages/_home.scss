@@ -30,14 +30,14 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -60,4 +60,14 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border: 12px solid pink;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform .6s;
 }
+
+.cards a:hover {
+  text-decoration: none !important;
+  }
+
+  .card-category:hover {
+    transform: scale(1.1);
+    // transition-duration: 0.5s;
+  }
