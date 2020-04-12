@@ -1,15 +1,27 @@
 <div class="wraper-list">
   <div class="cards-list">
     <% @artists.each do |artist|%>
+      <% if artist.active == true %>
         <div class="card-category-list">
-     <%= link_to artist_path(artist) do %>
-          <img src="<%= artist.image %>" class="artist-image" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><%= artist.name %></h5>
-            <!-- <h6 class="card-title"><%= artist.style %></h6> -->
-          </div>
-     <% end %>
+          <%= link_to artist_path(artist) do %>
+            <img src="<%= artist.image %>" class="artist-image" alt="<%= artist.name %>">
+            <div class="card-body">
+              <h5 class="card-title"><%= artist.name %></h5>
+              <!-- <h6 class="card-title"><%= artist.style %></h6> -->
+            </div>
+          <% end %>
         </div>
+      <% else %>
+        <div class="card-category-list-inactive">
+          <%= link_to artist_path(artist) do %>
+            <img src="<%= artist.image %>" class="artist-image-inactive" alt="<%= artist.name %>">
+            <div class="card-body-inactive">
+              <h5 class="card-title"><%= artist.name %></h5>
+              <!-- <h6 class="card-title"><%= artist.style %></h6> -->
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
