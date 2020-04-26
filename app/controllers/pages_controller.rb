@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     events = Event.order('date ASC')
-    @events = events.first(10)
+    @events = events.first(8)
   end
 
   def legals
