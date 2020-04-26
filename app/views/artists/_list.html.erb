@@ -15,6 +15,9 @@
         <div class="card-category-list-inactive">
           <%= link_to artist_path(artist) do %>
             <img src="<%= artist.image %>" class="artist-image-inactive" alt="<%= artist.name %>">
+            <div class="inactive-flag">
+              <h2>INACTIF</h2>
+            </div>
             <div class="card-body-inactive">
               <h5 class="card-title"><%= artist.name %></h5>
               <!-- <h6 class="card-title"><%= artist.style %></h6> -->
