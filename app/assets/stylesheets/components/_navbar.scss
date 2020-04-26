@@ -1,12 +1,14 @@
 .navbar {
   justify-content: space-between;
-  background: #F8E0DA;
+  background-color: #F8E0DA;
 }
 
 .navbar .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar .navbar-brand img {
-  width: 40px;
+
+.navbar .dropdown-menu {
+   background-color: #F8E0DA;
+   border-bottom: 2px solid #D94496;
 }

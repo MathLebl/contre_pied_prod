@@ -4,6 +4,11 @@
       <td><%= l event.date %></td>
       <td><%= event.artist.name %></td>
       <td><%= event.location %></td>
+      <% if event.location == nil %>
+        rr
+      <% else %>
+        <td><a href="<%= event.location %>"><i class="fas fa-ticket-alt"></i></a></td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
