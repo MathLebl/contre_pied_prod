@@ -1,3 +1,8 @@
+tr:hover {
+  background-color: #F8E0DA;
+  opacity: 0.9;
+}
+
 // Gestion du Ticket - Toutes les tables
 
 .table-ticket a {
@@ -113,9 +118,9 @@
 }
 
 .table-artist .table-date {
-  font-size: 12px;
+  font-size: 32px;
 }
 
 .table-artist .table-location {
-  font-size: 16px;
+  font-size: 24px;
 }
