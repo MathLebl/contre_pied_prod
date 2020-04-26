@@ -11,17 +11,20 @@ class ArtistsController < ApplicationController
 
   def jeune_publique
     @artists = Artist.where(category: "Jeune Publique")
-    @events = Event.where(category: "jeune publique").order('date ASC')
+    events = Event.where(category: "jeune publique").order('date ASC')
+    @events = events.first(8)
   end
 
   def theatre
      @artists = Artist.where(category: "Theatre")
-     @events = Event.where(category: "theatre").order('date ASC')
+     events = Event.where(category: "theatre").order('date ASC')
+     @events = events.first(8)
   end
 
   def concert
      @artists = Artist.where(category: "Concert")
-     @events = Event.where(category: "concert").order('date ASC')
+     events = Event.where(category: "concert").order('date ASC')
+     @events = events.first(8)
   end
 
   private

@@ -1,37 +1,121 @@
+// Gestion du Ticket - Toutes les tables
+
 .table-ticket a {
   color: black;
   opacity: 0.3;
   text-decoration: none;
   font-size: 24px;
-  padding: 0px 10px;
+  text-align: right;
 }
 
 .table-ticket a:hover {
   opacity: 1;
+}
 
+// Gestion du Link Name - Toutes les tables
+
+.table-name a{
+  text-decoration: none;
+  color: #D94496;
+}
+
+.table-name a:hover {
+  opacity: 0.6;
+}
+
+// Gestion Table Agenda
+
+.table-agenda {
+  width: 100%;
+  margin: 80px 20px;
+  color: #D94496;
+}
+
+.table-agenda tr {
+  border-bottom: 0.2px solid #D94496;
+}
+
+.table-agenda td {
+  padding: 15px 0px 5px 4px;
+  vertical-align: bottom;
+}
+
+
+.table-agenda .table-date {
+  font-size: 24px;
+}
+
+.table-agenda .table-name {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.table-agenda .table-location {
+  font-size: 20px;
+}
+
+// Gestion Table Générale - pages Home, Concert, Theatre, JP
+
+.table-title {
+  margin: 100px 50px 0px 50px;
+  text-align: center;
+  border-top: 0.2px solid #D94496;
+  padding-top: 16px;
+}
+
+.table-title h2 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #D94496;
 }
 
 .table-general {
-  width: 80%;
+  width: 60%;
+  margin: 12px 20px 100px 20px;
+  color: #D94496;
 }
 
+.table-general tr {
+  border-bottom: 0.2px solid #D94496;
+}
+
+.table-general td {
+  padding: 8px 0px 2px 0px;
+  vertical-align: bottom;
+}
 
 .table-general .table-date {
-  font-size: 30px;
+  font-size: 16px;
 }
+
+.table-general .table-name {
+  font-size: 24px;
+}
+
+.table-general .table-location {
+  font-size: 12px;
+}
+
+// Gestion Table Artiste - Date et Lieu
 
 .table-artist {
   width: 60%;
+  color: #D94496;
+}
+
+.table-artist tr {
+  border-bottom: 0.2px solid #D94496;
+}
+
+.table-artist td {
+  padding: 15px 0px 5px 4px;
+  vertical-align: bottom;
 }
 
 .table-artist .table-date {
   font-size: 12px;
 }
 
-.table-agenda {
-  width: 90%;
-}
-
-.table-agenda .table-date {
-  font-size: 22px;
+.table-artist .table-location {
+  font-size: 16px;
 }
