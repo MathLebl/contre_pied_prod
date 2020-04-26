@@ -1,10 +1,10 @@
  <tbody>
     <% @events.each do |event|%>
     <tr>
-      <td><%= l event.date %></td>
-      <td><%= event.location %></td>
+      <td class="table-date"><%= l event.date %></td>
+      <td class="table-location"><%= event.location %></td>
       <% if event.ticket != nil %>
-        <td><a href="<%= event.ticket %>"><i class="fas fa-ticket-alt"></i></a></td>
+        <td class="table-ticket"><a href="<%= event.ticket %>"><i class="fas fa-ticket-alt"></i></a></td>
       <% else %>
         <td></td>
       <% end %>
