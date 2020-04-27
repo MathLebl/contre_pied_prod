@@ -1,3 +1,13 @@
+.banner .container a {
+  text-decoration: none !important;
+  color: #FCC0CB;
+}
+
+.banner .container a:hover{
+  text-decoration: none !important;
+  color: #D94496;
+}
+
 .artist-page {
   border: 12px solid #FCC0CB;
   margin: 20px;
