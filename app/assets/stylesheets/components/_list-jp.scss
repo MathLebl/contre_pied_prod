@@ -7,12 +7,11 @@
 .cards-list-jp {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 30px;
   margin: 30px 0 30px 0;
   justify-content: center;
   align-items: center;
 }
-
 
 .card-category-list-jp {
   height: 340px;
@@ -26,16 +25,18 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   position: relative;
   text-decoration: none;
+  border-radius: 50%;
 }
+
 
 .card-category-list-jp .artist-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 75%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 50px;
+  border-radius: 50%;
 }
 
 .card-category-list-jp .card-body-jp {
@@ -46,11 +47,56 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 25%;
-  border: 5px solid #F8E0DA;
-  border-radius: 50px;
-  background-color: #FFF9F0;
+  height: 15%;
 }
+
+// Border animation
+
+.card-category-list-jp:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00,  #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  -webkit-background-size: 400%;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: animate 20s linear infinite;
+  opacity: 1;
+  transition: opacity .3s ease;
+  border-radius: 50%;
+  }
+
+  .card-category-list-jp:hover:before {
+    opacity: 1;
+  }
+
+  .card-category-list-jp:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+  }
+
+  @keyframes animate {
+    0%{
+      background-position: 0 0;
+    }
+    50%{
+      background-position: 400% 0;
+    }
+    100%{
+      background-position: 0 0;
+    }
+  }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
