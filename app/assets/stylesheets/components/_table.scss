@@ -15,11 +15,12 @@ tr {
   text-decoration: none;
   font-size: 24px;
   text-align: right;
-  transition: all .4s;
+  transition: all 1s;
 }
 
-.table-ticket a:hover {
+tr:hover .table-ticket a {
   color: black;
+  opacity: .8;
 }
 
 // Gestion du Link Name - Toutes les tables
@@ -27,11 +28,12 @@ tr {
 .table-name a{
   text-decoration: none;
   color: #D94496;
-  transition: all .4s;
+  transition: all 1s;
 }
 
-.table-name a:hover {
+tr:hover .table-name a {
   color: black;
+  opacity: .8;
 }
 
 // Gestion Table Agenda
