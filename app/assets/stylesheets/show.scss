@@ -1,24 +1,24 @@
-.navbar {
-  display:none;
-}
-
-.footer {
-  display:none;
-}
-
 .artist-page {
   border: 12px solid #FCC0CB;
   margin: 20px;
+  padding-bottom: 16px;
 }
 
 .artist-informations{
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 16px;
+  padding: 16px;
 }
 
 .description {
-  height: 100px;
-  margin: 40px 0px;
+  width: 80%;
+  text-align: justify;
+  font-size: 24px;
 }
+
+// Section Dice Photo
 
 .dice {
   width: 60%;
@@ -27,7 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 200px auto;
+  margin: 16px auto;
 }
 
 .dice .photo {
@@ -59,10 +59,18 @@
   right: 0px;
 }
 
+// Social Lnks Section
+
 .social-links {
   list-style: none;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
   font-size: 50px;
+  margin: auto;
+  margin-top: 80px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding-inline-start: 0px;
 }
 
 .social-links a {
@@ -70,6 +78,7 @@
   color: #D94496;
   display: inline;
   opacity: 0.3;
+  transition: all .4s;
 }
 
 .social-links a:hover {
@@ -79,6 +88,28 @@
 .social-links li {
   display: inline;
   text-align: center;
-  padding: 22px ;
 }
 
+// Table Section
+
+.table-artist{
+  width: 80%;
+  margin: auto;
+}
+
+.artist-page > .table-title {
+  margin: 0px 50px 0px 50px;
+  text-align: center;
+  border-top: 0.2px solid #D94496;
+  padding-top: 16px;
+}
+
+// Disable Section
+
+.navbar {
+  display:none;
+}
+
+.footer {
+  display:none;
+}

@@ -7,7 +7,7 @@ puts 'Creating 45 fake Events...'
     category:  "jeune publique",
     user_id: 1,
     artist_id: Random.rand(21..30),
-    location: "Le Théatre de La Vie quie joue"
+    location: "Le Théatre de La Vie qui joue"
   )
   event.save!
 end
@@ -18,7 +18,7 @@ end
     category:  "jeune publique",
     user_id: 1,
     artist_id: Random.rand(21..30),
-    location: "Le Théatre de La Vie quie joue",
+    location: "Le Théatre de La Vie qui joue",
     ticket: "https://www.billetreduc.com/spectacles-enfants/"
   )
   event.save!

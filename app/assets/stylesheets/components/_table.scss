@@ -1,20 +1,25 @@
+// Gestion du Hover - Toutes les tables
+
 tr:hover {
   background-color: #F8E0DA;
   opacity: 0.9;
+}
+tr {
+  transition: all .6s;
 }
 
 // Gestion du Ticket - Toutes les tables
 
 .table-ticket a {
-  color: black;
-  opacity: 0.3;
+  color: #D94496;
   text-decoration: none;
   font-size: 24px;
   text-align: right;
+  transition: all .4s;
 }
 
 .table-ticket a:hover {
-  opacity: 1;
+  color: black;
 }
 
 // Gestion du Link Name - Toutes les tables
@@ -22,10 +27,11 @@ tr:hover {
 .table-name a{
   text-decoration: none;
   color: #D94496;
+  transition: all .4s;
 }
 
 .table-name a:hover {
-  opacity: 0.6;
+  color: black;
 }
 
 // Gestion Table Agenda
@@ -104,7 +110,6 @@ tr:hover {
 // Gestion Table Artiste - Date et Lieu
 
 .table-artist {
-  width: 60%;
   color: #D94496;
 }
 
@@ -113,14 +118,18 @@ tr:hover {
 }
 
 .table-artist td {
-  padding: 15px 0px 5px 4px;
+  padding: 16px 0px 0px 0px;
   vertical-align: bottom;
 }
 
 .table-artist .table-date {
-  font-size: 32px;
+  font-size: 20px;
 }
 
 .table-artist .table-location {
-  font-size: 24px;
+  font-size: 20px;
+}
+
+.table-artist .table-ticket a {
+  font-size: 20px;
 }

@@ -4,7 +4,7 @@ puts 'Creating 10 fake Théatre Artists...'
 9.times do
   artist = Artist.new(
     name:    Faker::Movies::StarWars.character,
-    description: Faker::Lorem.paragraph,
+    description: Faker::Lorem.paragraph(sentence_count: 15),
     style: Faker::Movies::StarWars.planet,
     category:  "Theatre",
     user_id: 1,
@@ -14,7 +14,7 @@ puts 'Creating 10 fake Théatre Artists...'
 end
 artist = Artist.new(
   name:    Faker::Movies::StarWars.character,
-  description: Faker::Lorem.paragraph,
+  description: Faker::Lorem.paragraph(sentence_count: 15),
   style: Faker::Movies::StarWars.planet,
   category:  "Theatre",
   user_id: 1,
@@ -27,7 +27,7 @@ puts 'Creating 10 fake Concert Artists...'
 9.times do
   artist = Artist.new(
     name:    Faker::Music.band,
-    description: Faker::Lorem.paragraph,
+    description: Faker::Lorem.paragraph(sentence_count: 15),
     style: Faker::Music.genre,
     category:  "Concert",
     user_id: 1,
@@ -37,7 +37,7 @@ puts 'Creating 10 fake Concert Artists...'
 end
 artist = Artist.new(
   name:    Faker::Movies::StarWars.character,
-  description: Faker::Lorem.paragraph,
+  description: Faker::Lorem.paragraph(sentence_count: 15),
   style: Faker::Movies::StarWars.planet,
   category:  "Concert",
   user_id: 1,
@@ -50,7 +50,7 @@ puts 'Creating 10 fake Jeune Publique Artists...'
 9.times do
   artist = Artist.new(
     name:    Faker::Movies::HarryPotter.character,
-    description: Faker::Lorem.paragraph,
+    description: Faker::Lorem.paragraph(sentence_count: 15),
     style: Faker::Movies::HarryPotter.house,
     category:  "Jeune Publique",
     user_id: 1,
@@ -60,7 +60,7 @@ puts 'Creating 10 fake Jeune Publique Artists...'
 end
 artist = Artist.new(
   name:    Faker::Movies::StarWars.character,
-  description: Faker::Lorem.paragraph,
+  description: Faker::Lorem.paragraph(sentence_count: 15),
   style: Faker::Movies::StarWars.planet,
   category:  "Jeune Publique",
   user_id: 1,
