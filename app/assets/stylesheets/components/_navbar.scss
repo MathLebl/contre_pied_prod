@@ -4,8 +4,24 @@
   border-bottom: 0.6px solid #D94496;
 }
 
+.navbar a {
+  color: #D94496;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: black;
+  opacity: 0.8;
+}
+
+
 .navbar .navbar-collapse {
   flex-grow: 0;
+}
+
+.navbar .navbar-collapse a {
+  font-size: 18px;
+  padding: 0px 10px;
 }
 
 
@@ -15,5 +31,6 @@
 }
 
 .navbar .dropdown-item:hover {
-   background-color: #D94496;
+   background-color: #F8E0DA;
 }
+
