@@ -1,6 +1,7 @@
 .navbar {
   justify-content: space-between;
   background-color: #F8E0DA;
+  border-bottom: 0.6px solid #D94496;
 }
 
 .navbar .navbar-collapse {
@@ -10,5 +11,9 @@
 
 .navbar .dropdown-menu {
    background-color: #F8E0DA;
-   border-bottom: 2px solid #D94496;
+   border-bottom: 0.6px solid #D94496;
+}
+
+.navbar .dropdown-item:hover {
+   background-color: #D94496;
 }
