@@ -20,7 +20,7 @@
   justify-content: center;
   align-items: center;
   color: #FCC0CB;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border: 12px solid #FCC0CB;
@@ -33,8 +33,11 @@
 }
 
 .card-category:hover {
-  transform: scale(1.1);
-  font-size: 26.4px;
+  transform: scale(1.2);
+  font-size: 34px;
+  border: 6px solid #D94496;
+  color: #D94496;
+
 }
 
 

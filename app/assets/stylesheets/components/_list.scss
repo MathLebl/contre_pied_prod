@@ -17,6 +17,7 @@
 .card-category-list {
   height: 340px;
   width: 340px;
+  color: #FCC0CB;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,31 +27,35 @@
   border: 12px solid #FCC0CB;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
-  transition: all .7s;
+  transition: all .6s;
   background-color: transparent;
 }
 
 .card-category-list:hover {
   transform: scale(1.05);
-  background-color: #FCC0CB;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border: 6px solid #D94496;
+  color: #D94496;
+  font-size: 35px;
 }
 
 .card-category-list .card-body a{
   text-decoration: none !important;
-  color: #F8E0DA;
+  transition: color .6s;
+  transition: font-size .6s;
 }
 .card-category-list .card-body a:hover{
   text-decoration: none !important;
-  color: #D94496;
+
 }
+
 
 .card-category-list .artist-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 75%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -62,7 +67,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 25%;
+  height: 15%;
   background-color: transparent;
 }
 
