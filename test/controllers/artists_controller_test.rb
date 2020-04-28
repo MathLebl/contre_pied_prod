@@ -16,8 +16,8 @@ class ArtistsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get theatre" do
-    get artists_theatre_url
+  test "should get spectacle" do
+    get artists_spectacle_url
     assert_response :success
   end
 
