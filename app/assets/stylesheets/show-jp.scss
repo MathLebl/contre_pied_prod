@@ -1,17 +1,39 @@
-.banner .container a {
+// Gestion font
+.artist-page-jp {
+  font-family: 'Indie Flower';
+}
+
+.artist-page-jp h1 {
+  font-family: 'Schoolbell';
+}
+
+.artist-page-jp h2 {
+  font-family: 'Schoolbell';
+}
+
+// Gestion des composants
+
+.artist-page-jp {
+  margin: 30px;
+  padding-bottom: 16px;
+  position: relative;
+  border-radius: 100px;
+}
+
+
+.artist-page-jp > .banner {
+  border-radius: 100px 100px 0px 0px;
+}
+
+
+.banner >.container >a {
   text-decoration: none !important;
   color: #FCC0CB;
 }
 
-.banner .container a:hover{
+.banner >.container >a:hover{
   text-decoration: none !important;
   color: #D94496;
-}
-
-.artist-page-jp {
-  border: 12px solid black;
-  margin: 20px;
-  padding-bottom: 16px;
 }
 
 .artist-informations{
@@ -113,6 +135,51 @@
   border-top: 0.2px solid #D94496;
   padding-top: 16px;
 }
+
+// Border animation
+
+.artist-page-jp:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00,  #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  -webkit-background-size: 400%;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  animation: animate 20s linear infinite;
+  opacity: 1;
+  transition: all .3s ease;
+  border-radius: 100px;
+}
+
+.artist-page-jp:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #FFF9F0;
+  left: 0;
+  top: 0;
+  border-radius: 100px;
+}
+
+@keyframes animate {
+  0%{
+    background-position: 0 0;
+  }
+  50%{
+    background-position: 400% 0;
+  }
+  100%{
+    background-position: 0 0;
+  }
+}
+
 
 // Disable Section
 

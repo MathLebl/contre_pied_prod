@@ -1,12 +1,22 @@
 // .premiere {
 //   background-color: #D94496;
 // }
-.container-jp h1 {
+// Gestion font
+.container-jp {
   font-family: 'Indie Flower';
+}
+
+.container-jp h1 {
+  font-family: 'Schoolbell';
   font-size: 64px;
   margin: 12px;
   padding: 8px;
 }
+
+.container-jp h2 {
+  font-family: 'Schoolbell';
+}
+
 
 .container-jp {
   text-align: center;
