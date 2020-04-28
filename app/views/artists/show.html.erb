@@ -4,8 +4,8 @@
     <div class="banner" style="background-image: url('<%= image_path(@artist.image) %>');">
       <div class="container">
         <h1><%= @artist.name %></h1>
-        <% if   @artist.category == "Theatre"%>
-          <%= link_to theatre_artists_path do %>
+        <% if   @artist.category == "Spectacle"%>
+          <%= link_to spectacle_artists_path do %>
             Retour
           <% end %>
         <% elsif @artist.category == "Concert"%>
