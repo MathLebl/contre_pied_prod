@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  resources :artists, only: [:index, :show] do
+  resources :artists, only: [:index, :show ] do
     collection do
       get :concert
       get :theatre
       get :jeune_publique
+    end
+    member do
+      get :show_jp
     end
   end
   resources :events, only: [:index, :show] do

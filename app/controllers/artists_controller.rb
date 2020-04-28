@@ -1,11 +1,16 @@
 class ArtistsController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :find_artist, only: [ :show ]
+  before_action :find_artist_jp, only: [ :show_jp ]
   def index
     @artists = Artist.all
   end
 
   def show
+    @events = Event.where(artist_id: @artist.id).order('date ASC')
+  end
+
+  def show_jp
     @events = Event.where(artist_id: @artist.id).order('date ASC')
   end
 
@@ -32,4 +37,11 @@ class ArtistsController < ApplicationController
   def find_artist
     @artist = Artist.find(params[:id])
   end
+
+  def find_artist_jp
+    artists = Artist.where(category: "Jeune Publique")
+    @artist = artists.find(params[:id])
+  end
+
 end
+

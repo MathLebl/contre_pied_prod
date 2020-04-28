@@ -2,7 +2,7 @@
   <div class="cards-list-jp">
     <% @artists.each do |artist|%>
         <div class="card-category-list-jp">
-     <%= link_to artist_path(artist) do %>
+     <%= link_to show_jp_artist_path(artist) do %>
           <img src="<%= artist.image %>" class="artist-image" alt="...">
           <div class="card-body-jp">
             <h5 class="card-title-jp"><%= artist.name %></h5>
