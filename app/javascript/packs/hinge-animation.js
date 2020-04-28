@@ -1,11 +1,11 @@
-const jeunPubliqueHinge = () => {
+const jeunePublicHinge = () => {
 
-  const jeunePubliqueLink = document.querySelector('#jeunePublique');
-jeunePubliqueLink.addEventListener("click", (event) => {
+  const jeunePublicLink = document.querySelector('#jeunePublic');
+jeunePublicLink.addEventListener("click", (event) => {
   console.log(toto)
   event.classList.add("animated hinge");
 });
 
 }
 
-export { jeunPubliqueHinge }
+export { jeunePublicHinge }
