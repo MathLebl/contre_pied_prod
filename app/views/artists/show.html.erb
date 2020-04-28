@@ -1,51 +1,53 @@
 <%= stylesheet_link_tag 'show', media: 'all' %>
-<div class="artist-page">
-  <div class="banner" style="background-image: url('<%= image_path(@artist.image) %>');">
-    <div class="container">
-      <h1><%= @artist.name %></h1>
-      <% if   @artist.category == "Theatre"%>
-        <%= link_to theatre_artists_path do %>
-          Retour
+<div class="transition-fade">
+  <div class="artist-page">
+    <div class="banner" style="background-image: url('<%= image_path(@artist.image) %>');">
+      <div class="container">
+        <h1><%= @artist.name %></h1>
+        <% if   @artist.category == "Theatre"%>
+          <%= link_to theatre_artists_path do %>
+            Retour
+          <% end %>
+        <% elsif @artist.category == "Concert"%>
+          <%= link_to concert_artists_path do %>
+            Retour
+          <% end %>
+        <% else %>
+          <%= link_to jeune_publique_artists_path do %>
+            Retour
+          <% end %>
         <% end %>
-      <% elsif @artist.category == "Concert"%>
-        <%= link_to concert_artists_path do %>
-          Retour
-        <% end %>
-      <% else %>
-        <%= link_to jeune_publique_artists_path do %>
-          Retour
-        <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
-  <div class="artist-informations">
-    <div class="description">
-      <p><%= @artist.description %></p>
+    <div class="artist-informations">
+      <div class="description">
+        <p><%= @artist.description %></p>
+      </div>
     </div>
-  </div>
-    <div class="dice">
-      <img src="<%= @artist.image %>" class="photo top-left" alt="...">
-      <img src="<%= @artist.image %>" class="photo top-right" alt="...">
-      <iframe width="200" height="133.19" class="video" src="https://www.youtube.com/embed/14PZY7yOIus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <img src="<%= @artist.image %>" class="photo botom-left" alt="...">
-      <img src="<%= @artist.image %>" class="photo botom-right" alt="...">
-    </div>
+      <div class="dice">
+        <img src="<%= @artist.image %>" class="photo top-left" alt="...">
+        <img src="<%= @artist.image %>" class="photo top-right" alt="...">
+        <iframe width="200" height="133.19" class="video" src="https://www.youtube.com/embed/14PZY7yOIus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <img src="<%= @artist.image %>" class="photo botom-left" alt="...">
+        <img src="<%= @artist.image %>" class="photo botom-right" alt="...">
+      </div>
 
-    <ul class="social-links">
-      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-      <li><a href="#"><i class="fab fa-spotify"></i></a></li>
-      <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-      <li><a href="#"><i class="fab fa-soundcloud"></i></a></li>
-      <li><a href="#"><i class="fas fa-link"></i></a></li>
-    </ul>
-    <div class="table-title">
-      <h2>Agenda</h2>
-    </div>
-    <table class="table-artist">
-      <%= render 'events/event-table-artist' %>
-    </table>
+      <ul class="social-links">
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="#"><i class="fab fa-spotify"></i></a></li>
+        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+        <li><a href="#"><i class="fab fa-soundcloud"></i></a></li>
+        <li><a href="#"><i class="fas fa-link"></i></a></li>
+      </ul>
+      <div class="table-title">
+        <h2>Agenda</h2>
+      </div>
+      <table class="table-artist">
+        <%= render 'events/event-table-artist' %>
+      </table>
+</div>
 </div>
 
