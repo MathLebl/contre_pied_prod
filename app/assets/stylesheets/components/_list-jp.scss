@@ -27,7 +27,7 @@
   position: relative;
   text-decoration: none;
   border-radius: 50%;
-  background: transparent;
+  background: #FFF9F0;
 }
 
 .card-category-list-jp a{
@@ -43,10 +43,10 @@
 
 .card-category-list-jp .artist-image {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  width: 90%;
-  height: 90%;
+  top: 5.1px;
+  left: 5.1px;
+  width: 97%;
+  height: 97%;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -57,8 +57,7 @@
   align-items: center;
   position: absolute;
   bottom: 60px;
-  left: 0;
-  width: 100%;
+  margin: auto;
   height: 15%;
 }
 
@@ -91,10 +90,10 @@
   background-size: 400%;
   z-index: -1;
   filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
   animation: animate 20s linear infinite;
-  opacity: 1;
+  opacity: 0;
   transition: all .3s ease;
   border-radius: 50%;
   }
@@ -109,7 +108,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background: transparent;
+    background: #FFF9F0;
     left: 0;
     top: 0;
     border-radius: 50%;
