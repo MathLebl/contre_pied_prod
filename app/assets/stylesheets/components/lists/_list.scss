@@ -15,14 +15,14 @@
 
 
 .card-category-list {
-  height: 340px;
-  width: 340px;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 340px;
+  width: 340px;
   border: 12px solid #FCC0CB;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  position: relative;
   transition: all .6s;
   background-color: transparent;
 
