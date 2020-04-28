@@ -46,13 +46,13 @@ artist = Artist.new(
 )
 artist.save!
 
-puts 'Creating 10 fake Jeune Publique Artists...'
+puts 'Creating 10 fake Jeune Public Artists...'
 9.times do
   artist = Artist.new(
     name:    Faker::Movies::HarryPotter.character,
     description: Faker::Lorem.paragraph(sentence_count: 15),
     style: Faker::Movies::HarryPotter.house,
-    category:  "Jeune Publique",
+    category:  "Jeune Public",
     user_id: 1,
         image: "https://images.unsplash.com/photo-1472711795975-42c5b4ee828c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   )
@@ -62,7 +62,7 @@ artist = Artist.new(
   name:    Faker::Movies::StarWars.character,
   description: Faker::Lorem.paragraph(sentence_count: 15),
   style: Faker::Movies::StarWars.planet,
-  category:  "Jeune Publique",
+  category:  "Jeune Public",
   user_id: 1,
   active: false,
   image: "https://images.unsplash.com/photo-1571173069043-82a7a13cee9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"

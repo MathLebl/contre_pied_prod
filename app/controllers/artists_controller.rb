@@ -14,9 +14,9 @@ class ArtistsController < ApplicationController
     @events = Event.where(artist_id: @artist.id).order('date ASC')
   end
 
-  def jeune_publique
-    @artists = Artist.where(category: "Jeune Publique")
-    events = Event.where(category: "jeune publique").order('date ASC')
+  def jeune_public
+    @artists = Artist.where(category: "Jeune Public")
+    events = Event.where(category: "jeune public").order('date ASC')
     @events = events.first(8)
   end
 
@@ -39,7 +39,7 @@ class ArtistsController < ApplicationController
   end
 
   def find_artist_jp
-    artists = Artist.where(category: "Jeune Publique")
+    artists = Artist.where(category: "Jeune Public")
     @artist = artists.find(params[:id])
   end
 

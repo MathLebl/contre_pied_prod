@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     collection do
       get :concert
       get :theatre
-      get :jeune_publique
+      get :jeune_public
     end
     member do
       get :show_jp

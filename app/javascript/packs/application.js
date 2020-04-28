@@ -9,5 +9,5 @@ import Swup from "swup";
 const swup = new Swup();
 
 //Hinge Animation
-// import { jeunPubliqueHinge } from './hinge-animation';
-// jeunPubliqueHinge();
+// import { jeunePublicHinge } from './hinge-animation';
+// jeunePublicHinge();
