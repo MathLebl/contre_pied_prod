@@ -5,7 +5,7 @@
       <td class="table-name"><a href="#"><%= event.artist.name %></a></td>
       <td class="table-location"><%= event.location %></td>
       <% if event.ticket != nil %>
-        <td class="table-ticket"><a href="<%= event.ticket %>"><i class="fas fa-ticket-alt"></i></a></td>
+        <td class="table-ticket"><a href="<%= event.ticket %>" target="_blank"><i class="fas fa-ticket-alt"></i></a></td>
       <% else %>
         <td></td>
       <% end %>
