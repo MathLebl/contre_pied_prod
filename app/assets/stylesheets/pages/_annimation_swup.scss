@@ -16,19 +16,19 @@ html.is-leaving .transition-fade {
 }
 
 
-.transition-down {
-  transition: 1.3s;
-  opacity: 1;
-  transform: translateY(0);
+// .transition-down {
+//   transition: 1.3s;
+//   opacity: 1;
+//   transform: translateY(0);
 
-}
+// }
 
-html.is-animating .transition-down {
-  opacity: 0;
-  transform: translateY(-100%);
-}
+// html.is-animating .transition-down {
+//   opacity: 0;
+//   transform: translateY(-100%);
+// }
 
-html.is-leaving .transition-down {
-  opacity: 0;
-  transform: translateY(100%);
-}
+// html.is-leaving .transition-down {
+//   opacity: 0;
+//   transform: translateY(100%);
+// }
