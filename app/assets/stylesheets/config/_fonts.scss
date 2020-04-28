@@ -1,9 +1,14 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Karla:ital,wght@0,400;0,700;1,400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Schoolbell&display=swap');
 // Define fonts for body and headers
 $body-font: "Inconsolata", "Helvetica", "sans-serif";
 $headers-font: "Karla", "Helvetica", "sans-serif";
+
+// Fonts Jeune Publique
+$jeune-publique-font1: 'Indie Flower', cursive;
+$jeune-publique-font2: 'Schoolbell', cursive;
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

@@ -7,12 +7,16 @@
 .cards-list-jp {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 30px;
   margin: 30px 0 30px 0;
   justify-content: center;
   align-items: center;
 }
 
+.premiere h1 {
+  font-family: 'Indie Flower';
+  font-size: 64px;
+}
 
 .card-category-list-jp {
   height: 340px;
@@ -20,22 +24,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #F8E0DA;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   position: relative;
   text-decoration: none;
+  border-radius: 50%;
+  background: transparent;
 }
+
+.card-category-list-jp a{
+  text-decoration: none !important;
+  }
+
+.card-category-list-jp h5{
+  color: white;
+  font-family: 'Schoolbell';
+  font-size: 32px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+  }
 
 .card-category-list-jp .artist-image {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 75%;
+  top: 16px;
+  left: 16px;
+  width: 90%;
+  height: 90%;
   object-fit: cover;
-  border-radius: 50px;
+  border-radius: 50%;
 }
 
 .card-category-list-jp .card-body-jp {
@@ -43,14 +56,76 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 0;
+  bottom: 60px;
   left: 0;
   width: 100%;
-  height: 25%;
-  border: 5px solid #F8E0DA;
-  border-radius: 50px;
-  background-color: #FFF9F0;
+  height: 15%;
 }
+
+// Gestion :hover
+
+.card-category-list-jp:hover {
+
+}
+.card-category-list-jp:hover a{
+
+}
+
+.card-category-list-jp:hover h5{
+
+}
+
+.card-category-list-jp .artist-image {
+
+}
+
+// Border animation
+
+.card-category-list-jp:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00,  #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  -webkit-background-size: 400%;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: animate 20s linear infinite;
+  opacity: 1;
+  transition: all .3s ease;
+  border-radius: 50%;
+  }
+
+  .card-category-list-jp:hover:before {
+    opacity: 1;
+  }
+
+  .card-category-list-jp:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+  }
+
+  @keyframes animate {
+    0%{
+      background-position: 0 0;
+    }
+    50%{
+      background-position: 400% 0;
+    }
+    100%{
+      background-position: 0 0;
+    }
+  }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
