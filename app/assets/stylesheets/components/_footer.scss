@@ -1,25 +1,25 @@
 .footer {
-  background: #F8E0DA;
+  background: #FACBE9;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 60px;
   padding: 0px 20px;
-  border-top: 0.6px solid #D94496;
+
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: #D94496;
+  color: black;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
   color: black;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .footer-tabs {
@@ -28,7 +28,7 @@
 }
 
 .footer-tabs a {
-  color: #D94496;
+  color: black;
   text-decoration: none;
   font-size: 18px;
   padding: 0px 10px;
@@ -36,6 +36,6 @@
 
 .footer-tabs a:hover {
   color: black;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 

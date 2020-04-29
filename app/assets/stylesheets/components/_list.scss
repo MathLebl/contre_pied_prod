@@ -20,7 +20,7 @@
   align-items: center;
   height: 340px;
   width: 340px;
-  border: 12px solid #FCC0CB;
+  border: 12px solid rgba(255,211,60,1);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   transition: all .6s;
   background: transparent;
@@ -33,8 +33,8 @@
 .list-card h5{
   transition: all .6s;
   text-shadow: 2px 2px 2px rgba(0,0,0,0.8);
-  color: #FCC0CB;
-  font-size: 24px;
+  color: rgba(255,211,60,1);
+  font-size: 32px;
 }
 
 .list-card h6{
@@ -79,7 +79,7 @@
 .jeunesse h5 {
   color: white;
   font-family: 'Indie Flower';
-  font-size: 32px;
+  font-size: 24px;
 }
 
 
@@ -87,7 +87,7 @@
 
 .list-card:hover {
   transform: scale(1.05);
-  border: 6px solid #D94496;
+  border: 6px solid rgba(255,211,60,.9);
 
 }
 .list-card:hover a{
@@ -96,7 +96,7 @@
 
 .list-card:hover h5{
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  color: #D94496;
+  color: rgba(255,211,60,.9);
   font-size: 26px;
 }
 
