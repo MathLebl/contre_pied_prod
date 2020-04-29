@@ -21,7 +21,7 @@ class ArtistsController < ApplicationController
   end
 
   def spectacle
-     @artists = Artist.where(category: "spectacle")
+     @artists = Artist.where(category: "Spectacle")
      events = Event.where(category: "spectacle").order('date ASC')
      @events = events.first(8)
   end
