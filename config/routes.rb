@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get 'about', to: 'pages#about'
   get 'legals', to: 'pages#legals'
+  get 'contacts', to: 'pages#contacts'
   root to: 'pages#home'
 
   ActiveAdmin.routes(self)
