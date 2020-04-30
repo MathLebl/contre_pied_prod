@@ -26,6 +26,8 @@
   border: 12px solid rgba(255,211,60,1);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   transition: all .6s;
+  background-size: cover;
+  background-position: center;
 }
 
 .cards a:hover {
@@ -35,8 +37,8 @@
 .card-category:hover {
   transform: scale(1.2);
   font-size: 34px;
-  border: 6px solid rgba(255,211,60,.9);
-  color: rgba(255,211,60,.9);
+  border: 6px solid rgba(255,211,60,1);
+  color: rgba(255,211,60,1);
 
 }
 
