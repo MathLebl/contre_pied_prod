@@ -18,7 +18,7 @@
   padding-bottom: 16px;
   position: relative;
   border-radius: 100px;
-  border: 12px solid #FCC0CB;
+  border: 12px solid rgba(255,211,60,1);
 }
 
 
@@ -108,14 +108,14 @@
 
 .social-links a {
   text-decoration: none !important;
-  color: #D94496;
+  color: rgba(255,211,60,1);
   display: inline;
-  opacity: 0.3;
+  opacity: 1;
   transition: all .4s;
 }
 
 .social-links a:hover {
-  opacity: 1;
+  opacity: 0.3;
 }
 
 .social-links li {
