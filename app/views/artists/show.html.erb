@@ -35,6 +35,29 @@
         <p><%= @artist.description %></p>
       </div>
     </div>
+    <div class="centrale">
+        <ul class="info-list">
+          <li>
+            <button id="distri-btn">Distribution</button>
+            <p class="is-visible">on est là papa</p>
+          </li>
+          <li>
+            <button id="credit-text">Crédit</button>
+            <p class="is-visible">on est là papa</p>
+          </li>
+          <li>
+            <button id="presse-text">Presse</button>
+            <p class="is-visible">on est là papa</p>
+          </li>
+          <li>
+            <button id="part-btn">Partenaires</button>
+            <p class="is-visible">on est là papa</p>
+          </li>
+        </ul>
+
+
+
+
       <div class="dice">
         <img src="<%= @artist.image %>" class="photo top-left" alt="...">
         <img src="<%= @artist.image %>" class="photo top-right" alt="...">
@@ -42,25 +65,27 @@
         <img src="<%= @artist.image %>" class="photo botom-left" alt="...">
         <img src="<%= @artist.image %>" class="photo botom-right" alt="...">
       </div>
+    </div>
 
-      <ul class="social-links">
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="#"><i class="fab fa-spotify"></i></a></li>
-        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-        <li><a href="#"><i class="fab fa-soundcloud"></i></a></li>
-        <li><a href="#"><i class="fas fa-link"></i></a></li>
-      </ul>
-      <% if !@events.empty? %>
-        <div class="table-title">
-          <h2>Agenda</h2>
-        </div>
-        <table class="table-artist">
-          <%= render 'events/event-table-artist' %>
-        </table>
-      <% end %>
-</div>
+    <ul class="social-links">
+      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="#"><i class="fab fa-spotify"></i></a></li>
+      <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+      <li><a href="#"><i class="fab fa-soundcloud"></i></a></li>
+      <li><a href="#"><i class="fas fa-link"></i></a></li>
+    </ul>
+    <% if !@events.empty? %>
+      <div class="table-title">
+        <h2>Agenda</h2>
+      </div>
+      <table class="table-artist">
+        <%= render 'events/event-table-artist' %>
+      </table>
+    <% end %>
+  </div>
 </div>
 
+<%= javascript_pack_tag 'list-info-toggle' %>

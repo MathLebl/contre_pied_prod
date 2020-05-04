@@ -28,16 +28,37 @@
   font-size: 24px;
 }
 
+// Section Centrale
+
+.centrale {
+  display: flex;
+}
+
+// Section list-info
+
+.info-list {
+  width: 25%;
+  margin: 16px 8px;
+  button {
+    border: none;
+    text-decoration:none;
+    background-color: transparent;
+  }
+}
+.info-list > li > p.is-visible {
+  display: none;
+}
+
 // Section Dice Photo
 
 .dice {
-  width: 60%;
+  width: 75%;
   height: 350px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 16px auto;
+  margin: 16px 8px;
 }
 
 .dice .photo {
@@ -114,6 +135,12 @@
   padding-top: 16px;
 }
 
+ul {
+  list-style: none;
+}
+button:focus {
+  outline: none;
+}
 // Disable Section
 
 // .navbar {
