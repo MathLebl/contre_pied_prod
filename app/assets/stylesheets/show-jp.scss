@@ -19,8 +19,16 @@
   position: relative;
   border-radius: 100px;
   border: 12px solid rgba(255,211,60,1);
+  background-image: url('backg-jeunePublic-show-light.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
+body {
+  background-image: url('backg-jeunePublic.jpg');
+  background-position: center;
+  background-size: cover;
+}
 
 .artist-page-jp > .banner {
   border-radius: 85px 85px 0px 0px;
@@ -51,16 +59,40 @@
   font-size: 24px;
 }
 
+.description p::first-letter {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.centrale {
+  display: flex;
+}
+
+// Section list-info
+
+.info-list {
+  width: 25%;
+  margin: 16px 8px;
+  button {
+    border: none;
+    text-decoration:none;
+    background-color: transparent;
+  }
+}
+.info-list > li > p.is-visible {
+  display: none;
+}
+
 // Section Dice Photo
 
 .dice {
-  width: 60%;
+  width: 75%;
   height: 350px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 16px auto;
+  margin: 16px 8px;
 }
 
 .dice .photo {
@@ -137,6 +169,9 @@
   padding-top: 16px;
 }
 
+button:focus {
+  outline: none;
+}
 // Border animation
 
     // .artist-page-jp:before {

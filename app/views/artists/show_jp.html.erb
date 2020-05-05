@@ -15,12 +15,37 @@
         <p><%= @artist.description %></p>
       </div>
     </div>
-      <div class="dice">
-        <img src="<%= @artist.image %>" class="photo top-left" alt="...">
-        <img src="<%= @artist.image %>" class="photo top-right" alt="...">
-        <iframe width="200" height="133.19" class="video" src="https://www.youtube.com/embed/14PZY7yOIus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <img src="<%= @artist.image %>" class="photo botom-left" alt="...">
-        <img src="<%= @artist.image %>" class="photo botom-right" alt="...">
+
+     <div class="centrale">
+          <ul class="info-list">
+            <li>
+              <button id="distri-btn">Distribution</button>
+              <p class="is-visible">on est là papa</p>
+            </li>
+            <li>
+              <button id="credit-text">Crédit</button>
+              <p class="is-visible">on est là papa</p>
+            </li>
+            <li>
+              <button id="presse-text">Presse</button>
+              <p class="is-visible">on est là papa</p>
+            </li>
+            <li>
+              <button id="part-btn">Partenaires</button>
+              <p class="is-visible">on est là papa</p>
+            </li>
+          </ul>
+
+
+
+
+        <div class="dice">
+          <img src="<%= @artist.image %>" class="photo top-left" alt="...">
+          <img src="<%= @artist.image %>" class="photo top-right" alt="...">
+          <iframe width="200" height="133.19" class="video" src="https://www.youtube.com/embed/14PZY7yOIus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <img src="<%= @artist.image %>" class="photo botom-left" alt="...">
+          <img src="<%= @artist.image %>" class="photo botom-right" alt="...">
+        </div>
       </div>
 
       <ul class="social-links">

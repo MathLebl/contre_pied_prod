@@ -8,6 +8,9 @@ import Swup from "swup";
 // Swup Initiation
 const swup = new Swup();
 
-//Hinge Animation
-// import { jeunePublicHinge } from './hinge-animation';
-// jeunePublicHinge();
+import { toggleBtn } from '/list-info-toggle';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  toggleBtn();
+});
