@@ -9,8 +9,3 @@ import Swup from "swup";
 const swup = new Swup();
 
 import { toggleBtn } from '/list-info-toggle';
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your JS functions here
-  toggleBtn();
-});
