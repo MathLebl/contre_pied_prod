@@ -16,3 +16,4 @@ function toggleBtn() {
 
 toggleBtn();
 
+export { toggleBtn };
