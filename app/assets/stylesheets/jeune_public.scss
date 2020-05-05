@@ -1,10 +1,7 @@
-// .premiere {
-//   background-color: #D94496;
-// }
 // Gestion font
 .container-jp {
   font-family: 'Indie Flower';
-   background-image: url('JP_Text_9.jpg');
+  background-image: url('backg-jeunePublic.jpg');
   background-position: center;
   background-size: cover;
 
@@ -21,19 +18,50 @@
   font-family: 'Schoolbell';
 }
 
-
+body {
+  background-image: url('bandeau-jeunePublic.jpg');
+  background-position: center;
+  background-size: cover;
+  color: #FFEE93;
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .container-jp {
   text-align: center;
+  color: #FFEE93;
 }
 
 .navbar {
   font-family: 'Indie Flower';
+  background-color: transparent;
+  color: #FFEE93;
 }
 
 .navbar-brand h4 {
   font-family: 'Indie Flower';
+  color: #FFEE93;
 }
 
 .footer {
   font-family: 'Indie Flower';
+  color: #FFEE93;
+   background-color: transparent;
 }
+
+
+.navbar a {
+  color: #FFEE93;
+}
+
+
+
+
+.navbar .dropdown-menu {
+   background-color: transparent;
+}
+
+.navbar .dropdown-item:hover {
+   background-color: transparent;
+}
+
