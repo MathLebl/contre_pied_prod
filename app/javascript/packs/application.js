@@ -8,5 +8,5 @@ import Swup from "swup";
 // Swup Initiation
 const swup = new Swup();
 
-import { toggleBtn } from 'list-info-toggle';
+import { toggleBtn } from 'list-info-toggle.js';
 
