@@ -18,10 +18,10 @@
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.querySelector(".navbar").style.backgroundColor = transparent;
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    window.querySelector(".navbar").style.backgroundColor = "#DBD5CD";
   } else {
-    document.querySelector(".navbar").style.backgroundColor = #FACBE9;
+    window.querySelector(".navbar").style.backgroundColor = "transparent";
   }
 }
 

@@ -1,15 +1,24 @@
 <%= stylesheet_link_tag 'show', media: 'all' %>
-  <div class="banner" style="background-image: url('https://images.unsplash.com/photo-1529354235303-cc42f23d767a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+
+<% if  @artist.category == "Concert" %>
+  <div class="banner" style="background-image: url('<%= image_path "bandeau-concerts.jpg" %>'); background-position: top">
     <div class="container">
-      <% if  @artist.category == "Concert" %>
-        <h1>Concert</h1>
-      <% elsif  @artist.category == "Spectacle"%>
-        <h1>Spectacle</h1>
-      <% else %>
-        <h1>Jeune Public</h1>
-      <% end %>
+      <h1>Concerts</h1>
     </div>
   </div>
+<% elsif  @artist.category == "Spectacle"%>
+  <div class="banner" style="background-image: url('<%= image_path "bandeau-spectacles.jpg" %>')">
+    <div class="container">
+      <h1>Spectacles</h1>
+    </div>
+  </div>
+<% else %>
+  <div class="banner" style="background-color: transparent">
+    <div class="container">
+      <h1>Jeune Public</h1>
+    </div>
+  </div>
+<% end %>
 <div class="transition-fade">
   <div class="artist-page">
     <div class="banner" style="background-image: url('<%= image_path(@artist.image) %>');">
@@ -39,19 +48,19 @@
         <ul class="info-list">
           <li>
             <button id="distri-btn">Distribution</button>
-            <p class="is-invisible">on est là papa</p>
+            <p class="is-visible">on est là papa</p>
           </li>
           <li>
             <button id="credit-text">Crédit</button>
-            <p class="is-invisible">on est là papa</p>
+            <p class="is-visible">on est là papa</p>
           </li>
           <li>
             <button id="presse-text">Presse</button>
-            <p class="is-invisible">on est là papa</p>
+            <p class="is-visible">on est là papa</p>
           </li>
           <li>
             <button id="part-btn">Partenaires</button>
-            <p class="is-invisible">on est là papa</p>
+            <p class="is-visible">on est là papa</p>
           </li>
         </ul>
 
