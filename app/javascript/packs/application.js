@@ -4,7 +4,7 @@ require("channels")
 
 import "bootstrap";
 import Swup from "swup";
-import { toggleBtn } from 'listInfoToggle.js';
+import { toggleBtn } from '../listInfoToggle';
 
 // Swup Initiation
 const swup = new Swup();
