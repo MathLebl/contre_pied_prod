@@ -10,6 +10,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+
   </head>
   <body>
     <%= render 'shared/navbar' %>
@@ -18,11 +19,10 @@
     <div id="swup">
       <%= yield %>
     </div>
-
     <%= render 'shared/footer' %>
     <%= javascript_pack_tag 'application' %>
-    <%= javascript_pack_tag 'listInfoToggle' %>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="magnific-popup/jquery.magnific-popup.js"></script>
   </body>
 </html>
+

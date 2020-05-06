@@ -45,6 +45,17 @@ body {
   };
 }
 
+.navbar-yellow {
+  font-family: 'Indie Flower';
+  background-color: #FFEE93;
+  h4 {
+    font-family: 'Indie Flower';
+    color: black;
+  };
+  .nav-link {
+    color: black;
+  };
+}
 
 .navbar .dropdown-menu {
    background-color: transparent;
