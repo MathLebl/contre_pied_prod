@@ -1,13 +1,12 @@
 <%= stylesheet_link_tag 'show-jp', media: 'all' %>
 <div class="transition-fade">
   <div class="artist-page-jp">
-    <div class="banner" style="background-image: url('<%= image_path(@artist.image) %>');">
+    <div class="banner" style="background-image: url('<%= image_path(@artist.banner) %>');">
       <div class="container">
         <h1><%= @artist.name %></h1>
-          <%= link_to jeune_public_artists_path do %>
-            Retour
-          <% end %>
-
+        <%= link_to jeune_public_artists_path do %>
+          Retour
+        <% end %>
       </div>
     </div>
     <div class="artist-informations">
@@ -15,55 +14,51 @@
         <p><%= @artist.description %></p>
       </div>
     </div>
-
-     <div class="centrale">
-          <ul class="info-list">
-            <li>
-              <button id="distri-btn">Distribution</button>
-              <p class="is-visible">on est là papa</p>
-            </li>
-            <li>
-              <button id="credit-text">Crédit</button>
-              <p class="is-visible">on est là papa</p>
-            </li>
-            <li>
-              <button id="presse-text">Presse</button>
-              <p class="is-visible">on est là papa</p>
-            </li>
-            <li>
-              <button id="part-btn">Partenaires</button>
-              <p class="is-visible">on est là papa</p>
-            </li>
-          </ul>
-
-
-
-
-        <div class="dice">
-          <img src="<%= @artist.image %>" class="photo top-left" alt="...">
-          <img src="<%= @artist.image %>" class="photo top-right" alt="...">
-          <iframe width="200" height="133.19" class="video" src="https://www.youtube.com/embed/14PZY7yOIus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <img src="<%= @artist.image %>" class="photo botom-left" alt="...">
-          <img src="<%= @artist.image %>" class="photo botom-right" alt="...">
-        </div>
-      </div>
-
-      <ul class="social-links">
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="#"><i class="fab fa-spotify"></i></a></li>
-        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-        <li><a href="#"><i class="fab fa-soundcloud"></i></a></li>
-        <li><a href="#"><i class="fas fa-link"></i></a></li>
+    <div class="centrale">
+      <ul class="info-list">
+        <li>
+          <button id="distri-btn">Distribution</button>
+          <p class="is-visible">on est là papa</p>
+        </li>
+        <li>
+          <button id="credit-text">Crédit</button>
+          <p class="is-visible">on est là papa</p>
+        </li>
+        <li>
+          <button id="presse-text">Presse</button>
+          <p class="is-visible">on est là papa</p>
+        </li>
+        <li>
+          <button id="part-btn">Partenaires</button>
+          <p class="is-visible">on est là papa</p>
+        </li>
       </ul>
+      <div class="dice">
+        <%= image_tag @artist.dice1, class: "photo top-left" %>
+        <%= image_tag @artist.dice2, class: "photo top-right" %>
+        <iframe width="200" height="133.19" class="video" src="https://www.youtube.com/embed/14PZY7yOIus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <%= image_tag @artist.dice3, class: "photo botom-left" %>
+        <%= image_tag @artist.dice4, class: "photo botom-right" %>
+      </div>
+    </div>
+    <ul class="social-links">
+      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="#"><i class="fab fa-spotify"></i></a></li>
+      <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+      <li><a href="#"><i class="fab fa-soundcloud"></i></a></li>
+      <li><a href="#"><i class="fas fa-link"></i></a></li>
+    </ul>
+    <% if !@events.empty? %>
       <div class="table-title">
         <h2>Agenda</h2>
       </div>
       <table class="table-artist">
         <%= render 'events/event-table-artist' %>
       </table>
-</div>
+    <% end %>
+  </div>
 </div>
 
