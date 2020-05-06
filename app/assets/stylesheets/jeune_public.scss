@@ -32,28 +32,18 @@ body {
   color: #FFEE93;
 }
 
+
 .navbar {
   font-family: 'Indie Flower';
   background-color: transparent;
-  color: #FFEE93;
+  h4 {
+    font-family: 'Indie Flower';
+    color: #FFEE93;
+  };
+  .nav-link {
+    color: #FFEE93;
+  };
 }
-
-.navbar-brand h4 {
-  font-family: 'Indie Flower';
-  color: #FFEE93;
-}
-
-.footer {
-  font-family: 'Indie Flower';
-  color: #FFEE93;
-}
-
-
-.navbar a {
-  color: #FFEE93;
-}
-
-
 
 
 .navbar .dropdown-menu {
@@ -64,3 +54,8 @@ body {
    background-color: transparent;
 }
 
+// Section du footer
+.footer {
+  font-family: 'Indie Flower';
+  background-color: #FFEE93;
+}
