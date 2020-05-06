@@ -11,6 +11,7 @@
   font-family: 'Schoolbell';
 }
 
+
 // Gestion des composants
 
 .artist-page-jp {
@@ -172,6 +173,11 @@ body {
 button:focus {
   outline: none;
 }
+
+ul {
+  list-style: none;
+}
+
 // Border animation
 
     // .artist-page-jp:before {

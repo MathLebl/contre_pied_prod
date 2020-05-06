@@ -16,3 +16,4 @@ const initNavbar = () => {
   document.addEventListener('scroll', scrollCondition)
 }
 initNavbar()
+export { initNavbar }

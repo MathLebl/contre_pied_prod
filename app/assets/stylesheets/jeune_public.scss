@@ -1,10 +1,6 @@
 // Gestion font
 .container-jp {
   font-family: 'Indie Flower';
-  background-image: url('backg-jeunePublic.jpg');
-  background-position: center;
-  background-size: cover;
-
 }
 
 .container-jp h1 {
@@ -15,6 +11,10 @@
 }
 
 .container-jp h2 {
+  font-family: 'Schoolbell';
+}
+
+.banner h1 {
   font-family: 'Schoolbell';
 }
 
@@ -30,6 +30,9 @@ body {
 .container-jp {
   text-align: center;
   color: #FFEE93;
+  background-image: url('backg-jeunePublic.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 
@@ -43,6 +46,16 @@ body {
   .nav-link {
     color: #FFEE93;
   };
+  .dropdown-menu {
+    background-color: transparent;
+    color: #FFEE93;
+  };
+  .dropdown-item {
+    color: #FFEE93;
+  };
+  .dropdown-item:hover {
+    background-color: transparent;
+  };
 }
 
 .navbar-yellow {
@@ -55,15 +68,14 @@ body {
   .nav-link {
     color: black;
   };
+  .dropdown-menu {
+    background-color: #FFEE93;
+  };
+  .dropdown-item {
+    color: black;
+  };
 }
 
-.navbar .dropdown-menu {
-   background-color: transparent;
-}
-
-.navbar .dropdown-item:hover {
-   background-color: transparent;
-}
 
 // Section du footer
 .footer {
