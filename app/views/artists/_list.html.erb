@@ -2,7 +2,7 @@
   <div class="list-grid">
     <% @artists.each do |artist|%>
       <%= link_to artist.category == "Jeune Public" ? show_jp_artist_path(artist) : artist_path(artist)  do %>
-        <div class="list-card <%="inactive" if artist.active == false %> <%="jeunesse" if artist.category == "Jeune Public" %>" style="background-image: url(<%= artist.image %>)">
+        <div class="list-card <%="inactive" if artist.active == false %> <%="jeunesse" if artist.category == "Jeune Public" %>" style="background-image: url('<%= image_path artist.image %>')">
           <div class="card-body">
             <h6 class="card-style"><%= artist.style %></h6>
             <h5 class="card-name"><%= artist.name %></h5>
