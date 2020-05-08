@@ -1,6 +1,6 @@
 const buttons = document.querySelectorAll('.info-list > li > button')
-const commentsBlocks = document.querySelectorAll('.info-list > li > p')
-
+const commentsBlocks = document.querySelectorAll('.info-list > li > ul')
+console.log(commentsBlocks)
 const toggleBtn = () => {
   buttons.forEach((button, index) => {
   const commentsBlock = commentsBlocks[index];
