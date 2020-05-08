@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_06_074318) do
+ActiveRecord::Schema.define(version: 2020_05_08_203230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,12 @@ ActiveRecord::Schema.define(version: 2020_05_06_074318) do
     t.string "dice2"
     t.string "dice3"
     t.string "dice4"
+    t.string "facebook"
+    t.string "soundcloud"
+    t.string "distribution", array: true
+    t.string "credits", array: true
+    t.string "presse", array: true
+    t.string "partenaires", array: true
     t.index ["user_id"], name: "index_artists_on_user_id"
   end
 

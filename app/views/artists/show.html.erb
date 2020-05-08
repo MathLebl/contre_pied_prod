@@ -21,7 +21,7 @@
 <% end %>
 <div class="transition-fade">
   <div class="artist-page">
-    <div class="banner" style="background-image: url('<%= image_path(@artist.banner) %>');">
+    <div class="banner" style="background-image: url('<%= image_path @artist.banner %>');">
       <div class="container">
         <h1><%= @artist.name %></h1>
         <% if   @artist.category == "Spectacle"%>
