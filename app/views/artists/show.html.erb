@@ -104,14 +104,27 @@
       </div>
     </div>
     <ul class="social-links">
-      <li><a href=""><i class="fab fa-instagram"></i></a></li>
-      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-      <li><a href="#"><i class="fab fa-spotify"></i></a></li>
-      <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-      <li><a href="#"><i class="fab fa-soundcloud"></i></a></li>
-      <li><a href="#"><i class="fas fa-link"></i></a></li>
+      <% if @artist.insta != nil %>
+        <li><a href="<%= @artist.insta %>"><i class="fab fa-instagram"></i></a></li>
+      <% end %>
+      <% if @artist.facebook != nil %>
+        <li><a href="<%= @artist.facebook %>"><i class="fab fa-facebook"></i></a></li>
+      <% end %>
+      <% if @artist.twitter != nil %>
+        <li><a href="<%= @artist.twitter %>"><i class="fab fa-twitter"></i></a></li>
+      <% end %>
+      <% if @artist.spotify != nil %>
+        <li><a href="<%= @artist.spotify %>"><i class="fab fa-spotify"></i></a></li>
+      <% end %>
+      <% if @artist.youtube != nil %>
+        <li><a href="<%= @artist.youtube %>"><i class="fab fa-youtube"></i></a></li>
+      <% end %>
+      <% if @artist.soundcloud != nil %>
+        <li><a href="<%= @artist.soundcloud %>"><i class="fab fa-soundcloud"></i></a></li>
+      <% end %>
+      <% if @artist.deezer != nil %>
+        <li><a href="<%= @artist.deezer %>"><i class="fas fa-link"></i></a></li>
+      <% end %>
     </ul>
     <% if !@events.empty? %>
       <div class="table-title">
