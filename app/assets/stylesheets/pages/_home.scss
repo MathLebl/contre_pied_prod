@@ -19,11 +19,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FFEE93;
+  color: #bdeaca;
   font-size: 30px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border: 12px solid #FFEE93;
+  border: 12px solid #bdeaca;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   transition: all .6s;
   background-size: cover;
@@ -39,8 +39,8 @@
 .card-category:hover {
   transform: scale(1.2);
   font-size: 34px;
-  border: 6px solid #FFEE93;
-  color: #FFEE93;
+  border: 6px solid #bdeaca;
+  color: #bdeaca;
 
 }
 
