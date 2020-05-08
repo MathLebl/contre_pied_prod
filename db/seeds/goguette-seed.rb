@@ -19,7 +19,7 @@ dice3: "goguette/goguette-dice3" ,
 dice4: "goguette/goguette-dice4.JPG",
 facebook: "https://www.facebook.com/lesgoguettes/"
 distribution: ["Stan", "Clémence Monnier", "Valentin Vander", "Aurélien Merle"],
-credit: ["Mise en scène : Yéshé Henneguelle", "Création lumière : Anne Muller", "Création sonore : Benoit Laur", "Costumes : Louisa Gesset-Hernandez", "Régie lumière Vincent Lemaitre", "Régie son : Christian Desille"],
+credits: ["Mise en scène : Yéshé Henneguelle", "Création lumière : Anne Muller", "Création sonore : Benoit Laur", "Costumes : Louisa Gesset-Hernandez", "Régie lumière Vincent Lemaitre", "Régie son : Christian Desille"],
 partenaires: ["Rire et chansons", "20 minutes", "F2F Music"]
   )
 artist.save!
