@@ -66,7 +66,7 @@
       <div class="dice">
         <%= image_tag @artist.dice1, class: "photo top-left" %>
         <%= image_tag @artist.dice2, class: "photo top-right" %>
-        <iframe width="200" height="133.19" class="video" src="https://www.youtube.com/embed/14PZY7yOIus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="200" height="133.19" class="video" src="<%= @artist.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <%= image_tag @artist.dice3, class: "photo botom-left" %>
         <%= image_tag @artist.dice4, class: "photo botom-right" %>
       </div>
