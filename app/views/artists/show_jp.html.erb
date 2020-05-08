@@ -16,46 +16,54 @@
     </div>
     <div class="centrale">
       <ul class="info-list">
-        <% if @artist.distribution != nil %>
-          <li>
-            <button id="distri-btn">Distribution</button>
-            <ul class="is-visible">
+        <li>
+          <button id="distri-btn">Distribution</button>
+          <ul class="is-visible">
+            <% if @artist.distribution != nil %>
               <% @artist.distribution.each do |distrib| %>
                 <li><%= distrib %></li>
               <% end %>
-            </ul>
-          </li>
-        <% end %>
-        <% if @artist.credits != nil %>
-          <li>
-            <button id="credits-text">Crédit</button>
-            <ul class="is-visible">
+            <% else %>
+                <li>Contenu à venir</li>
+            <% end %>
+          </ul>
+        </li>
+        <li>
+          <button id="credits-text">Crédit</button>
+          <ul class="is-visible">
+            <% if @artist.credits != nil %>
               <% @artist.credits.each do |credit| %>
                 <li><%= credit %></li>
               <% end %>
-            </ul>
-          </li>
-        <% end %>
-        <% if @artist.presse != nil %>
-          <li>
-            <button id="presse-text">Presse</button>
-              <ul class="is-visible">
-                <% @artist.presse.each do |press| %>
-                  <li><%= press %></li>
-                <% end %>
-              </ul>
-          </li>
-        <% end %>
-        <% if @artist.partenaires != nil %>
-          <li>
-            <button id="part-btn">Partenaires</button>
-            <ul class="is-visible">
+            <% else %>
+              <li>Contenu à venir</li>
+            <% end %>
+          </ul>
+        </li>
+        <li>
+          <button id="presse-text">Presse</button>
+          <ul class="is-visible">
+            <% if @artist.presse != nil %>
+              <% @artist.presse.each do |press| %>
+                <li><%= press %></li>
+              <% end %>
+            <% else %>
+              <li>Contenu à venir</li>
+            <% end %>
+          </ul>
+        </li>
+        <li>
+          <button id="part-btn">Partenaires</button>
+          <ul class="is-visible">
+            <% if @artist.partenaires != nil %>
               <% @artist.partenaires.each do |parten| %>
                 <li><%= parten %></li>
               <% end %>
-            </ul>
-          </li>
-        <% end %>
+            <% else %>
+              <li>Contenu à venir</li>
+            <% end %>
+          </ul>
+        </li>
       </ul>
       <div class="dice">
         <%= image_tag @artist.dice1, class: "photo top-left" %>
