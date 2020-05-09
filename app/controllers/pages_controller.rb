@@ -4,7 +4,8 @@ class PagesController < ApplicationController
   def home
     events = Event.order('date ASC')
     @events = events.first(8)
-    @actus = Actu.all
+    actus = Actu.all
+    @actus = actus.first(4)
   end
 
   def legals

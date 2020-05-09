@@ -1,0 +1,24 @@
+.actus-wraper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.actu-card {
+  border: 2px solid $Marron-tertiaire;
+  height: 250px;
+  width: 250px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.actu-illustration {
+  height: 60%;
+  .actu-card-photo {
+    height: 100%;
+  };
+}
+
+.actu-description {
+  height: 40%;
+}
