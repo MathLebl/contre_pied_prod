@@ -1,18 +1,15 @@
 ActiveAdmin.register Artist do
+  menu priority: 4
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :youtube, :insta, :twitter, :slug, :user_id, :category
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:name, :description, :style, :image, :video, :deezer, :spotify, :youtube, :insta, :twitter, :slug, :user_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-
+  index do
+    column "Nom" do |artist|
+      link_to artist.name, admin_artist_path(artist)
+    end
+    column :category
+    column :style
+    column :active
+    actions
+  end
 end
+
+# permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :youtube, :insta, :twitter, :slug, :user_id, :category

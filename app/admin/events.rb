@@ -1,18 +1,26 @@
 ActiveAdmin.register Event do
+  menu label: "Représentations", priority: 3
+  permit_params :category, :description, :date, :time_table, :location, :artist_id, :user_id, :ticket
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  permit_params :category, :description, :date, :time_table, :location, :artist_id, :user_id
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:category, :description, :date, :time_table, :location, :artist_id, :user_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  index do
+    selectable_column
+    column "Artist" do |event|
+      link_to event.artist.name, admin_event_path(event)
+    end
+    column :category
+    column :date
+    column 'Horaire', :time_table
+    column 'Salle', :location
+    column  'Reservable ?', :ticket
+    actions
+  end
+  show do
+      attributes_table do
+        row :category
+        row :date
+        row :location
+  end
+
+end
 
 end
