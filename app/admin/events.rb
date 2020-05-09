@@ -1,6 +1,6 @@
 ActiveAdmin.register Event do
   menu label: "Représentations", priority: 3
-  permit_params :category, :description, :date, :time_table, :location, :artist_id, :user_id
+  permit_params :category, :description, :date, :time_table, :location, :artist_id, :user_id, :ticket
 
   index do
     selectable_column
