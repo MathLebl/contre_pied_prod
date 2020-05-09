@@ -3,32 +3,21 @@ ActiveAdmin.register_page "Dashboard" do
   sidebar :help do
     "Need help? Email us at help@example.com"
   end
-
-  # show do
-  #   panel "Prochaines dates" do
-  #     table_for order.event do
-  #       column "Artist" do |event|
-  #         link_to event.artist.name, admin_event_path(event)
-  #       end
-  #       column :category
-  #       column :date
-  #       column 'Horaire', :time_table
-  #       column 'Salle', :location
-  #       column  'Reservable ?', :ticket
-  #     end
-  #   end
-  # end
-  table_for event do
-    column "Artist" do |event|
-      link_to event.artist.name, admin_event_path(event)
+  content do
+    columns do
+      column do
+        panel "Prochaines dates" do
+          table_for Event.all do
+            column :date
+            column "Artist" do |event|
+              link_to event.artist.name, admin_event_path(event)
+            end
+            column :location
+          end
+        end
+      end
     end
-    column :category
-    column :date
-    column 'Horaire', :time_table
-    column 'Salle', :location
-    column  'Reservable ?', :ticket
   end
-
 end
 
 

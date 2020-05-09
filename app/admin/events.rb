@@ -14,5 +14,13 @@ ActiveAdmin.register Event do
     column  'Reservable ?', :ticket
     actions
   end
+  show do
+      attributes_table do
+        row :category
+        row :date
+        row :location
+  end
+
+end
 
 end
