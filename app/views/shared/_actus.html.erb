@@ -1,0 +1,17 @@
+<div class="actus-wraper">
+  <% @actus.each do |actu| %>
+    <div class="actu-card">
+      <div class="actu-illustration">
+        <% if actu.illustration != nil %>
+          <%= image_tag actu.illustration, class: "actu-card-photo" %>
+        <% end %>
+        <% if actu.video != nil %>
+          <iframe width="200" height="133.19" src="<%= actu.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <% end %>
+      </div>
+      <div class="actu-description">
+        <p><%= actu.description %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
