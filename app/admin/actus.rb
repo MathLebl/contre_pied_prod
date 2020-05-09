@@ -5,8 +5,8 @@ ActiveAdmin.register Actu do
     column :video
     column :description
     column :artist_id
+    actions
   end
-
 
 end
 
