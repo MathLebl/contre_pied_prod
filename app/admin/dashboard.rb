@@ -4,10 +4,12 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       column do
         panel "Prochaines dates" do
-          table_for Event.all do
-            column :date
+          table_for Event.all.order('date ASC') do
+            column "Dates" do |event|
+              link_to event.date, admin_event_path(event)
+            end
             column "Artist" do |event|
-              link_to event.artist.name, admin_event_path(event)
+              link_to event.artist.name, admin_artist_path(event.artist)
             end
             column :location
           end

@@ -3,6 +3,7 @@ require 'faker'
 puts 'Creating Actus'
 2.times do
 actu = Actu.new(
+  title: "Première Actu",
   description: " Cagnotte gagnante
                 sur Ulule pour Garance !
                 Merci pour tout vos dons et
@@ -17,6 +18,7 @@ end
 
 2.times do
 actu = Actu.new(
+  title: "Deuxième Actu",
   description: " Bientôt 4 millions de vues pour La Goguettes T'as voulu voir le salon. Merci à vous tous pour vos
                 partages. À très bientôt on espère....",
   video: "https://www.youtube.com/embed/BFOJtRFlY-8",
