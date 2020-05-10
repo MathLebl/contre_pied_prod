@@ -7,8 +7,4 @@ class User < ApplicationRecord
   has_many :artists
   has_many :events
 
-  def name
-    "#{id} - #{email}"
-
-  end
 end

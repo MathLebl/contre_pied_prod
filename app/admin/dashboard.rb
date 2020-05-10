@@ -1,8 +1,5 @@
 ActiveAdmin.register_page "Dashboard" do
   menu priority: 1, label: "Tableau de bord"
-  sidebar :help do
-    "Need help? Email us at help@example.com"
-  end
   content do
     columns do
       column do
@@ -13,6 +10,21 @@ ActiveAdmin.register_page "Dashboard" do
               link_to event.artist.name, admin_event_path(event)
             end
             column :location
+          end
+        end
+      end
+      column do
+        panel "Dernières actus publiées" do
+          table_for Actu.all do
+            column "Titre" do |actu|
+              link_to actu.title, admin_actu_path(actu)
+            end
+            column "Publiée le :" do |actu|
+              actu.published_at? ? actu.published_at : "pas encore publiée"
+            end
+            column "Artist" do |actu|
+              link_to actu.artist.name, admin_artist_path(actu.artist)
+            end
           end
         end
       end

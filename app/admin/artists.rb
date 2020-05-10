@@ -10,6 +10,11 @@ ActiveAdmin.register Artist do
     column :active
     actions
   end
+
+  filter :name
+  filter :category
+  filter :style
+  filter :active, as: :check_boxes
 end
 
 # permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :youtube, :insta, :twitter, :slug, :user_id, :category
