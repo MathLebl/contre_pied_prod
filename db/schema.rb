@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_10_122248) do
+ActiveRecord::Schema.define(version: 2020_05_10_151403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2020_05_10_122248) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "category", null: false
     t.boolean "active", default: true
     t.string "banner"
     t.string "dice1"
@@ -71,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_122248) do
     t.string "credits", array: true
     t.string "presse", array: true
     t.string "partenaires", array: true
+    t.integer "category"
     t.index ["user_id"], name: "index_artists_on_user_id"
   end
 

@@ -1,7 +1,7 @@
 puts "Creating Les beaux jours d'Aranjuez"
 
 artist = Artist.new(
-category: "Spectacle",
+category: "spectacle",
 name: "Les beaux jours d'Aranjuez",
 description: "Une femme et un homme se retrouvent. Un lieu abstrait, par exemple une salle de théâtre. Un jeu de
 questions/réponses se met alors en place. Nous en ignorons la règle tacite. Comme si pour mieux se

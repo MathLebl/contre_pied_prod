@@ -1,12 +1,13 @@
+
 <%= stylesheet_link_tag 'show', media: 'all' %>
 
-<% if  @artist.category == "Concert" %>
+<% if  @artist.category == "concert" %>
   <div class="banner" style="background-image: url('<%= image_path "bandeau-concerts.jpg" %>'); background-position: top">
     <div class="container">
       <h1>Concerts</h1>
     </div>
   </div>
-<% elsif  @artist.category == "Spectacle"%>
+<% elsif  @artist.category == "spectacle"%>
   <div class="banner" style="background-image: url('<%= image_path "bandeau-spectacles.jpg" %>')">
     <div class="container">
       <h1>Spectacles</h1>
@@ -24,11 +25,11 @@
     <div class="banner" style="background-image: url('<%= image_path @artist.banner %>');">
       <div class="container">
         <h1><%= @artist.name %></h1>
-        <% if   @artist.category == "Spectacle"%>
+        <% if   @artist.category == "spectacle"%>
           <%= link_to spectacle_artists_path do %>
             Retour
           <% end %>
-        <% elsif @artist.category == "Concert"%>
+        <% elsif @artist.category == "concert"%>
           <%= link_to concert_artists_path do %>
             Retour
           <% end %>

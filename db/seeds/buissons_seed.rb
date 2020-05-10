@@ -1,7 +1,7 @@
 puts "Creating Les Buissons"
 
 artist = Artist.new(
-category: "Concert",
+category: "concert",
 name: "Les Buissons",
 description: "Les Buissons, c'est trois auteurs, compositeurs et interprètes qui mélangent leurs influences et créent
 ensemble un répertoire nouveau. Munis de guitares, d'un accordéon, d'un cajon, et de trois voix

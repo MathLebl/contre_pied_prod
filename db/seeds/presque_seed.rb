@@ -1,7 +1,7 @@
 puts "Creating Presue un cri"
 
 artist = Artist.new(
-category: "Concert",
+category: "concert",
 name: "Presque un cri",
 description: "Presque un cri est une plongé dans l'œuvre intense et puissante de l' auteur-compositeur-interprète
 Vladimir Vyssotski. Les artistes Lise Martin et Valentin Vander nous proposent un spectacle dans
