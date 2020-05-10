@@ -2,6 +2,15 @@ ActiveAdmin.register Actu do
   permit_params :artist_id, :title, :published_at, :illustration, :video, :description, :user_id
   menu priority: 2
 
+
+  action_item :publish, only: :show do
+    link_to "retour", admin_actus_path
+  end
+
+  action_item :publish, only: :index do
+    link_to "retour", admin_root_path
+  end
+
   action_item :publish, only: :show do
     link_to "Publier", publish_admin_actu_path(actu), method: :put if !actu.published_at?
   end
@@ -21,6 +30,19 @@ ActiveAdmin.register Actu do
     actu.update(published_at: nil)
     redirect_to admin_actu_path(actu)
   end
+
+  member_action :publish_index, method: :put do
+    actu = Actu.find(params[:id])
+    actu.update(published_at: Time.zone.now)
+    redirect_to admin_actus_path
+  end
+
+  member_action :unpublish_index, method: :put do
+    actu = Actu.find(params[:id])
+    actu.update(published_at: nil)
+    redirect_to admin_actus_path
+  end
+
 
   filter :published_at
   filter :artist
@@ -44,7 +66,10 @@ ActiveAdmin.register Actu do
     column "Publiée le :" do |actu|
       actu.published_at? ? actu.published_at : "pas encore publiée"
     end
-    actions
+    actions do |actu|
+    item "Publier", publish_index_admin_actu_path(actu), method: :put if !actu.published_at?
+    item "Dépublier", unpublish_index_admin_actu_path(actu), method: :put if actu.published_at?
+  end
   end
 
 

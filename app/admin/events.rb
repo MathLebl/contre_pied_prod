@@ -1,7 +1,16 @@
 ActiveAdmin.register Event do
   menu label: "Représentations", priority: 3
-  permit_params :category, :description, :date, :time_table, :location, :artist_id, :user_id, :ticket
   config.sort_order = 'date_asc'
+  permit_params :category, :description, :date, :time_table, :location, :artist_id, :user_id, :ticket
+
+  action_item :publish, only: :show do
+    link_to "retour", admin_events_path
+  end
+
+  action_item :publish, only: :index do
+    link_to "retour", admin_root_path
+  end
+
 
   index do
     column "Artist" do |event|

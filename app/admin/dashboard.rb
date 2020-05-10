@@ -17,10 +17,13 @@ ActiveAdmin.register_page "Dashboard" do
           div do |event|
             link_to "Toutes les représentations", admin_events_path
           end
+          div do |event|
+            link_to "Nouvelle date", new_admin_event_path
+          end
         end
       end
       column do
-        panel "Dernières actus publiées" do
+        panel "Dernières actus crées" do
           table_for Actu.all do
             column "Titre" do |actu|
               link_to actu.title, admin_actu_path(actu)
@@ -34,6 +37,9 @@ ActiveAdmin.register_page "Dashboard" do
           end
           div do |actu|
             link_to "Toutes les actus", admin_actus_path
+          end
+          div do |actu|
+            link_to "Nouvelle actu", new_admin_actu_path
           end
         end
       end
