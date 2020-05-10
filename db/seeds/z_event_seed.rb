@@ -6,7 +6,7 @@ puts 'Creating 15 fake Events...'
     date: Faker::Date.forward,
     category:  "jeune_public",
     user_id: 1,
-    city: "Lyon"
+    city: "Lyon",
     artist_id: Random.rand(6..9),
     location: "Le Théâtre de La Vie qui joue"
   )
@@ -18,7 +18,7 @@ end
     date: Faker::Date.forward,
     category:  "jeune_public",
     user_id: 1,
-    city: "Paris"
+    city: "Paris",
     artist_id: Random.rand(6..9),
     location: "Le Théâtre de La Vie qui joue",
     ticket: "https://www.billetreduc.com/spectacles-enfants/"
@@ -31,7 +31,7 @@ end
     date: Faker::Date.forward,
     category:  "concert",
     user_id: 1,
-    city: "Lyon"
+    city: "Lyon",
     artist_id: 12,
     location: "Le Théâtre de La Taupe qui pêche"
   )
@@ -43,7 +43,7 @@ end
     date: Faker::Date.forward,
     category:  "concert",
     user_id: 1,
-    city: "Montcul"
+    city: "Montcul",
     artist_id: 10,
     location: "Le Théâtre de La Taupe qui pêche",
     ticket: "https://www.billetreduc.com/theatre/"
@@ -56,7 +56,7 @@ end
     date: Faker::Date.forward,
     category:  "spectacle",
     user_id: 1,
-    city: "Le Havre"
+    city: "Le Havre",
     artist_id: 11,
     location: "Le Théâtre de La Joie qui danse",
     ticket: "https://www.billetreduc.com/theatre/"
@@ -69,7 +69,7 @@ end
     date: Faker::Date.forward,
     category:  "spectacle",
     user_id: 1,
-    city: "Marseille"
+    city: "Marseille",
     artist_id: 9,
     location: "Le Théâtre de La Joie qui danse"
   )
