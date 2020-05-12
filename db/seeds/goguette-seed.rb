@@ -5,7 +5,7 @@ category: "spectacle",
 name: "Les Goguettes",
 description: "Les Goguettes ce sont : 3 auteurs-interprètes, 1 pianiste, des centaines de parodies, près de 30.000 spectateurs, plus de 300 spectacles dans toute la France, près de 10 millions de vues sur leur chaîne YouTube, 290 ampoules de 15 watts chacune sur scène, 2 triomphes au Festival d’Avignon, une douzaine de cravates noires un peu usées et au moins 3 blagues sur Krasucki.",
 style: "Théâtre musical / humour" ,
-image: "goguette/goguette-image" ,
+
 banner: "goguette/goguette-banner" ,
 dice1: "goguette/goguette-dice1" ,
 dice2: "goguette/goguette-dice2" ,

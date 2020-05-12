@@ -8,7 +8,6 @@ Vladimir Vyssotski. Les artistes Lise Martin et Valentin Vander nous proposent u
 lequel ils interprètent des adaptations en français d’une partie des chansons de ce créateur hors du
 commun.",
 style: "Chanson" ,
-image: "presque/presque-image" ,
 banner: "presque/presque-banner" ,
 dice1: "presque/presque-dice1" ,
 dice2: "presque/presque-dice2" ,

@@ -8,7 +8,6 @@ ensemble un répertoire nouveau. Munis de guitares, d'un accordéon, d'un cajon,
 enjouées, ils ne se prennent pas complètement au sérieux et colorent leurs créations d'un humour
 qui confine parfois à l'absurde. ",
 style: "Chanson / humour" ,
-image: "buissons/buissons-image" ,
 banner: "buissons/buissons-banner" ,
 dice1: "buissons/buissons-dice1" ,
 dice2: "buissons/buissons-dice2" ,

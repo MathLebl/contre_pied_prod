@@ -9,7 +9,6 @@ actu = Actu.new(
                 Merci pour tout vos dons et
                 votre soutien... Hâte de
                 vous retrouver ! ",
-  illustration: "actu1",
   artist_id: 4,
   user_id: 1
   )

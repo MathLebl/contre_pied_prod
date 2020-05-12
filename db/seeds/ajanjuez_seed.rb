@@ -9,7 +9,6 @@ raconter, il fallait taire certaines choses. Mais est-ce encore possible ? De se
 À la frontière entre réalité et fiction, on se parle d'amour et de nature, comme si Platon et son
 Banquet n'étaient pas si loin.",
 style: "Théâtre" ,
-image: "aranjuez/aranjuez-image" ,
 banner: "aranjuez/aranjuez-banner" ,
 dice1: "aranjuez/aranjuez-dice1" ,
 dice2: "aranjuez/aranjuez-dice2" ,
