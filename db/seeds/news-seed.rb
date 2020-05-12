@@ -9,7 +9,7 @@ actu = Actu.new(
                 Merci pour tout vos dons et
                 votre soutien... Hâte de
                 vous retrouver ! ",
-  artist_id: 4,
+  artist_id: 1,
   user_id: 1
   )
 actu.save!
@@ -21,7 +21,7 @@ actu = Actu.new(
   description: " Bientôt 4 millions de vues pour La Goguettes T'as voulu voir le salon. Merci à vous tous pour vos
                 partages. À très bientôt on espère....",
   video: "https://www.youtube.com/embed/BFOJtRFlY-8",
-  artist_id: 11,
+  artist_id: 7,
   user_id: 1
   )
 actu.save!

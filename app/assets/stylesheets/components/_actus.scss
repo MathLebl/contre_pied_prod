@@ -5,17 +5,17 @@
 }
 
 .actu-card {
-  border: 2px solid $Marron-tertiaire;
-  height: 250px;
-  width: 250px;
+  border: 12px solid $Marron-tertiaire;
+  height: 400px;
+  width: 300px;
   margin: 10px;
   padding: 10px;
 }
 
 .actu-illustration {
   height: 60%;
-  .actu-card-photo {
-    height: 100%;
+  img {
+    height: 80%;
   };
 }
 

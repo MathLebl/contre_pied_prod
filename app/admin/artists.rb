@@ -1,4 +1,5 @@
 ActiveAdmin.register Artist do
+permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :youtube, :insta, :twitter, :slug, :user_id, :active, :banner, :dice1, :dice2, :dice3, :dice4, :facebook, :soundcloud, :distribution, :credits, :presse, :partenaires, :category
   menu priority: 4
 
   action_item :publish, only: :show do
@@ -25,4 +26,5 @@ ActiveAdmin.register Artist do
   filter :active, as: :check_boxes
 end
 
-# permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :youtube, :insta, :twitter, :slug, :user_id, :category
+
+

@@ -2,9 +2,10 @@
   <% @actus.each do |actu| %>
   <% if actu.published_at? %>
     <div class="actu-card">
+      <h4><%= actu.title %> </h4>
       <div class="actu-illustration">
         <% if actu.illustration != nil %>
-          <%= image_tag actu.illustration, class: "actu-card-photo" %>
+        <img src="<%= image_path actu.illustration %>" alt="">
         <% end %>
         <% if actu.video != nil %>
           <iframe width="200" height="133.19" src="<%= actu.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
