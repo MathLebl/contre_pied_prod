@@ -236,7 +236,7 @@ ActiveAdmin.setup do |config|
   #
     config.namespace :admin do |admin|
       admin.build_menu :utility_navigation do |menu|
-        menu.add label: "Retour au site", url: "http://localhost:3000/"
+        menu.add label: "Retour au site", url: "https://contre-pied-prod.herokuapp.com/"
         admin.add_logout_button_to_menu menu
       end
     end
