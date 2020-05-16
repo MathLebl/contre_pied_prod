@@ -10,6 +10,7 @@
 // Active Admin's got SASS!
 @import "active_admin/mixins";
 @import "active_admin/base";
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Karla:ital,wght@0,400;0,700;1,400&display=swap');
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
@@ -19,3 +20,10 @@
 .name {
   font-weight: bold;
 }
+body {
+  background-color: #f7c0d2;
+  font-family: "Inconsolata";
+}
+ .important {
+  color: blue;
+ }
