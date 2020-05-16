@@ -1,25 +1,6 @@
 
 <%= stylesheet_link_tag 'show', media: 'all' %>
 
-<% if  @artist.category == "concert" %>
-  <div class="banner" style="background-image: url('<%= image_path "bandeau-concerts.jpg" %>'); background-position: top">
-    <div class="container">
-      <h1>Concerts</h1>
-    </div>
-  </div>
-<% elsif  @artist.category == "spectacle"%>
-  <div class="banner" style="background-image: url('<%= image_path "bandeau-spectacles.jpg" %>')">
-    <div class="container">
-      <h1>Spectacles</h1>
-    </div>
-  </div>
-<% else %>
-  <div class="banner" style="background-color: transparent">
-    <div class="container">
-      <h1>Jeune Public</h1>
-    </div>
-  </div>
-<% end %>
 <div class="transition-fade">
   <div class="artist-page">
     <div class="banner" style="background-image: url('<%= image_path @artist.banner %>');">
