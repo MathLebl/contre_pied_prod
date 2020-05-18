@@ -12,7 +12,9 @@ ActiveAdmin.register_page "Dashboard" do
               link_to event.artist.name, admin_artist_path(event.artist)
             end
             column :location
-            column :city
+            column class: "important" do |event|
+              event.city
+            end
           end
           div do |event|
             link_to "Toutes les représentations", admin_events_path
