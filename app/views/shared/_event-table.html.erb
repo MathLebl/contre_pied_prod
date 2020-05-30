@@ -2,7 +2,11 @@
     <% @events.each do |event|%>
     <tr>
       <td class="table-date"><%= l event.date %></td>
-      <td class="table-name"><a href="#"><%= event.artist.name %></a></td>
+      <td class="table-name">
+        <%= link_to artist_path(event.artist_id) do %>
+          <%= event.artist.name %>
+        <% end %>
+      </td>
       <td class="table-location"><%= event.location %></td>
       <% if event.ticket != nil %>
         <td class="table-ticket"><a href="<%= event.ticket %>" target="_blank"><i class="fas fa-ticket-alt"></i></a></td>
