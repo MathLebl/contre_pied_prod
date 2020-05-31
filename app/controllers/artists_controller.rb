@@ -2,8 +2,14 @@ class ArtistsController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :find_artist, only: [ :show ]
   before_action :find_artist_jp, only: [ :show_jp ]
+
+
   def index
-    @artists = Artist.all
+    if params[:id].present?
+      @artists = Artist.all.select { |artist| artist.id == params[:id].to_i }
+    else
+      @artists = Artist.all
+    end
   end
 
   def show
