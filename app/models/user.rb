@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_many :artists
   has_many :events
+  has_many :orders
 
 end

@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   end
   resources :products, only: [:index, :show] do
   end
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
 
   get 'about', to: 'pages#about'
   get 'legals', to: 'pages#legals'
