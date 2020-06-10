@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
   resources :events, only: [:index, :show] do
   end
+  resources :products, only: [:index, :show] do
+  end
 
   get 'about', to: 'pages#about'
   get 'legals', to: 'pages#legals'
