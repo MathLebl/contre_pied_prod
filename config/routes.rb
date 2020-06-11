@@ -11,6 +11,13 @@ Rails.application.routes.draw do
   end
   resources :events, only: [:index, :show] do
   end
+  resources :products, only: [:index, :show] do
+  end
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
+
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 
   get 'about', to: 'pages#about'
   get 'legals', to: 'pages#legals'
