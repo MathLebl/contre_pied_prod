@@ -1,15 +1,15 @@
 ActiveAdmin.register Product do
-  menu label: "Boutique", priority: 6
+  menu label: "Articles", priority: 7
 #   config.sort_order = 'date_asc'
 #   permit_params :category, :description, :date, :time_table, :location, :artist_id, :user_id, :ticket
 
-#   action_item :publish, only: :show do
-#     link_to "retour", admin_events_path
-#   end
+  action_item :publish, only: :show do
+    link_to "retour", admin_products_path
+  end
 
-#   action_item :publish, only: :index do
-#     link_to "retour", admin_root_path
-#   end
+  action_item :publish, only: :index do
+    link_to "retour", admin_root_path
+  end
 
 
 #   index do
