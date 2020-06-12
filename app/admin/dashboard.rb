@@ -45,6 +45,30 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
+       column do
+        panel "Commandes" do
+          table_for Order.first(8) do
+            column "État" do |order|
+              order.state
+            end
+            column "Article" do |order|
+              link_to order.product_name
+            end
+            column "Total" do |order|
+              order.amount
+            end
+          #   column class: "important" do |event|
+          #     event.city
+          #   end
+          # end
+          # div do |event|
+          #   link_to "Toutes les représentations", admin_events_path
+          # end
+          # div do |event|
+          #   link_to "Nouvelle date", new_admin_event_path
+          end
+        end
+      end
     end
   end
 end
