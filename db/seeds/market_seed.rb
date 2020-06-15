@@ -13,7 +13,8 @@ puts 'Creating CD products'
     name: "Le CD de ouf",
     shop_category_id: 1,
     photo_url: "https://images.unsplash.com/photo-1571173069043-82a7a13cee9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-    price_cents: 1400
+    price_cents: 1400,
+    artist_id: 7
   )
   product.save!
 end
@@ -24,7 +25,8 @@ puts 'Creating Tshirt products'
     name: "Le Tshirt de ouf",
     shop_category_id: 2,
     photo_url: "https://boutique.tennislegend.fr/37-large_default/tshirt-la-chatte-homme.jpg",
-    price_cents: 2200
+    price_cents: 2200,
+    artist_id: 7
   )
   product.save!
 end
