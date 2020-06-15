@@ -72,7 +72,16 @@ ActiveAdmin.register Actu do
   end
   end
 
-
+form do |f|
+  f.inputs do
+    f.input :description, :as => :pagedown_text
+    f.input :artist
+    f.input :illustration
+    f.input :video
+    f.input :title
+    f.actions
+  end
+end
 end
 
 
