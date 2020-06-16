@@ -8,11 +8,6 @@ import Swup from "swup";
 import "../stylesheets/application.scss";
 
 
-// navbar jeunePublic
-import initNavbar from '../packs/navbarScroll'
-// initNavbar()
-
-
 // Swup Initiation
 const swup = new Swup();
 
@@ -20,6 +15,7 @@ const swup = new Swup();
 // toggleBtn();
 import { toggleBtn } from '../packs/listInfoToggle';
 toggleBtn();
+
 
 
 //Select2
