@@ -8,14 +8,12 @@ import Swup from "swup";
 import "../stylesheets/application.scss";
 
 
-// Swup Initiation
-const swup = new Swup();
+
 
 
 // toggleBtn();
 import { toggleBtn } from '../packs/listInfoToggle';
 toggleBtn();
-
 
 
 //Select2
