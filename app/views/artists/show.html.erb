@@ -28,57 +28,51 @@
     </div>
     <div class="centrale">
       <ul class="info-list">
-        <li>
-          <button id="distri-btn">Distribution</button>
-          <ul class="is-visible">
-            <% if @artist.distribution != nil %>
+        <% if @artist.distribution != nil %>
+          <li>
+            <button id="distri-btn">Distribution</button>
+            <ul class="is-visible">
               <% @artist.distribution.each do |distrib| %>
                 <li><%= distrib %></li>
               <% end %>
-            <% else %>
-                <li>Contenu à venir</li>
-            <% end %>
-          </ul>
-        </li>
-        <li>
-          <button id="credits-text">Crédit</button>
-          <ul class="is-visible">
-            <% if @artist.credits != nil %>
+            </ul>
+          </li>
+        <% end %>
+        <% if @artist.credits != nil %>
+          <li>
+            <button id="credits-text">Crédit</button>
+            <ul class="is-visible">
               <% @artist.credits.each do |credit| %>
                 <li><%= credit %></li>
               <% end %>
-            <% else %>
-              <li>Contenu à venir</li>
-            <% end %>
-          </ul>
-        </li>
-        <li>
-          <button id="presse-text">Presse</button>
-          <ul class="is-visible">
-            <% if @artist.presse != nil %>
+            </ul>
+          </li>
+        <% end %>
+        <% if @artist.presse != nil %>
+          <li>
+            <button id="presse-text">Presse</button>
+            <ul class="is-visible">
               <% @artist.presse.each do |press| %>
                 <li><%= press %></li>
               <% end %>
-            <% else %>
-              <li>Contenu à venir</li>
-            <% end %>
-          </ul>
-        </li>
-        <li>
-          <button id="part-btn">Partenaires</button>
-          <ul class="is-visible">
-            <% if @artist.partenaires != nil %>
+            </ul>
+          </li>
+        <% end %>
+        <% if @artist.partenaires != nil %>
+          <li>
+            <button id="part-btn">Partenaires</button>
+            <ul class="is-visible">
               <% @artist.partenaires.each do |parten| %>
                 <li><%= parten %></li>
               <% end %>
-            <% else %>
-              <li>Contenu à venir</li>
-            <% end %>
-          </ul>
-        </li>
-        <li>
-          <%= link_to "Dossier de Presse", "/CV Mathieu Leblond MOWGLI.pdf", target: :_blank, class:"download-btn" %>
-        </li>
+            </ul>
+          </li>
+        <% end %>
+        <% if @artist.press_file != nil %>
+          <li>
+            <%= link_to "Dossier de Presse",@artist.press_file.url, target: :_blank, class:"download-btn" %>
+          </li>
+        <% end %>
       </ul>
       <div class="dice">
         <%= image_tag @artist.dice1, class: "photo top-left" %>
