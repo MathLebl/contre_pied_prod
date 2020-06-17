@@ -4,7 +4,6 @@ require("channels")
 require("stylesheets/application.scss")
 
 import "bootstrap";
-import Swup from "swup";
 import "../stylesheets/application.scss";
 
 
