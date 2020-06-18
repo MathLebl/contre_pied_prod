@@ -27,9 +27,7 @@ permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :y
   end
   end
 
-  filter :name
-  filter :category
-  filter :style
+  filter :name, as: :select
   filter :active, as: :check_boxes
 
   form do |f|
