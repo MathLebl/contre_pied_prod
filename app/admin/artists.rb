@@ -1,6 +1,10 @@
 ActiveAdmin.register Artist do
 permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :youtube, :insta, :twitter, :slug, :user_id, :active, :banner, :dice1, :dice2, :dice3, :dice4, :facebook, :soundcloud, :category, :press_file, distribution: [], credits: [], presse: [], partenaires: []
   menu priority: 4
+  scope :all
+  scope :concert
+  scope :spectacle
+  scope :jeunePublic
 
 
   action_item :publish, only: :show do
