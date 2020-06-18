@@ -3,6 +3,7 @@ class Artist < ApplicationRecord
   has_many :events
   has_many :products
 
+
   enum category: [ :spectacle, :concert, :jeune_public ]
 
   mount_uploader :image, ImageUploader

@@ -2,6 +2,7 @@ ActiveAdmin.register Artist do
 permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :youtube, :insta, :twitter, :slug, :user_id, :active, :banner, :dice1, :dice2, :dice3, :dice4, :facebook, :soundcloud, :category, :press_file, distribution: [], credits: [], presse: [], partenaires: []
   menu priority: 4
 
+
   action_item :publish, only: :show do
     link_to "retour", admin_artists_path
   end
@@ -17,7 +18,9 @@ permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :y
     column :category
     column :style
     column :active
-    actions
+    actions do |artist|
+    item "Voir sur le site", artist_path(artist)
+  end
   end
 
   filter :name

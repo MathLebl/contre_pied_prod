@@ -57,15 +57,6 @@ ActiveAdmin.register_page "Dashboard" do
             column "Total" do |order|
               order.amount
             end
-          #   column class: "important" do |event|
-          #     event.city
-          #   end
-          # end
-          # div do |event|
-          #   link_to "Toutes les représentations", admin_events_path
-          # end
-          # div do |event|
-          #   link_to "Nouvelle date", new_admin_event_path
           end
         end
       end
