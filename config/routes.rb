@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show] do
   end
   resources :products, only: [:index, :show] do
+    member do
+      get :add_to_cart
+    end
   end
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
