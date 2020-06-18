@@ -63,9 +63,9 @@ ActiveAdmin.register Product do
   end
   end
 
-#   filter :artist
-#   filter :date
-#   filter :city
+  filter :artist
+  filter :shop_category
+
 
 #   show do
 #       attributes_table do
