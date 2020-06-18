@@ -3,6 +3,9 @@ ActiveAdmin.register Order do
   config.sort_order = 'created_at_asc'
   permit_params :state, :product_name, :amount_cents, :checkout_session_id, :user_id, :product_id, :created_at, :updated_at
 
+  scope :all
+  scope :payées
+  scope :enAttente
 
 
 
