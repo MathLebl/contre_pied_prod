@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
     @session = session[:cart]
   end
 
+  # Ajout d'un produit dans le panier
   def add_to_cart
     @product = Product.find(params[:id])
     session[:cart] << @product
