@@ -3,6 +3,9 @@ class OrdersController < ApplicationController
     product = Product.find(params[:product_id])
     order  = Order.create!(product: product, product_name: product.name, amount: product.price, state: 'pending', user: current_user)
     items = session[:cart]
+    items.each do |element|
+      Item.create!(product_id: element["id"], order_id: order.id)
+    end
     line_items = items.map do |item|
       {
         name: item["name"],
