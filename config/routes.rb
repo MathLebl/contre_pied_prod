@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show] do
     member do
       get :add_to_cart
+      get :remove_from_cart
+    end
+    collection do
+      get :show_cart
     end
   end
   resources :orders, only: [:show, :create] do
