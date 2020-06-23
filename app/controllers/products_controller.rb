@@ -38,7 +38,6 @@ class ProductsController < ApplicationController
   def cart_amount
     amount = 0
     session[:cart].each do |item|
-      puts Product.find(item["id"]).price
       amount += Product.find(item["id"]).price
     end
     amount
