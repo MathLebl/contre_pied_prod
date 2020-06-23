@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
   def show_cart
     @cart = session[:cart]
     @products = Product.all
+    @amount = cart_amount
   end
 
   # Path pour suppression d'un produit du panier
@@ -30,5 +31,16 @@ class ProductsController < ApplicationController
       item["id"] == @product.id
     end
     redirect_to show_cart_products_path
+  end
+
+  private
+
+  def cart_amount
+    amount = 0
+    session[:cart].each do |item|
+      puts Product.find(item["id"]).price
+      amount += Product.find(item["id"]).price
+    end
+    amount
   end
 end
