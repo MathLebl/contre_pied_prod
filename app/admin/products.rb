@@ -60,12 +60,13 @@ ActiveAdmin.register Product do
     actions do |product|
     item "Publier", publish_index_admin_product_path(product), method: :put if !product.published_at?
     item "Dépublier", unpublish_index_admin_product_path(product), method: :put if product.published_at?
+    item "Voir sur le site", product_path(product)
   end
   end
 
-#   filter :artist
-#   filter :date
-#   filter :city
+  filter :artist
+  filter :shop_category
+
 
 #   show do
 #       attributes_table do

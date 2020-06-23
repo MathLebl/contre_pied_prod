@@ -2,6 +2,11 @@ ActiveAdmin.register Actu do
   permit_params :artist_id, :title, :published_at, :illustration, :video, :description, :user_id
   menu priority: 2
 
+  scope :all
+  scope :publiées
+  scope :nonPubliées
+
+
 
   action_item :publish, only: :show do
     link_to "retour", admin_actus_path
