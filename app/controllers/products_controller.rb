@@ -35,10 +35,11 @@ class ProductsController < ApplicationController
 
   private
 
+  # calcule le montant total du panier pour affichage dans "show cart"
   def cart_amount
     amount = 0
     session[:cart].each do |item|
-      amount += Product.find(item["id"]).price
+      amount += Product.find(item["id"]).price #methode find pour avoir le money object via .price (car non dispo dans le cookie session[:cart])
     end
     amount
   end

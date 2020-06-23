@@ -11,5 +11,7 @@
 <% end %>
 
 <hr>
-<h2>Total</h2>
+<h2>Total de la commande</h2>
 <p><%= humanized_money_with_symbol(@amount) %></p>
+
+<%= submit_tag 'Purchase', class: 'btn btn-primary' %>
