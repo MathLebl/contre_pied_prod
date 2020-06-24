@@ -22,7 +22,7 @@ gem 'webpacker'
 
 # Image Management
 gem 'carrierwave', '~> 2.0'
-gem 'cloudinary', '~> 1.12.0'
+gem "fog-aws"
 
 # E-shop
 gem 'money-rails'
