@@ -18,4 +18,8 @@ class Cart
     end
     amount
   end
+
+  def self.reset_cart(cookie)
+    cookie.clear
+  end
 end
