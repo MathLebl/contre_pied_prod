@@ -5,15 +5,10 @@ class OrdersController < ApplicationController
   end
 
   def create
-    # Ligne product.find va bientôt être inutile
-    product = Product.find(5) #params[:product_id]
     amount = cart_amount
+    order_attributes = {state: 'pending', user: current_user, amount: amount}
     order  = Order.new(order_params)
-    order.product = product
-    order.product_name = product.name
-    order.state = 'pending'
-    order.user = current_user
-    order.amount = amount
+    order.update(order_attributes)
     order.save!
 
     items = session[:cart]
