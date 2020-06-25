@@ -49,27 +49,14 @@ class OrdersController < ApplicationController
   end
 
   def set_line_items(items)
-    # Si le cart n'est pas vide, on rempli line_items avec ses infos
-    unless items.empty?
-      items.map do |item|
-        {
-          name: item["name"],
-          images: [item["photo_url"]],
-          amount: item["price_cents"],
-          currency: 'eur',
-          quantity: 1
-        }
-      end
-      # s'il est vide, on rempli line_items avec les infos du produit de la page sur laquelle on a appuyé sur "purchase"
-    else
-      product = Product.find(5)
-      [{
-        name: product.name,
-        images: [product.photo_url],
-        amount: product.price_cents,
+    items.map do |item|
+      {
+        name: item["name"],
+        images: [item["photo_url"]],
+        amount: item["price_cents"],
         currency: 'eur',
         quantity: 1
-      }]
+      }
     end
   end
 
