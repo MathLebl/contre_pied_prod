@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   def new
     @order = Order.new
+    add_to_cart
   end
 
   def create
@@ -12,6 +13,8 @@ class OrdersController < ApplicationController
     order.product_name = product.name
     order.state = 'pending'
     order.user = current_user
+    order.amount = amount
+    order.save!
 
     items = session[:cart]
 
@@ -19,8 +22,6 @@ class OrdersController < ApplicationController
     create_items_objects(items, order)
     line_items = set_line_items(items)
 
-    order.amount = amount
-    order.save!
 
     # Lancement de la phase de paiement Stripe
     session = Stripe::Checkout::Session.create(
@@ -70,6 +71,11 @@ class OrdersController < ApplicationController
         quantity: 1
       }]
     end
+  end
+
+  def add_to_cart
+    @product = Product.find(params[:product_id])
+    session[:cart] << @product
   end
 
   def cart_amount
