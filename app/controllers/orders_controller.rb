@@ -1,11 +1,11 @@
 class OrdersController < ApplicationController
   def new
     @order = Order.new
-    add_to_cart
+    Cart.add_to_cart(session[:cart], params[:product_id])
   end
 
   def create
-    amount = cart_amount
+    amount = Cart.cart_amount(session[:cart])
     order_attributes = {state: 'pending', user: current_user, amount: amount}
     order  = Order.new(order_params)
     order.update(order_attributes)
@@ -53,19 +53,6 @@ class OrdersController < ApplicationController
         quantity: 1
       }
     end
-  end
-
-  def add_to_cart
-    @product = Product.find(params[:product_id])
-    session[:cart] << @product
-  end
-
-  def cart_amount
-    amount = 0
-    session[:cart].each do |item|
-      amount += Product.find(item["id"]).price #methode find pour avoir le money object via .price (car non dispo dans le cookie session[:cart])
-    end
-    amount
   end
 
   def order_params

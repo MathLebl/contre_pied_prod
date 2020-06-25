@@ -20,19 +20,12 @@ class ProductsController < ApplicationController
   def show_cart
     @cart = session[:cart]
     @products = Product.all
-    @amount = cart_amount
+    @amount = Cart.cart_amount(@cart)
   end
 
   # Path pour suppression d'un produit du panier
   def remove_from_cart
     Cart.remove_from_cart(session[:cart], params[:id])
     redirect_to show_cart_products_path
-  end
-
-  private
-
-  # calcule le montant total du panier pour affichage dans "show cart"
-  def cart_amount
-    Cart.cart_amount(session[:cart])
   end
 end
