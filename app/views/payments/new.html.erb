@@ -1,10 +1,28 @@
 <!-- app/views/payments/new.html.erb -->
 <div class="container">
   <div class="row py-4">
-    <div class="col-md-3"><%= image_tag @order.product.photo_url, width: '100%' %></div>
     <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @order.product.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
+      <h1>Votre commande :</h1>
+
+      <ul>
+        <% @order.products.each do |product| %>
+          <li class="flex items-center"><%= image_tag product.photo_url, class: "w-20 m-2" %><strong><%= product.name %></strong><strong> prix : <%= humanized_money_with_symbol product.price %></strong></li>
+        <% end %>
+      </ul>
+      <br>
+      <h3>sera livrée à l'adresse :</h3>
+      <ul>
+        <li><%= @order.address %></li>
+        <li><%= @order.city %></li>
+        <li><%= @order.zip_code %></li>
+      </ul>
+      <br>
+      <hr>
+      <br>
+
+      <h3>Total de la commande : <strong><%= humanized_money_with_symbol @order.amount %></strong></h3>
+      <br>
+
       <button id="pay" class="btn btn-primary">Pay</button>
 
       <script src="https://js.stripe.com/v3/"></script>
