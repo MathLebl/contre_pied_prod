@@ -1,3 +1,15 @@
+#bigdiv:hover {
+  .categoryimg {
+    filter: grayscale(100%);
+  }
+  .categoryimg:hover {
+    filter: grayscale(0%);
+  }
+  @if #pif:hover #pouf:hover {
+    #paf
+  }
+}
+
 .wraper{
   display: flex;
   justify-content: center;
