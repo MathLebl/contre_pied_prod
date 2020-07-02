@@ -1,15 +1,16 @@
 <div class="container">
   <div class="row py-4">
-    <div class="col-md-3"><%= image_tag @order.product.photo_url, width: '100%' %></div>
     <div class="col">
-      <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
+      <h1>Commande n° #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
       <ul class="list-unstyled">
-        <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
-        <li><strong>PRODUCT</strong> <%= @order.product.name %> [<%= @order.product_name %>]</li>
+        <li><strong>Effectuée le :</strong> <%= l @order.created_at.to_date %></li>
         <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
-        </li>
+        <li><strong>Produits :</strong></li>
+        <% @order.products.each do |product| %>
+          <li class="flex items-center"><%= image_tag product.photo_url, class: "w-20 m-2" %><strong><%= product.name %></strong><strong> prix : <%= humanized_money_with_symbol product.price %></strong></li>
+        <% end %>
       </ul>
-      <p>Estimated delivery in <strong>2 business days</strong></p>
+      <p>Durée moyenne de livraison sous <strong>2 jours ouvrés</strong></p>
     </div>
   </div>
 </div>

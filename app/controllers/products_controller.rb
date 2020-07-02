@@ -12,8 +12,7 @@ class ProductsController < ApplicationController
 
   # Path pour ajout d'un produit dans le panier
   def add_to_cart
-    @product = Product.find(params[:id])
-    session[:cart] << @product
+    Cart.add_to_cart(session[:cart], params[:id])
     redirect_to products_path
   end
 
@@ -21,26 +20,12 @@ class ProductsController < ApplicationController
   def show_cart
     @cart = session[:cart]
     @products = Product.all
-    @amount = cart_amount
+    @amount = Cart.cart_amount(@cart)
   end
 
   # Path pour suppression d'un produit du panier
   def remove_from_cart
-    @product = Product.find(params[:id])
-    session[:cart].reject! do |item|
-      item["id"] == @product.id
-    end
+    Cart.remove_from_cart(session[:cart], params[:id])
     redirect_to show_cart_products_path
-  end
-
-  private
-
-  # calcule le montant total du panier pour affichage dans "show cart"
-  def cart_amount
-    amount = 0
-    session[:cart].each do |item|
-      amount += Product.find(item["id"]).price #methode find pour avoir le money object via .price (car non dispo dans le cookie session[:cart])
-    end
-    amount
   end
 end

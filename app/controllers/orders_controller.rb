@@ -1,14 +1,22 @@
 class OrdersController < ApplicationController
+  def new
+    @order = Order.new
+    Cart.add_to_cart(session[:cart], params[:product_id])
+  end
+
   def create
-    # Lignes 4 & 5 servent pour la partie active admin pour l'instant, à modifier plus tard
-    product = Product.find(params[:product_id])
-    order  = Order.create!(product: product, product_name: product.name, amount: product.price, state: 'pending', user: current_user)
+    amount = Cart.cart_amount(session[:cart])
+    order_attributes = {state: 'pending', user: current_user, amount: amount}
+    order  = Order.new(order_params)
+    order.update(order_attributes)
+    order.save!
 
     items = session[:cart]
 
     # Création des modèles Items pour chaque produit dans la commande, et récupération des infos pour la variable line_items
     create_items_objects(items, order)
     line_items = set_line_items(items)
+
 
     # Lancement de la phase de paiement Stripe
     session = Stripe::Checkout::Session.create(
@@ -24,6 +32,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = current_user.orders.find(params[:id])
+    Cart.reset_cart(session[:cart])
   end
 
   private
@@ -36,27 +45,18 @@ class OrdersController < ApplicationController
   end
 
   def set_line_items(items)
-    # Si le cart n'est pas vide, on rempli line_items avec ses infos
-    unless items.empty?
-      items.map do |item|
-        {
-          name: item["name"],
-          images: [item["photo_url"]],
-          amount: item["price_cents"],
-          currency: 'eur',
-          quantity: 1
-        }
-      end
-      # s'il est vide, on rempli line_items avec les infos du produit de la page sur laquelle on a appuyé sur "purchase"
-    else
-      product = Product.find(params[:product_id])
-      [{
-        name: product.name,
-        images: [product.photo_url],
-        amount: product.price_cents,
+    items.map do |item|
+      {
+        name: item["name"],
+        images: [item["photo_url"]],
+        amount: item["price_cents"],
         currency: 'eur',
         quantity: 1
-      }]
+      }
     end
+  end
+
+  def order_params
+    params.require(:order).permit(:address, :city, :zip_code, :phone)
   end
 end
