@@ -83,3 +83,9 @@ production:
   database: contre_pied_prod_production
   username: contre_pied_prod
   password: <%= ENV['CONTRE_PIED_PROD_DATABASE_PASSWORD'] %>
+
+  staging:
+  <<: *default
+  database: contre_pied_prod_production
+  username: contre_pied_prod
+  password: <%= ENV['CONTRE_PIED_PROD_DATABASE_PASSWORD'] %>
