@@ -23,6 +23,7 @@ gem 'webpacker'
 # Image Management
 gem 'carrierwave', '~> 2.0'
 gem "fog-aws"
+gem "aws-sdk-s3", require: false
 
 # E-shop
 gem 'money-rails'
