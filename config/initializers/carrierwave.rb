@@ -1,6 +1,6 @@
+CarrierWave.configure do |config|
 if Rails.env.staging? || Rails.env.production?
 config.fog_provider = ‘fog/aws’
-CarrierWave.configure do |config|
   config.fog_credentials = {
     provider:              'AWS',                        # required
     aws_access_key_id:     ENV['S3_PUBLISHABLE_KEY'],                        # required unless using use_iam_profile
