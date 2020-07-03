@@ -10,7 +10,9 @@ local:
 # amazon:
   service: S3
   access_key_id: ENV['S3_PUBLISHABLE_KEY']
+
   secret_access_key: ENV['S3_SECRET_KEY']
+
   region: eu-west-1
   bucket: contrepied
 
