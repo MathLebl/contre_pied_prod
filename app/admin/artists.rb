@@ -35,7 +35,6 @@ permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :y
       f.input :name
       f.input :description, :as => :pagedown_text
       f.input :style
-      f.input :image
       f.input :video
       f.input :deezer
       f.input :spotify
@@ -56,7 +55,8 @@ permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :y
       f.input :presse
       f.input :partenaires
       f.input :category
-      f.input :press_file
+      f.input :press_file, as: :file
+      f.input :image, as: :file
       f.actions
     end
   end

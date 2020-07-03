@@ -1,5 +1,5 @@
 ActiveAdmin.register Actu do
-  permit_params :artist_id, :title, :published_at, :illustration, :video, :description, :user_id
+  permit_params :artist_id, :title, :published_at, :illustration, :video, :description, :user_id, :featured_image
   menu priority: 2
 
   scope :all
@@ -74,16 +74,18 @@ ActiveAdmin.register Actu do
     actions do |actu|
     item "Publier", publish_index_admin_actu_path(actu), method: :put if !actu.published_at?
     item "Dépublier", unpublish_index_admin_actu_path(actu), method: :put if actu.published_at?
-  end
+    end
   end
 
 form do |f|
   f.inputs do
     f.input :description, :as => :pagedown_text
     f.input :artist
+    f.input :user_id
     f.input :illustration
     f.input :video
     f.input :title
+    f.input :featured_image, as: :file
     f.actions
   end
 end

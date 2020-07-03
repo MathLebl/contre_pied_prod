@@ -24,12 +24,6 @@ Rails.application.routes.draw do
     resources :payments, only: :new
   end
 
-  mount StripeEvent::Engine, at: '/stripe-webhooks'
-
-  get 'uploader/index'
-  get 'uploader/form'
-  get 'uploader/upload'
-  get 'uploader/download'
   get 'about', to: 'pages#about'
   get 'legals', to: 'pages#legals'
   get 'contacts', to: 'pages#contacts'
