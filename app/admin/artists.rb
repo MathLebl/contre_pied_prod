@@ -41,7 +41,7 @@ permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :y
       f.input :youtube
       f.input :insta
       f.input :twitter
-      f.input :user_id
+      f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.name}", u.id]}
       f.input :active
       f.input :banner
       f.input :dice1

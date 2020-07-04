@@ -81,7 +81,7 @@ form do |f|
   f.inputs do
     f.input :description, :as => :pagedown_text
     f.input :artist
-    f.input :user_id
+    f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.name}", u.id]}
     f.input :illustration
     f.input :video
     f.input :title
