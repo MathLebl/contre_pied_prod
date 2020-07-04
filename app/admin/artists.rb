@@ -35,14 +35,13 @@ permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :y
       f.input :name
       f.input :description, :as => :pagedown_text
       f.input :style
-      f.input :image
       f.input :video
       f.input :deezer
       f.input :spotify
       f.input :youtube
       f.input :insta
       f.input :twitter
-      f.input :user_id
+      f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.name}", u.id]}
       f.input :active
       f.input :banner
       f.input :dice1
@@ -56,7 +55,8 @@ permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :y
       f.input :presse
       f.input :partenaires
       f.input :category
-      f.input :press_file
+      f.input :press_file, as: :file
+      f.input :image, as: :file
       f.actions
     end
   end

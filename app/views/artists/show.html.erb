@@ -68,9 +68,9 @@
             </ul>
           </li>
         <% end %>
-        <% if @artist.press_file? %>
+        <% if @artist.press_file.attached? %>
           <li>
-            <%= link_to "Dossier de Presse",@artist.press_file.url, target: :_blank, class:"download-btn" %>
+            <%= link_to "Dossier de Presse",@artist.press_file, target: :_blank, class:"download-btn" %>
           </li>
         <% end %>
       </ul>
