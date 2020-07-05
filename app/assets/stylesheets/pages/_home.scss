@@ -1,8 +1,4 @@
-#pif {
-  height: 27em;
-}
-
-#pouf {
+#pif, #pouf {
   height: 27em;
 }
 
@@ -17,6 +13,19 @@
   .categoryimg:hover {
     filter: grayscale(0%);
   }
+}
+
+#pif:hover {
+  height: 32em;
+  width: 12rem;
+}
+
+#paf:hover {
+  width: 18rem;
+}
+#pouf:hover {
+  height: 32em;
+  width: 12rem;
 }
 
 .wraper{
