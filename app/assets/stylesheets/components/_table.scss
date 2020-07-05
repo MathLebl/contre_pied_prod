@@ -1,29 +1,16 @@
 // Gestion du Ticket - Toutes les tables
 
 .table-ticket a {
-  // color: black;
+  color: black;
   text-decoration: none;
   font-size: 24px;
   text-align: right;
   transition: all 0.2s;
 }
 
-// tr:hover .table-ticket a {
-//   color: #F7C0D2;
-//   opacity: .5;
-// }
-
-tr:hover {
-  background-color: #BA184D;
-  td {
-    color: #F7C0D2;
-  }
-  p {
-    color: #F7C0D2;
-  }
-  i {
-    color: #F7C0D2;
-  }
+tr:hover .table-ticket a {
+  color: black;
+  opacity: .5;
 }
 
 // Gestion du Link Name - Toutes les tables
