@@ -1,15 +1,15 @@
-  <tbody>
+  <tbody class="bg-secondary">
     <% @events.each do |event|%>
     <tr>
-      <td class="table-date"><%= l event.date %></td>
+      <td class="table-date text-primary"><%= l event.date %></td>
       <td class="table-name">
         <%= link_to artist_path(event.artist_id) do %>
-          <%= event.artist.name %>
+          <p class="text-primary text-xl font-bold"><%= event.artist.name %></p>
         <% end %>
       </td>
-      <td class="table-location"><%= event.location %></td>
+      <td class="table-location text-primary"><%= event.location %></td>
       <% if event.ticket != nil %>
-        <td class="table-ticket"><a href="<%= event.ticket %>" target="_blank"><i class="fas fa-ticket-alt"></i></a></td>
+        <td class="table-ticket"><a href="<%= event.ticket %>" target="_blank"><i class="fas fa-ticket-alt text-primary"></i></a></td>
       <% else %>
         <td></td>
       <% end %>
