@@ -1,12 +1,21 @@
+#pif {
+  height: 27em;
+}
+
+#pouf {
+  height: 27em;
+}
+
+#paf {
+  height: 32em;
+}
+
 #bigdiv:hover {
   .categoryimg {
     filter: grayscale(100%);
   }
   .categoryimg:hover {
     filter: grayscale(0%);
-  }
-  @if #pif:hover #pouf:hover {
-    #paf
   }
 }
 
