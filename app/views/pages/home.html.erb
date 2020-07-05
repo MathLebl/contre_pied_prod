@@ -1,26 +1,17 @@
 <div class="transition-fade">
   <div class="flex justify-center items-center" id="bigdiv">
     <%= link_to spectacle_artists_path, class: "z-10" do %>
-      <div class="z-10 w-40 bg-cover bg-center bg-no-repeat m-4 transform duration-200 categoryimg" id="pif" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)), url('<%= image_path "home-spectacles.jpg" %>')">
-       <!--  <div class="w-40 bg-cover bg-center bg-no-repeat m-4 transform duration-200 categoryimg" id="pif" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)), url('<%= image_path "home-spectacles.jpg" %>')">
-          Spectacles
-        </div> -->
+      <div class="w-40 bg-cover bg-center bg-no-repeat m-4 transform duration-200 categoryimg" id="pif" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)), url('<%= image_path "home-spectacles.jpg" %>')">
       </div>
     <% end %>
-    <div class="z-10">
-      <%= link_to concert_artists_path do %>
-        <div class="w-48 bg-cover bg-center bg-no-repeat m-4 transform duration-200 categoryimg" id="paf" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)), url('<%= image_path "home-concerts.jpg" %>')">
-          Concerts
-        </div>
-      <% end %>
-    </div>
-    <div class="z-10">
-      <%= link_to jeune_public_artists_path do %>
-        <div class="w-40 bg-cover bg-center bg-no-repeat m-4 transform duration-200 categoryimg" id="pouf" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)), url('<%= image_path "home-jeunePublic.JPG" %>')">
-          Jeune Public
-        </div>
-      <% end %>
-    </div>
+    <%= link_to concert_artists_path, class: "z-10" do %>
+      <div class="w-48 bg-cover bg-center bg-no-repeat m-4 transform duration-200 categoryimg" id="paf" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)), url('<%= image_path "home-concerts.jpg" %>')">
+      </div>
+    <% end %>
+    <%= link_to jeune_public_artists_path, class: "z-10" do %>
+      <div class="w-40 bg-cover bg-center bg-no-repeat m-4 transform duration-200 categoryimg" id="pouf" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)), url('<%= image_path "home-jeunePublic.JPG" %>')">
+      </div>
+    <% end %>
     <div class="bg-secondary h-40 w-2/3 z-0 absolute">
     </div>
   </div>
