@@ -1,3 +1,35 @@
+#pif, #pouf {
+  height: 27em;
+  color: white;
+}
+
+#paf {
+  height: 32em;
+  color: white;
+}
+
+#bigdiv:hover {
+  .categoryimg {
+    filter: grayscale(100%);
+  }
+  .categoryimg:hover {
+    filter: grayscale(0%);
+  }
+}
+
+#pif:hover {
+  height: 32em;
+  width: 18rem;
+}
+
+#paf:hover {
+  width: 18rem;
+}
+#pouf:hover {
+  height: 32em;
+  width: 18rem;
+}
+
 .wraper{
   display: flex;
   justify-content: center;
