@@ -19,11 +19,11 @@
     </div>
   </div>
    <%= render 'shared/actus' %>
-  <!-- Section Agenda -->
-  <div class="table-title">
-    <h2>Agenda</h2>
-  </div>
-  <div class="wraper">
+  <div class="wraper relative">
+    <!-- Section Agenda -->
+    <div class="table-title p-4 bg-primary inline-block absolute top-0">
+      <h2 class="text-3xl font-bold">Agenda</h2>
+    </div>
     <table class="table-general">
       <%= render 'shared/event-table' %>
     </table>

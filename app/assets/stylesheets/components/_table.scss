@@ -1,16 +1,29 @@
 // Gestion du Ticket - Toutes les tables
 
 .table-ticket a {
-  color: black;
+  // color: black;
   text-decoration: none;
   font-size: 24px;
   text-align: right;
-  transition: all 1s;
+  transition: all 0.2s;
 }
 
-tr:hover .table-ticket a {
-  color: black;
-  opacity: .5;
+// tr:hover .table-ticket a {
+//   color: black;
+//   opacity: .5;
+// }
+
+tr:hover {
+  background-color: #BA184D;
+  td {
+    color: #F7C0D2;
+  }
+  p {
+    color: #F7C0D2;
+  }
+  i {
+    color: #F7C0D2;
+  }
 }
 
 // Gestion du Link Name - Toutes les tables
@@ -61,21 +74,22 @@ tr:hover .table-name a {
 // Gestion Table Générale - pages Home, Concert, Spectacle, JP
 
 .table-title {
-  margin: 100px 50px 0px 50px;
-  text-align: center;
-  border-top: 0.2px solid #D94496;
-  padding-top: 16px;
+  right: 22rem;
+  // margin: 100px 50px 0px 50px;
+  // text-align: center;
+  // border-top: 0.2px solid #D94496;
+  // padding-top: 16px;
 }
 
 .table-title h2 {
-  font-size: 48px;
-  font-weight: bold;
-  color: black;
+  // font-size: 48px;
+  // font-weight: bold;
+  color: white;
 }
 
 .table-general {
   width: 60%;
-  margin: 12px 20px 100px 20px;
+  margin: 60px 100px;
   color: black;
 }
 
@@ -83,13 +97,18 @@ tr:hover .table-name a {
   border-bottom: 0.2px solid #D94496;
 }
 
+#ticket {
+  padding: 1rem 3rem 1rem 1rem;
+}
+
 .table-general td {
-  padding: 8px 0px 2px 0px;
+  padding: 1rem 0.5rem 1rem 3rem;
   vertical-align: bottom;
 }
 
 .table-general .table-date {
   font-size: 16px;
+  padding: 1rem 0.5rem 1rem 4rem;
 }
 
 .table-general .table-name {
