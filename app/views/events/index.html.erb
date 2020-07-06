@@ -13,7 +13,13 @@
 
         <%= form.submit value:"Recherche" %>
       <% end %>
-      <%= render 'shared/event-table' %>
+      <div class="wraper relative">
+        <!-- Section Agenda -->
+        <div class="table-title p-4 bg-primary inline-block absolute top-0">
+          <h2 class="text-3xl font-bold">Agenda</h2>
+        </div>
+        <%= render 'shared/event-table' %>
+      </div>
     </table>
   </div>
 </div>
