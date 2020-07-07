@@ -1,5 +1,5 @@
 ActiveAdmin.register Artist do
-permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :youtube, :insta, :twitter, :slug, :user_id, :active, :banner, :dice1, :dice2, :dice3, :dice4, :facebook, :soundcloud, :category, :press_file, distribution: [], credits: [], presse: [], partenaires: []
+permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :youtube, :insta, :twitter, :slug, :user_id, :active, :banner, :dice1, :dice2, :dice3, :dice4, :facebook, :soundcloud, :category, :press_file, :banner_image,:show_image1, :show_image2, :show_image3, :show_image4, distribution: [], credits: [], presse: [], partenaires: []
   menu priority: 4
   scope :all
   scope :concert
@@ -43,11 +43,11 @@ permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :y
       f.input :twitter
       f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.name}", u.id]}
       f.input :active
-      f.input :banner
-      f.input :dice1
-      f.input :dice2
-      f.input :dice3
-      f.input :dice4
+      f.input :banner_image, as: :file
+      f.input :show_image1, as: :file
+      f.input :show_image2, as: :file
+      f.input :show_image3, as: :file
+      f.input :show_image4, as: :file
       f.input :facebook
       f.input :soundcloud
       f.input :distribution
@@ -61,3 +61,4 @@ permit_params :name, :description, :style, :image, :video, :deezer, :spotify, :y
     end
   end
 end
+

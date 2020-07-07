@@ -5,6 +5,12 @@ class Artist < ApplicationRecord
 
   has_one_attached :image
   has_one_attached :press_file
+  has_one_attached :banner_image
+  has_one_attached :show_image1
+  has_one_attached :show_image2
+  has_one_attached :show_image3
+  has_one_attached :show_image4
+
 
   scope :concert, -> { where.(category:"concert") }
   scope :spectacle, -> { where(category:"spectacle") }
