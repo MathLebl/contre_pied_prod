@@ -5,7 +5,7 @@
       <h4><%= actu.title %> </h4>
       <div class="actu-illustration">
         <% if actu.featured_image != nil %>
-        <img src="<%= actu.featured_image %>" alt="">
+        <%= image_tag actu.featured_image, alt: "alttext" %>
         <% end %>
         <% if actu.video != nil %>
           <iframe width="200" height="133.19" src="<%= actu.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
