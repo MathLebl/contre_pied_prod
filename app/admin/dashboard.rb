@@ -51,9 +51,9 @@ ActiveAdmin.register_page "Dashboard" do
             column "État" do |order|
               order.state
             end
-            column "Article" do |order|
-              link_to order.product_name
-            end
+            # column "Article" do |order|
+            #   link_to order.product_name
+            # end
             column "Total" do |order|
               order.amount
             end
