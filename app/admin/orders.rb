@@ -25,9 +25,9 @@ ActiveAdmin.register Order do
     column "Etat" do |order|
       order.state
     end
-    column "Article" do |order|
-      link_to order.product_name, admin_product_path(order)
-    end
+    # column "Article" do |order|
+    #   link_to order.product_name, admin_product_path(order)
+    # end
     column "Date" do |order|
       order.created_at
     end
