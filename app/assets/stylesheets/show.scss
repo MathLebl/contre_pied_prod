@@ -1,32 +1,32 @@
-.banner .container a {
-  text-decoration: none !important;
-  color: #FCC0CB;
-}
+// .banner .container a {
+//   text-decoration: none !important;
+//   color: #FCC0CB;
+// }
 
-.banner .container a:hover{
-  text-decoration: none !important;
-  color: #D94496;
-}
+// .banner .container a:hover{
+//   text-decoration: none !important;
+//   color: #D94496;
+// }
 
 .artist-page {
-  border: 12px solid #bdeaca;
-  margin: 30px;
-  padding-bottom: 16px;
+  // border: 12px solid #bdeaca;
+  // margin: 30px;
+  // padding-bottom: 16px;
 }
 
 .artist-informations{
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  margin-top: 16px;
-  padding: 16px;
+  // display: flex;
+  // justify-content: center;
+  // align-content: center;
+  // margin-top: 16px;
+  // padding: 16px;
 }
 
-.description {
-  width: 80%;
-  text-align: justify;
-  font-size: 24px;
-}
+// .description {
+//   width: 80%;
+//   text-align: justify;
+//   font-size: 24px;
+// }
 
 .description p::first-letter {
   font-size: 28px;
@@ -47,7 +47,7 @@
   button {
     border: none;
     text-decoration:none;
-    background-color: transparent;
+    // background-color: transparent;
   }
 }
 .info-list > li > ul.is-visible {
@@ -69,7 +69,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 16px 8px;
 }
 
 .dice .photo {
