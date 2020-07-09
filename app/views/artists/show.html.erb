@@ -83,27 +83,27 @@
       </div>
     </div>
     <div class="centrale">
-      <div class="dice mx-auto my-16">
+      <div class="dice mx-auto my-16 grid grid-cols-12 grid-rows-2 row-gap-16 col-gap-4">
         <% if @artist.dice1 == nil %>
-          <%= image_tag @artist.show_image1, alt: "alttext", class: "photo" %>
+          <%= image_tag @artist.show_image1, alt: "alttext", class: "photo col-span-5 row-span-1" %>
         <% else %>
-          <%= image_tag @artist.dice1, class: "photo top-left" %>
+          <%= image_tag @artist.dice1, class: "photo col-span-5 row-span-1" %>
         <% end %>
+        <iframe class="col-span-5 row-span-1 col-start-7" width="100%" height="100%" src="<%= @artist.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <% if @artist.dice2 == nil %>
-          <%= image_tag @artist.show_image2, alt: "alttext", class: "photo" %>
+          <%= image_tag @artist.show_image2, alt: "alttext", class: "photo col-span-3 row-span-2" %>
         <% else %>
-          <%= image_tag @artist.dice2, class: "photo top-right" %>
+          <%= image_tag @artist.dice2, class: "photo col-span-3 row-span-2" %>
         <% end %>
-        <iframe width="200" height="133.19" src="<%= @artist.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <% if @artist.dice3 == nil %>
-          <%= image_tag @artist.show_image3, alt: "alttext", class: "photo" %>
+          <%= image_tag @artist.show_image3, alt: "alttext", class: "photo col-span-4 row-span-2 col-start-5" %>
         <% else %>
-          <%= image_tag @artist.dice3, class: "photo botom-left" %>
+          <%= image_tag @artist.dice3, class: "photo col-span-4 row-span-2 col-start-5" %>
         <% end %>
         <% if @artist.dice4 == nil %>
-          <%= image_tag @artist.show_image4, alt: "alttext", class: "photo" %>
+          <%= image_tag @artist.show_image4, alt: "alttext", class: "photo col-span-3 row-span-2 col-start-10" %>
         <% else %>
-          <%= image_tag @artist.dice4, class: "photo botom-right" %>
+          <%= image_tag @artist.dice4, class: "photo col-span-3 row-span-2 col-start-10" %>
         <% end %>
       </div>
     </div>
@@ -136,9 +136,11 @@
           <div class="table-title p-4 bg-primary inline-block absolute top-0">
             <h2 class="text-3xl font-bold">Agenda</h2>
           </div>
-          <table class="table-artist">
+          <table class="table-artist z-10">
             <%= render 'shared/event-table-artist' %>
           </table>
+        <div class="bg-primary w-full z-0 absolute bottom-0" style="height: 50%">
+        </div>
       </div>
     <% end %>
   </div>
