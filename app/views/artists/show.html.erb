@@ -13,19 +13,42 @@
       <div class="container z-10">
         <h1 class="absolute text-white text-3xl font-bold bg-white text-primary px-1 z-10"><%= @artist.name %></h1>
         <% if   @artist.category == "spectacle"%>
-          <%= link_to spectacle_artists_path, class: "text-secondary no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
+          <%= link_to spectacle_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
             Retour
           <% end %>
         <% elsif @artist.category == "concert"%>
-          <%= link_to concert_artists_path, class: "text-secondary no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
+          <%= link_to concert_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
             Retour
           <% end %>
         <% else %>
-          <%= link_to jeune_public_artists_path, class: "text-secondary no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
+          <%= link_to jeune_public_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
             Retour
           <% end %>
         <% end %>
       </div>
+    <ul class="social-links flex absolute" style="bottom: -2.5rem; right: 22rem">
+      <% if @artist.insta != nil %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.insta %>"><i class="fab fa-instagram"></i></a></li>
+      <% end %>
+      <% if @artist.facebook != nil %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.facebook %>"><i class="fab fa-facebook"></i></a></li>
+      <% end %>
+      <% if @artist.twitter != nil %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.twitter %>"><i class="fab fa-twitter"></i></a></li>
+      <% end %>
+      <% if @artist.spotify != nil %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.spotify %>"><i class="fab fa-spotify"></i></a></li>
+      <% end %>
+      <% if @artist.youtube != nil %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.youtube %>"><i class="fab fa-youtube"></i></a></li>
+      <% end %>
+      <% if @artist.soundcloud != nil %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.soundcloud %>"><i class="fab fa-soundcloud"></i></a></li>
+      <% end %>
+      <% if @artist.deezer != nil %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.deezer %>"><i class="fas fa-link"></i></a></li>
+      <% end %>
+    </ul>
     </div>
     <div class="artist-informations bg-primary grid grid-cols-2 gap-4">
       <div class="col-span-1 flex justify-center items-center">
@@ -107,29 +130,6 @@
         <% end %>
       </div>
     </div>
-    <ul class="social-links">
-      <% if @artist.insta != nil %>
-        <li><a href="<%= @artist.insta %>"><i class="fab fa-instagram"></i></a></li>
-      <% end %>
-      <% if @artist.facebook != nil %>
-        <li><a href="<%= @artist.facebook %>"><i class="fab fa-facebook"></i></a></li>
-      <% end %>
-      <% if @artist.twitter != nil %>
-        <li><a href="<%= @artist.twitter %>"><i class="fab fa-twitter"></i></a></li>
-      <% end %>
-      <% if @artist.spotify != nil %>
-        <li><a href="<%= @artist.spotify %>"><i class="fab fa-spotify"></i></a></li>
-      <% end %>
-      <% if @artist.youtube != nil %>
-        <li><a href="<%= @artist.youtube %>"><i class="fab fa-youtube"></i></a></li>
-      <% end %>
-      <% if @artist.soundcloud != nil %>
-        <li><a href="<%= @artist.soundcloud %>"><i class="fab fa-soundcloud"></i></a></li>
-      <% end %>
-      <% if @artist.deezer != nil %>
-        <li><a href="<%= @artist.deezer %>"><i class="fas fa-link"></i></a></li>
-      <% end %>
-    </ul>
     <% if !@events.empty? %>
       <div class="wraper relative">
         <!-- Section Agenda -->
