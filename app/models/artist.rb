@@ -2,12 +2,15 @@ class Artist < ApplicationRecord
   belongs_to :user
   has_many :events
   has_many :products
-  has_many :distribution
-  accepts_nested_attributes_for :distribution
-  has_many :credits
-  accepts_nested_attributes_for :credits
-  has_many :presse
-  accepts_nested_attributes_for :presse
+  has_many :distribution, dependent: :destroy
+  accepts_nested_attributes_for :distribution, allow_destroy: true
+  has_many :credits, dependent: :destroy
+  accepts_nested_attributes_for :credits, allow_destroy: true
+  has_many :presse, dependent: :destroy
+  accepts_nested_attributes_for :presse, allow_destroy: true
+  has_many :partenaires, dependent: :destroy
+  accepts_nested_attributes_for :partenaires, allow_destroy: true
+
 
   has_one_attached :image
   has_one_attached :press_file
