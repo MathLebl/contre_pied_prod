@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_04_105904) do
+ActiveRecord::Schema.define(version: 2020_07_10_172357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 2020_07_04_105904) do
     t.text "description"
     t.string "style"
     t.string "video"
-    t.string "deezer"
     t.string "spotify"
     t.string "youtube"
     t.string "insta"
@@ -79,19 +78,26 @@ ActiveRecord::Schema.define(version: 2020_07_04_105904) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "active", default: true
-    t.string "banner"
-    t.string "dice1"
-    t.string "dice2"
-    t.string "dice3"
-    t.string "dice4"
     t.string "facebook"
     t.string "soundcloud"
-    t.string "distribution", array: true
-    t.string "credits", array: true
-    t.string "presse", array: true
-    t.string "partenaires", array: true
     t.integer "category"
     t.index ["user_id"], name: "index_artists_on_user_id"
+  end
+
+  create_table "credits", force: :cascade do |t|
+    t.string "name"
+    t.bigint "artist_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artist_id"], name: "index_credits_on_artist_id"
+  end
+
+  create_table "distributions", force: :cascade do |t|
+    t.string "name"
+    t.bigint "artist_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artist_id"], name: "index_distributions_on_artist_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -132,6 +138,22 @@ ActiveRecord::Schema.define(version: 2020_07_04_105904) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "partenaires", force: :cascade do |t|
+    t.string "name"
+    t.bigint "artist_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artist_id"], name: "index_partenaires_on_artist_id"
+  end
+
+  create_table "presses", force: :cascade do |t|
+    t.string "name"
+    t.bigint "artist_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artist_id"], name: "index_presses_on_artist_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.integer "stock"
     t.string "name"
@@ -170,11 +192,15 @@ ActiveRecord::Schema.define(version: 2020_07_04_105904) do
   add_foreign_key "actus", "artists"
   add_foreign_key "actus", "users"
   add_foreign_key "artists", "users"
+  add_foreign_key "credits", "artists"
+  add_foreign_key "distributions", "artists"
   add_foreign_key "events", "artists"
   add_foreign_key "events", "users"
   add_foreign_key "items", "orders"
   add_foreign_key "items", "products"
   add_foreign_key "orders", "users"
+  add_foreign_key "partenaires", "artists"
+  add_foreign_key "presses", "artists"
   add_foreign_key "products", "artists"
   add_foreign_key "products", "shop_categories"
 end
