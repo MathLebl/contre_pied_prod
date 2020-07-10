@@ -6,6 +6,8 @@ class Artist < ApplicationRecord
   accepts_nested_attributes_for :distribution
   has_many :credits
   accepts_nested_attributes_for :credits
+  has_many :presse
+  accepts_nested_attributes_for :presse
 
   has_one_attached :image
   has_one_attached :press_file

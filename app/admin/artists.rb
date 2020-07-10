@@ -4,7 +4,8 @@ permit_params :name, :description, :style, :image, :video, :deezer, :spotify,
               :dice1, :dice2, :dice3, :dice4, :facebook, :soundcloud, :category,
               :press_file, :banner_image,:show_image1, :show_image2, :show_image3,
               :show_image4, distribution_attributes: [:id, :name],
-              credits_attributes: [:id, :name], presse: [], partenaires: []
+              credits_attributes: [:id, :name], presse_attributes: [:id, :name],
+              partenaires: []
 
   menu priority: 4
   scope :all
@@ -66,8 +67,11 @@ permit_params :name, :description, :style, :image, :video, :deezer, :spotify,
         t.input :name
       end
     end
-      f.input :credits
-      f.input :presse
+    f.inputs do
+      f.has_many :presse do |t|
+        t.input :name
+      end
+    end
       f.input :partenaires
       f.input :category
       f.input :press_file, as: :file
