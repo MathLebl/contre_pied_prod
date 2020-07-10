@@ -5,11 +5,7 @@
   <div class="artist-page">
       <div class="bg-secondary h-40 w-5/6 z-0 absolute" style="left: 7.5%; bottom: 30%">
       </div>
-    <% if @artist.banner == nil %>
-      <%= image_tag @artist.banner_image, alt: "alttext" %>
-    <% else %>
-      <div class="banner z-10 relative mb-16" style="background-image: url('<%= image_path @artist.banner %>');">
-    <% end %>
+      <div class="banner z-10 relative mb-16" style="background-image: url('<%= image_path @artist.banner_image %>');">
       <div class="container z-10">
         <h1 class="absolute text-white text-3xl font-bold bg-white text-primary px-1 z-10"><%= @artist.name %></h1>
         <% if   @artist.category == "spectacle"%>
