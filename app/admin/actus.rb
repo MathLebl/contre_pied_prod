@@ -1,5 +1,5 @@
 ActiveAdmin.register Actu do
-  permit_params :artist_id, :title, :published_at, :illustration, :video, :description, :user_id, :featured_image
+  permit_params :title, :published_at, :video, :description, :user_id, :featured_image
   menu priority: 2
 
   scope :all
@@ -58,16 +58,13 @@ ActiveAdmin.register Actu do
     column "Titre" do |actu|
       link_to actu.title, admin_actu_path(actu)
     end
-    column "Artist" do |actu|
-      link_to actu.artist.name, admin_artist_path(actu.artist)
-    end
     column :description
-    column "Photo" do |actu|
-      "Ok" if actu.illustration?
-    end
-    column "Vidéo" do |actu|
-      "Ok" if actu.video?
-    end
+    # column "Photo" do |actu|
+    #   "Ok" if actu.illustration?
+    # end
+    # column "Vidéo" do |actu|
+    #   "Ok" if actu.video?
+    # end
     column "Publiée le :" do |actu|
       actu.published_at? ? actu.published_at : "pas encore publiée"
     end
@@ -79,13 +76,11 @@ ActiveAdmin.register Actu do
 
 form do |f|
   f.inputs do
-    f.input :description, :as => :pagedown_text
-    f.input :artist
     f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.name}", u.id]}
-    f.input :illustration
-    f.input :video
-    f.input :title
     f.input :featured_image, as: :file
+    f.input :video
+    f.input :description, :as => :pagedown_text
+    f.input :title
     f.actions
   end
 end

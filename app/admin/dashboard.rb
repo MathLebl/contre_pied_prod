@@ -33,9 +33,6 @@ ActiveAdmin.register_page "Dashboard" do
             column "Publiée le :" do |actu|
               actu.published_at? ? actu.published_at : "pas encore publiée"
             end
-            column "Artist" do |actu|
-              link_to actu.artist.name, admin_artist_path(actu.artist)
-            end
           end
           div do |actu|
             link_to "Toutes les actus", admin_actus_path

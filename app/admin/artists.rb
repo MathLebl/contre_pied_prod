@@ -15,8 +15,12 @@ permit_params :name, :description, :style, :image, :video, :deezer, :spotify,
 
 
   action_item :publish, only: :show do
+    link_to "Sur le site", artist_path(artist)
+  end
+  action_item :publish, only: :show do
     link_to "retour", admin_artists_path
   end
+
 
   action_item :publish, only: :index do
     link_to "retour", admin_root_path
