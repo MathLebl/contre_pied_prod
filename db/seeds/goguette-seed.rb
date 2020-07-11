@@ -11,9 +11,6 @@ youtube: "https://www.youtube.com/channel/UCL95UhlTaJ5YNJczY5I-X5A",
 insta: "https://www.instagram.com/lesgoguettes/",
 twitter: "https://twitter.com/Les_Goguettes",
 facebook: "https://www.facebook.com/lesgoguettes/",
-distribution: ["Stan", "Clémence Monnier", "Valentin Vander", "Aurélien Merle"],
-credits: ["Mise en scène : Yéshé Henneguelle", "Création lumière : Anne Muller", "Création sonore : Benoit Laur", "Costumes : Louisa Gesset-Hernandez", "Régie lumière : Vincent Lemaitre", "Régie son : Christian Desille"],
-partenaires: ["Rire et chansons", "20 minutes", "F2F Music"],
 user_id: 1
   )
 artist.image.attach(
@@ -42,4 +39,3 @@ artist.show_image4.attach(
   )
 artist.save!
  puts "Goguette done"
-
