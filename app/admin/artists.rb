@@ -1,8 +1,20 @@
 ActiveAdmin.register Artist do
-permit_params :name, :description, :style, :image, :video, :deezer, :spotify,
-              :youtube, :insta, :twitter, :slug, :user_id, :active, :banner,
-              :dice1, :dice2, :dice3, :dice4, :facebook, :soundcloud, :category,
-              :press_file, :banner_image,:show_image1, :show_image2, :show_image3,
+ActiveAdmin.register Presse do
+  belongs_to :artist
+end
+ActiveAdmin.register Credit do
+  belongs_to :artist
+end
+ActiveAdmin.register Partenaire do
+  belongs_to :artist
+end
+ActiveAdmin.register Distribution do
+  belongs_to :artist
+end
+permit_params :name, :description, :style, :image, :video, :spotify,
+              :youtube, :insta, :twitter, :slug, :user_id, :active,
+              :facebook, :soundcloud, :category,
+              :press_file, :banner_image, :show_image1, :show_image2, :show_image3,
               :show_image4, distribution_attributes: [:id, :name, :_destroy],
               credits_attributes: [:id, :name, :_destroy], presse_attributes: [:id, :name, :_destroy],
               partenaires_attributes: [:id, :name, :_destroy]
@@ -44,13 +56,13 @@ permit_params :name, :description, :style, :image, :video, :deezer, :spotify,
       f.input :category
       f.input :description, :as => :pagedown_text
       f.input :style
-      f.input :banner_image, as: :file
+      f.input :image, as: :file, label: "Vignette"
+      f.input :banner_image, as: :file, label: "Bannière"
+      f.input :show_image1, as: :file, label: "Image 1"
+      f.input :show_image2, as: :file, label: "Image 2"
+      f.input :show_image3, as: :file, label: "Image 3"
+      f.input :show_image4, as: :file, label: "Image 4"
       f.input :video
-      f.input :show_image1, as: :file
-      f.input :show_image2, as: :file
-      f.input :show_image3, as: :file
-      f.input :show_image4, as: :file
-      f.input :image, as: :file
       f.input :spotify
       f.input :youtube
       f.input :insta
@@ -77,10 +89,53 @@ permit_params :name, :description, :style, :image, :video, :deezer, :spotify,
         t.input :name
       end
     end
-      f.input :press_file, as: :file
+      f.input :press_file, as: :file, label: "Dossier de presse", allow_destroy: true
       f.input :active
       f.actions
     end
   end
-end
+
+    show do
+    attributes_table do
+      row :name
+      row :category
+      row :description
+      row :style
+      row "Vignette" do |art|
+        "OK" if art.image
+      end
+      row "Bannière" do |art|
+        "OK" if art.banner_image
+      end
+      row "Image 1" do |art|
+        "OK" if art.show_image1
+      end
+      row "Image 2" do |art|
+        "OK" if art.show_image2
+      end
+      row "Image 3" do |art|
+        "OK" if art.show_image3
+      end
+      row "Image 4" do |art|
+        "OK" if art.show_image4
+      end
+      row :video
+      row :spotify
+      row :youtube
+      row :insta
+      row :twitter
+      row :facebook
+      row :soundcloud
+      row :distribution
+      row :credits
+      row :presse
+      row :partenaires
+      row "Dossier de Presse" do |art|
+        "OK" if art.press_file
+      end
+      row :active
+      end
+    end
+  end
+
 
