@@ -13,26 +13,28 @@
   <div class="collapse navbar-collapse flex items-center" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto flex">
       <% if user_signed_in? %>
-        <li class="nav-item bg-primary text-white mx-2 p-1">
-          <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" }, class: "nav-link" %>
-        </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1">
-          <%= link_to "Gestion", admin_root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1">
+        <% if current_user.admin %>
+          <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
+            <%= link_to "Gestion", admin_root_path, class: "nav-link" %>
+          </li>
+        <% end %>
+        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
           <%= link_to "Agenda", events_path, class: "nav-link" %>
         </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1">
+        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
           <%= link_to "Contacts", contacts_path, class: "nav-link" %>
         </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1">
-          <%= link_to "A propos", about_path, class: "bg-primary" %>
+        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
+          <%= link_to "A propos", about_path, class: "nav-link" %>
         </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1">
+        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
           <%= link_to "E-boutique", products_path, class: "nav-link" %>
         </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1">
-          <%= link_to "Pannier", show_cart_products_path, class: "nav-link" %>
+        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
+          <%= link_to "Mon Pannier", show_cart_products_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
+          <%= link_to "Se Déconnecter", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" }, class: "nav-link" %>
         </li>
 <!--         <li class="nav-item dropdown">
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -43,19 +45,19 @@
           </div>
         </li> -->
       <% else %>
-        <li class="nav-item bg-primary text-white mx-2 p-1">
+        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
           <%= link_to "Agenda", events_path, class: "nav-link" %>
         </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1">
+        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
           <%= link_to "Contacts", contacts_path, class: "nav-link" %>
         </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1">
+        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
           <%= link_to "A propos", about_path, class: "bg-primary" %>
         </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1">
+        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
           <%= link_to "Nos Artistes", artists_path, class: "bg-primary" %>
         </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1">
+        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
           <%= link_to "E-boutique", products_path, class: "nav-link" %>
         </li>
 <!--         <li class="nav-item dropdown">
