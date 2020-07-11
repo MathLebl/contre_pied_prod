@@ -46,41 +46,41 @@
     <div class="artist-informations bg-primary grid grid-cols-2 gap-4">
       <div class="col-span-1 flex justify-center items-center">
         <ul class="info-list flex flex-col">
-          <% if @artist.distribution? %>
+          <% if !@distributions.empty? %>
             <li>
               <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="distri-btn">Distribution</button>
               <ul class="is-visible">
-                <% @artist.distribution.each do |distrib| %>
+                <% @distributions.each do |distrib| %>
                   <li><%= distrib %></li>
                 <% end %>
               </ul>
             </li>
           <% end %>
-          <% if @artist.credits? %>
+          <% if !@credits.empty? %>
             <li>
               <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="credits-text">Crédit</button>
               <ul class="is-visible">
-                <% @artist.credits.each do |credit| %>
+                <% @credits.each do |credit| %>
                   <li><%= credit %></li>
                 <% end %>
               </ul>
             </li>
           <% end %>
-          <% if @artist.presse? %>
+          <% if !@presses.empty? %>
             <li>
               <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="presse-text">Presse</button>
               <ul class="is-visible">
-                <% @artist.presse.each do |press| %>
+                <% @presses.each do |press| %>
                   <li><%= press %></li>
                 <% end %>
               </ul>
             </li>
           <% end %>
-          <% if @artist.partenaires? %>
+          <% if !@partenaires.empty? %>
             <li>
               <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="part-btn">Partenaires</button>
               <ul class="is-visible">
-                <% @artist.partenaires.each do |parten| %>
+                <% @partenaires.each do |parten| %>
                   <li><%= parten %></li>
                 <% end %>
               </ul>
