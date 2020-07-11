@@ -1,19 +1,16 @@
-<%= stylesheet_link_tag 'jeune_public', media: 'all' %>
-<div class="transition-fade">
- <div class="banner" style="background-color: transparent">
+  <div class="banner" style="background-image: url('<%= image_path "bandeau-jeunePublic.jpg" %>'); background-position: top">
     <div class="container">
       <h1>Jeune Public</h1>
     </div>
   </div>
-  <div class="container-jp">
-      <%= render 'shared/list' %>
-    <div class="wraper relative">
-      <div class="table-title p-4 bg-primary inline-block absolute top-0">
-        <h2 class="text-3xl font-bold">Agenda</h2>
-      </div>
-      <table class="table-general">
-        <%= render 'shared/event-table' %>
-      </table>
+<div class="transition-fade">
+  <%= render 'shared/list' %>
+  <div class="wraper relative">
+    <div class="table-title p-4 bg-primary inline-block absolute top-0">
+      <h2 class="text-3xl font-bold">Agenda</h2>
     </div>
+    <table class="table-general">
+      <%= render 'shared/event-table' %>
+    </table>
   </div>
 </div>
