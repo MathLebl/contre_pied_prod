@@ -22,6 +22,10 @@ class ArtistsController < ApplicationController
 
   def show_jp
     @events = Event.where(artist_id: @artist.id).order('date ASC')
+    @distributions = Distribution.where(artist_id: @artist.id)
+    @presses = Presse.where(artist_id: @artist.id)
+    @partenaires = Partenaire.where(artist_id: @artist.id)
+    @credits = Credit.where(artist_id: @artist.id)
   end
 
   def jeune_public
