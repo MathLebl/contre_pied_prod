@@ -22,22 +22,22 @@
         <% end %>
       </div>
     <ul class="social-links flex absolute" style="bottom: -2.5rem; right: 22rem">
-      <% if @artist.insta != nil %>
+      <% if !@artist.insta.empty? %>
         <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.insta %>"><i class="fab fa-instagram"></i></a></li>
       <% end %>
-      <% if @artist.facebook != nil %>
+      <% if !@artist.facebook.empty? %>
         <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.facebook %>"><i class="fab fa-facebook"></i></a></li>
       <% end %>
-      <% if @artist.twitter != nil %>
+      <% if !@artist.twitter.empty? %>
         <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.twitter %>"><i class="fab fa-twitter"></i></a></li>
       <% end %>
-      <% if @artist.spotify != nil %>
+      <% if !@artist.spotify.empty? %>
         <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.spotify %>"><i class="fab fa-spotify"></i></a></li>
       <% end %>
-      <% if @artist.youtube != nil %>
+      <% if !@artist.youtube.empty? %>
         <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.youtube %>"><i class="fab fa-youtube"></i></a></li>
       <% end %>
-      <% if @artist.soundcloud != nil %>
+      <% if !@artist.soundcloud.empty? %>
         <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.soundcloud %>"><i class="fab fa-soundcloud"></i></a></li>
       <% end %>
     </ul>
