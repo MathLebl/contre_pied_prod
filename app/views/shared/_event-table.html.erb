@@ -7,8 +7,7 @@
         <p class="text-primary text-xl font-bold transform duration-200 hover:scale-110"><%= event.artist.name %></p>
       <% end %>
     </td>
-    <td class="table-location text-primary"><%= event.city %></td>
-    <td class="table-location text-primary"><%= event.location %></td>
+    <td class="table-location text-primary"><strong><%= event.city %></strong> - <%= event.location %></td>
     <% if !event.ticket.empty? %>
       <td class="table-ticket" id="ticket"><a href="<%= event.ticket %>" target="_blank"><i class="fas fa-ticket-alt text-primary transform duration-200 hover:scale-150"></i></a></td>
     <% else %>
@@ -17,3 +16,4 @@
   </tr>
   <% end %>
 </tbody>
+
