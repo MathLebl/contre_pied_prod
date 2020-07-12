@@ -37,4 +37,4 @@ artist.show_image4.attach(
   filename: "aranjuez-dice3.jpg"
   )
 artist.save!
- puts "Goguette done"
+ puts "Aranjuez done"
