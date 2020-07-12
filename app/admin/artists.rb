@@ -13,7 +13,7 @@ ActiveAdmin.register Distribution do
 end
 permit_params :name, :description, :style, :image, :video, :spotify,
               :youtube, :insta, :twitter, :slug, :user_id, :active,
-              :facebook, :soundcloud, :category,
+              :facebook, :soundcloud, :category, :artist_video,
               :press_file, :banner_image, :show_image1, :show_image2, :show_image3,
               :show_image4, distribution_attributes: [:id, :name, :_destroy],
               credits_attributes: [:id, :name, :_destroy], presse_attributes: [:id, :name, :_destroy],
@@ -67,6 +67,7 @@ permit_params :name, :description, :style, :image, :video, :spotify,
       f.input :show_image3, as: :file, label: "Image 3"
       f.input :show_image4, as: :file, label: "Image 4"
       f.input :video
+      f;input :artist_video, as: :file
       f.input :spotify
       f.input :youtube
       f.input :insta
@@ -135,7 +136,7 @@ permit_params :name, :description, :style, :image, :video, :spotify,
       row :presse
       row :partenaires
       row "Dossier de Presse" do |art|
-        "OK" if art.press_file
+        "OK" if art.press_file.attached?
       end
       row :active
       end
