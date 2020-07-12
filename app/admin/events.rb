@@ -20,7 +20,6 @@ ActiveAdmin.register Event do
     column "Date" do |event|
       link_to event.date, admin_event_path(event)
     end
-    column 'Horaire', :time_table
     column "Ville", :city
     column 'Salle', :location
     column  'Reservable ?' do |event|
@@ -34,16 +33,14 @@ ActiveAdmin.register Event do
   filter :city
 
   show do
-      attributes_table do
-        row :category
-        row :date
-        row :city
-        row :location
-        row "Reservable ?" do |evt|
+    attributes_table do
+      row :category
+      row :date
+      row :city
+      row :location
+      row "Reservable ?" do |evt|
         "OK" if evt.ticket?
       end
+    end
   end
-
-end
-
 end
