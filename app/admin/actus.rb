@@ -59,12 +59,12 @@ ActiveAdmin.register Actu do
       link_to actu.title, admin_actu_path(actu)
     end
     column :description
-    # column "Photo" do |actu|
-    #   "Ok" if actu.illustration?
-    # end
-    # column "Vidéo" do |actu|
-    #   "Ok" if actu.video?
-    # end
+    column "Photo" do |actu|
+      "Ok" if actu.featured_image.attached?
+    end
+    column "Vidéo" do |actu|
+      "Ok" if actu.video?
+    end
     column "Publiée le :" do |actu|
       actu.published_at? ? actu.published_at : "pas encore publiée"
     end

@@ -19,6 +19,7 @@ class Artist < ApplicationRecord
   has_one_attached :show_image2
   has_one_attached :show_image3
   has_one_attached :show_image4
+  has_one_attached :artist_video
 
 
   scope :concert, -> { where.(category:"concert") }
