@@ -100,7 +100,11 @@
     <div class="centrale">
       <div class="dice mx-auto my-16 grid grid-cols-12 grid-rows-2 row-gap-16 col-gap-4">
           <%= image_tag @artist.show_image1, alt: "alttext", class: "photo col-span-5 row-span-1" %>
-        <iframe class="col-span-5 row-span-1 col-start-7" width="100%" height="100%" src="<%= @artist.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <% if @artist.video? %>
+            <iframe class="col-span-5 row-span-1 col-start-7" width="100%" height="100%" src="<%= @artist.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <% else %>
+            <%= video_tag @artist.artist.video, alt: "alttext", class: "col-span-5 row-span-1 col-start-7" %>
+          <% end %>
           <%= image_tag @artist.show_image2, alt: "alttext", class: "photo col-span-3 row-span-2" %>
           <%= image_tag @artist.show_image3, alt: "alttext", class: "photo col-span-4 row-span-2 col-start-5" %>
           <%= image_tag @artist.show_image4, alt: "alttext", class: "photo col-span-3 row-span-2 col-start-10" %>
