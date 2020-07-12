@@ -7,7 +7,7 @@ puts 'Creating 15 fake Events...'
     category:  "concert",
     user_id: 1,
     city: "Lyon",
-    artist_id: 2,
+    artist_id: 1,
     location: "Le Théâtre de La Vie qui joue"
   )
   event.save!
@@ -19,9 +19,9 @@ end
     category:  "spectacle",
     user_id: 1,
     city: "Paris",
-    artist_id: 1,
+    artist_id: 4,
     location: "Le Théâtre de La Vie qui joue",
-    ticket: "https://www.billetreduc.com/spectacles-enfants/"
+    ticket: "https://www.billetreduc.com/th/"
   )
   event.save!
 end
@@ -32,7 +32,7 @@ end
     category:  "jeune_public",
     user_id: 1,
     city: "Lyon",
-    artist_id: 3,
+    artist_id: 2,
     location: "Le Théâtre de Ta Mère qui Trticotte"
   )
   event.save!
@@ -44,7 +44,7 @@ end
     category:  "jeune_public",
     user_id: 1,
     city: "Valence",
-    artist_id: 3,
+    artist_id: 2,
     location: "Le Théâtre de Ta Mère qui Trticotte",
     ticket: "https://www.billetreduc.com/theatre/"
   )
@@ -57,7 +57,7 @@ end
     category:  "concert",
     user_id: 1,
     city: "Lyon",
-    artist_id: 2,
+    artist_id: 1,
     location: "Le Théâtre de La Taupe qui pêche"
   )
   event.save!
@@ -69,7 +69,7 @@ end
     category:  "concert",
     user_id: 1,
     city: "Toulouse",
-    artist_id: 2,
+    artist_id: 1,
     location: "Le Théâtre de La Taupe qui pêche",
     ticket: "https://www.billetreduc.com/theatre/"
   )
@@ -82,7 +82,7 @@ end
     category:  "spectacle",
     user_id: 1,
     city: "Le Havre",
-    artist_id: 1,
+    artist_id: 4,
     location: "Le Théâtre de La Joie qui danse",
     ticket: "https://www.billetreduc.com/theatre/"
   )
@@ -95,7 +95,7 @@ end
     category:  "spectacle",
     user_id: 1,
     city: "Marseille",
-    artist_id: 1,
+    artist_id: 4,
     location: "Le Théâtre de La Joie qui danse"
   )
   event.save!
