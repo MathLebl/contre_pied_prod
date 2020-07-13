@@ -94,7 +94,7 @@ permit_params :name, :description, :style, :image, :video, :spotify,
         t.input :name
       end
     end
-      f.input :press_file, as: :file, label: "Dossier de presse", allow_destroy: true
+      f.input :press_file, as: :file, label: "Dossier de presse"
       f.input :active
       f.actions
     end
