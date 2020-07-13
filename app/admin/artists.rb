@@ -33,9 +33,15 @@ permit_params :name, :description, :style, :image, :video, :spotify,
     link_to "retour", admin_artists_path
   end
 
-
   action_item :publish, only: :index do
     link_to "retour", admin_root_path
+  end
+
+   member_action :delete_artist_press_file, method: :delete do
+    artist = Artist.find(params[:id])
+    file = artist.press_file
+    file.purge_later
+    redirect_to edit_admin_artist_path
   end
 
   index do
@@ -95,6 +101,7 @@ permit_params :name, :description, :style, :image, :video, :spotify,
       end
     end
       f.input :press_file, as: :file, label: "Dossier de presse"
+        span link_to "Supprimer",delete_artist_press_file_admin_artist_path(artist),method: :delete,data: { confirm: 'Are you sure?' }
       f.input :active
       f.actions
     end
