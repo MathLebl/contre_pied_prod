@@ -1,23 +1,22 @@
 <div class="container">
-  <h2>Log in</h2>
+  <h2 class="text-center">Formulaire de connexion</h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" } %>
-      <%= f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Connexion" %>
+<div class="w-full ">
+<form class="w-full max-w-lg mx-auto mb-2">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <%= f.label :email, class: 'block uppercase text-gray-700 text-sm font-bold my-2' %>
+      <%= f.email_field :email, autofocus: true, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", required: false, input_html: { autocomplete: "email" }, placeholder: "email" %>
+      <%= f.label :password, class: "block uppercase text-gray-700 text-sm font-bold my-2" %>
+      <%= f.password_field :password, class: "shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline", required: false, input_html: { autocomplete: "current-password" }, placeholder: "password" %>
+      <%= f.check_box :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <%= f.label :remember_me %>
+    <div class="actions">
+      <%= f.submit :submit, class:'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-2 rounded focus:outline-none focus:shadow-outline' %>
     </div>
   <% end %>
   <%= render "devise/shared/links" %><br>
   <%= link_to "Pas encore inscrit ?", new_user_registration_path %>
-
+  </div>
+</form>
 </div>
