@@ -101,7 +101,9 @@ permit_params :name, :description, :style, :image, :video, :spotify,
       end
     end
       f.input :press_file, as: :file, label: "Dossier de presse"
+      if artist.press_file.attached?
         span link_to "Supprimer",delete_artist_press_file_admin_artist_path(artist),method: :delete,data: { confirm: 'Are you sure?' }
+      end
       f.input :active
       f.actions
     end
