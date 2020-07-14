@@ -73,7 +73,7 @@ permit_params :name, :description, :style, :image, :video, :spotify,
       f.input :show_image3, as: :file, label: "Image 3"
       f.input :show_image4, as: :file, label: "Image 4"
       f.input :video
-      f;input :artist_video, as: :file
+      f.input :artist_video, as: :file
       f.input :spotify
       f.input :youtube
       f.input :insta
