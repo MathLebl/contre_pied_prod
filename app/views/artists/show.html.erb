@@ -2,25 +2,23 @@
 
 <div class="transition-fade">
   <div class="artist-page">
-      <div class="bg-secondary h-40 w-5/6 z-0 absolute" style="left: 7.5%; bottom: 30%">
+      <div class="bg-secondary h-40 w-5/6 z-0 absolute" style="left: 7.5%; bottom: 35%">
       </div>
       <div class="banner z-10 relative mb-16" style="background-image: url('<%= image_path url_for (@artist.banner_image) %>');">
-      <div class="container z-10">
         <h1 class="absolute text-white text-3xl font-bold bg-white text-primary px-1 z-10"><%= @artist.name %></h1>
         <% if   @artist.category == "spectacle"%>
-          <%= link_to spectacle_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
+          <%= link_to spectacle_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold mt-4 ml-4" do %>
             Retour
           <% end %>
         <% elsif @artist.category == "concert"%>
-          <%= link_to concert_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
+          <%= link_to concert_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold mt-4 ml-4" do %>
             Retour
           <% end %>
         <% else %>
-          <%= link_to jeune_public_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
+          <%= link_to jeune_public_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold mt-4 ml-4" do %>
             Retour
           <% end %>
         <% end %>
-      </div>
     <ul class="social-links flex absolute" style="bottom: -2.5rem; right: 22rem">
       <% if @artist.insta? %>
         <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.insta %>"><i class="fab fa-instagram"></i></a></li>
