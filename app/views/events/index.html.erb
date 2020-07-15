@@ -6,15 +6,18 @@
     </div>
   </div>
   <div class="container">
-    <table class="table-agenda">
+        <!-- Section Search -->
+      <div class="my-5">
       <%= form_with url: events_path, method: :get, local: true do |form| %>
         <%= form.select :city, @cities, {:include_blank => 'Où ?'}, {:class => 'select2'} %>
-        <%= form.select :artist_id, @artists, {:include_blank => 'Qui ?'}, {:class => 'select2'} %>
+        <%= form.collection_select :artist_id, @artists, :id, :name, {:include_blank => 'Qui ?'}, {:class => 'select2'}  %>
         <%= form.select :date, @dates, {:include_blank => 'Quand ?'}, {:class => 'select2'} %>
         <%= form.submit value:"Recherche" %>
       <% end %>
-      <div class="wraper relative">
+      </div>
         <!-- Section Agenda -->
+    <table class="table-agenda">
+      <div class="wraper relative">
         <div class="table-title p-4 bg-primary inline-block absolute top-0">
           <h2 class="text-3xl font-bold">Agenda</h2>
         </div>
