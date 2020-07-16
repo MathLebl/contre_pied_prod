@@ -59,14 +59,22 @@
 // Gestion de la class Inactive
 
 .inactive {
-  border: 12px solid #683D25 !important;
+  filter: grayscale(100%);
+  &:hover {
+    #back-image {
+      transition-duration: 200ms;
+      filter: blur(0.5rem);
+    }
+    #inactive-flag {
+      transition-duration:200ms;
+      visibility: visible;
+    }
+  }
 }
 
 #inactive-flag {
-  position: absolute;
-  color: transparent;
-  top: 60%;
-  left: 33%;
+  top: 50%;
+  left: 40%;
 }
 
 
@@ -107,12 +115,12 @@
 //   padding: 2px 10px 2px 10px;
 // }
 
-.list-card:hover #inactive-flag {
-  position: absolute;
-  color: #bdeaca;
-  top: 60%;
-  left: 33%;
-}
+// .list-card:hover #inactive-flag {
+//   position: absolute;
+//   color: #bdeaca;
+//   top: 60%;
+//   left: 33%;
+// }
 
 
 // Smallest device
