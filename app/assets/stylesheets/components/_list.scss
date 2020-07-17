@@ -65,11 +65,19 @@
       transition-duration: 200ms;
       filter: blur(0.5rem);
     }
+    .card-style {
+      transition-duration: 200ms;
+      filter: blur(0.5rem);
+    }
     #inactive-flag {
       transition-duration:200ms;
       visibility: visible;
     }
   }
+}
+
+#back-image {
+  border: solid 1em white;
 }
 
 #inactive-flag {
