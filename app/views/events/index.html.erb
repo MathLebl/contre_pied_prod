@@ -1,28 +1,26 @@
-<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1529354235303-cc42f23d767a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
-  <div class="container">
-    <h1>Agenda</h1>
-    <p>Retrouvez nos artistes, partout en France</p>
-  </div>
+<div class="bg-secondary h-40 w-5/6 z-0 absolute" style="left: 7.5%; bottom: 35%">
 </div>
-<div class="">
-  <!-- Section Search -->
-  <div class="my-5">
-    <%= form_with url: events_path, method: :get, local: true do |form| %>
-    <%= form.select :city, @cities, {:include_blank => 'Où ?'}, {:class => 'select2'} %>
-    <%= form.collection_select :artist_id, @artists, :id, :name, {:include_blank => 'Qui ?'}, {:class => 'select2'}  %>
-    <%= form.select :date, @dates, {:include_blank => 'Quand ?'}, {:class => 'select2'} %>
-    <%= form.submit value:"Recherche" %>
-    <% end %>
+<div class="banner relative z-1" style="background-image: url('<%= image_path "bandeau-spectacles.jpg" %>')">
+  <h1 class="absolute bg-white text-primary text-3xl font-bold px-1">Agenda</h1>
+</div>
+<!-- Section Search -->
+<p class="text-2xl text-center m-4">Retrouvez nos artistes, partout en France</p>
+<form class="my-8 max-w-lg mx-auto flex lg:align-bottom">
+  <%= form_with url: events_path, method: :get, local: true do |form| %>
+  <%= form.select :city, @cities, {:include_blank => 'Où ?'}, {:class => 'shadow appearance-none border rounded py-2 px-4 m-2 font-bold text-gray-700 leading-tight focus:outline-none focus:shadow-outline'} %>
+  <%= form.collection_select :artist_id, @artists, :id, :name, {:include_blank => 'Qui ?'}, {:class => 'shadow appearance-none border rounded py-2 px-4 m-2 font-bold text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}  %>
+  <%= form.select :date, @dates, {:include_blank => 'Quand ?'}, {:class => 'shadow appearance-none border rounded py-2 px-4 m-2 font-bold text-gray-700 leading-tight focus:outline-none focus:shadow-outline'} %>
+  <%= form.submit value:"Recherche", class:'bg-primary hover:bg-secondary hover:text-primary text-white font-bold py-2 px-4 m-2 rounded focus:outline-none focus:shadow-outline' %>
+  <% end %>
+</form>
+<!-- Section Agenda -->
+<div class="wraper relative my-24">
+  <div class="table-title p-4 bg-primary inline-block absolute">
+    <h2 class="text-3xl font-bold">Agenda</h2>
   </div>
-  <!-- Section Agenda -->
-  <div class="wraper relative my-24">
-    <div class="table-title p-4 bg-primary inline-block absolute">
-      <h2 class="text-3xl font-bold">Agenda</h2>
-    </div>
-    <div class="w-5/6 p-12 bg-secondary">
-      <table class="table-agenda">
-        <%= render 'shared/event-table' %>
-      </table>
-    </div>
+  <div class="w-5/6 p-12 bg-secondary">
+    <table class="table-agenda">
+      <%= render 'shared/event-table' %>
+    </table>
   </div>
 </div>

@@ -1,19 +1,19 @@
-  <div class="bg-secondary h-40 w-5/6 z-0 absolute" style="left: 7.5%; bottom: 35%">
+<div class="bg-secondary h-40 w-5/6 z-0 absolute" style="left: 7.5%; bottom: 35%">
+</div>
+<div class="banner relative z-1" style="background-image: url('<%= image_path "bandeau-spectacles.jpg" %>')">
+  <h1 class="absolute bg-white text-primary text-3xl font-bold px-1">Spectacles</h1>
+</div>
+<div class="bg-primary my-6">
+  <%= render 'shared/list' %>
+</div>
+<div class="wraper relative my-24">
+  <!-- Section Agenda -->
+  <div class="table-title p-4 bg-primary inline-block absolute">
+    <h2 class="text-3xl font-bold">Agenda</h2>
   </div>
-  <div class="banner relative z-1" style="background-image: url('<%= image_path "bandeau-spectacles.jpg" %>')">
-    <h1 class="absolute bg-white text-primary text-3xl font-bold px-1">Spectacles</h1>
+  <div class="w-2/3 p-12 bg-secondary">
+    <table class="table-general">
+      <%= render 'shared/event-table' %>
+    </table>
   </div>
-  <div class="bg-primary my-6">
-    <%= render 'shared/list' %>
-  </div>
-  <div class="wraper relative my-24">
-    <!-- Section Agenda -->
-    <div class="table-title p-4 bg-primary inline-block absolute">
-      <h2 class="text-3xl font-bold">Agenda</h2>
-    </div>
-    <div class="w-2/3 p-12 bg-secondary">
-      <table class="table-general">
-        <%= render 'shared/event-table' %>
-      </table>
-    </div>
-  </div>
+</div>
