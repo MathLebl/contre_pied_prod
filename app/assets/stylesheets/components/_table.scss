@@ -43,8 +43,7 @@ tr:hover .table-name a {
 // Gestion Table Agenda
 
 .table-agenda {
-  width: 80%;
-  margin: 60px auto;
+  width: 100%;
   // color: black;
 }
 
@@ -53,13 +52,13 @@ tr:hover .table-name a {
 }
 
 .table-agenda td {
-  padding: 1rem 0.5rem 1rem 3rem;
+  padding: 1rem 0.5rem 1rem 1rem;
   vertical-align: bottom;
 }
 
 
 .table-agenda .table-date {
-  padding: 1rem 0.5rem 1rem 4rem;
+  padding: 1rem 0.5rem 1rem 1rem;
   font-size: 18px;
 }
 
