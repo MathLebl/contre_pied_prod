@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm sticky-top flex justify-between">
   <div class="bg-primary text-white flex items-center h-24 mt-12">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <h4>CONTREPIED PRODUCTIONS</h4>
+    <h4>CONTREPIED PRODUCTIONS</h4>
     <% end %>
   </div>
 
@@ -13,60 +13,60 @@
   <div class="collapse navbar-collapse flex items-center" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto flex">
       <% if user_signed_in? %>
-        <% if current_user.admin %>
-          <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
-            <%= link_to "Gestion", admin_root_path, class: "nav-link" %>
+      <% if current_user.admin %>
+      <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
+        <%= link_to "Gestion", admin_root_path, class: "nav-link" %>
+      </li>
+      <% end %>
+      <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
+        <%= link_to "Nos Artistes", artists_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
+        <%= link_to "Agenda", events_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
+        <%= link_to "A propos", about_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
+        <%= link_to "E-boutique", boutique_path, class: "nav-link" %>
+      </li>
+      <li class="dropdown inline-block relative">
+        <button class="nav-item text-primary ml-2 mr-3 p-1 hover:text-secondary">
+          <span class="mr-1"><i class="fas fa-ellipsis-v"></i></span>
+        </button>
+        <ul class="dropdown-menu z-20 absolute right-0 hidden mr-2">
+          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=spectacle_artists_path %>">Spectacles</a></li>
+          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=concert_artists_path %>">Concerts</a></li>
+          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=jeune_public_artists_path %>">Jeune Public</a></li>
+          <li class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap">
+            <%= link_to "Se Déconnecter", destroy_user_session_path, method: :delete, data: { confirm: "Êtes vous sûr de vouloir vous déconncter" }, class: "nav-link" %>
           </li>
-        <% end %>
-        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
-          <%= link_to "Nos Artistes", artists_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
-          <%= link_to "Agenda", events_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
-          <%= link_to "A propos", about_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
-          <%= link_to "E-boutique", boutique_path, class: "nav-link" %>
-        </li>
-        <li class="dropdown inline-block relative">
-          <button class="nav-item text-primary mx-2 p-1 hover:text-secondary">
-            <span class="mr-1"><i class="fas fa-ellipsis-v"></i></span>
-          </button>
-          <ul class="dropdown-menu z-20 absolute right-0 hidden text-gray-700">
-            <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=spectacle_artists_path %>">Spectacles</a></li>
-            <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=concert_artists_path %>">Concerts</a></li>
-            <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=jeune_public_artists_path %>">Jeune Public</a></li>
-            <li class="bg-gray-200 hover:bg-gray-400 py-2 px-4 mr-1 block whitespace-no-wrap">
-              <%= link_to "Se Déconnecter", destroy_user_session_path, method: :delete, data: { confirm: "Êtes vous sûr de vouloir vous déconncter" }, class: "nav-link" %>
-            </li>
-          </ul>
-        </li>
+        </ul>
+      </li>
       <% else %>
-        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
-          <%= link_to "Nos Artistes", artists_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
-          <%= link_to "Agenda", events_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
-          <%= link_to "A propos", about_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
-          <%= link_to "E-boutique", boutique_path, class: "nav-link" %>
-        </li>
-        <li class="dropdown inline-block relative">
-          <button class="nav-item text-primary mx-2 p-1 hover:text-secondary">
-            <span class="mr-1"><i class="fas fa-ellipsis-v"></i></span>
-          </button>
-          <ul class="dropdown-menu absolute right-0 hidden text-gray-700">
-            <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=spectacle_artists_path %>">Spectacles</a></li>
-            <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=concert_artists_path %>">Concerts</a></li>
-            <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=jeune_public_artists_path %>">Jeune Public</a></li>
-            <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=new_user_session_path %>">Se Connecter</a></li>
-          </ul>
-        </li>
+      <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
+        <%= link_to "Nos Artistes", artists_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
+        <%= link_to "Agenda", events_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
+        <%= link_to "A propos", about_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item bg-primary text-white mx-2 p-1 hover:bg-secondary hover:text-primary">
+        <%= link_to "E-boutique", boutique_path, class: "nav-link" %>
+      </li>
+      <li class="dropdown inline-block relative">
+        <button class="nav-item text-primary mx-2 p-1 hover:text-secondary">
+          <span class="mr-1"><i class="fas fa-ellipsis-v"></i></span>
+        </button>
+        <ul class="dropdown-menu absolute right-0 hidden mr-2 z-20">
+          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=spectacle_artists_path %>">Spectacles</a></li>
+          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=concert_artists_path %>">Concerts</a></li>
+          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=jeune_public_artists_path %>">Jeune Public</a></li>
+          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=new_user_session_path %>">Se Connecter</a></li>
+        </ul>
+      </li>
       <% end %>
     </ul>
   </div>
