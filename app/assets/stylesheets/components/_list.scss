@@ -65,11 +65,19 @@
       transition-duration: 200ms;
       filter: blur(0.5rem);
     }
+    .card-style {
+      transition-duration: 200ms;
+      filter: blur(0.5rem);
+    }
     #inactive-flag {
       transition-duration:200ms;
       visibility: visible;
     }
   }
+}
+
+#back-image {
+  border: solid 1em white;
 }
 
 #inactive-flag {
@@ -80,15 +88,15 @@
 
 // Gestion de la class Jeunesse
 
-.jeunesse {
- height: 340px;
-  width: 680px;
-}
+// .jeunesse {
+//  height: 340px;
+//   width: 680px;
+// }
 
-.jeunesse h5 {
-  font-family: 'Indie Flower';
-  font-size: 24px;
-}
+// .jeunesse h5 {
+//   font-family: 'Indie Flower';
+//   font-size: 24px;
+// }
 
 
 // Gestion :hover

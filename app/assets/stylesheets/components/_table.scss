@@ -43,23 +43,22 @@ tr:hover .table-name a {
 // Gestion Table Agenda
 
 .table-agenda {
-  width: 80%;
-  margin: 60px auto;
+  width: 100%;
   // color: black;
 }
 
 .table-agenda tr {
-  border-bottom: 0.2px solid #D94496;
+  border-bottom: 2px solid #BA184D;
 }
 
 .table-agenda td {
-  padding: 1rem 0.5rem 1rem 3rem;
+  padding: 1rem 0.5rem 1rem 1rem;
   vertical-align: bottom;
 }
 
 
 .table-agenda .table-date {
-  padding: 1rem 0.5rem 1rem 4rem;
+  padding: 1rem 0.5rem 1rem 1rem;
   font-size: 18px;
 }
 
@@ -76,6 +75,7 @@ tr:hover .table-name a {
 
 .table-title {
   right: 22rem;
+  top: -3rem;
   // margin: 100px 50px 0px 50px;
   // text-align: center;
   // border-top: 0.2px solid #D94496;
@@ -89,27 +89,26 @@ tr:hover .table-name a {
 }
 
 .table-general {
-  width: 60%;
-  margin: 60px auto;
+  width: 100%;
   // color: black;
 }
 
 .table-general tr {
-  border-bottom: 0.2px solid #D94496;
+  border-bottom: 2px solid #BA184D;
 }
 
 #ticket {
-  padding: 1rem 3rem 1rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 .table-general td {
-  padding: 1rem 0.5rem 1rem 3rem;
+  padding: 1rem 0.5rem 1rem 1rem;
   vertical-align: bottom;
 }
 
 .table-general .table-date {
   font-size: 16px;
-  padding: 1rem 0.5rem 1rem 4rem;
+  padding: 1rem 0.5rem 1rem 1rem;
 }
 
 .table-general .table-name {
@@ -133,12 +132,12 @@ tr:hover .table-name a {
 }
 
 .table-artist td {
-  padding: 1rem 0.5rem 1rem 3rem;
+  padding: 1rem 0.5rem 1rem 1rem;
   vertical-align: bottom;
 }
 
 .table-artist .table-date {
-  padding: 1rem 0.5rem 1rem 4rem;
+  padding: 1rem 0.5rem 1rem 1rem;
   font-size: 20px;
 }
 
