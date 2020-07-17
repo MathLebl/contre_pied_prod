@@ -5,16 +5,18 @@
     <%= image_tag "jeune-public-bird", alt: "un poussin trop mignon", class: "w-1/4 absolute bottom-0 left-0 ml-56 mb-12" %>
   </div>
 </div>
-  <div class="bg-tertiary mb-20">
-    <%= render 'shared/list' %>
+<div class="bg-tertiary mb-20">
+  <%= render 'shared/list' %>
+</div>
+<% if !@events.empty? %>
+<div class="wraper relative my-24">
+  <div class="table-title p-4 bg-primary inline-block absolute">
+    <h2 class="text-2xl font-bold">Agenda</h2>
   </div>
-  <div class="wraper relative my-24">
-    <div class="table-title p-4 bg-primary inline-block absolute">
-      <h2 class="text-2xl font-bold">Agenda</h2>
-    </div>
-    <div class="w-2/3 p-12 bg-secondary">
-      <table class="table-general">
-        <%= render 'shared/event-table' %>
-      </table>
-    </div>
+  <div class="w-2/3 p-12 bg-secondary">
+    <table class="table-general">
+      <%= render 'shared/event-table' %>
+    </table>
   </div>
+</div>
+<% end %>

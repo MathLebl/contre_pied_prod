@@ -6,6 +6,7 @@
 <div class="bg-primary my-6">
   <%= render 'shared/list' %>
 </div>
+<% if !@events.empty? %>
 <div class="wraper relative my-24">
   <!-- Section Agenda -->
   <div class="table-title p-4 bg-primary inline-block absolute">
@@ -17,3 +18,4 @@
     </table>
   </div>
 </div>
+<% end %>
