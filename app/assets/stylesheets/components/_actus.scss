@@ -1,24 +1,44 @@
 .actus-wraper {
+  margin: 5em 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background: $primary;
+  padding: 2em 0;
 }
 
 .actu-card {
-  border: 12px solid $Marron-tertiaire;
-  height: 400px;
-  width: 300px;
-  margin: 10px;
-  padding: 10px;
+  display: flex;
+  background: #ffffff;
+  height: 250px;
+  width: 450px;
+  padding: 0.5em;
 }
 
 .actu-illustration {
-  height: 60%;
-  img {
-    height: 80%;
+  height: 100%;
+  width: 50%;
+  img, iframe  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   };
 }
 
 .actu-description {
-  height: 40%;
+  width: 50%;
+  margin-left: 0.5em;
+  display: flex;
+  align-items: center;
+  color: $primary;
+}
+
+.actu-title{
+  background: #ffffff;
+  width: min-content;
+  white-space: nowrap;
+  padding: 0.5em 1em;
+  margin-bottom: 0.5em;
+  color: $primary;
+  font-weight: bold;
 }
