@@ -6,12 +6,12 @@
 
 
           <div class="card-body p-8 relative">
-            <h5 class="card-name bg-primary text-white font-bold p-2 mb-4" style="width: fit-content"><%= artist.name %></h5>
+            <h5 class="card-name bg-white text-primary font-bold p-2 mb-4" style="width: fit-content"><%= artist.name %></h5>
        <!--      <div>
               <%= image_tag(set_picture(artist), class: "object-cover") %>
             </div> -->
             <div id="back-image" class="bg-cover bg-center" style="background-image: url('<%= image_path url_for (artist.image) %>'); height: 25rem; width: 25rem"></div>
-            <h6 class="card-style absolute bg-white text-primary font-bold p-1" style="top: 6rem; left: 3rem"><%= artist.style %></h6>
+            <h6 class="card-style absolute bg-white text-primary font-bold p-2" style="top: 6rem; left: 3rem"><%= artist.style %></h6>
             <% if artist.active == false %>
               <div id="inactive-flag" class="absolute text-white font-bold text-2xl invisible">
                 <h2>INACTIF</h2>
