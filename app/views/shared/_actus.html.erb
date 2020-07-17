@@ -1,8 +1,9 @@
 <div class="actus-wraper">
   <% @actus.each do |actu| %>
   <% if actu.published_at? %>
+  <div>
+    <h4 class="actu-title"><%= actu.title %></h4>
     <div class="actu-card">
-      <h4><%= actu.title %> </h4>
       <div class="actu-illustration">
         <%= image_tag actu.featured_image if actu.featured_image.attached? %>
         <% if actu.video != nil %>
@@ -13,6 +14,7 @@
         <p><%= actu.description %></p>
       </div>
     </div>
+  </div>
   <% end %>
   <% end %>
 </div>
