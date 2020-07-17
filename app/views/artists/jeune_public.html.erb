@@ -1,10 +1,14 @@
-<div class="bg-secondary h-40 w-5/6 z-0 absolute" style="left: 7.5%; bottom: 35%">
-</div>
-<div class="banner relative" style="background-image: url('<%= image_path "bandeau-jeunePublic.jpg" %>'); background-position: top">
-  <h1 class="absolute bg-white text-primary text-3xl font-bold px-1">Jeune Public</h1>
+<div class="bg-secondary h-40 w-5/6 m-auto mb-24 mt-48 relative">
+  <div class="h-full flex flex-col justify-center" style="margin-left: 50%">
+    <h1 class="text-3xl font-bold text-primary">Jeune Public</h1>
+    <p class="text-primary">Des spectacles de qualité supérieure pour satisfaire vos chiards</p>
+    <%= image_tag "jeune-public-bird", alt: "un poussin trop mignon", class: "w-1/4 absolute bottom-0 left-0 ml-56 mb-12" %>
+  </div>
 </div>
 <div class="transition-fade">
-  <%= render 'shared/list' %>
+  <div class="bg-tertiary mb-20">
+    <%= render 'shared/list' %>
+  </div>
   <div class="wraper relative">
     <div class="table-title p-4 bg-primary inline-block absolute top-0">
       <h2 class="text-3xl font-bold">Agenda</h2>
