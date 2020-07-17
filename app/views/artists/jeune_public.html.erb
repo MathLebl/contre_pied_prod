@@ -10,11 +10,13 @@
     <%= render 'shared/list' %>
   </div>
   <div class="wraper relative">
-    <div class="table-title p-4 bg-primary inline-block absolute top-0">
-      <h2 class="text-3xl font-bold">Agenda</h2>
+    <div class="table-title p-4 bg-primary inline-block absolute">
+      <h2 class="text-2xl font-bold">Agenda</h2>
     </div>
-    <table class="table-general">
-      <%= render 'shared/event-table' %>
-    </table>
+    <div class="w-2/3 p-12 bg-secondary">
+      <table class="table-general">
+        <%= render 'shared/event-table' %>
+      </table>
+    </div>
   </div>
 </div>
