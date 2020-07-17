@@ -65,7 +65,7 @@
           <% end %>
           <% if @artist.press_file.attached? %>
             <li>
-              <%= link_to "Dossier de Presse",@artist.press_file, target: :_blank, class:"bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" %>
+              <%= link_to "Dossier de Presse",@artist.press_file, type:'button', target: :_blank, class:"bg-white text-primary font-bold p-1 m-2 w-40 hover:bg-secondary transform duration-200 hover:scale-110" %>
             </li>
           <% end %>
         </ul>
