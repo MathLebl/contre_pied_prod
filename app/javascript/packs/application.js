@@ -11,3 +11,8 @@ require("stylesheets/application.scss")
 //Select2
 import { initSelect2 } from '../plugins/init_select2';
 initSelect2();
+
+//Toggle Infos
+import { toggleBtn } from '../plugins/infoToggle';
+toggleBtn();
+

@@ -41,46 +41,26 @@
     </ul>
     </div>
     <div class="artist-informations bg-primary grid grid-cols-2 gap-4">
-      <div class="col-span-1 flex justify-center items-center">
+      <div class="info-block col-span-1 flex justify-center items-center">
         <ul class="info-list flex flex-col">
           <% if !@distributions.empty? %>
             <li>
               <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="distri-btn">Distribution</button>
-              <ul class="is-visible">
-                <% @distributions.each do |distrib| %>
-                  <li><%= distrib %></li>
-                <% end %>
-              </ul>
             </li>
           <% end %>
           <% if !@credits.empty? %>
             <li>
               <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="credits-text">Crédit</button>
-              <ul class="is-visible">
-                <% @credits.each do |credit| %>
-                  <li><%= credit %></li>
-                <% end %>
-              </ul>
             </li>
           <% end %>
           <% if !@presses.empty? %>
             <li>
               <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="presse-text">Presse</button>
-              <ul class="is-visible">
-                <% @presses.each do |press| %>
-                  <li><%= press %></li>
-                <% end %>
-              </ul>
             </li>
           <% end %>
           <% if !@partenaires.empty? %>
             <li>
               <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="part-btn">Partenaires</button>
-              <ul class="is-visible">
-                <% @partenaires.each do |parten| %>
-                  <li><%= parten %></li>
-                <% end %>
-              </ul>
             </li>
           <% end %>
           <% if @artist.press_file.attached? %>
@@ -89,6 +69,36 @@
             </li>
           <% end %>
         </ul>
+      <div class="info-text-block">
+        <% if !@distributions.empty? %>
+        <ul class="info-text is-visible bg-white text-primary p-1 m-2">
+          <% @distributions.each do |distrib| %>
+            <li><%= distrib.name %></li>
+          <% end %>
+        </ul>
+        <% end %>
+        <% if !@credits.empty? %>
+        <ul class="info-text is-visible bg-white text-primary p-1 m-2">
+          <% @credits.each do |credit| %>
+            <li><%= credit.name %></li>
+          <% end %>
+        </ul>
+        <% end %>
+        <% if !@presses.empty? %>
+        <ul class="info-text is-visible bg-white text-primary p-1 m-2">
+          <% @presses.each do |press| %>
+            <li><%= press.name %></li>
+          <% end %>
+        </ul>
+        <% end %>
+        <% if !@partenaires.empty? %>
+        <ul class="info-text is-visible bg-white text-primary p-1 m-2">
+          <% @partenaires.each do |parten| %>
+            <li><%= parten.name %></li>
+          <% end %>
+        </ul>
+        <% end %>
+      </div>
       </div>
       <div class="description bg-white text-primary p-8 text-sm my-16 mr-40 text-justify col-span-1 relative">
         <p><%= @artist.description %></p>
