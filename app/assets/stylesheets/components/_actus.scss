@@ -7,12 +7,19 @@
   padding: 2em 0;
 }
 
+.card-container{
+  &:not(:first-child){
+    margin-left: 2em;
+  }
+}
+
 .actu-card {
   display: flex;
   background: #ffffff;
   height: 250px;
   width: 450px;
   padding: 0.5em;
+  
 }
 
 .actu-illustration {
@@ -41,4 +48,10 @@
   margin-bottom: 0.5em;
   color: $primary;
   font-weight: bold;
+}
+.hello{
+  display: flex;
+  justify-content: space-between;
+  width: 66.666667%;
+  overflow-x: scroll;
 }
