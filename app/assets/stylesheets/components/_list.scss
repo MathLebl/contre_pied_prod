@@ -57,20 +57,28 @@
 
 
 // Gestion de la class Inactive
+.inactive {
+  #back-image {
+    transition: all .4s ease-in-out;
+  }
+  .card-style {
+    transition: all .4s ease-in-out;
+  }
+  #inactive-flag {
+    transition-delay: .3s in;
+  }
+}
 
 .inactive {
   filter: grayscale(100%);
   &:hover {
     #back-image {
-      transition-duration: 200ms;
       filter: blur(0.5rem);
     }
     .card-style {
-      transition-duration: 200ms;
       filter: blur(0.5rem);
     }
     #inactive-flag {
-      transition-duration:200ms;
       visibility: visible;
     }
   }
