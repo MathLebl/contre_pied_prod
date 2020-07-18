@@ -1,7 +1,7 @@
 ActiveAdmin.register Product do
   menu label: "Articles", priority: 7
 #   config.sort_order = 'date_asc'
-  permit_params :stock, :name, :shop_category_id, :price_cents, :artist_id, :product_image
+  permit_params :stock, :name, :shop_category_id, :price_cents, :artist_id, :product_image, :description
 
 
 
@@ -71,6 +71,7 @@ ActiveAdmin.register Product do
     f.inputs do
       f.input :stock
       f.input :name
+      f.input :description
       f.input :shop_category_id, :as => :select, :collection => ShopCategory.all.map{|u| ["#{u.name}", u.id]}
       f.input :price_cents
       f.input :artist_id, :label => 'Artist', :as => :select, :collection => Artist.all.map{|u| ["#{u.name}", u.id]}
