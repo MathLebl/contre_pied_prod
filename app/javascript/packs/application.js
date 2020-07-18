@@ -16,3 +16,6 @@ initSelect2();
 import { toggleBtn } from '../plugins/infoToggle';
 toggleBtn();
 
+//Toggle DropDown
+import { toggleNav } from '../plugins/DropdownToggle';
+toggleNav();
