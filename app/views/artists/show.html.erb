@@ -19,22 +19,22 @@
       <% end %>
       <ul class="social-links flex absolute" style="bottom: -2.5rem; right: 22rem">
         <% if @artist.insta? %>
-          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.insta %>"><i class="fab fa-instagram"></i></a></li>
+          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.insta %>" target="_blank"><i class="fab fa-instagram"></i></a></li>
         <% end %>
         <% if @artist.facebook? %>
-          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.facebook %>"><i class="fab fa-facebook"></i></a></li>
+          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.facebook %>" target="_blank"><i class="fab fa-facebook"></i></a></li>
         <% end %>
         <% if @artist.twitter? %>
-          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.twitter %>"><i class="fab fa-twitter"></i></a></li>
+          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.twitter %>" target="_blank"><i class="fab fa-twitter"></i></a></li>
         <% end %>
         <% if @artist.spotify? %>
-          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.spotify %>"><i class="fab fa-spotify"></i></a></li>
+          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.spotify %>" target="_blank"><i class="fab fa-spotify"></i></a></li>
         <% end %>
         <% if @artist.youtube? %>
-          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.youtube %>"><i class="fab fa-youtube"></i></a></li>
+          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.youtube %>" target="_blank"><i class="fab fa-youtube"></i></a></li>
         <% end %>
         <% if @artist.soundcloud? %>
-          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.soundcloud %>"><i class="fab fa-soundcloud"></i></a></li>
+          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.soundcloud %>" target="_blank"><i class="fab fa-soundcloud"></i></a></li>
         <% end %>
       </ul>
     </div>
