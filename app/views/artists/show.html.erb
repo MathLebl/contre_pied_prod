@@ -110,10 +110,14 @@
             <%= video_tag rails_blob_path(@artist.artist_video), controls: true, class: "col-span-6 row-span-1 col-start-4" %>
           <% else %>
           <% end %>
-          <%= image_tag @artist.show_image1, alt: "alttext", class: "photo col-span-3 row-span-1 col-start-1 transform duration-200 hover:scale-110" %>
-          <%= image_tag @artist.show_image2, alt: "alttext", class: "photo col-span-3 row-span-1 col-start-4 transform duration-200 hover:scale-110" %>
-          <%= image_tag @artist.show_image3, alt: "alttext", class: "photo col-span-3 row-span-1 col-start-7 transform duration-200 hover:scale-110" %>
-          <%= image_tag @artist.show_image4, alt: "alttext", class: "photo col-span-3 row-span-1 col-start-10 transform duration-200 hover:scale-110" %>
+          <a href="<%= "@artist.show_image1" %>" class="photo col-span-3 row-span-1 col-start-1 transform duration-200 hover:scale-110"  data-lightbox="roadtrip"><%= image_tag @artist.show_image1%> </a>
+          <a href="<%= "@artist.show_image2" %>" class="photo col-span-3 row-span-1 col-start-4 transform duration-200 hover:scale-110"  data-lightbox="roadtrip"><%= image_tag @artist.show_image2%> </a>
+          <a href="<%= "@artist.show_image3" %>" class="photo col-span-3 row-span-1 col-start-7 transform duration-200 hover:scale-110"  data-lightbox="roadtrip"><%= image_tag @artist.show_image3%> </a>
+          <a href="<%= "@artist.show_image4" %>" class="photo col-span-3 row-span-1 col-start-10 transform duration-200 hover:scale-110"  data-lightbox="roadtrip"><%= image_tag @artist.show_image4%> </a>
+          <%#= image_tag @artist.show_image1, alt: "alttext", class: "photo col-span-3 row-span-1 col-start-1 transform duration-200 hover:scale-110", type:"button", data_lightbox:"roadtrip" %>
+          <%#= image_tag @artist.show_image2, alt: "alttext", class: "photo col-span-3 row-span-1 col-start-4 transform duration-200 hover:scale-110", type:"button", data_lightbox:"roadtrip" %>
+          <%#= image_tag @artist.show_image3, alt: "alttext", class: "photo col-span-3 row-span-1 col-start-7 transform duration-200 hover:scale-110" %>
+          <%#= image_tag @artist.show_image4, alt: "alttext", class: "photo col-span-3 row-span-1 col-start-10 transform duration-200 hover:scale-110" %>
       </div>
     </div>
     <% if !@events.empty? %>

@@ -2,6 +2,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("stylesheets/application.scss")
+//= require lightbox
 
 // import "bootstrap";
 // import "../stylesheets/application.scss";
