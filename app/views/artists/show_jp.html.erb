@@ -38,6 +38,9 @@
       <% if @artist.soundcloud? %>
       <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.soundcloud %>" target="_blank"><i class="fab fa-soundcloud"></i></a></li>
       <% end %>
+      <% if @artist.slug? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.slug %>" target="_blank"><i class="fas fa-link"></i></a></li>
+      <% end %>
     </ul>
   </div>
   <div class="artist-informations bg-tertiary grid grid-cols-2 gap-4">

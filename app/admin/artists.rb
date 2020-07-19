@@ -13,7 +13,7 @@ ActiveAdmin.register Distribution do
 end
 permit_params :name, :description, :style, :image, :video, :spotify,
               :youtube, :insta, :twitter, :slug, :user_id, :active,
-              :facebook, :soundcloud, :category, :artist_video,
+              :facebook, :soundcloud, :category, :artist_video, :slug,
               :press_file, :banner_image, :show_image1, :show_image2, :show_image3,
               :show_image4, distribution_attributes: [:id, :name, :_destroy],
               credits_attributes: [:id, :name, :_destroy], presse_attributes: [:id, :name, :_destroy],
@@ -57,7 +57,6 @@ permit_params :name, :description, :style, :image, :video, :spotify,
     end
     column :category
     column :style
-    column :active
     actions do |artist|
     item "Voir sur le site", artist_path(artist)
   end
@@ -90,6 +89,7 @@ permit_params :name, :description, :style, :image, :video, :spotify,
       f.input :twitter
       f.input :facebook
       f.input :soundcloud
+      f.input :slug, label: "Site Internet"
       f.inputs do
       f.has_many :distribution, allow_destroy: true do |t|
         t.input :name
@@ -150,6 +150,9 @@ permit_params :name, :description, :style, :image, :video, :spotify,
       row :twitter
       row :facebook
       row :soundcloud
+      row "Site internet" do |art|
+        art.slug
+      end
       row :distribution
       row :credits
       row :presse
