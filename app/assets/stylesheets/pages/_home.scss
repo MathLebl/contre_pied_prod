@@ -1,11 +1,13 @@
 #pif, #pouf {
   height: 27em;
   color: white;
+  transition: .1s ease-in-out;
 }
 
 #paf {
   height: 32em;
   color: white;
+  transition: .1s ease-in-out;
 }
 
 #bigdiv:hover {
@@ -17,17 +19,19 @@
   }
 }
 
+
 #pif:hover {
   // height: 32em;
-  width: 26rem;
+  width: 32rem;
 }
 
 #paf:hover {
-  width: 26rem;
+  width: 30rem;
+
 }
 #pouf:hover {
   // height: 32em;
-  width: 26rem;
+  width: 32rem;
 }
 
 .wraper{
