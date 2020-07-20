@@ -1,13 +1,20 @@
 const buttons = document.querySelectorAll('.info-list > li > button')
 const commentsBlocks = document.querySelectorAll('.info-text')
-console.log(buttons)
-console.log(commentsBlocks)
 const toggleBtn = () => {
+  // buttons.forEach((button, index) => {
+  //   const commentsBlock = commentsBlocks[index];
+  //   button.addEventListener('click', () => {
+  //     commentsBlock.classList.toggle('is-visible');
+  //   });
+  // });
   buttons.forEach((button, index) => {
-  const commentsBlock = commentsBlocks[index];
-  button.addEventListener('click', () => {
-    commentsBlock.classList.toggle('is-visible');
+    document.addEventListener('click', (e) => {
+      if (e.target === button) {
+        commentsBlocks[index].classList.toggle("hidden");
+      } else {
+        commentsBlocks[index].classList.add("hidden");
+      }
+    });
   });
-});
 };
 export { toggleBtn };

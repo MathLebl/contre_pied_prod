@@ -72,28 +72,28 @@
         </ul>
         <div class="info-text-block">
           <% if !@distributions.empty? %>
-          <ul class="info-text is-visible bg-white text-primary p-1 m-2">
+          <ul class="info-text hidden bg-white text-primary p-1 m-2">
             <% @distributions.each do |distrib| %>
               <li><%= distrib.name %></li>
             <% end %>
           </ul>
           <% end %>
           <% if !@credits.empty? %>
-          <ul class="info-text is-visible bg-white text-primary p-1 m-2">
+          <ul class="info-text hidden bg-white text-primary p-1 m-2">
             <% @credits.each do |credit| %>
               <li><%= credit.name %></li>
             <% end %>
           </ul>
           <% end %>
           <% if !@presses.empty? %>
-          <ul class="info-text is-visible bg-white text-primary p-1 m-2">
+          <ul class="info-text hidden bg-white text-primary p-1 m-2">
             <% @presses.each do |press| %>
               <li><%= press.name %></li>
             <% end %>
           </ul>
           <% end %>
           <% if !@partenaires.empty? %>
-          <ul class="info-text is-visible bg-white text-primary p-1 m-2">
+          <ul class="info-text hidden bg-white text-primary p-1 m-2">
             <% @partenaires.each do |parten| %>
               <li><%= parten.name %></li>
             <% end %>
