@@ -11,7 +11,7 @@ end
 ActiveAdmin.register Distribution do
   belongs_to :artist
 end
-permit_params :name, :description, :style, :image, :video, :spotify,
+permit_params :name, :description, :ranking, :style, :image, :video, :spotify,
               :youtube, :insta, :twitter, :slug, :user_id, :active,
               :facebook, :soundcloud, :category, :artist_video, :slug,
               :press_file, :banner_image, :show_image1, :show_image2, :show_image3,
@@ -57,6 +57,7 @@ permit_params :name, :description, :style, :image, :video, :spotify,
     end
     column :category
     column :style
+    column "Classement", :ranking
     actions do |artist|
     item "Voir sur le site", artist_path(artist)
   end
@@ -70,6 +71,7 @@ permit_params :name, :description, :style, :image, :video, :spotify,
       f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.name}", u.id]}
       f.input :name
       f.input :category
+      f.input :ranking, label: "Classement", as: :select, collection: (1..Artist.count)
       f.input :description, :as => :pagedown_text
       f.input :style
       f.input :image, as: :file, label: "Vignette"
