@@ -5,11 +5,12 @@ class ArtistsController < ApplicationController
 
 
   def index
-    if params[:id].present?
-      @artists = Artist.all.select { |artist| artist.id == params[:id].to_i }
-    else
-      @artists = Artist.all
-    end
+    # if params[:id].present?
+    #   @artists = Artist.all.select { |artist| artist.id == params[:id].to_i }
+    # else
+    #   @artists = Artist.all
+    # end
+    @artists = Artist.order(ranking: :asc)
   end
 
   def show
@@ -29,19 +30,19 @@ class ArtistsController < ApplicationController
   end
 
   def jeune_public
-    @artists = Artist.where(category: "jeune_public")
+    @artists = Artist.where(category: "jeune_public").order(ranking: :asc)
     events = Event.where(category: "jeune_public").order('date ASC')
     @events = events.first(8)
   end
 
   def spectacle
-     @artists = Artist.where(category: "spectacle")
+     @artists = Artist.where(category: "spectacle").order(ranking: :asc)
      events = Event.where(category: "spectacle").order('date ASC')
      @events = events.first(8)
   end
 
   def concert
-     @artists = Artist.where(category: "concert")
+     @artists = Artist.where(category: "concert").order(ranking: :asc)
      events = Event.where(category: "concert").order('date ASC')
      @events = events.first(8)
   end
