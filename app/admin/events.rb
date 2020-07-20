@@ -1,7 +1,8 @@
 ActiveAdmin.register Event do
   menu label: "Représentations", priority: 3
   config.sort_order = 'date_asc'
-  permit_params :category, :date, :location, :artist_id, :user_id, :ticket, :city
+  permit_params :category, :date, :location, :artist_id, :user_id, :ticket,
+                :city, :month, :region
 
   action_item :publish, only: :show do
     link_to "retour", admin_events_path
@@ -21,7 +22,9 @@ ActiveAdmin.register Event do
       link_to event.date, admin_event_path(event)
     end
     column "Ville", :city
+    column "Région", :region
     column 'Salle', :location
+    column "Mois", :month
     column  'Reservable ?' do |event|
       "Oui" if event.ticket?
     end
