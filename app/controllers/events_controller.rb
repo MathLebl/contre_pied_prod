@@ -3,15 +3,15 @@ class EventsController < ApplicationController
   before_action :find_event, only: [ :show ]
 
   def index
-    @regions = Event.select(:region).group(:region).collect{|e| e.region}
+    @cities = Event.select(:city).group(:city).collect{|e| e.city}
     @artists = Artist.all
-    @months = Event.select(:month).group(:month).collect{|e| e.month}
-    if params[:region].present?
-      @events = Event.all.select { |event| event.region == params[:region]}
+    @dates = Event.select(:date).group(:date).order('date ASC').collect{|e| e.date}
+    if params[:city].present?
+      @events = Event.all.order('date ASC').select { |event| event.city == params[:city]}
     elsif params[:artist_id].present?
       @events = Event.where(artist_id: params[:artist_id])
-    elsif params[:month].present?
-      @events = Event.where(month: params[:month])
+    elsif params[:date].present?
+      @events = Event.where(date: params[:date])
     else
       @events = Event.all.order('date ASC')
     end
