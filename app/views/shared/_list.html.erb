@@ -1,7 +1,7 @@
 <div class="list-wraper flex justify-center items-center">
   <div class="<%= "grid grid-cols-2 gap-4" if @artists.count > 1 %> m-8">
     <% @artists.each do |artist|%>
-    <%= link_to artist.category == "jeune_public" ? show_jp_artist_path(artist) : artist_path(artist)  do %>
+    <%= link_to artist.active == true ? (artist.category == "jeune_public" ? show_jp_artist_path(artist) : artist_path(artist)) : "https://vever-amiot.pagesperso-orange.fr/bonhomme.GIF"  do %>
     <div class="list-card transform duration-200 <%= "hover:scale-110" if artist.active == true %> <%="inactive" if artist.active == false %> <%="jeunesse" if artist.category == "jeune_public" %>">
       <div class="card-body p-8 relative">
         <h5 class="card-name bg-white text-primary font-bold p-2 mb-4" style="width: fit-content"><%= artist.name %></h5>
