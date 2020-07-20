@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_18_151730) do
+ActiveRecord::Schema.define(version: 2020_07_20_123425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_151730) do
     t.string "facebook"
     t.string "soundcloud"
     t.integer "category"
+    t.integer "ranking"
     t.index ["user_id"], name: "index_artists_on_user_id"
   end
 
