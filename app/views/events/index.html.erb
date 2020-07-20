@@ -9,9 +9,9 @@
 
 <form class="grid grid-flow-col grid-cols-4 grid-rows-1 gap-2 m-auto lg:align-bottom">
   <%= form_with url: events_path, method: :get, local: true do |form| %>
-  <%= form.select :city, @cities, {:include_blank => 'Où ?'}, {:class => 'shadow appearance-none border rounded py-2 px-4 m-2 font-bold text-gray-700 leading-tight focus:outline-none focus:shadow-outline'} %>
+  <%= form.select :region, @regions, {:include_blank => 'Où ?'}, {:class => 'shadow appearance-none border rounded py-2 px-4 m-2 font-bold text-gray-700 leading-tight focus:outline-none focus:shadow-outline'} %>
   <%= form.collection_select :artist_id, @artists, :id, :name, {:include_blank => 'Qui ?'}, {:class => 'shadow appearance-none border rounded py-2 px-4 m-2 font-bold text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}  %>
-  <%= form.select :date, @dates, {:include_blank => 'Quand ?'}, {:class => 'shadow appearance-none border rounded py-2 px-4 m-2 font-bold text-gray-700 leading-tight focus:outline-none focus:shadow-outline'} %>
+  <%= form.select :month, @months, {:include_blank => 'Quand ?'}, {:class => 'shadow appearance-none border rounded py-2 px-4 m-2 font-bold text-gray-700 leading-tight focus:outline-none focus:shadow-outline'} %>
   <%= form.submit value:"Recherche", class:'bg-primary hover:bg-secondary hover:text-primary text-white font-bold py-2 px-4 m-2 rounded focus:outline-none focus:shadow-outline' %>
   <% end %>
 </form>
