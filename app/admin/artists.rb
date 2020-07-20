@@ -125,6 +125,9 @@ permit_params :name, :description, :ranking, :style, :image, :video, :spotify,
     attributes_table do
       row :name
       row :category
+      row "Classement" do |art|
+        art.ranking
+      end
       row :description
       row :style
       row "Vignette" do |art|
