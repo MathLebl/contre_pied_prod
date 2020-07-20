@@ -17,7 +17,7 @@
           <!-- Retour -->
         <%# end %>
       <%# end %>
-      <ul class="social-links flex absolute" style="bottom: -2.5rem; right: 22rem">
+      <ul class="social-links flex absolute" style="bottom: -2.5rem; right: 4rem">
         <% if @artist.insta? %>
           <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.insta %>" target="_blank"><i class="fab fa-instagram"></i></a></li>
         <% end %>
@@ -115,22 +115,22 @@
           <% end %>
           <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-1 transform duration-200 hover:scale-110">
             <%= link_to @artist.show_image1, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-              <%= image_tag @artist.show_image1, class: 'absolute h-full w-full object-cover' %>
+              <%= image_tag @artist.show_image1, class: 'absolute h-full w-full object-contain' %>
             <%end%>
           </div>
           <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-4 transform duration-200 hover:scale-110">
             <%= link_to @artist.show_image2, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-              <%= image_tag @artist.show_image2, class: 'absolute h-full w-full object-cover' %>
+              <%= image_tag @artist.show_image2, class: 'absolute h-full w-full object-contain' %>
             <%end%>
           </div>
           <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-7 transform duration-200 hover:scale-110">
             <%= link_to @artist.show_image3, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-              <%= image_tag @artist.show_image3, class: 'absolute h-full w-full object-cover' %>
+              <%= image_tag @artist.show_image3, class: 'absolute h-full w-full object-contain' %>
             <%end%>
           </div>
           <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-10 transform duration-200 hover:scale-110">
             <%= link_to @artist.show_image4, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-              <%= image_tag @artist.show_image4, class: 'absolute h-full w-full object-cover' %>
+              <%= image_tag @artist.show_image4, class: 'absolute h-full w-full object-contain' %>
             <%end%>
           </div>
       </div>
