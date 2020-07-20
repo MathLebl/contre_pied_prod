@@ -20,4 +20,7 @@ class PagesController < ApplicationController
   def boutique
   end
 
+  def retraite
+  end
+
 end

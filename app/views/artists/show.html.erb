@@ -1,152 +1,164 @@
 <%= stylesheet_link_tag 'show', media: 'all' %>
-  <div class="artist-page">
-    <div class="bg-secondary h-40 w-5/6 z-0 absolute" style="left: 7.5%; bottom: 25%">
-    </div>
-    <div class="banner-2 z-10 relative my-16" style="background-image: url('<%= image_path url_for (@artist.banner_image) %>');">
-      <h1 class="absolute text-white text-3xl font-bold bg-white text-primary px-1 z-10"><%= @artist.name %></h1>
-      <%# if   @artist.category == "spectacle"%>
-        <%#= link_to spectacle_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold mt-4 ml-4" do %>
-          <!-- Retour -->
-        <%# end %>
-      <%# elsif @artist.category == "concert"%>
-        <%#= link_to concert_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold mt-4 ml-4" do %>
-          <!-- Retour -->
-        <%# end %>
-      <%# else %>
-        <%#= link_to jeune_public_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold mt-4 ml-4" do %>
-          <!-- Retour -->
-        <%# end %>
-      <%# end %>
-      <ul class="social-links flex absolute" style="bottom: -2.5rem; right: 4rem">
-        <% if @artist.insta? %>
-          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.insta %>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+<div class="artist-page">
+  <div class="bg-secondary h-40 w-5/6 z-0 absolute" style="left: 7.5%; bottom: 25%">
+  </div>
+  <div class="banner-2 z-10 relative my-16" style="background-image: url('<%= image_path url_for (@artist.banner_image) %>');">
+    <h1 class="absolute text-white text-3xl font-bold bg-white text-primary px-1 z-10"><%= @artist.name %></h1>
+    <%# if   @artist.category == "spectacle"%>
+    <%#= link_to spectacle_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold mt-4 ml-4" do %>
+    <!-- Retour -->
+    <%# end %>
+    <%# elsif @artist.category == "concert"%>
+    <%#= link_to concert_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold mt-4 ml-4" do %>
+    <!-- Retour -->
+    <%# end %>
+    <%# else %>
+    <%#= link_to jeune_public_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold mt-4 ml-4" do %>
+    <!-- Retour -->
+    <%# end %>
+    <%# end %>
+    <ul class="social-links flex absolute" style="bottom: -2.5rem; right: 4rem">
+      <% if @artist.insta? %>
+      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.insta %>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+      <% end %>
+      <% if @artist.facebook? %>
+      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.facebook %>" target="_blank"><i class="fab fa-facebook"></i></a></li>
+      <% end %>
+      <% if @artist.twitter? %>
+      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.twitter %>" target="_blank"><i class="fab fa-twitter"></i></a></li>
+      <% end %>
+      <% if @artist.spotify? %>
+      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.spotify %>" target="_blank"><i class="fab fa-spotify"></i></a></li>
+      <% end %>
+      <% if @artist.youtube? %>
+      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.youtube %>" target="_blank"><i class="fab fa-youtube"></i></a></li>
+      <% end %>
+      <% if @artist.soundcloud? %>
+      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.soundcloud %>" target="_blank"><i class="fab fa-soundcloud"></i></a></li>
+      <% end %>
+      <% if @artist.slug? %>
+      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.slug %>" target="_blank"><i class="fas fa-link"></i></a></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="artist-informations bg-primary grid grid-cols-2 gap-4">
+    <div class="info-block col-span-1 flex justify-center items-center pl-40">
+      <ul class="info-list flex flex-col">
+        <% if !@distributions.empty? %>
+        <li>
+          <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="distri-btn">Distribution</button>
+        </li>
         <% end %>
-        <% if @artist.facebook? %>
-          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.facebook %>" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        <% if !@credits.empty? %>
+        <li>
+          <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="credits-text">Crédit</button>
+        </li>
         <% end %>
-        <% if @artist.twitter? %>
-          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.twitter %>" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <% if !@presses.empty? %>
+        <li>
+          <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="presse-text">Presse</button>
+        </li>
         <% end %>
-        <% if @artist.spotify? %>
-          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.spotify %>" target="_blank"><i class="fab fa-spotify"></i></a></li>
+        <% if !@partenaires.empty? %>
+        <li>
+          <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="part-btn">Partenaires</button>
+        </li>
         <% end %>
-        <% if @artist.youtube? %>
-          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.youtube %>" target="_blank"><i class="fab fa-youtube"></i></a></li>
-        <% end %>
-        <% if @artist.soundcloud? %>
-          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.soundcloud %>" target="_blank"><i class="fab fa-soundcloud"></i></a></li>
-        <% end %>
-        <% if @artist.slug? %>
-          <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.slug %>" target="_blank"><i class="fas fa-link"></i></a></li>
+        <% if @artist.press_file.attached? %>
+        <li>
+          <%= link_to "Dossier de Presse",@artist.press_file, type:'button', target: :_blank, class:"bg-white text-primary font-bold p-1 m-2 w-40 hover:bg-secondary transform duration-200 hover:scale-110" %>
+        </li>
         <% end %>
       </ul>
-    </div>
-    <div class="artist-informations bg-primary grid grid-cols-2 gap-4">
-      <div class="info-block col-span-1 flex justify-center items-center">
-        <ul class="info-list flex flex-col">
-          <% if !@distributions.empty? %>
-            <li>
-              <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="distri-btn">Distribution</button>
-            </li>
-          <% end %>
-          <% if !@credits.empty? %>
-            <li>
-              <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="credits-text">Crédit</button>
-            </li>
-          <% end %>
-          <% if !@presses.empty? %>
-            <li>
-              <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="presse-text">Presse</button>
-            </li>
-          <% end %>
-          <% if !@partenaires.empty? %>
-            <li>
-              <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="part-btn">Partenaires</button>
-            </li>
-          <% end %>
-          <% if @artist.press_file.attached? %>
-            <li>
-              <%= link_to "Dossier de Presse",@artist.press_file, type:'button', target: :_blank, class:"bg-white text-primary font-bold p-1 m-2 w-40 hover:bg-secondary transform duration-200 hover:scale-110" %>
-            </li>
+      <div class="info-text-block relative w-full h-48 ml-8">
+        <% if !@distributions.empty? %>
+        <ul class="info-text absolute hidden bg-white text-primary p-1 m-2">
+          <% @distributions.each do |distrib| %>
+          <li><%= distrib.name %></li>
           <% end %>
         </ul>
-        <div class="info-text-block relative mb-16">
-          <% if !@distributions.empty? %>
-          <ul class="info-text absolute hidden bg-white text-primary p-1 m-2">
-            <% @distributions.each do |distrib| %>
-              <li><%= distrib.name %></li>
-            <% end %>
-          </ul>
+        <% end %>
+        <% if !@credits.empty? %>
+        <ul class="info-text absolute hidden bg-white text-primary p-1 m-2">
+          <% @credits.each do |credit| %>
+          <li><%= credit.name %></li>
           <% end %>
-          <% if !@credits.empty? %>
-          <ul class="info-text absolute hidden bg-white text-primary p-1 m-2">
-            <% @credits.each do |credit| %>
-              <li><%= credit.name %></li>
-            <% end %>
-          </ul>
+        </ul>
+        <% end %>
+        <% if !@presses.empty? %>
+        <ul class="info-text absolute hidden bg-white text-primary p-1 m-2">
+          <% @presses.each do |press| %>
+          <li><%= press.name %></li>
           <% end %>
-          <% if !@presses.empty? %>
-          <ul class="info-text absolute hidden bg-white text-primary p-1 m-2">
-            <% @presses.each do |press| %>
-              <li><%= press.name %></li>
-            <% end %>
-          </ul>
+        </ul>
+        <% end %>
+        <% if !@partenaires.empty? %>
+        <ul class="info-text absolute hidden bg-white text-primary p-1 m-2">
+          <% @partenaires.each do |parten| %>
+          <li><%= parten.name %></li>
           <% end %>
-          <% if !@partenaires.empty? %>
-          <ul class="info-text absolute hidden bg-white text-primary p-1 m-2">
-            <% @partenaires.each do |parten| %>
-              <li><%= parten.name %></li>
-            <% end %>
-          </ul>
-          <% end %>
-        </div>
-      </div>
-      <div class="description bg-white text-primary p-8 text-sm my-16 mr-40 text-justify col-span-1 relative">
-        <p><%= @artist.description %></p>
+        </ul>
+        <% end %>
       </div>
     </div>
-    <div class="centrale">
-      <div class="dice mx-auto my-16 grid grid-cols-12 grid-rows-2 row-gap-16 col-gap-4" style="height: 35rem;">
-          <% if @artist.video? %>
-            <iframe class="col-span-6 row-span-1 col-start-4" width="100%" height="100%" src="<%= @artist.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <% elsif @artist.artist_video.attached? %>
-            <%= video_tag rails_blob_path(@artist.artist_video), controls: true, class: "col-span-6 row-span-1 col-start-4" %>
-          <% else %>
-          <% end %>
-          <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-1 transform duration-200 hover:scale-110">
-            <%= link_to @artist.show_image1, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-              <%= image_tag @artist.show_image1, class: 'absolute h-full w-full object-contain' %>
-            <%end%>
-          </div>
-          <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-4 transform duration-200 hover:scale-110">
-            <%= link_to @artist.show_image2, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-              <%= image_tag @artist.show_image2, class: 'absolute h-full w-full object-contain' %>
-            <%end%>
-          </div>
-          <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-7 transform duration-200 hover:scale-110">
-            <%= link_to @artist.show_image3, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-              <%= image_tag @artist.show_image3, class: 'absolute h-full w-full object-contain' %>
-            <%end%>
-          </div>
-          <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-10 transform duration-200 hover:scale-110">
-            <%= link_to @artist.show_image4, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-              <%= image_tag @artist.show_image4, class: 'absolute h-full w-full object-contain' %>
-            <%end%>
-          </div>
-      </div>
+    <div class="description bg-white text-primary p-8 text-sm my-16 mr-40 text-justify col-span-1 relative">
+      <p><%= @artist.description %></p>
     </div>
-    <% if !@events.empty? %>
-      <div class="wraper relative">
-        <!-- Section Agenda -->
-          <div class="table-title px-4 bg-primary inline-block absolute top-0 z-20">
-            <h2 class="text-2xl font-bold">Agenda</h2>
-          </div>
-          <table class="table-artist z-10">
-            <%= render 'shared/event-table-artist' %>
-          </table>
-        <div class="bg-primary w-full z-0 absolute bottom-0" style="height: 50%">
-        </div>
-      </div>
-    <% end %>
   </div>
+  <div class="centrale">
+    <div class="dice mx-auto my-16 grid grid-cols-12 grid-rows-2 row-gap-16 col-gap-4" style="height: 35rem;">
+      <% if @artist.video? %>
+      <iframe class="col-span-6 row-span-1 col-start-4" width="100%" height="100%" src="<%= @artist.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <% elsif @artist.artist_video.attached? %>
+      <%= video_tag rails_blob_path(@artist.artist_video), controls: true, class: "col-span-6 row-span-1 col-start-4" %>
+      <% else %>
+      <% end %>
+      <% if @artist.show_image1.attached? %>
+      <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-1 transform duration-200 hover:scale-110">
+        <%= link_to @artist.show_image1, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+        <%= image_tag @artist.show_image1, class: 'absolute h-full w-full object-contain' %>
+        <% end %>
+      </div>
+      <% else %>
+      <% end %>
+      <% if @artist.show_image1.attached? %>
+      <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-4 transform duration-200 hover:scale-110">
+        <%= link_to @artist.show_image2, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+        <%= image_tag @artist.show_image2, class: 'absolute h-full w-full object-contain' %>
+        <% end %>
+      </div>
+      <% else %>
+      <% end %>
+      <% if @artist.show_image1.attached? %>
+      <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-7 transform duration-200 hover:scale-110">
+        <%= link_to @artist.show_image3, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+        <%= image_tag @artist.show_image3, class: 'absolute h-full w-full object-contain' %>
+        <% end %>
+      </div>
+      <% else %>
+      <% end %>
+      <% if @artist.show_image1.attached? %>
+      <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-10 transform duration-200 hover:scale-110">
+        <%= link_to @artist.show_image4, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+        <%= image_tag @artist.show_image4, class: 'absolute h-full w-full object-contain' %>
+        <% end %>
+      </div>
+      <% else %>
+      <% end %>
+    </div>
+  </div>
+  <% if !@events.empty? %>
+  <div class="wraper relative">
+    <!-- Section Agenda -->
+    <div class="table-title px-4 bg-primary inline-block absolute top-0 z-20">
+      <h2 class="text-2xl font-bold">Agenda</h2>
+    </div>
+    <table class="table-artist z-10">
+      <%= render 'shared/event-table-artist' %>
+    </table>
+    <div class="bg-primary w-full z-0 absolute bottom-0" style="height: 50%">
+    </div>
+  </div>
+  <% end %>
+</div>
 

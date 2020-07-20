@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'legals', to: 'pages#legals'
   get 'contacts', to: 'pages#contacts'
   get 'boutique', to: 'pages#boutique'
+  get 'retraite', to: 'pages#retraite'
 
   root to: 'pages#home'
 
