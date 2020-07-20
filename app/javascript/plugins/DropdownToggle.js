@@ -1,15 +1,19 @@
 const buttonDrop = document.getElementById('dropdown-btn');
+const buttonDrop2 = buttonDrop.childNodes[1].childNodes[0];
 const DropDownBlock = document.getElementById('dropdown-block');
-console.log(buttonDrop);
-console.log(DropDownBlock);
+console.log(buttonDrop2);
 
 let isVisible = false;
-console.log(isVisible)
 
 const toggleNav = () => {
-  buttonDrop.addEventListener('click', () => {
-    isVisible = !isVisible;
-    isVisible ? DropDownBlock.classList.add('is-visible') : DropDownBlock.classList.remove('is-visible');
+  document.addEventListener('click', (e) => {
+    if (e.target === buttonDrop) {
+      DropDownBlock.classList.toggle('is-visible');
+    } else if (e.target === buttonDrop2) {
+      DropDownBlock.classList.toggle('is-visible');
+    } else {
+      DropDownBlock.classList.remove('is-visible');
+    }
   });
 };
 export { toggleNav };
