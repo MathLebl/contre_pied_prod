@@ -7,4 +7,9 @@ module ApplicationHelper
       image_url("https://images.pexels.com/photos/1191531/pexels-photo-1191531.jpeg?cs=srgb&dl=art-bijoux-bracelet-bracelets-1191531.jpg&fm=jpg")
     end
   end
+
+  def markdown(text)
+    options = [ :hard_wrap, :autolink, :no_intra_emphasis]
+    raw Markdown.new(text, *options).to_html
+  end
 end
