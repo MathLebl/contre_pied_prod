@@ -1,0 +1,5 @@
+meta_product_name: "Contrepied Productions"
+meta_title: "Contrepied Productions"
+meta_description: "Contrepied Productions est une société de production évoluant dans le monde du spectacle vivant"
+meta_image: "bandeau-spectacles.jpg" # should exist in `app/assets/images/`
+twitter_account: "@ContrepiedProd"   # required for Twitter Cards
