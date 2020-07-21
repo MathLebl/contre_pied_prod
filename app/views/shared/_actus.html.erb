@@ -1,9 +1,9 @@
-<div class="actus-wraper relative">
-  <div class="hello my-8">
+<div class="actus-wraper my-12 relative">
+  <div class="hello">
     <div class="bg-secondary text-2xl text-primary font-bold absolute px-4" style="top: -1rem; right: 18rem">Actus</div>
     <% @actus.each do |actu| %>
     <% if actu.published_at? %>
-    <div class="card-container mb-2">
+    <div class="card-container my-2">
       <div class="actu-card">
         <div class="actu-illustration">
           <%= image_tag actu.featured_image if actu.featured_image.attached? %>

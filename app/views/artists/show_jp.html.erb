@@ -43,8 +43,8 @@
       <% end %>
     </ul>
   </div>
-  <div class="artist-informations bg-tertiary grid grid-cols-2 gap-4">
-    <div class="info-block col-span-1 flex justify-center items-center">
+  <div class="artist-informations bg-primary grid grid-cols-2 gap-4">
+    <div class="info-block col-span-1 flex justify-center items-center pl-32">
       <ul class="info-list flex flex-col">
         <% if !@distributions.empty? %>
         <li>
@@ -74,28 +74,28 @@
       </ul>
       <div class="info-text-block relative w-full h-48 ml-8">
         <% if !@distributions.empty? %>
-        <ul class="info-text absolute hidden bg-white text-primary p-1 m-2">
+        <ul class="info-text absolute hidden bg-white text-primary p-4 m-2">
           <% @distributions.each do |distrib| %>
           <li><%= distrib.name %></li>
           <% end %>
         </ul>
         <% end %>
         <% if !@credits.empty? %>
-        <ul class="info-text absolute hidden bg-white text-primary p-1 m-2">
+        <ul class="info-text absolute hidden bg-white text-primary p-4 m-2">
           <% @credits.each do |credit| %>
           <li><%= credit.name %></li>
           <% end %>
         </ul>
         <% end %>
         <% if !@presses.empty? %>
-        <ul class="info-text absolute hidden bg-white text-primary p-1 m-2">
+        <ul class="info-text absolute hidden bg-white text-primary p-4 m-2">
           <% @presses.each do |press| %>
           <li><%= press.name %></li>
           <% end %>
         </ul>
         <% end %>
         <% if !@partenaires.empty? %>
-        <ul class="info-text absolute hidden bg-white text-primary p-1 m-2">
+        <ul class="info-text absolute hidden bg-white text-primary p-4 m-2">
           <% @partenaires.each do |parten| %>
           <li><%= parten.name %></li>
           <% end %>
@@ -103,7 +103,7 @@
         <% end %>
       </div>
     </div>
-    <div class="description bg-white text-primary p-8 text-sm my-16 mr-40 text-justify col-span-1 relative">
+    <div class="description bg-white text-primary p-8 text-sm my-16 mr-32 text-justify col-span-1 relative">
       <p><%= @artist.description %></p>
     </div>
   </div>
