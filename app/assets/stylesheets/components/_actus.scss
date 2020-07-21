@@ -8,9 +8,11 @@
 }
 
 .card-container{
-  &:not(:first-child){
-    margin-left: 2em;
-  }
+    margin: 0 1rem;
+}
+
+.card-container:first-child{
+    margin-left: 0;
 }
 
 .card-container:last-child{
@@ -56,8 +58,9 @@
 .hello{
   display: flex;
   justify-content: space-between;
-  overflow-x: scroll;
+  overflow-x: visible;
   overflow-y: hidden;
+  margin: 0 2rem;
 }
 
 .hello::-webkit-scrollbar {
