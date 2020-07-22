@@ -1,5 +1,5 @@
-<div class="navbar navbar-expand-sm sticky-top flex justify-between">
-  <div class="bg-primary text-white flex items-center justify-center h-24 px-10">
+<div class="navbar navbar-expand-sm sticky-top sm:flex sm:justify-between">
+  <div class="bg-primary text-white flex items-center justify-center py-1 sm:h-24 sm:px-10">
     <%= link_to root_path, class: "navbar-brand" do %>
      <%= image_tag 'logo', class:"w-32, h-16" %>
     <% end %>
@@ -11,27 +11,27 @@
 
 
   <div class="collapse navbar-collapse flex items-center" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto flex">
+    <ul class="navbar-nav sm:mr-auto m-auto flex">
       <% if user_signed_in? %>
       <% if current_user.admin %>
-      <li class="nav-item bg-primary text-white mx-2 py-1 px-3 hover:bg-secondary hover:text-primary">
+      <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary">
         <%= link_to "Gestion", admin_root_path, class: "nav-link" %>
       </li>
       <% end %>
-      <li class="nav-item bg-primary text-white mx-2 py-1 px-3 hover:bg-secondary hover:text-primary">
+      <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary">
         <%= link_to "Nos Artistes", artists_path, class: "nav-link" %>
       </li>
-      <li class="nav-item bg-primary text-white mx-2 py-1 px-3 hover:bg-secondary hover:text-primary">
+      <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary">
         <%= link_to "Agenda", events_path, class: "nav-link" %>
       </li>
-      <li class="nav-item bg-primary text-white mx-2 py-1 px-3 hover:bg-secondary hover:text-primary">
+      <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary">
         <%= link_to "A propos", about_path, class: "nav-link" %>
       </li>
-      <li class="nav-item bg-primary text-white mx-2 py-1 px-3 hover:bg-secondary hover:text-primary">
+      <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary">
         <%= link_to "E-boutique", boutique_path, class: "nav-link" %>
       </li>
       <li class="dropdown inline-block relative">
-        <button class="nav-item text-primary ml-2 mr-3 p-1 hover:text-secondary" id="dropdown-btn">
+        <button class="nav-item text-primary sm:ml-2 sm:mr-3 p-1 hover:text-secondary" id="dropdown-btn">
           <span class="mr-1"><i class="fas fa-ellipsis-v"></i></span>
         </button>
         <ul class="dropdown-menu z-20 absolute right-0 m-2" id="dropdown-block">
@@ -44,20 +44,20 @@
         </ul>
       </li>
       <% else %>
-      <li class="nav-item bg-primary text-white mx-2 py-1 px-3 hover:bg-secondary hover:text-primary">
+      <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary">
         <%= link_to "Nos Artistes", artists_path, class: "nav-link" %>
       </li>
-      <li class="nav-item bg-primary text-white mx-2 py-1 px-3 hover:bg-secondary hover:text-primary">
+      <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary">
         <%= link_to "Agenda", events_path, class: "nav-link" %>
       </li>
-      <li class="nav-item bg-primary text-white mx-2 py-1 px-3 hover:bg-secondary hover:text-primary">
+      <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary">
         <%= link_to "A propos", about_path, class: "nav-link" %>
       </li>
-      <li class="nav-item bg-primary text-white mx-2 py-1 px-3 hover:bg-secondary hover:text-primary">
+      <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary">
         <%= link_to "E-boutique", boutique_path, class: "nav-link" %>
       </li>
       <li class="dropdown inline-block relative">
-        <button class="nav-item text-primary mx-2 py-1 px-3 hover:text-secondary" id="dropdown-btn">
+        <button class="nav-item text-primary sm:ml-2 sm:mr-3 p-1 hover:text-secondary" id="dropdown-btn">
           <span class="mr-1"><i class="fas fa-ellipsis-v"></i></span>
         </button>
         <ul class="dropdown-menu absolute right-0 m-2 z-20" id="dropdown-block">

@@ -82,6 +82,14 @@ tr:hover .table-name a {
   // padding-top: 16px;
 }
 
+@media (max-width: 640px) {
+  /* For mobile phones: */
+  .table-title {
+    right: 1rem;
+    top: -2rem;
+  }
+}
+
 .table-title h2 {
   // font-size: 48px;
   // font-weight: bold;

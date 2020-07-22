@@ -43,32 +43,32 @@
       <% end %>
     </ul>
   </div>
-  <div class="artist-informations bg-primary grid grid-cols-2 gap-4">
-    <div class="info-block col-span-1 flex justify-center items-center pl-32">
+  <div class="artist-informations bg-tertiary sm:grid sm:grid-cols-2 sm:gap-4">
+    <div class="info-block sm:col-span-1 flex justify-center items-center mx-auto sm:pl-32">
       <ul class="info-list flex flex-col">
         <% if !@distributions.empty? %>
         <li>
-          <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="distri-btn">Distribution</button>
+          <button class="bg-white text-tertiary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="distri-btn">Distribution</button>
         </li>
         <% end %>
         <% if !@credits.empty? %>
         <li>
-          <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="credits-text">Crédit</button>
+          <button class="bg-white text-tertiary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="credits-text">Crédit</button>
         </li>
         <% end %>
         <% if !@presses.empty? %>
         <li>
-          <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="presse-text">Presse</button>
+          <button class="bg-white text-tertiary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="presse-text">Presse</button>
         </li>
         <% end %>
         <% if !@partenaires.empty? %>
         <li>
-          <button class="bg-white text-primary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="part-btn">Partenaires</button>
+          <button class="bg-white text-tertiary font-bold p-1 m-2 hover:bg-secondary transform duration-200 hover:scale-110" id="part-btn">Partenaires</button>
         </li>
         <% end %>
         <% if @artist.press_file.attached? %>
         <li>
-          <%= link_to "Dossier de Presse",@artist.press_file, type:'button', target: :_blank, class:"bg-white text-primary font-bold p-1 m-2 w-40 hover:bg-secondary transform duration-200 hover:scale-110" %>
+          <%= link_to "Dossier de Presse",@artist.press_file, type:'button', target: :_blank, class:"bg-white text-tertiary font-bold p-1 m-2 w-40 hover:bg-secondary transform duration-200 hover:scale-110" %>
         </li>
         <% end %>
       </ul>
@@ -103,20 +103,20 @@
         <% end %>
       </div>
     </div>
-    <div class="description bg-white text-primary p-8 text-sm my-16 mr-32 text-justify col-span-1 relative">
+    <div class="description bg-white text-primary sm:p-8 p-2 text-sm sm:my-16 my-2 mx-auto sm:mr-32 text-justify sm:col-span-1 relative">
       <p><%= markdown(@artist.description) %></p>
     </div>
   </div>
   <div class="centrale">
-    <div class="dice mx-auto my-16 grid grid-cols-12 grid-rows-2 row-gap-16 col-gap-4" style="height: 35rem;">
+    <div class="dice mx-auto my-16 grid sm:grid-cols-12 grid-cols-1 sm:grid-rows-2 grid-rows-10 sm:row-gap-16 row-gap-8 sm:col-gap-4 col-gap-1">
       <% if @artist.video? %>
-      <iframe class="col-span-6 row-span-1 col-start-4" width="100%" height="100%" src="<%= @artist.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="sm:col-span-6 sm:row-span-1 sm:col-start-4 sm:w-full mx-auto col-span-1 row-span-2 col-start-1" src="<%= @artist.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <% elsif @artist.artist_video.attached? %>
-      <%= video_tag rails_blob_path(@artist.artist_video), controls: true, class: "col-span-6 row-span-1 col-start-4" %>
+      <%= video_tag rails_blob_path(@artist.artist_video), controls: true, class: "sm:col-span-6 sm:row-span-1 sm:col-start-4 mx-auto col-span-1 row-span-2 col-start-1" %>
       <% else %>
       <% end %>
       <% if @artist.show_image1.attached? %>
-      <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-1 transform duration-200 hover:scale-110">
+      <div class="relative mx-auto w-56 h-40 sm:col-span-3 sm:row-span-1 sm:col-start-1 col-span-1 row-span-2 transform duration-200 hover:scale-110">
         <%= link_to @artist.show_image1, class: 'photo', data: { lightbox: "gallery-show"}  do %>
         <%= image_tag @artist.show_image1, class: 'absolute h-full w-full object-contain' %>
         <% end %>
@@ -124,7 +124,7 @@
       <% else %>
       <% end %>
       <% if @artist.show_image1.attached? %>
-      <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-4 transform duration-200 hover:scale-110">
+      <div class="relative mx-auto w-56 h-40 sm:col-span-3 sm:row-span-1 sm:col-start-4 col-span-1 row-span-2  transform duration-200 hover:scale-110">
         <%= link_to @artist.show_image2, class: 'photo', data: { lightbox: "gallery-show"}  do %>
         <%= image_tag @artist.show_image2, class: 'absolute h-full w-full object-contain' %>
         <% end %>
@@ -132,7 +132,7 @@
       <% else %>
       <% end %>
       <% if @artist.show_image1.attached? %>
-      <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-7 transform duration-200 hover:scale-110">
+      <div class="relative mx-auto w-56 h-40 sm:col-span-3 sm:row-span-1 sm:col-start-7 col-span-1 row-span-2  transform duration-200 hover:scale-110">
         <%= link_to @artist.show_image3, class: 'photo', data: { lightbox: "gallery-show"}  do %>
         <%= image_tag @artist.show_image3, class: 'absolute h-full w-full object-contain' %>
         <% end %>
@@ -140,7 +140,7 @@
       <% else %>
       <% end %>
       <% if @artist.show_image1.attached? %>
-      <div class="relative w-56 h-40 col-span-3 row-span-1 col-start-10 transform duration-200 hover:scale-110">
+      <div class="relative mx-auto w-56 h-40 sm:col-span-3 sm:row-span-1 sm:col-start-10 col-span-1 row-span-2  transform duration-200 hover:scale-110">
         <%= link_to @artist.show_image4, class: 'photo', data: { lightbox: "gallery-show"}  do %>
         <%= image_tag @artist.show_image4, class: 'absolute h-full w-full object-contain' %>
         <% end %>
@@ -152,10 +152,10 @@
   <% if !@events.empty? %>
   <div class="wraper relative">
     <!-- Section Agenda -->
-    <div class="table-title p-4 bg-primary inline-block absolute top-0 z-20">
-      <h2 class="text-3xl font-bold">Agenda</h2>
+    <div class="table-title px-4 bg-tertiary inline-block absolute top-0 z-20">
+      <h2 class="text-2xl font-bold">Agenda</h2>
     </div>
-    <table class="table-artist z-10">
+    <table class="table-artist w-full sm:mx-20 z-10">
       <%= render 'shared/event-table-artist' %>
     </table>
     <div class="bg-tertiary w-full z-0 absolute bottom-0" style="height: 50%">
