@@ -1,32 +1,7 @@
-.actus-wraper {
-  margin: 5em 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: $primary;
-  padding: 2em 0;
-}
 
-.card-container{
-    margin: 0 1rem;
-}
 
-.card-container:first-child{
-    margin-left: 0;
-}
 
-.card-container:last-child{
-    margin-right: 2em;
-}
 
-.actu-card {
-  display: flex;
-  background: #ffffff;
-  height: 250px;
-  width: 450px;
-  padding: 0.5em;
-
-}
 
 .actu-illustration {
   height: 100%;
@@ -55,6 +30,51 @@
   color: $primary;
   font-weight: bold;
 }
+
+
+
+@media (max-width: 640px) {
+  /* For mobile phones: */
+  .hello {
+    display: block;
+  }
+  .actu-title{
+    top: -2rem;
+    right: 8rem;
+  }
+  .actu-card {
+  display: flex;
+  background: #ffffff;
+  width: 100%;
+  padding: 0.5em;
+}
+.card-container{
+    margin: 0;
+}
+.actus-wraper {
+  margin: 5em 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: $primary;
+  padding: 2em 0;
+  width:100%;
+}
+
+}
+
+
+@media (min-width: 640px) {
+  .actus-wraper {
+  margin: 5em 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: $primary;
+  padding: 2em 0;
+}
+
+
 .hello{
   display: flex;
   justify-content: space-between;
@@ -62,6 +82,31 @@
   overflow-y: hidden;
   margin: 0 2rem;
 }
+
+.actu-card {
+  display: flex;
+  background: #ffffff;
+  height: 250px;
+  width: 450px;
+  padding: 0.5em;
+
+}
+.card-container{
+    margin: 0 1rem;
+}
+
+.card-container:first-child{
+    margin-left: 0;
+}
+
+.card-container:last-child{
+    margin-right: 2em;
+}
+
+.actu-title{
+    top: -2rem;
+    right: 18rem;
+  }
 
 .hello::-webkit-scrollbar {
   width: 12px;
@@ -74,6 +119,13 @@
   background: #F7C0D2;
   border-radius: 10px;
 }
+}
+
+
+
+
+
+
 
 
 // ::-webkit-scrollbar {

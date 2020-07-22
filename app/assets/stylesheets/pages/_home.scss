@@ -1,14 +1,34 @@
+@media (max-width: 640px) {
+  /* For mobile phones: */
+#paf {
+  height: 15em;
+  width: 100%;
+  color: white;
+  transition: none;
+}
+
+#pif, #pouf {
+  height: 15em;
+  color: white;
+  transition: none;
+}
+}
+
+
+@media (min-width: 640px) {
+
 #pif, #pouf {
   height: 27em;
   color: white;
   transition: .7s ease-in-out;
 }
-
 #paf {
   height: 32em;
   color: white;
   transition: .7s ease-in-out;
 }
+}
+
 
 #bigdiv:hover {
   .categoryimg {
