@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag 'show', media: 'all' %>
 <div class="artist-page">
-  <div class="bg-secondary h-40 w-5/6 z-0 absolute" style="left: 7.5%; bottom: 25%">
+  <div class="bg-secondary h-40 w-5/6 z-0 absolute hidden sm:inline-block" style="left: 7.5%; bottom: 25%">
   </div>
   <div class="banner-2 z-10 relative my-16" style="background-image: url('<%= image_path url_for (@artist.banner_image) %>');">
     <div class="container z-10">
@@ -43,7 +43,7 @@
       <% end %>
     </ul>
   </div>
-  <div class="artist-informations bg-tertiary sm:grid sm:grid-cols-2 sm:gap-4">
+  <div class="artist-informations bg-tertiary sm:grid sm:grid-cols-2 sm:gap-4 py-8">
     <div class="info-block sm:col-span-1 flex justify-center items-center mx-auto sm:pl-32">
       <ul class="info-list flex flex-col">
         <% if !@distributions.empty? %>
@@ -103,12 +103,12 @@
         <% end %>
       </div>
     </div>
-    <div class="description bg-white text-primary sm:p-8 p-2 text-sm sm:my-16 my-2 mx-auto sm:mr-32 text-justify sm:col-span-1 relative">
+    <div class="description bg-white text-primary sm:p-8 p-3 text-sm sm:my-16 my-2 mx-auto sm:mr-32 text-justify sm:col-span-1 relative">
       <p><%= markdown(@artist.description) %></p>
     </div>
   </div>
   <div class="centrale">
-    <div class="dice mx-auto my-16 grid sm:grid-cols-12 grid-cols-1 sm:grid-rows-2 grid-rows-10 sm:row-gap-16 row-gap-8 sm:col-gap-4 col-gap-1">
+    <div class="dice mx-auto my-16 grid sm:grid-cols-12 grid-cols-1 sm:grid-rows-2 grid-rows-10 sm:row-gap-16 row-gap-6 sm:col-gap-4 col-gap-1">
       <% if @artist.video? %>
       <iframe class="sm:col-span-6 sm:row-span-1 sm:col-start-4 sm:w-full mx-auto col-span-1 row-span-2 col-start-1" src="<%= @artist.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <% elsif @artist.artist_video.attached? %>
@@ -152,7 +152,7 @@
   <% if !@events.empty? %>
   <div class="wraper relative">
     <!-- Section Agenda -->
-    <div class="table-title px-4 bg-tertiary inline-block absolute top-0 z-20">
+    <div class="table-title px-4 bg-tertiary inline-block absolute z-20">
       <h2 class="text-2xl font-bold">Agenda</h2>
     </div>
     <table class="table-artist w-full sm:mx-20 z-10">

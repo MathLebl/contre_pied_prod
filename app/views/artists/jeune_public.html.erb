@@ -3,8 +3,7 @@
 <div class="bg-secondary h-40 w-5/6 m-auto mb-24 mt-48 relative">
   <div class="h-full flex flex-col justify-center" style="margin-left: 50%">
     <h1 class="text-3xl font-bold text-primary">Jeune Public</h1>
-    <p class="text-primary">Des spectacles de qualité supérieure pour satisfaire vos chiards</p>
-    <%= image_tag "jeune-public-bird", alt: "un poussin trop mignon", class: "w-1/4 absolute bottom-0 left-0 ml-56 mb-12" %>
+    <%= image_tag "jeune-public-bird", alt: "un poussin trop mignon", class: "sm:w-1/4 w-1/2 m-4 absolute bottom-0 left-0 sm:ml-56 sm:mb-12" %>
   </div>
 </div>
 <div class="bg-tertiary mb-20">
@@ -12,10 +11,11 @@
 </div>
 <% if !@events.empty? %>
 <div class="wraper relative my-24">
-  <div class="table-title p-4 bg-primary inline-block absolute">
+  <!-- Section Agenda -->
+  <div class="table-title px-4 bg-primary sm:inline-block absolute">
     <h2 class="text-2xl font-bold">Agenda</h2>
   </div>
-  <div class="w-2/3 p-12 bg-secondary">
+  <div class="w-full sm:w-2/3 sm:p-12 bg-secondary">
     <table class="table-general">
       <%= render 'shared/event-table' %>
     </table>

@@ -1,5 +1,5 @@
 <% content_for :meta_title, "Agenda #{DEFAULT_META["meta_product_name"]}" %>
-<div class="bg-secondary h-40 w-5/6 z-0 absolute" style="left: 7.5%; bottom: 35%">
+<div class="bg-secondary h-40 w-5/6 z-0 absolute hidden sm:inline-block" style="left: 7.5%; bottom: 35%">
 </div>
 <div class="banner relative z-1" style="background-image: url('<%= image_path "bandeau-agenda.JPG" %>')">
   <h1 class="absolute bg-white text-primary text-3xl font-bold px-1">Agenda</h1>
@@ -19,7 +19,7 @@
 </div>
 <!-- Section Agenda -->
 <div class="wraper relative my-24">
-  <div class="table-title px-4 bg-primary sm:inline-block absolute">
+  <div class="table-title px-4 bg-primary hidden sm:inline-block absolute">
     <h2 class="text-2xl font-bold">Agenda</h2>
   </div>
   <div class="w-full sm:w-5/6 sm:p-12 bg-secondary">

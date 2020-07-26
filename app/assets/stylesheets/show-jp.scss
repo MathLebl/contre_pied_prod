@@ -166,6 +166,23 @@ body {
   padding-top: 16px;
 }
 
+@media (max-width: 640px) {
+  /* For mobile phones: */
+  .artist-page-jp >.table-title {
+    right: 1rem;
+    top: 2rem;
+  }
+}
+
+@media (min-width: 640px) {
+  /* For mobile phones: */
+  .artist-page-jp >.table-title {
+    right: 13rem;
+    top: 2rem;
+  }
+}
+
+
 button:focus {
   outline: none;
 }
