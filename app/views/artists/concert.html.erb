@@ -1,8 +1,8 @@
 <% content_for :meta_title, "Les Concerts de #{DEFAULT_META["meta_product_name"]}" %>
 
-<div class="bg-secondary h-40 w-5/6 z-0 absolute" style="left: 7.5%; bottom: 25%">
+<div class="bg-secondary h-40 w-5/6 z-0 absolute hidden sm:inline-block" style="left: 7.5%; bottom: 25%">
 </div>
-<div class="banner relative my-16 mx-48 z-10" style="background-image: url('<%= image_path "bandeau-concerts.jpg" %>'); background-position: top">
+<div class="banner relative my-16 sm:mx-48 z-10" style="background-image: url('<%= image_path "bandeau-concerts.jpg" %>'); background-position: top">
   <div class="container">
     <h1 class="absolute text-white text-3xl font-bold bg-white text-primary px-1 z-10">Concerts</h1>
   </div>
@@ -12,10 +12,11 @@
 </div>
 <% if !@events.empty? %>
 <div class="wraper relative my-24">
-  <div class="table-title p-4 bg-primary inline-block absolute">
-    <h2 class="text-3xl font-bold">Agenda</h2>
+  <!-- Section Agenda -->
+  <div class="table-title px-4 bg-primary sm:inline-block absolute">
+    <h2 class="text-2xl font-bold">Agenda</h2>
   </div>
-  <div class="w-2/3 p-12 bg-secondary">
+  <div class="w-full sm:w-2/3 sm:p-12 bg-secondary">
     <table class="table-general">
       <%= render 'shared/event-table' %>
     </table>
