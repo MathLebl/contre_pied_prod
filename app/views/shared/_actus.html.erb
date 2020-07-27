@@ -6,9 +6,11 @@
     <div class="card-container my-2">
       <div class="actu-card">
         <div class="actu-illustration">
-          <%= image_tag actu.featured_image if actu.featured_image.attached? %>
-          <% if !actu.video.nil? %>
+          <% if actu.featured_image.attached?  %>
+          <%= image_tag actu.featured_image %>
+          <% elsif !actu.video.nil? %>
           <iframe width="200" height="133.19" src="<%= actu.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <% else %>
           <% end %>
         </div>
         <div class="actu-description">
