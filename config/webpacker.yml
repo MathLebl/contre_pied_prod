@@ -1,13 +1,13 @@
 # Note: You must restart bin/webpack-dev-server for changes to take effect
 
 default: &default
-source_path: app/javascript
-source_entry_path: packs
-public_root_path: public
-public_output_path: packs
-cache_path: tmp/cache/webpacker
-check_yarn_integrity: false
-webpack_compile_output: true
+  source_path: app/javascript
+  source_entry_path: packs
+  public_root_path: public
+  public_output_path: packs
+  cache_path: tmp/cache/webpacker
+  check_yarn_integrity: false
+  webpack_compile_output: true
 
   # Additional paths webpack should lookup modules
   # ['app/assets', 'engine/foo/app/assets']
@@ -33,24 +33,24 @@ webpack_compile_output: true
     - .woff
     - .woff2
 
-    extensions:
-      - .mjs
-      - .js
-      - .sass
-      - .scss
-      - .css
-      - .module.sass
-      - .module.scss
-      - .module.css
-      - .png
-      - .svg
-      - .gif
-      - .jpeg
-      - .jpg
+  extensions:
+    - .mjs
+    - .js
+    - .sass
+    - .scss
+    - .css
+    - .module.sass
+    - .module.scss
+    - .module.css
+    - .png
+    - .svg
+    - .gif
+    - .jpeg
+    - .jpg
 
-      development:
-        <<: *default
-        compile: true
+development:
+  <<: *default
+  compile: true
 
   # Verifies that correct packages and versions are installed by inspecting package.json, yarn.lock, and node_modules
   check_yarn_integrity: true
@@ -72,19 +72,19 @@ webpack_compile_output: true
     pretty: false
     headers:
       'Access-Control-Allow-Origin': '*'
-      watch_options:
-        ignored: '**/node_modules/**'
+    watch_options:
+      ignored: '**/node_modules/**'
 
 
-        test:
-          <<: *default
-          compile: true
+test:
+  <<: *default
+  compile: true
 
   # Compile test packs to a separate directory
   public_output_path: packs-test
 
-  production:
-    <<: *default
+production:
+  <<: *default
 
   # Production depends on precompilation of packs prior to booting for performance.
   compile: false
@@ -93,8 +93,8 @@ webpack_compile_output: true
   # Cache manifest.json for performance
   cache_manifest: true
 
-  staging:
-    <<: *default
+staging:
+  <<: *default
   # Staging depends on precompilation of packs prior to booting for performance.
   compile: false
   # Cache manifest.json for performance

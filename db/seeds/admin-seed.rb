@@ -1,9 +1,5 @@
 require 'faker'
 
-puts 'Cleaning database...'
-User.destroy_all
-Artist.destroy_all
-
 puts 'Creating Admins'
 
 user = User.new(

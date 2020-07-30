@@ -1,0 +1,85 @@
+// Gestion font
+.container-jp {
+  font-family: 'Indie Flower';
+}
+
+.container-jp h1 {
+  font-family: 'Schoolbell';
+  font-size: 64px;
+  margin: 12px;
+  padding: 8px;
+}
+
+.container-jp h2 {
+  font-family: 'Schoolbell';
+}
+
+.banner h1 {
+  font-family: 'Schoolbell';
+}
+
+body {
+  background-image: url('bandeau-jeunePublic.jpg');
+  background-position: center;
+  background-size: cover;
+  color: #bdeaca;
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.container-jp {
+  text-align: center;
+  color: #bdeaca;
+  background-image: url('backg-jeunePublic.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+
+.navbar {
+  font-family: 'Indie Flower';
+  background-color: transparent;
+  h4 {
+    font-family: 'Indie Flower';
+    color: #bdeaca;
+  };
+  .nav-link {
+    color: #bdeaca;
+  };
+  .dropdown-menu {
+    background-color: transparent;
+    color: #bdeaca;
+  };
+  .dropdown-item {
+    color: #bdeaca;
+  };
+  .dropdown-item:hover {
+    background-color: transparent;
+  };
+}
+
+.navbar-yellow {
+  font-family: 'Indie Flower';
+  background-color: #bdeaca;
+  h4 {
+    font-family: 'Indie Flower';
+    color: black;
+  };
+  .nav-link {
+    color: black;
+  };
+  .dropdown-menu {
+    background-color: #bdeaca;
+  };
+  .dropdown-item {
+    color: black;
+  };
+}
+
+
+// Section du footer
+.footer {
+  font-family: 'Indie Flower';
+  background-color: #bdeaca;
+}
+
