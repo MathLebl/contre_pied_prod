@@ -1,13 +1,13 @@
 <h1>Mon panier</h1>
 <% unless @cart.empty? %>
-  <% @cart.each do |item| %>
-    <h3><%= item["name"] %></h3>
-    <p>Prix : <%= humanized_money_with_symbol(@products.find(item["id"]).price) %></p>
-    <%= image_tag item["photo_url"] %>
-    <%= link_to "[X]", remove_from_cart_product_path(@products.find(item["id"])) %>
-  <% end %>
+<% @cart.each do |item| %>
+<h3><%= item["name"] %></h3>
+<p>Prix : <%= humanized_money_with_symbol(@products.find(item["id"]).price) %></p>
+<%= image_tag item["photo_url"] %>
+<%= link_to "[X]", remove_from_cart_product_path(@products.find(item["id"])) %>
+<% end %>
 <% else %>
-  <p>Panier vide</p>
+<p>Panier vide</p>
 <% end %>
 
 <hr>

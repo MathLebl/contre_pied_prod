@@ -1,5 +1,8 @@
 require 'faker'
 
+puts 'Cleaning database...'
+Event.destroy_all
+
 puts 'Creating 15 fake Events...'
 2.times do
   event = Event.new(
@@ -9,7 +12,7 @@ puts 'Creating 15 fake Events...'
     city: "Lyon",
     artist_id: 1,
     location: "Le Théâtre de La Vie qui joue"
-  )
+    )
   event.save!
 end
 
@@ -22,7 +25,7 @@ end
     artist_id: 4,
     location: "Le Théâtre de La Vie qui joue",
     ticket: "https://www.billetreduc.com/th/"
-  )
+    )
   event.save!
 end
 
@@ -34,7 +37,7 @@ end
     city: "Lyon",
     artist_id: 2,
     location: "Le Théâtre de Ta Mère qui Trticotte"
-  )
+    )
   event.save!
 end
 
@@ -47,7 +50,7 @@ end
     artist_id: 2,
     location: "Le Théâtre de Ta Mère qui Trticotte",
     ticket: "https://www.billetreduc.com/theatre/"
-  )
+    )
   event.save!
 end
 
@@ -59,7 +62,7 @@ end
     city: "Lyon",
     artist_id: 1,
     location: "Le Théâtre de La Taupe qui pêche"
-  )
+    )
   event.save!
 end
 
@@ -72,7 +75,7 @@ end
     artist_id: 1,
     location: "Le Théâtre de La Taupe qui pêche",
     ticket: "https://www.billetreduc.com/theatre/"
-  )
+    )
   event.save!
 end
 
@@ -85,7 +88,7 @@ end
     artist_id: 4,
     location: "Le Théâtre de La Joie qui danse",
     ticket: "https://www.billetreduc.com/theatre/"
-  )
+    )
   event.save!
 end
 
@@ -97,7 +100,7 @@ end
     city: "Marseille",
     artist_id: 4,
     location: "Le Théâtre de La Joie qui danse"
-  )
+    )
   event.save!
 end
 

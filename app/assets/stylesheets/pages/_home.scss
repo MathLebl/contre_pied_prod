@@ -1,35 +1,33 @@
+// Gestion du Responsive
 @media (max-width: 640px) {
   /* For mobile phones: */
-#paf {
-  height: 15em;
-  width: 100%;
-  color: white;
-  transition: none;
+  #paf {
+    height: 15em;
+    width: 100%;
+    color: white;
+    transition: none;
+  }
+  #pif, #pouf {
+    height: 15em;
+    color: white;
+    transition: none;
+  }
 }
-
-#pif, #pouf {
-  height: 15em;
-  color: white;
-  transition: none;
-}
-}
-
-
 @media (min-width: 640px) {
-
-#pif, #pouf {
-  height: 27em;
-  color: white;
-  transition: .7s ease-in-out;
+  #pif, #pouf {
+    height: 27em;
+    color: white;
+    transition: .7s ease-in-out;
+  }
+  #paf {
+    height: 32em;
+    color: white;
+    transition: .7s ease-in-out;
+  }
 }
-#paf {
-  height: 32em;
-  color: white;
-  transition: .7s ease-in-out;
-}
-}
 
 
+// Animation Home
 #bigdiv:hover {
   .categoryimg {
     filter: grayscale(100%);
@@ -38,7 +36,6 @@
     filter: grayscale(0%);
   }
 }
-
 
 #pif:hover {
   // height: 32em;
@@ -53,87 +50,3 @@
   // height: 32em;
   width: 32rem;
 }
-
-.wraper{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 80px;
-  margin: 200px 0 200px 0;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-category {
-  height: 300px;
-  width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #bdeaca;
-  font-size: 30px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border: 12px solid #bdeaca;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  transition: all .6s;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-
-.cards a:hover {
-  text-decoration: none !important;
-}
-
-.card-category:hover {
-  transform: scale(1.2);
-  font-size: 34px;
-  border: 6px solid #bdeaca;
-  color: #bdeaca;
-
-}
-
-
-
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-

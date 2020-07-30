@@ -7,7 +7,7 @@
         <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
         <li><strong>Produits :</strong></li>
         <% @order.products.each do |product| %>
-          <li class="flex items-center"><%= image_tag product.photo_url, class: "w-20 m-2" %><strong><%= product.name %></strong><strong> prix : <%= humanized_money_with_symbol product.price %></strong></li>
+        <li class="flex items-center"><%= image_tag product.photo_url, class: "w-20 m-2" %><strong><%= product.name %></strong><strong> prix : <%= humanized_money_with_symbol product.price %></strong></li>
         <% end %>
       </ul>
       <p>Durée moyenne de livraison sous <strong>2 jours ouvrés</strong></p>
