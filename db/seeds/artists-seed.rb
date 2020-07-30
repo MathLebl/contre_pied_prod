@@ -1,12 +1,12 @@
 require 'faker'
 
 puts 'Creating 2 fake Jeune Public Artists...'
-artist = Artist.new(
-  name:    Faker::Movies::HarryPotter.character,
-  description: Faker::Lorem.paragraph(sentence_count: 15),
-  style: Faker::Movies::HarryPotter.house,
-  category:  "jeune_public",
-  user_id: 1
+  artist = Artist.new(
+    name:    Faker::Movies::HarryPotter.character,
+    description: Faker::Lorem.paragraph(sentence_count: 15),
+    style: Faker::Movies::HarryPotter.house,
+    category:  "jeune_public",
+    user_id: 1
   )
 artist.image.attach(
   io: File.open("app/assets/images/aranjuez/aranjuez-dice3.jpg"),
@@ -32,7 +32,7 @@ artist.show_image4.attach(
   io: File.open("app/assets/images/aranjuez/aranjuez-dice3.jpg"),
   filename: "aranjuez-dice3.jpg"
   )
-artist.save!
+  artist.save!
 
 artist = Artist.new(
   name:    Faker::Movies::StarWars.character,
@@ -41,7 +41,7 @@ artist = Artist.new(
   category:  "jeune_public",
   user_id: 1,
   active: false
-  )
+)
 artist.image.attach(
   io: File.open("app/assets/images/aranjuez/aranjuez-dice3.jpg"),
   filename: "aranjuez-dice3.jpg"
