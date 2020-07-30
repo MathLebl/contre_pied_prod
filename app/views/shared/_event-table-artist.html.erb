@@ -1,13 +1,13 @@
 <tbody class="bg-secondary">
   <% @events.each do |event|%>
-    <tr class="duration-200">
-      <td class="table-date text-primary"><%= l event.date %></td>
-      <td class="table-location text-primary"><strong><%= event.city %></strong> - <%= event.location %></td>
-      <% if event.ticket? %>
-        <td class="table-ticket" id="ticket"><a href="<%= event.ticket %>" target="_blank"><i class="fas fa-ticket-alt text-primary transform duration-200 hover:scale-150"></i></a></td>
-      <% else %>
-        <td></td>
-      <% end %>
-    </tr>
+  <tr class="duration-200">
+    <td class="table-date text-primary"><%= l event.date %></td>
+    <td class="table-location text-primary"><strong><%= event.city %></strong> - <%= event.location %></td>
+    <% if event.ticket? %>
+    <td class="table-ticket" id="ticket"><a href="<%= event.ticket %>" target="_blank"><i class="fas fa-ticket-alt text-primary transform duration-200 hover:scale-150"></i></a></td>
+    <% else %>
+    <td></td>
+    <% end %>
+  </tr>
   <% end %>
 </tbody>
