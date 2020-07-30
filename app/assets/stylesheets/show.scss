@@ -1,54 +1,17 @@
 @import "lightbox";
-// .banner .container a {
-//   text-decoration: none !important;
-//   color: #FCC0CB;
-// }
-
-// .banner .container a:hover{
-//   text-decoration: none !important;
-//   color: #D94496;
-// }
-
-.artist-page {
-  // border: 12px solid #bdeaca;
-  // margin: 30px;
-  // padding-bottom: 16px;
-}
-
-.artist-informations{
-  // display: flex;
-  // justify-content: center;
-  // align-content: center;
-  // margin-top: 16px;
-  // padding: 16px;
-}
-
-// .description {
-//   width: 80%;
-//   text-align: justify;
-//   font-size: 24px;
-// }
-
-// Section Centrale
-
 .centrale {
   display: flex;
 }
 
 // Section list-info
-
 .info-list {
   width: 25%;
   margin: 16px 8px;
   button {
     border: none;
     text-decoration:none;
-    // background-color: transparent;
   }
 }
-// .info-text.is-visible {
-//   display: block;
-// }
 
 .info-list > li > a.download-btn {
   margin: 16px 8px;
@@ -61,77 +24,14 @@
 .dice {
   width: 75%;
   position: relative;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
 }
 
-.dice .photo {
-  // width: 200px;
-}
-
-
-.top-left {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-
-.top-right {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-}
-
-.botom-left {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-}
-
-.botom-right {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-}
-
-// Social Lnks Section
-
-.social-links {
-  // list-style: none;
-  // text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-  // font-size: 50px;
-  // margin: auto;
-  // margin-top: 80px;
-  // width: 80%;
-  // display: flex;
-  // justify-content: space-between;
-  // padding-inline-start: 0px;
-}
-
-.social-links a {
-  // text-decoration: none !important;
-  // color: rgba(255,211,60,1);
-  // display: inline;
-  // opacity: 1;
-  // transition: all .4s;
-}
-
-// .social-links a:hover {
-//   opacity: .6;
-// }
+// Social Links Section
 
 .social-links li {
   display: inline;
   text-align: center;
 }
-
-// Table Section
-
-// .table-artist{
-//   width: 80%;
-//   margin: auto;
-// }
 
 .artist-page > .table-title {
   margin: 0px 50px 0px 50px;
@@ -163,12 +63,3 @@ button:focus {
     top: 2rem;
   }
 }
-// Disable Section
-
-// .navbar {
-//   display:none;
-// }
-
-// .footer {
-//   display:none;
-// }
