@@ -69,26 +69,19 @@ ActiveAdmin.register Actu do
       actu.published_at? ? actu.published_at : "pas encore publiée"
     end
     actions do |actu|
-    item "Publier", publish_index_admin_actu_path(actu), method: :put if !actu.published_at?
-    item "Dépublier", unpublish_index_admin_actu_path(actu), method: :put if actu.published_at?
+      item "Publier", publish_index_admin_actu_path(actu), method: :put if !actu.published_at?
+      item "Dépublier", unpublish_index_admin_actu_path(actu), method: :put if actu.published_at?
     end
   end
 
-form do |f|
-  f.inputs do
-    f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.name}", u.id]}
-    f.input :featured_image, as: :file
-    f.input :video
-    f.input :description, :as => :pagedown_text
-    f.input :title
-    f.actions
+  form do |f|
+    f.inputs do
+      f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.name}", u.id]}
+      f.input :featured_image, as: :file
+      f.input :video
+      f.input :description, :as => :pagedown_text
+      f.input :title
+      f.actions
+    end
   end
 end
-end
-
-
-# permit_params :artist_id
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-
-

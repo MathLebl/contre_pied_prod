@@ -42,7 +42,7 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
-       column do
+      column do
         panel "Commandes" do
           table_for Order.order('created_at ASC').first(8) do
             column "État" do |order|
