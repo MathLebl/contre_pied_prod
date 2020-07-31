@@ -1,23 +1,23 @@
 ActiveAdmin.register Artist do
-ActiveAdmin.register Presse do
-  belongs_to :artist
-end
-ActiveAdmin.register Credit do
-  belongs_to :artist
-end
-ActiveAdmin.register Partenaire do
-  belongs_to :artist
-end
-ActiveAdmin.register Distribution do
-  belongs_to :artist
-end
-permit_params :name, :description, :ranking, :style, :image, :video, :spotify,
-              :youtube, :insta, :twitter, :slug, :user_id, :active,
-              :facebook, :soundcloud, :category, :artist_video, :slug,
-              :press_file, :banner_image, :show_image1, :show_image2, :show_image3,
-              :show_image4, distribution_attributes: [:id, :name, :_destroy],
-              credits_attributes: [:id, :name, :_destroy], presse_attributes: [:id, :name, :_destroy],
-              partenaires_attributes: [:id, :name, :_destroy]
+  ActiveAdmin.register Presse do
+    belongs_to :artist
+  end
+  ActiveAdmin.register Credit do
+    belongs_to :artist
+  end
+  ActiveAdmin.register Partenaire do
+    belongs_to :artist
+  end
+  ActiveAdmin.register Distribution do
+    belongs_to :artist
+  end
+  permit_params :name, :description, :ranking, :style, :image, :video, :spotify,
+  :youtube, :insta, :twitter, :slug, :user_id, :active,
+  :facebook, :soundcloud, :category, :artist_video, :slug,
+  :press_file, :banner_image, :show_image1, :show_image2, :show_image3,
+  :show_image4, distribution_attributes: [:id, :name, :_destroy],
+  credits_attributes: [:id, :name, :_destroy], presse_attributes: [:id, :name, :_destroy],
+  partenaires_attributes: [:id, :name, :_destroy]
 
   menu priority: 4
   scope :all
@@ -59,8 +59,8 @@ permit_params :name, :description, :ranking, :style, :image, :video, :spotify,
     column :style
     column "Classement", :ranking
     actions do |artist|
-    item "Voir sur le site", artist_path(artist)
-  end
+      item "Voir sur le site", artist_path(artist)
+    end
   end
 
   filter :name, as: :select
@@ -93,25 +93,25 @@ permit_params :name, :description, :ranking, :style, :image, :video, :spotify,
       f.input :soundcloud
       f.input :slug, label: "Site Internet"
       f.inputs do
-      f.has_many :distribution, allow_destroy: true do |t|
-        t.input :name
+        f.has_many :distribution, allow_destroy: true do |t|
+          t.input :name
+        end
       end
-    end
       f.inputs do
-      f.has_many :credits, allow_destroy: true do |t|
-        t.input :name
+        f.has_many :credits, allow_destroy: true do |t|
+          t.input :name
+        end
       end
-    end
-    f.inputs do
-      f.has_many :presse, allow_destroy: true do |t|
-        t.input :name
+      f.inputs do
+        f.has_many :presse, allow_destroy: true do |t|
+          t.input :name
+        end
       end
-    end
-    f.inputs do
-      f.has_many :partenaires, allow_destroy: true do |t|
-        t.input :name
+      f.inputs do
+        f.has_many :partenaires, allow_destroy: true do |t|
+          t.input :name
+        end
       end
-    end
       f.input :press_file, as: :file, label: "Dossier de presse"
       if artist.press_file.attached?
         span link_to "Supprimer",delete_artist_press_file_admin_artist_path(artist),method: :delete,data: { confirm: 'Are you sure?' }
@@ -121,7 +121,7 @@ permit_params :name, :description, :ranking, :style, :image, :video, :spotify,
     end
   end
 
-    show do
+  show do
     attributes_table do
       row :name
       row :category
@@ -166,8 +166,8 @@ permit_params :name, :description, :ranking, :style, :image, :video, :spotify,
         "OK" if art.press_file.attached?
       end
       row :active
-      end
     end
   end
+end
 
 

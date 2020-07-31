@@ -6,7 +6,7 @@
 
       <ul>
         <% @order.products.each do |product| %>
-          <li class="flex items-center"><%= image_tag product.photo_url, class: "w-20 m-2" %><strong><%= product.name %></strong><strong> prix : <%= humanized_money_with_symbol product.price %></strong></li>
+        <li class="flex items-center"><%= image_tag product.photo_url, class: "w-20 m-2" %><strong><%= product.name %></strong><strong> prix : <%= humanized_money_with_symbol product.price %></strong></li>
         <% end %>
       </ul>
       <br>

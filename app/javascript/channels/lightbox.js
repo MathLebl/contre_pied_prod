@@ -14,24 +14,24 @@
 
 // Uses Node, AMD or browser globals to create a module.
 (function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define(['jquery'], factory);
-    } else if (typeof exports === 'object') {
+      } else if (typeof exports === 'object') {
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like environments that support module.exports,
         // like Node.
         module.exports = factory(require('jquery'));
-    } else {
+      } else {
         // Browser globals (root is window)
         root.lightbox = factory(root.jQuery);
-    }
-}(this, function ($) {
+      }
+    }(this, function ($) {
 
-  function Lightbox(options) {
-    this.album = [];
-    this.currentImageIndex = void 0;
-    this.init();
+      function Lightbox(options) {
+        this.album = [];
+        this.currentImageIndex = void 0;
+        this.init();
 
     // options
     this.options = $.extend({}, this.constructor.defaults);
@@ -60,7 +60,7 @@
 
     If the caption data is user submitted or from some other untrusted source, then set this to true
     to prevent xss and other injection attacks.
-     */
+    */
     sanitizeTitle: false
   };
 
@@ -95,7 +95,7 @@
   // Attach event handlers to the new DOM elements. click click click
   Lightbox.prototype.build = function() {
     if ($('#lightbox').length > 0) {
-        return;
+      return;
     }
 
     var self = this;
@@ -185,25 +185,25 @@
       the next mouseup will bubble down to the image. Once the right-click/contextmenu event occurs
       we set the pointer events back to auto for the nav div so it can capture hover and left-click
       events as usual.
-     */
-    this.$nav.on('mousedown', function(event) {
-      if (event.which === 3) {
-        self.$nav.css('pointer-events', 'none');
+      */
+      this.$nav.on('mousedown', function(event) {
+        if (event.which === 3) {
+          self.$nav.css('pointer-events', 'none');
 
-        self.$lightbox.one('contextmenu', function() {
-          setTimeout(function() {
+          self.$lightbox.one('contextmenu', function() {
+            setTimeout(function() {
               this.$nav.css('pointer-events', 'auto');
-          }.bind(self), 0);
-        });
-      }
-    });
+            }.bind(self), 0);
+          });
+        }
+      });
 
 
-    this.$lightbox.find('.lb-loader, .lb-close').on('click', function() {
-      self.end();
-      return false;
-    });
-  };
+      this.$lightbox.find('.lb-loader, .lb-close').on('click', function() {
+        self.end();
+        return false;
+      });
+    };
 
   // Show overlay and lightbox. If the image is part of a set, add siblings to album array.
   Lightbox.prototype.start = function($link) {
@@ -374,8 +374,8 @@
     */
     setTimeout(function() {
       self.$overlay
-        .width($(document).width())
-        .height($(document).height());
+      .width($(document).width())
+      .height($(document).height());
 
     }, 0);
   };
@@ -469,27 +469,27 @@
     if (typeof this.album[this.currentImageIndex].title !== 'undefined' &&
       this.album[this.currentImageIndex].title !== '') {
       var $caption = this.$lightbox.find('.lb-caption');
-      if (this.options.sanitizeTitle) {
-        $caption.text(this.album[this.currentImageIndex].title);
-      } else {
-        $caption.html(this.album[this.currentImageIndex].title);
-      }
-      $caption.fadeIn('fast');
-    }
-
-    if (this.album.length > 1 && this.options.showImageNumberLabel) {
-      var labelText = this.imageCountLabel(this.currentImageIndex + 1, this.album.length);
-      this.$lightbox.find('.lb-number').text(labelText).fadeIn('fast');
+    if (this.options.sanitizeTitle) {
+      $caption.text(this.album[this.currentImageIndex].title);
     } else {
-      this.$lightbox.find('.lb-number').hide();
+      $caption.html(this.album[this.currentImageIndex].title);
     }
+    $caption.fadeIn('fast');
+  }
 
-    this.$outerContainer.removeClass('animating');
+  if (this.album.length > 1 && this.options.showImageNumberLabel) {
+    var labelText = this.imageCountLabel(this.currentImageIndex + 1, this.album.length);
+    this.$lightbox.find('.lb-number').text(labelText).fadeIn('fast');
+  } else {
+    this.$lightbox.find('.lb-number').hide();
+  }
 
-    this.$lightbox.find('.lb-dataContainer').fadeIn(this.options.resizeDuration, function() {
-      return self.sizeOverlay();
-    });
-  };
+  this.$outerContainer.removeClass('animating');
+
+  this.$lightbox.find('.lb-dataContainer').fadeIn(this.options.resizeDuration, function() {
+    return self.sizeOverlay();
+  });
+};
 
   // Preload previous and next images in set.
   Lightbox.prototype.preloadNeighboringImages = function() {

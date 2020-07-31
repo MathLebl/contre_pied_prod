@@ -41,14 +41,14 @@ ActiveAdmin.register Order do
   filter :amount_cents
 
   show do
-      attributes_table do
-        row :state
-        row :product_name
-        row :created_at
-        row :amount
-        row :user
-  end
+    attributes_table do
+      row :state
+      row :product_name
+      row :created_at
+      row :amount
+      row :user
+    end
 
-end
+  end
 
 end
