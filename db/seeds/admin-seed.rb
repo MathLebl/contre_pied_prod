@@ -1,6 +1,4 @@
 require 'faker'
-puts 'Cleaning Admins...'
-User.destroy_all
 
 puts 'Creating Admins'
 

@@ -1,8 +1,5 @@
 require 'faker'
 
-puts 'Cleaning News...'
-Event.destroy_all
-
 puts 'Creating 15 fake Events...'
 2.times do
   event = Event.new(

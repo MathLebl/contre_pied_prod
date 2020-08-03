@@ -1,8 +1,5 @@
 require 'faker'
 
-puts 'Cleaning News...'
-Actu.destroy_all
-
 puts 'Creating Actus'
 actu = Actu.new(
   title: "Première Actu",

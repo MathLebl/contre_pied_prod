@@ -1,7 +1,3 @@
-# puts 'Cleaning database...'
-# Product.destroy_all
-# ShopCategory.destroy_all
-
 # puts 'Creating categories...'
 # cd = ShopCategory.create!(name: 'cd')
 # tshirt = ShopCategory.create!(name: 'Tshirt')
