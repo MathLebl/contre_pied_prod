@@ -1,7 +1,7 @@
 ActiveAdmin.register Event do
   menu label: "Représentations", priority: 3
   config.sort_order = 'date_asc'
-  permit_params :category, :date, :location, :artist_id, :user_id, :ticket,
+  permit_params :date, :location, :artist_id, :user_id, :ticket,
   :city, :month, :region
 
   action_item :publish, only: :show do
@@ -17,7 +17,6 @@ ActiveAdmin.register Event do
     column "Artist" do |event|
       link_to event.artist.name, admin_artist_path(event.artist)
     end
-    column :category
     column "Date" do |event|
       link_to event.date, admin_event_path(event)
     end
@@ -37,7 +36,6 @@ ActiveAdmin.register Event do
 
   show do
     attributes_table do
-      row :category
       row :date
       row :city
       row :location
