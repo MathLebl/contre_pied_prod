@@ -31,8 +31,14 @@ class ArtistsController < ApplicationController
 
   def jeune_public
     @artists = Artist.where(category: "jeune_public").order(ranking: :asc)
-    events = Event.where(category: "jeune_public").order('date ASC')
-    @events = events.first(8)
+    # events = Event.where(category: "jeune_public").order('date ASC')
+    # @events = events.first(8)
+    @all_events = []
+    @artists.each do |art|
+      @all_events << art.events
+    end
+    @events = @all_events.flatten
+
   end
 
   def spectacle
