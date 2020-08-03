@@ -1,3 +1,6 @@
+puts 'Cleaning Artists...'
+Artist.destroy_all
+
 puts "Creating Les beaux jours d'Aranjuez"
 
 artist = Artist.new(
