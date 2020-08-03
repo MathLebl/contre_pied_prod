@@ -37,20 +37,26 @@ class ArtistsController < ApplicationController
     @artists.each do |art|
       @all_events << art.events
     end
-    @events = @all_events.flatten
+    @events = @all_events.flatten.first(8).sort_by { |event| event.date }
 
   end
 
   def spectacle
-     @artists = Artist.where(category: "spectacle").order(ranking: :asc)
-     events = Event.where(category: "spectacle").order('date ASC')
-     @events = events.first(8)
+    @artists = Artist.where(category: "spectacle").order(ranking: :asc)
+    @all_events = []
+    @artists.each do |art|
+      @all_events << art.events
+    end
+    @events = @all_events.flatten.first(8).sort_by { |event| event.date }
   end
 
   def concert
-     @artists = Artist.where(category: "concert").order(ranking: :asc)
-     events = Event.where(category: "concert").order('date ASC')
-     @events = events.first(8)
+    @artists = Artist.where(category: "concert").order(ranking: :asc)
+    @all_events = []
+    @artists.each do |art|
+      @all_events << art.events
+    end
+    @events = @all_events.flatten.first(8).sort_by { |event| event.date }
   end
 
   private
