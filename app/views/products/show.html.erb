@@ -7,7 +7,7 @@
     <div class="">
       <h1 class="text-2xl text-gray-900"><%= @product.name %></h1>
       <p class="my-4 text-gray-800"><%= @product.description %></p>
-      <p class="text-xl my-4"><%= humanized_money @product.price %> <%= currency_symbol %></p>
+      <p class="text-xl my-4 text-gray-900"><%= humanized_money @product.price %> <%= currency_symbol %></p>
       <div class="flex flex-col">
         <%= link_to "Acheter ce produit", new_order_path(product_id: @product), class: 'bg-primary text-white font-bold py-2 px-4 my-1 text-center hover:bg-secondary hover:text-primary'  %>
         <%= link_to "Ajouter à mon pannier", add_to_cart_product_path(@product), class: 'bg-primary text-white font-bold py-2 px-4 my-1 text-center hover:bg-secondary hover:text-primary'  %>
