@@ -1,18 +1,19 @@
 <div class="mx-12">
-  <h1>Products</h1>
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid grid-cols-3 gap-20 mx-48">
     <% @products.each do |product| %>
     <% if product.published_at? %>
-    <%# <div class="col-6 col-md-4"> %>
-      <div class="card">
-        <%= image_tag product.photo_url , class: "card-img-top w-5/12" %>
+    <%= link_to product_path(product), class:"card" do %>
+      <%# card %>
+      <div class="flex flex-col">
+      <%# background image %>
+        <div class="bg-cover flex justify-center items-center" style="background-image: url('<%= image_path product.photo_url %>'); height: 23rem"></div>
+        <%# card details %>
         <div class="card-body">
-          <h5 class="card-title"><%= product.name %></h5>
-          <p>Prix: <%= humanized_money_with_symbol(product.price) %></p>
-          <%= link_to "Détails", product_path(product), class: "btn btn-primary" %>
+          <h5 class="card-title mb-2"><%= product.name %></h5>
+          <p class="mt-2"><%= humanized_money product.price %> <%= currency_symbol %></p>
         </div>
       </div>
-    <%# </div> %>
+    <% end %>
     <% end %>
     <% end %>
   </div>
