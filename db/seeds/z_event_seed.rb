@@ -4,7 +4,6 @@ puts 'Creating 15 fake Events...'
 2.times do
   event = Event.new(
     date: Faker::Date.forward,
-    category:  "concert",
     user_id: 1,
     city: "Lyon",
     artist_id: 1,
@@ -16,7 +15,6 @@ end
 2.times do
   event = Event.new(
     date: Faker::Date.forward,
-    category:  "spectacle",
     user_id: 1,
     city: "Paris",
     artist_id: 4,
@@ -29,7 +27,6 @@ end
 2.times do
   event = Event.new(
     date: Faker::Date.forward,
-    category:  "jeune_public",
     user_id: 1,
     city: "Lyon",
     artist_id: 2,
@@ -41,7 +38,6 @@ end
 3.times do
   event = Event.new(
     date: Faker::Date.forward,
-    category:  "jeune_public",
     user_id: 1,
     city: "Valence",
     artist_id: 2,
@@ -54,7 +50,6 @@ end
 2.times do
   event = Event.new(
     date: Faker::Date.forward,
-    category:  "concert",
     user_id: 1,
     city: "Lyon",
     artist_id: 1,
@@ -66,7 +61,6 @@ end
 3.times do
   event = Event.new(
     date: Faker::Date.forward,
-    category:  "concert",
     user_id: 1,
     city: "Toulouse",
     artist_id: 1,
@@ -79,7 +73,6 @@ end
 2.times do
   event = Event.new(
     date: Faker::Date.forward,
-    category:  "spectacle",
     user_id: 1,
     city: "Le Havre",
     artist_id: 4,
@@ -92,7 +85,6 @@ end
 3.times do
   event = Event.new(
     date: Faker::Date.forward,
-    category:  "spectacle",
     user_id: 1,
     city: "Marseille",
     artist_id: 4,
