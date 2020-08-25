@@ -1,7 +1,9 @@
 class OrdersController < ApplicationController
   def new
     @order = Order.new
-    Cart.add_to_cart(session[:cart], params[:product_id])
+    if params[:product_id]
+      Cart.add_to_cart(session[:cart], params[:product_id])
+    end
   end
 
   def create

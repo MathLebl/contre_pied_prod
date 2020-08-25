@@ -1,13 +1,17 @@
 <h1 class="text-2xl bg-primary text-white inline-block mt-6 ml-10 py-2 px-4">Mon panier</h1>
-<div class="grid mx-40">
+<div class="grid mx-40 my-20">
     <% unless @cart.empty? %>
         <% @cart.each do |item| %>
-        <div class="col-span-1 flex items-center">
+        <div class="col-span-1 flex items-center pb-1" style="border-bottom: 2px solid; border-color: #BA184D">
             <%= image_tag item["photo_url"], class:"w-1/12" %>
-            <div class="ml-20">
-                <h3 class="text-xl"><%= item["name"] %></h3>
-                <p><%= humanized_money @products.find(item["id"]).price %> <%= currency_symbol %></p>
-                <%= link_to "[X]", remove_from_cart_product_path(@products.find(item["id"])) %>
+            <div class="ml-20 flex w-full justify-between items-center">
+                <div>
+                    <h3 class="text-xl text-gray-900"><%= item["name"] %></h3>
+                    <p class="text-gray-900 text-lg"><%= humanized_money @products.find(item["id"]).price %> <%= currency_symbol %></p>
+                </div>
+                <div>
+                    <%= link_to "Retirer du panier", remove_from_cart_product_path(@products.find(item["id"])), class: "bg-primary text-white font-bold py-2 px-4 my-1 text-center hover:bg-secondary hover:text-primary" %>
+                </div>
             </div>
         </div>
         <% end %>
@@ -16,8 +20,9 @@
     <% end %>
 </div>
 
-<hr>
-<h2>Total de la commande</h2>
-<p><%= humanized_money_with_symbol(@amount) %></p>
-
-<%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<div class="mx-40 flex flex-col">
+    <h2 class="text-2xl text-gray-900">Total de la commande</h2>
+    <p class="text-lg text-gray-800 mt-4">- <%= @cart.count %> Articles -</p>
+    <p class="text-lg text-gray-900 mt-4"><%= humanized_money @amount %> <%= currency_symbol %></p>
+    <%= link_to "Passer la commande", new_order_path, class: 'bg-primary text-white font-bold py-2 px-4 my-1 w-1/3 self-center text-center hover:bg-secondary hover:text-primary' %>
+</div>
