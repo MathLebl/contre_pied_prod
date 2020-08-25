@@ -8,7 +8,7 @@
       <%# background image %>
         <div class="bg-cover flex justify-center items-center" style="background-image: url('<%= image_path product.photo_url %>'); height: 23rem"></div>
         <%# card details %>
-        <div class="card-body">
+        <div class="card-body mt-4">
           <h5 class="card-title mb-2 text-gray-900"><%= product.name %></h5>
           <p class="font-light text-gray-600"><%= product.description %></p>
           <p class="mt-2"><%= humanized_money product.price %> <%= currency_symbol %></p>
