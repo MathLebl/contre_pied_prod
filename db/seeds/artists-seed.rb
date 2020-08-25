@@ -6,7 +6,7 @@ puts 'Creating 2 fake Jeune Public Artists...'
     description: Faker::Lorem.paragraph(sentence_count: 15),
     style: Faker::Movies::HarryPotter.house,
     category:  "jeune_public",
-    user_id: 1
+    user_id: User.last.id
   )
 artist.image.attach(
   io: File.open("app/assets/images/aranjuez/aranjuez-dice3.jpg"),
@@ -39,7 +39,7 @@ artist = Artist.new(
   description: Faker::Lorem.paragraph(sentence_count: 15),
   style: Faker::Movies::StarWars.planet,
   category:  "jeune_public",
-  user_id: 1,
+  user_id: User.last.id,
   active: false
 )
 artist.image.attach(

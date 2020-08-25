@@ -11,7 +11,7 @@ youtube: "https://www.youtube.com/channel/UCL95UhlTaJ5YNJczY5I-X5A",
 insta: "https://www.instagram.com/lesgoguettes/",
 twitter: "https://twitter.com/Les_Goguettes",
 facebook: "https://www.facebook.com/lesgoguettes/",
-user_id: 1
+user_id: User.last.id
   )
 artist.image.attach(
   io: File.open("app/assets/images/goguette/goguette-dice3.jpg"),

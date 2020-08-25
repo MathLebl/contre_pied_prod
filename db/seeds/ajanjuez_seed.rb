@@ -10,7 +10,7 @@ raconter, il fallait taire certaines choses. Mais est-ce encore possible ? De se
 Banquet n'étaient pas si loin.",
 style: "Théâtre" ,
 video: "https://www.youtube.com/embed/h-oNNO3Oi4M",
-user_id: 1
+user_id: User.last.id
   )
 artist.image.attach(
   io: File.open("app/assets/images/aranjuez/aranjuez-dice3.jpg"),
