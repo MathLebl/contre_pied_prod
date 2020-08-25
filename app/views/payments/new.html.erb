@@ -1,29 +1,43 @@
 <!-- app/views/payments/new.html.erb -->
-<div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1>Votre commande :</h1>
+  <div class="py-4">
+    <div class="mx-20">
+      <h1 class="text-2xl bg-primary text-white inline-block mt-6 py-2 px-4">Votre commande :</h1>
 
-      <ul>
+      <ul class="mx-10 mt-8">
         <% @order.products.each do |product| %>
-        <li class="flex items-center"><%= image_tag product.photo_url, class: "w-20 m-2" %><strong><%= product.name %></strong><strong> prix : <%= humanized_money_with_symbol product.price %></strong></li>
+        <li class="flex items-center" style="border-bottom: 2px solid; border-color: #BA184D">
+          <%= image_tag product.photo_url, class: "w-20 m-2" %>
+          <div class="flex flex-col w-full justify-center">
+            <span class="text-gray-900 ml-8">
+              <strong><%= product.name %></strong>
+            </span>
+            <span class="text-gray-900 ml-8">
+              <strong><%= humanized_money product.price %> <%= currency_symbol %></strong>
+            </span>
+            <span class="text-gray-700 text-sm" style="align-self: center">
+              <%= product.description %>
+            </span>
+          </div>
+        </li>
         <% end %>
       </ul>
       <br>
-      <h3>sera livrée à l'adresse :</h3>
-      <ul>
-        <li><%= @order.address %></li>
-        <li><%= @order.city %></li>
-        <li><%= @order.zip_code %></li>
-      </ul>
+      <div class="mx-10">
+        <h3 class="text-xl text-gray-900 my-6">Sera livrée à l'adresse suivante :</h3>
+        <ul>
+          <li class="text-gray-900"><%= @order.address %></li>
+          <li class="text-gray-900"><%= @order.city %></li>
+          <li class="text-gray-900"><%= @order.zip_code %></li>
+        </ul>
+      </div>
       <br>
       <hr>
       <br>
 
-      <h3>Total de la commande : <strong><%= humanized_money_with_symbol @order.amount %></strong></h3>
+      <h3 class="text-gray-900 text-xl mx-10">Total de la commande : <strong><%= humanized_money @order.amount %> <%= currency_symbol %></strong></h3>
       <br>
 
-      <button id="pay" class="btn btn-primary">Pay</button>
+      <button id="pay" class="bg-primary text-white inline-block mt-6 py-2 px-4 w-3/12 mb-8">Payer</button>
 
       <script src="https://js.stripe.com/v3/"></script>
       <script>
@@ -37,4 +51,3 @@
       </script>
     </div>
   </div>
-</div>

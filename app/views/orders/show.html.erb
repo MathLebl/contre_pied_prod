@@ -1,16 +1,18 @@
-<div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1>Commande n° #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
-      <ul class="list-unstyled">
-        <li><strong>Effectuée le :</strong> <%= l @order.created_at.to_date %></li>
-        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
-        <li><strong>Produits :</strong></li>
+  <div class="py-4">
+    <div class="mx-20">
+      <h1 class="text-gray-900">Commande n° #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
+      <ul class="">
+        <li class="my-2 text-gray-900"><strong>Effectuée le :</strong> <%= l @order.created_at.to_date %></li>
+        <li class="my-2 text-gray-900"><strong>TOTAL</strong> <%= humanized_money @order.amount %> <%= currency_symbol %></li>
+        <li class="my-2 text-gray-900"><strong>Produits :</strong></li>
         <% @order.products.each do |product| %>
-        <li class="flex items-center"><%= image_tag product.photo_url, class: "w-20 m-2" %><strong><%= product.name %></strong><strong> prix : <%= humanized_money_with_symbol product.price %></strong></li>
+        <li class="flex items-center">
+        <span class="text-gray-900"><%= image_tag product.photo_url, class: "w-20 m-2" %></span>
+        <span class="text-gray-900"><strong><%= product.name %></strong></span>
+        <span class="text-gray-900 ml-4"><strong><%= humanized_money product.price %> <%= currency_symbol %></strong></li></span>
         <% end %>
       </ul>
-      <p>Durée moyenne de livraison sous <strong>2 jours ouvrés</strong></p>
+      <p class="text-gray-900 my-8">Durée moyenne de livraison sous <strong>2 jours ouvrés</strong></p>
+      <%= link_to "Retour au site", products_path, class: "bg-primary text-white inline-block mt-6 py-2 px-4" %>
     </div>
   </div>
-</div>
