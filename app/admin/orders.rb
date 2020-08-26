@@ -1,7 +1,9 @@
 ActiveAdmin.register Order do
   menu label: "Commandes", priority: 6
   config.sort_order = 'created_at_asc'
-  permit_params :state, :product_name, :amount_cents, :checkout_session_id, :user_id, :product_id, :created_at, :updated_at
+  permit_params :state, :amount_cents, :checkout_session_id, :user_id,
+                :created_at, :updated_at, :address, :city, :zip_code, :phone, product_attributes: [:id, :name],
+                item_attributes: [:order_id, :product_id]
 
   scope :all
   scope :payées
@@ -25,9 +27,11 @@ ActiveAdmin.register Order do
     column "Etat" do |order|
       order.state
     end
-    # column "Article" do |order|
-    #   link_to order.product_name, admin_product_path(order)
-    # end
+    column "Article" do |orders|
+      orders.products.each do |product|
+        link_to product.name, admin_product_path(product)
+      end
+    end
     column "Date" do |order|
       order.created_at
     end
