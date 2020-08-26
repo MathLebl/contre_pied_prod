@@ -52,7 +52,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Commandes" do
           table_for Order.order('created_at ASC').first(8) do
             column "Num" do |order|
-              order.id
+              link_to order.id, admin_order_path(order)
             end
             column "État" do |order|
               order.state
