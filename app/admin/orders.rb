@@ -37,7 +37,9 @@ ActiveAdmin.register Order do
       order.created_at
     end
     column 'Prix', :amount
-    column "Client", :user
+    column 'Client' do |order|
+      link_to order.user.first_name + " " + order.user.name, admin_user_path(order.user)
+    end
     actions
   end
 
@@ -48,7 +50,9 @@ ActiveAdmin.register Order do
   show do
     panel "Détails Commande" do
       attributes_table_for order do
-        row :user
+        row 'Client' do |order|
+          order.user.first_name + " " + order.user.name
+        end
         row :state
         row "products" do |order|
           order.products.each do |product|
@@ -57,16 +61,12 @@ ActiveAdmin.register Order do
         end
         row :amount
         row :created_at
-      end
-    end
-  end
-    sidebar "Details Livraison" do
-      attributes_table_for order do
         row :address
         row :city
         row :zip_code
         row :phone
       end
     end
-
+    active_admin_comments
+  end
 end
