@@ -63,7 +63,7 @@ ActiveAdmin.register_page "Dashboard" do
               end
             end
             column "Client" do |order|
-              link_to order.user.name, admin_user_path(order.user)
+              link_to order.user.first_name + " " + order.user.name, admin_user_path(order.user)
             end
             column "adresse" do |order|
               order.address
@@ -74,10 +74,7 @@ ActiveAdmin.register_page "Dashboard" do
           end
           div class:'links'do
             div do |order|
-              link_to "Toutes les représentations", admin_orders_path
-            end
-            div do |order|
-              link_to "Nouvelle date", new_admin_order_path
+              link_to "Toutes les commandes", admin_orders_path
             end
           end
         end
