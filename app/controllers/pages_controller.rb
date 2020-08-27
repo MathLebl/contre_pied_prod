@@ -99,19 +99,24 @@ class PagesController < ApplicationController
     when 'payment_intent.succeeded'
       payment_intent = event.data.object # contains a Stripe::PaymentIntent
       user = User.find_by(email: event[:data][:object][:charges][:data][0][:billing_details][:email])
+      puts user.name
       last_order = user.orders.last
+      puts last_order.state
       last_order.state = "Payé"
+      last_order.save
     when 'payment_intent.canceled'
       payment_intent = event.data.object # contains a Stripe::PaymentIntent
       user = User.find_by(email: event[:data][:object][:charges][:data][0][:billing_details][:email])
       last_order = user.orders.last
       last_order.state = "Annulé"
+      last_order.save
     when 'payment_intent.payment_failed'
       payment_intent = event.data.object # contains a Stripe::PaymentIntent
       user = User.find_by(email: event[:data][:object][:charges][:data][0][:billing_details][:email])
       last_order = user.orders.last
       last_order.state = "Echec"
-    # ... handle other event types
+      last_order.save
+      # ... handle other event types
     else
       # Unexpected event type
       # status 400
