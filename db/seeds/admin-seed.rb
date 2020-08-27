@@ -9,6 +9,7 @@ user = User.new(
   admin: true,
   password: "tototo"
   )
+user.skip_confirmation!
 user.save!
 
 user = User.new(
@@ -18,6 +19,7 @@ user = User.new(
   admin: true,
   password: "tototo"
   )
+user.skip_confirmation!
 user.save!
 
 puts 'Admins done'
