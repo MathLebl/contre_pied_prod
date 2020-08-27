@@ -1,7 +1,8 @@
 ActiveAdmin.register Product do
   menu label: "Articles", priority: 7
 #   config.sort_order = 'date_asc'
-permit_params :stock, :name, :shop_category_id, :price_cents, :artist_id, :product_image, :description
+permit_params :stock, :name, :shop_category_id, :price_cents, :artist_id,
+              :product_image, :description
 
 
 
