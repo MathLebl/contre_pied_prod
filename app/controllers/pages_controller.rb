@@ -61,6 +61,4 @@ class PagesController < ApplicationController
   
     # status 200
   end
-  end
-
 end
