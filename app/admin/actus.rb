@@ -59,19 +59,38 @@ ActiveAdmin.register Actu do
       link_to actu.title, admin_actu_path(actu)
     end
     column :description
-    column "Photo" do |actu|
-      "Ok" if actu.featured_image.attached?
+    column "Media" do |actu|
+      if actu.video?
+        "Vidéo"
+      elsif actu.featured_image.attached?
+        "Photo"
+      end
     end
-    column "Vidéo" do |actu|
-      "Ok" if actu.video?
-    end
-    column "Publiée le :" do |actu|
-      actu.published_at? ? actu.published_at : "pas encore publiée"
+    column "État" do |actu|
+      actu.published_at? ? "Publié le #{ l actu.published_at}" : "Pas encore publiée"
     end
     actions do |actu|
       item "Publier", publish_index_admin_actu_path(actu), method: :put if !actu.published_at?
       item "Dépublier", unpublish_index_admin_actu_path(actu), method: :put if actu.published_at?
     end
+  end
+
+  show do
+    attributes_table do
+      row :title
+      row :description
+      row "Media" do |actu|
+        if actu.video?
+          "Vidéo"
+        elsif actu.featured_image.attached?
+          "Photo"
+        end
+      end
+      row "État" do |actu|
+        actu.published_at? ? "Publié le #{ l actu.published_at}" : "Pas encore publiée"
+      end
+    end
+    active_admin_comments
   end
 
   form do |f|

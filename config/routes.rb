@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/full_name'
   resources :artists, only: [:index, :show ] do
     collection do
       get :concert

@@ -184,6 +184,7 @@ ActiveRecord::Schema.define(version: 2020_08_27_152932) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false, null: false
     t.string "name"
+    t.string "first_name"
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"

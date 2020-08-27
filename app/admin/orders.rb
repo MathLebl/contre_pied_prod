@@ -28,8 +28,8 @@ ActiveAdmin.register Order do
     column "Etat" do |order|
       order.state
     end
-    column "Article" do |orders|
-      orders.products.each do |product|
+    column "Article" do |order|
+      order.products.each do |product|
         link_to product.name, admin_product_path(product)
       end
     end
@@ -37,7 +37,9 @@ ActiveAdmin.register Order do
       order.created_at
     end
     column 'Prix', :amount
-    column "Client", :user
+    column 'Client' do |order|
+      link_to order.user.first_name + " " + order.user.name, admin_user_path(order.user)
+    end
     actions
   end
 
@@ -46,14 +48,25 @@ ActiveAdmin.register Order do
   filter :amount_cents
 
   show do
-    attributes_table do
-      row :state
-      row :product_name
-      row :created_at
-      row :amount
-      row :user
+    panel "Détails Commande" do
+      attributes_table_for order do
+        row 'Client' do |order|
+          order.user.first_name + " " + order.user.name
+        end
+        row :state
+        row "products" do |order|
+          order.products.each do |product|
+            link_to product.name, admin_product_path(product)
+          end
+        end
+        row :amount
+        row :created_at
+        row :address
+        row :city
+        row :zip_code
+        row :phone
+      end
     end
-
+    active_admin_comments
   end
-
 end

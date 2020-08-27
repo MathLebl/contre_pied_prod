@@ -49,24 +49,58 @@ end
 
 
 index do
-  column "Artist" do |product|
-    link_to product.artist.name, admin_artist_path(product.artist_id)
+  column "Nom" do |product|
+    link_to product.name, admin_product_path(product)
   end
-  column "Prix", :price
-  column "Type" do |product|
-    link_to product.shop_category.name, admin_product_path(product)
+  column "Artist" do |product|
+    product.artist.name
   end
   column 'Stock', :stock
-  column "Nom", :name
+  column "Prix", :price
+  column "Type" do |product|
+    product.shop_category.name
+  end
   actions do |product|
-    item "Publier", publish_index_admin_product_path(product), method: :put if !product.published_at?
-    item "Dépublier", unpublish_index_admin_product_path(product), method: :put if product.published_at?
-    item "Voir sur le site", product_path(product)
+    item "Publier", publish_index_admin_product_path(product), style:'margin: 0 7px;', method: :put if !product.published_at?
+    item "Dépublier", unpublish_index_admin_product_path(product), style:'margin: 0 7px;', method: :put if product.published_at?
+    item "Voir sur le site", product_path(product), style:'margin: 0 7px;'
   end
 end
 
 filter :artist
 filter :shop_category
+
+show do
+  attributes_table do
+    row :name
+    row :artist
+    row :stock
+    row :price_cents
+    row "Description" if product.description? do |product|
+      product.description
+    end
+    row :shop_category
+    row "Photo" do |product|
+      if product.product_image.attached?
+        'Fichier'
+      elsif product.photo_url
+        'URL'
+      end
+    end
+
+    # row "Media" do |actu|
+    #   if actu.video?
+    #     "Vidéo"
+    #   elsif actu.featured_image.attached?
+    #     "Photo"
+    #   end
+    # end
+    # row "État" do |actu|
+    #   actu.published_at? ? "Publié le #{ l actu.published_at}" : "Pas encore publiée"
+    # end
+  end
+  active_admin_comments
+end
 
 form do |f|
   f.inputs do
@@ -76,6 +110,7 @@ form do |f|
     f.input :shop_category_id, :as => :select, :collection => ShopCategory.all.map{|u| ["#{u.name}", u.id]}
     f.input :price_cents
     f.input :artist_id, :label => 'Artist', :as => :select, :collection => Artist.all.map{|u| ["#{u.name}", u.id]}
+    f.input :photo_url
     f.input :product_image, as: :file
     f.actions
   end
