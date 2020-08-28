@@ -37,6 +37,17 @@ class OrdersController < ApplicationController
     Cart.reset_cart(session[:cart])
   end
 
+  after_update :order_send if order.state == "envoyée"
+  after_update :order_paid if order.state == 'Payé'
+
+  def order_send
+      OrderMailer.order_send(self).deliver
+  end
+
+  def order_paid
+      OrderMailer.order_paid(self).deliver
+  end
+
   private
 
   # création des entrées dans la table Items
