@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   def full_name
   end
 
-
   private
 
   def find_user

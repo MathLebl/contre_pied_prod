@@ -17,8 +17,10 @@
         </div>
       </div>
     </form>
+    <div class="text-center ">
+      <%= link_to "Pas encore inscrit ?", new_user_registration_path, class: "m-4 text-primary hover:text-secondary" %>
+      <%= render "devise/shared/links" %><br>
+    </div>
     <% end %>
-    <%= render "devise/shared/links" %><br>
-    <%= link_to "Pas encore inscrit ?", new_user_registration_path, class: "ml-8 text-primary hover:text-secondary" %>
   </div>
 </div>
