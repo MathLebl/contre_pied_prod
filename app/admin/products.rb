@@ -6,6 +6,9 @@ permit_params :stock, :name, :shop_category_id, :price_cents, :artist_id,
 
 
 
+action_item :publish, only: :index do
+  link_to "Sur le site", products_path
+end
 
 action_item :publish, only: :show do
   link_to "retour", admin_products_path
