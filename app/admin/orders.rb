@@ -23,7 +23,7 @@ ActiveAdmin.register Order do
     link_to "Envoyée", send_order_admin_order_path(order), method: :put if order.state == 'Payé'
   end
   action_item :unsend_order, only: :show do
-    link_to "Pending", unsend_order_admin_order_path(order), method: :put if order.state == 'envoyée'
+    link_to "Payée", unsend_order_admin_order_path(order), method: :put if order.state == 'envoyée'
   end
 
   member_action :send_order, method: :put do
@@ -71,7 +71,7 @@ ActiveAdmin.register Order do
     end
     actions do |order|
       item "Envoyée", send_order_index_admin_order_path(order), method: :put if order.state == 'Payé'
-      item "Pending", unsend_order_index_admin_order_path(order), method: :put if order.state == 'envoyée'
+      item "Payée", unsend_order_index_admin_order_path(order), method: :put if order.state == 'envoyée'
     end
   end
 
