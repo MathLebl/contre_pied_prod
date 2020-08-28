@@ -11,23 +11,32 @@
       <%= f.input :email,
                     # required: true,
                     autofocus: true,
-                    placeholder: "exemple@exmaple.fr",
-                    input_html: { autocomplete: "email" },
+                    placeholder: "exemple@example.fr",
                     input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
                     label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
-                    <%= f.input :password,
+      <%= f.input :name,
+                    # required: true,
+                    autofocus: true,
+                    placeholder: "Martin",
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :first_name,
+                    # required: true,
+                    autofocus: true,
+                    placeholder: "Jean-Michel",
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :password,
                     # required: true,
                     label: "Mot de passe",
                     placeholder: "**********",
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" },
                     input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
                     label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
-                    <%= f.input :password_confirmation,
+      <%= f.input :password_confirmation,
                     # required: true,
                     label: "Confirmation du mot de passe",
                     placeholder: "**********",
-                    input_html: { autocomplete: "new-password" },
                     input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
                     label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
 
@@ -39,5 +48,3 @@
                   <% end %>
                 </div>
               </div>
-
-              <%= render "devise/shared/links" %>
