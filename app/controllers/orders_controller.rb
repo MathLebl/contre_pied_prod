@@ -37,6 +37,8 @@ class OrdersController < ApplicationController
     Cart.reset_cart(session[:cart])
   end
 
+
+
   private
 
   # création des entrées dans la table Items
