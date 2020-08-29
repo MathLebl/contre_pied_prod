@@ -15,12 +15,12 @@ class Order < ApplicationRecord
 
 
   after_update :order_send,
-    if: Proc.new { |order| order.state == "envoyé" }
+    if: Proc.new { |order| order.state == "envoyée" }
   after_update :order_paid,
     if: Proc.new { |order| order.state == "Payé" }
 
   def order_send
-      OrderMailer.order_send(self).deliver
+      OrderSendMailer.order_send(self).deliver
   end
 
   def order_paid

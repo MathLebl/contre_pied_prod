@@ -1,17 +1,7 @@
 class OrderMailer < ApplicationMailer
-
-  def order_send(order, user)
+  def order_paid(order)
     @order = order
-    @user = user
-    mail to: user.email, subject: "Votre commande numéro #{ order.id } a été envoyée"
-  end
-
-  def order_paid(order, user)
-    @order = order
-    @user = user
-    mail to: user.email, subject: "Votre commande numéro #{ order.id } a été prise en compte"
+    @user = @order.user
+    mail to: @user.email, subject: "Votre commande numéro #{ order.id } a été prise en compte"
   end
 end
-
-
-
