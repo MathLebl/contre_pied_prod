@@ -19,7 +19,36 @@ ActiveAdmin.register Order do
   action_item :publish, only: :index do
     link_to "retour", admin_root_path
   end
+  action_item :send_order, only: :show do
+    link_to "Envoyée", send_order_admin_order_path(order), method: :put if order.state == 'Payé'
+  end
+  action_item :unsend_order, only: :show do
+    link_to "Payée", unsend_order_admin_order_path(order), method: :put if order.state == 'envoyée'
+  end
 
+  member_action :send_order, method: :put do
+    order = Order.find(params[:id])
+    order.update(state: 'envoyée')
+    redirect_to admin_order_path(order)
+  end
+
+  member_action :unsend_order, method: :put do
+    order = Order.find(params[:id])
+    order.update(state: 'Payé')
+    redirect_to admin_order_path(order)
+  end
+
+  member_action :send_order_index, method: :put do
+    order = Order.find(params[:id])
+    order.update(state: 'envoyée')
+    redirect_to admin_orders_path
+  end
+
+  member_action :unsend_order_index, method: :put do
+    order = Order.find(params[:id])
+    order.update(state: 'Payé')
+    redirect_to admin_orders_path
+  end
 
   index do
     column "Référence" do |order|
@@ -40,7 +69,10 @@ ActiveAdmin.register Order do
     column 'Client' do |order|
       link_to order.user.first_name + " " + order.user.name, admin_user_path(order.user)
     end
-    actions
+    actions do |order|
+      item "Envoyée", send_order_index_admin_order_path(order), method: :put if order.state == 'Payé'
+      item "Payée", unsend_order_index_admin_order_path(order), method: :put if order.state == 'envoyée'
+    end
   end
 
   filter :state
