@@ -37,9 +37,9 @@ class OrdersController < ApplicationController
     Cart.reset_cart(session[:cart])
   end
 
-  after_action :order_send, only: [:update]
+  after_action :order_send, only: [:update],
     if: Proc.new { |order| order.state == "envoyé" }
-  after_action :order_paid, only: [:update]
+  after_action :order_paid, only: [:update],
     if: Proc.new { |order| order.state == "Payé" }
 
   def order_send
