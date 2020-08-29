@@ -11,7 +11,8 @@ puts 'Creating CD products'
     shop_category_id: ShopCategory.last.id,
     photo_url: "https://images.unsplash.com/photo-1571173069043-82a7a13cee9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
     price_cents: 1400,
-    artist_id: Artist.last.id
+    artist_id: Artist.last.id,
+    published_at: Time.zone.now
   )
   product.save!
 end
@@ -23,7 +24,8 @@ puts 'Creating Tshirt products'
     shop_category_id: ShopCategory.first.id,
     photo_url: "https://boutique.tennislegend.fr/37-large_default/tshirt-la-chatte-homme.jpg",
     price_cents: 2200,
-    artist_id: Artist.last.id
+    artist_id: Artist.last.id,
+    published_at: Time.zone.now
   )
   product.save!
 end
