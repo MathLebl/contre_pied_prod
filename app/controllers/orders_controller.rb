@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
       payment_method_types: ['card'],
       line_items: line_items,
       success_url: order_url(order),
-      cancel_url: order_url(order)
+      cancel_url: new_order_payment_url(order)
     )
 
     order.update(checkout_session_id: session.id)
