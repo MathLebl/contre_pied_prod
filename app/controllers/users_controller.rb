@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   
   def me
     @user = current_user
+    @orders = find_orders(@user.id)
   end
 
   def full_name
@@ -12,5 +13,9 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find(params[:id])
+  end
+
+  def find_orders(id)
+    Order.where(user_id: id)
   end
 end
