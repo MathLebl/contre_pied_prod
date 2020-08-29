@@ -37,8 +37,10 @@ class OrdersController < ApplicationController
     Cart.reset_cart(session[:cart])
   end
 
-  after_update :order_send if @order.state == "envoyée"
-  after_update :order_paid if @order.state == 'Payé'
+  after_update :order_send,
+    if: Proc.new { |order| order.state == "envoyé" }
+  after_update :order_paid,
+    if: Proc.new { |order| order.state == "Payé" }
 
   def order_send
       OrderMailer.order_send(self).deliver
