@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   get 'contacts', to: 'pages#contacts'
   get 'boutique', to: 'pages#boutique'
   get 'retraite', to: 'pages#retraite'
-  # get 'users/me', to: 'users#me'
+  get 'users/me', to: 'users#me'
   post 'webhook', to: 'pages#webhook'
 
   root to: 'pages#home'

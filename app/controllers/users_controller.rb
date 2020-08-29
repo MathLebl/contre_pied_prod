@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [ :full_name ]
+  
+  def me
+    @user = current_user
+  end
 
   def full_name
   end
@@ -8,9 +12,5 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find(params[:id])
-  end
-
-  def me
-    @user = current_user
   end
 end

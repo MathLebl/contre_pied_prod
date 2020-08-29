@@ -1,1 +1,20 @@
-<h1>User me <%= @user %></h1>
+<h1 class="text-center text-3xl text-white bg-primary font-bold mx-auto mb-4 p-1" style="width: fit-content">Mon profil</h1>
+
+<div class="grid grid-cols-12">
+    <%# Personnal infos block %>
+    <div class="border-2 border-primary px-4 py-8 inline-block ml-4 mt-16 flex flex-col col-span-3">
+        <h2 class="text-l text-white bg-primary font-bold mb-4 p-1 self-center" style="width: fit-content">Mes coordonnées</h2>
+        <div class="grid grid-cols-2">
+            <span class="text-primary bg-secondary p-1 mt-1 mb-1" style="width: fit-content">Nom</span>
+            <span class="mt-1 mb-1 p-1"><%= @user.name %></span>
+            <span class="text-primary bg-secondary p-1 mt-1 mb-1" style="width: fit-content">Adresse</span>
+            <span class="mt-1 mb-1 p-1"><%= @user.address %></span>
+            <span class="text-primary bg-secondary p-1 mt-1 mb-1" style="width: fit-content">Ville</span>
+            <span class="mt-1 mb-1 p-1"><%= @user.city %></span>
+            <span class="text-primary bg-secondary p-1 mt-1 mb-1" style="width: fit-content">Code postal</span>
+            <span class="mt-1 mb-1 p-1"><%= @user.zip_code %></span>
+        </div>
+    </div>
+
+    <div class="bg-primary col-start-5 col-span-7 mt-16">salut</div>
+</div>
