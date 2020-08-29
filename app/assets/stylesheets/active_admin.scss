@@ -21,8 +21,10 @@ body {
   font-family: "Inconsolata";
 }
 #header {
-  background-color: #BA184D;
+  background-color: #BA184D !important;
+  background-image: none !important;
 }
+
 .name {
   font-weight: bold;
 }
