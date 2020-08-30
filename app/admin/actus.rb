@@ -95,7 +95,7 @@ ActiveAdmin.register Actu do
 
   form do |f|
     f.inputs do
-      f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.name}", u.id]}
+      f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.first_name}", u.id]}
       f.input :featured_image, as: :file
       f.input :video
       f.input :description, :as => :pagedown_text
