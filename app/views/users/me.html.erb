@@ -13,11 +13,14 @@
             <span class="mt-1 mb-1 p-1"><%= @user.city %></span>
             <span class="text-primary bg-secondary p-1 mt-1 mb-1" style="width: fit-content">Code postal</span>
             <span class="mt-1 mb-1 p-1"><%= @user.zip_code %></span>
+            <span class="text-primary bg-secondary p-1 mt-1 mb-1" style="width: fit-content">Téléphone</span>
+            <span class="mt-1 mb-1 p-1"><%= number_to_phone(@user.phone) %></span>
         </div>
+        <%= link_to "Modifier", edit_user_path(@user), class: "text-l text-white bg-primary font-bold mt-6 p-1 self-center hover:bg-secondary hover:text-primary" %>
     </div>
 
     <%# orders block %>
-    <div class="bg-primary col-start-5 col-span-6 mt-16 overflow-scroll h-64">
+    <div class="bg-primary col-start-5 col-span-6 mt-16 overflow-scroll h-auto">
         <% @orders.each do |order| %>
         <%= link_to order_path(order) do %>
         <div class="bg-secondary flex justify-around m-4 transform hover:scale-105 duration-200">
