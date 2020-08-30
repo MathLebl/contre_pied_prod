@@ -22,7 +22,7 @@
     <%# orders block %>
     <div class="bg-primary col-start-5 col-span-6 mt-16 overflow-scroll h-auto">
         <% @orders.each do |order| %>
-        <%= link_to order_path(order) do %>
+        <%= link_to order.state == "Payé" ? order_path(order) : new_order_payment_path(order) do %>
         <div class="bg-secondary flex justify-around m-4 transform hover:scale-105 duration-200">
             <div class="flex flex-col py-2">
                 <p>Commande du <strong><%= l order.created_at.to_date %></strong></p>
