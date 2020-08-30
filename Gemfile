@@ -13,6 +13,9 @@ gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'activeadmin_pagedown'
 gem 'redcarpet'
+gem 'dnsimple'
+gem 'platform-api'
+
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
