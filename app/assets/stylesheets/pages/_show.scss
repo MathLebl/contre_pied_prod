@@ -14,12 +14,20 @@
   // margin: 30px;
   // padding-bottom: 16px;
 }
+#back-button {
+    transition: all 0.2s ease;
+  #back-text {
+    display: none;
+  }
+}
 
 #back-button:hover {
   #back-text {
     display: block;
+
   }
 }
+
 
 .artist-informations {
   // display: flex;
