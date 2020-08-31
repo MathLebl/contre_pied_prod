@@ -1,0 +1,49 @@
+<h1 class="text-center text-2xl text-primary font-bold mx-auto mt-4 mb-4 p-1" style="width: fit-content">Bonjour <%= @user.name %></h1>
+
+<div class="grid grid-cols-12 mb-12" style="grid-template-rows: 27.5rem">
+    <%# Personnal infos block %>
+    <div class="border-2 border-primary px-4 py-8 inline-block ml-4 mt-16 flex flex-col col-span-3">
+        <h2 class="text-l text-white bg-primary font-bold mb-4 p-1 self-center" style="width: fit-content">Mes coordonnées</h2>
+        <div class="grid grid-cols-2">
+            <span class="text-primary bg-secondary p-1 mt-1 mb-1" style="width: fit-content">Nom</span>
+            <span class="mt-1 mb-1 p-1"><%= @user.name %></span>
+            <span class="text-primary bg-secondary p-1 mt-1 mb-1" style="width: fit-content">Adresse</span>
+            <span class="mt-1 mb-1 p-1"><%= @user.address %></span>
+            <span class="text-primary bg-secondary p-1 mt-1 mb-1" style="width: fit-content">Ville</span>
+            <span class="mt-1 mb-1 p-1"><%= @user.city %></span>
+            <span class="text-primary bg-secondary p-1 mt-1 mb-1" style="width: fit-content">Code postal</span>
+            <span class="mt-1 mb-1 p-1"><%= @user.zip_code %></span>
+            <span class="text-primary bg-secondary p-1 mt-1 mb-1" style="width: fit-content">Téléphone</span>
+            <span class="mt-1 mb-1 p-1"><%= number_to_phone(@user.phone) %></span>
+        </div>
+        <%= link_to "Modifier", edit_user_path(@user), class: "text-l text-white bg-primary font-bold mt-6 p-1 self-center hover:bg-secondary hover:text-primary" %>
+    </div>
+
+    <%# orders block %>
+    <div class="bg-primary col-start-5 col-span-6 mt-16 overflow-scroll h-auto">
+        <% @orders.each do |order| %>
+        <%= link_to order.state == ("Payé" || "envoyée") ? order_path(order) : new_order_payment_path(order) do %>
+        <div class="bg-secondary flex justify-around m-4 transform hover:scale-105 duration-200">
+            <div class="flex flex-col py-2">
+                <p>Commande du <strong><%= l order.created_at.to_date %></strong></p>
+                <p class="font-bold"><%= order.state %></p>
+                <% if order.items.length < 2 %>
+                <p><%= order.items.length %> Article</p>
+                <% else %>
+                    <p><%= order.items.length %> Articles</p>
+                <% end %>
+                <div>
+                    <span class="text-xl"><%= humanized_money order.amount %> <%= currency_symbol %></span>
+                </div>
+            </div>
+            <div class="flex flex-col py-2">
+                <p class="font-bold">Livraison à :</p>
+                <span><%= order.address %></span>
+                <span><%= order.city %></span>
+                <span><%= order.zip_code %></span>
+            </div>
+        </div>
+        <% end %>
+        <% end %>
+    </div>
+</div>

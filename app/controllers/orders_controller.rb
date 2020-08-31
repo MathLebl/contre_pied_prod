@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   def new
     @order = Order.new
+    @user = current_user
     if params[:product_id]
       Cart.add_to_cart(session[:cart], params[:product_id])
     end

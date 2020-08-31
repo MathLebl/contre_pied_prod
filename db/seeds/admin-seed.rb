@@ -7,7 +7,11 @@ user = User.new(
   first_name: 'Mathieu',
   email: "leblond.mathieu@gmail.com",
   admin: true,
-  password: "tototo"
+  password: "tototo",
+  address: "adresse test",
+  city: "Lyon",
+  zip_code: "01234",
+  phone: "01234567"
   )
 user.skip_confirmation!
 user.save!
@@ -17,7 +21,11 @@ user = User.new(
   first_name: 'Yéshé',
   email: "h.yeshe@gmail.com",
   admin: true,
-  password: "tototo"
+  password: "tototo",
+  address: "adresse test",
+  city: "Lyon",
+  zip_code: "01234",
+  phone: "01234567"
   )
 user.skip_confirmation!
 user.save!

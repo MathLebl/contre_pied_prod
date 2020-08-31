@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/full_name'
+  # get 'users/full_name'
   resources :artists, only: [:index, :show ] do
     collection do
       get :concert
@@ -25,11 +25,19 @@ Rails.application.routes.draw do
     resources :payments, only: :new
   end
 
+  resources :users, only: [:edit, :update] do
+    collection do
+      get :full_name
+      get :me
+    end
+  end
+
   get 'about', to: 'pages#about'
   get 'legals', to: 'pages#legals'
   get 'contacts', to: 'pages#contacts'
   get 'boutique', to: 'pages#boutique'
   get 'retraite', to: 'pages#retraite'
+  # get 'users/me', to: 'users#me'
   post 'webhook', to: 'pages#webhook'
 
   root to: 'pages#home'
