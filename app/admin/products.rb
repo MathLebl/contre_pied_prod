@@ -63,6 +63,13 @@ index do
   column "Type" do |product|
     product.shop_category.name
   end
+  column "Photo" do |product|
+    if product.product_image.attached?
+      image_tag product.photo_image, class:'photo-index'
+    elsif product.photo_url
+      image_tag product.photo_url, class:'photo-index'
+    end
+  end
   actions do |product|
     item "Publier", publish_index_admin_product_path(product), style:'margin: 0 7px;', method: :put if !product.published_at?
     item "Dépublier", unpublish_index_admin_product_path(product), style:'margin: 0 7px;', method: :put if product.published_at?
@@ -85,22 +92,11 @@ show do
     row :shop_category
     row "Photo" do |product|
       if product.product_image.attached?
-        'Fichier'
+        image_tag product.photo_image, class:'photo-show'
       elsif product.photo_url
-        'URL'
+        image_tag product.photo_url, class:'photo-show'
       end
     end
-
-    # row "Media" do |actu|
-    #   if actu.video?
-    #     "Vidéo"
-    #   elsif actu.featured_image.attached?
-    #     "Photo"
-    #   end
-    # end
-    # row "État" do |actu|
-    #   actu.published_at? ? "Publié le #{ l actu.published_at}" : "Pas encore publiée"
-    # end
   end
   active_admin_comments
 end
