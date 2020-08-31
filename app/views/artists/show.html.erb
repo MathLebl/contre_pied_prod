@@ -2,7 +2,7 @@
   <div class="bg-secondary h-40 w-5/6 z-0 absolute hidden sm:inline-block" style="left: 7.5%; bottom: 25%">
   </div>
     <% if   @artist.category == "spectacle"%>
-    <%= link_to spectacle_artists_path, class: "inmine-flex items-center absolute text-primary no-underline hover:text-secondary transform hover:scale-110 duration-200 text-3xl p-1 font-bold mt-4 ml-20", style: "top: 10rem", id: "back-button" do %>
+    <%= link_to spectacle_artists_path, class: "inline-flex items-center absolute text-primary no-underline hover:text-secondary transform hover:scale-110 duration-200 text-3xl p-1 font-bold mt-4 ml-20", style: "top: 10rem", id: "back-button" do %>
      <i class="fas fa-arrow-left"></i>
      <span id="back-text" class="text-base ml-2">Retour</span>
     <% end %>
