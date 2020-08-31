@@ -15,7 +15,13 @@
   // padding-bottom: 16px;
 }
 
-.artist-informations{
+#back-button:hover {
+  #back-text {
+    display: block;
+  }
+}
+
+.artist-informations {
   // display: flex;
   // justify-content: center;
   // align-content: center;
@@ -42,7 +48,7 @@
   margin: 16px 8px;
   button {
     border: none;
-    text-decoration:none;
+    text-decoration: none;
     // background-color: transparent;
   }
 }
@@ -52,7 +58,7 @@
 
 .info-list > li > a.download-btn {
   margin: 16px 8px;
-  text-decoration:none;
+  text-decoration: none;
   color: black;
 }
 
@@ -69,7 +75,6 @@
 .dice .photo {
   // width: 200px;
 }
-
 
 .top-left {
   position: absolute;
@@ -136,7 +141,7 @@
 .artist-page > .table-title {
   margin: 0px 50px 0px 50px;
   text-align: center;
-  border-top: 0.2px solid #D94496;
+  border-top: 0.2px solid #d94496;
   padding-top: 16px;
 }
 
@@ -147,10 +152,9 @@ button:focus {
   outline: none;
 }
 
-
 @media (max-width: 640px) {
   /* For mobile phones: */
-  .artist-page >.artist-page >.table-title {
+  .artist-page > .artist-page > .table-title {
     right: 1rem;
     top: 2rem;
   }
@@ -158,7 +162,7 @@ button:focus {
 
 @media (min-width: 640px) {
   /* For mobile phones: */
-  .artist-page >.table-title {
+  .artist-page > .table-title {
     right: 13rem;
     top: 2rem;
   }
