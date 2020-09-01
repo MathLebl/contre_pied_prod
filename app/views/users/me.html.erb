@@ -1,5 +1,8 @@
 <h1 class="text-center text-2xl text-primary font-bold mx-auto mt-4 mb-4 p-1" style="width: fit-content">Bonjour <%= @user.name %></h1>
-
+<%= link_to root_path, class: "inline-flex items-center absolute text-primary no-underline hover:text-secondary transform hover:scale-110 duration-200 text-3xl p-1 font-bold mt-4 ml-20", style: "top: 10rem", id: "back-button" do %>
+   <i class="fas fa-arrow-left"></i>
+   <span id="back-text" class="text-base ml-2">Retour</span>
+<% end %>
 <div class="grid grid-cols-12 mb-12" style="grid-template-rows: 27.5rem">
     <%# Personnal infos block %>
     <div class="border-2 border-primary px-4 py-8 inline-block ml-4 mt-16 flex flex-col col-span-3">
