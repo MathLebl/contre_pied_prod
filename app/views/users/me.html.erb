@@ -1,19 +1,19 @@
-<div class="bg-secondary h-40 w-5/6 mx-auto my-40 relative">
+<div class="bg-secondary h-40 w-5/6 mx-auto my-20 lg:my-40 md:my-40 relative">
     <div class="flex flex-col h-full justify-center" style="padding-left: 35%;">
-        <h3 class="text-3xl text-primary font-bold mb-4"><%= @user.name %> <%= @user.first_name %></h3>
-        <p class="text-sm text-primary">Bienvenue sur votre espace personnel, retrouvez ici vos commandes ainsi que vos données personnelles.</p>
-        <%= image_tag "profile-pic", alt: "illustration graphique d'une photo de profil", class: "w-1/5 absolute", style: "left: 7rem; bottom: -2.5rem;" %>
+        <%= image_tag "profile-pic", alt: "illustration graphique d'une photo de profil", class: "w-3/12 lg:w-1/5 md:w-1/3 absolute m-4 lg:m-24 md:m-24 left-0" %>
+        <h3 class="text-xl lg:text-3xl md:text-3xl text-primary font-bold mb-4"><%= @user.name %> <%= @user.first_name %></h3>
+        <p class="text-xs lg:text-sm md:text-sm text-primary">Bienvenue sur votre espace personnel, retrouvez ici vos commandes ainsi que vos données personnelles.</p>
     </div>
 </div>
 
 <%# orders block %>
-<div class="bg-primary flex flex-col pb-10 mb-20 overflow-scroll" style="height: 70vh; padding-right: 25%; padding-left:25%;">
+<div class="bg-primary flex flex-col pb-10 mb-20 overflow-scroll" style="height: 70vh;">
     <% @orders.each do |order| %>
-    <div class="bg-white text-primary mt-10 mb-2 w-1/2 px-4 py-1">
+    <div class="bg-white text-primary mt-10 mb-2 w-11/12 lg:w-1/2 md:w-2/3 mx-auto px-4 py-1">
         <p>Commande du <strong><%= l order.created_at.to_date %></strong></p>
     </div>
     <%= link_to order.state == ("Payé" || "envoyée") ? order_path(order) : new_order_payment_path(order) do %>
-        <div class="text-primary bg-white flex justify-around transform hover:scale-105 duration-200">
+        <div class="text-primary bg-white w-11/12 lg:w-1/2 md:w-2/3 mx-auto flex justify-around transform hover:scale-105 duration-200">
             <div class="flex flex-col py-2">
                 <p class="font-bold mb-2">Status : <%= order.state %></p>
                 <% if order.items.length < 2 %>
@@ -37,7 +37,7 @@
 </div>
 
 <%# user-infos block %>
-<div class="bg-secondary w-3/6 mx-auto mb-20 flex flex-col items-center">
+<div class="bg-secondary w-11/12 lg:w-3/6 md:w-2/3 mx-auto mb-20 flex flex-col items-center">
     <div class="bg-primary text-white text-2xl font-bold inline-block mt-4">
         <span>Mes informations</span>
     </div>
