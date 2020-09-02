@@ -17,13 +17,16 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+body {
+  font-family: "Inconsolata";
+}
+#header {
+  background-color: #BA184D !important;
+  background-image: none !important;
+}
 
 .name {
   font-weight: bold;
-}
-body {
-  background-color: #f7c0d2;
-  font-family: "Inconsolata";
 }
 .important {
 }
