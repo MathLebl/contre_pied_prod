@@ -1,9 +1,41 @@
-<div class="bg-secondary h-40 w-5/6 mx-auto mt-40">
+<div class="bg-secondary h-40 w-5/6 mx-auto my-40">
     <div class="flex flex-col h-full justify-center" style="padding-left: 35%;">
         <h3 class="text-3xl text-primary font-bold mb-4"><%= @user.name %> <%= @user.first_name %></h3>
         <p class="text-sm text-primary">Bienvenue sur votre espace personnel, retrouvez ici vos commandes ainsi que vos données personnelles.</p>
     </div>
 </div>
+
+<%# orders block %>
+<div class="bg-primary flex flex-col pb-10 overflow-scroll" style="height: 70vh; padding-right: 25%; padding-left:25%;">
+    <% @orders.each do |order| %>
+    <div class="bg-white text-primary mt-10 mb-2 w-1/2 px-4 py-1">
+        <p>Commande du <strong><%= l order.created_at.to_date %></strong></p>
+    </div>
+    <%= link_to order.state == ("Payé" || "envoyée") ? order_path(order) : new_order_payment_path(order) do %>
+        <div class="text-primary bg-white flex justify-around transform hover:scale-105 duration-200">
+            <div class="flex flex-col py-2">
+                <p class="font-bold mb-2">Status : <%= order.state %></p>
+                <% if order.items.length < 2 %>
+                <p><%= order.items.length %> Article</p>
+                <% else %>
+                    <p><%= order.items.length %> Articles</p>
+                <% end %>
+                <div class="mt-2">
+                    <span class="text-xl font-bold"><%= humanized_money order.amount %> <%= currency_symbol %></span>
+                </div>
+            </div>
+            <div class="flex flex-col py-2">
+                <p class="font-bold">Livraison à :</p>
+                <span><%= order.address %></span>
+                <span><%= order.city %></span>
+                <span><%= order.zip_code %></span>
+            </div>
+        </div>
+    <% end %>
+    <% end %>
+</div>
+
+
 
 <!-- <h1 class="text-center text-2xl text-primary font-bold mx-auto mt-4 mb-4 p-1" style="width: fit-content">Bonjour <%= @user.name %></h1>
 <%= link_to root_path, class: "inline-flex items-center absolute text-primary no-underline hover:text-secondary transform hover:scale-110 duration-200 text-3xl p-1 font-bold mt-4 ml-20", style: "top: 10rem", id: "back-button" do %>
