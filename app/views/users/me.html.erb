@@ -1,7 +1,8 @@
-<div class="bg-secondary h-40 w-5/6 mx-auto my-40">
+<div class="bg-secondary h-40 w-5/6 mx-auto my-40 relative">
     <div class="flex flex-col h-full justify-center" style="padding-left: 35%;">
         <h3 class="text-3xl text-primary font-bold mb-4"><%= @user.name %> <%= @user.first_name %></h3>
         <p class="text-sm text-primary">Bienvenue sur votre espace personnel, retrouvez ici vos commandes ainsi que vos données personnelles.</p>
+        <%= image_tag "profile-pic", alt: "illustration graphique d'une photo de profil", class: "w-1/5 absolute", style: "left: 7rem; bottom: -2.5rem;" %>
     </div>
 </div>
 
