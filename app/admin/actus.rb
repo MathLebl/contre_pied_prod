@@ -79,15 +79,15 @@ ActiveAdmin.register Actu do
     attributes_table do
       row :title
       row :description
-      row "Media" do |actu|
-        if actu.video?
-          "Vidéo"
-        elsif actu.featured_image.attached?
-          "Photo"
-        end
-      end
       row "État" do |actu|
         actu.published_at? ? "Publié le #{ l actu.published_at}" : "Pas encore publiée"
+      end
+      row "Media" do |actu|
+        if actu.video?
+          link_to actu.video
+        elsif actu.featured_image.attached?
+          image_tag actu.featured_image, class:'photo-show'
+        end
       end
     end
     active_admin_comments
@@ -95,7 +95,7 @@ ActiveAdmin.register Actu do
 
   form do |f|
     f.inputs do
-      f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.name}", u.id]}
+      f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.first_name}", u.id]}
       f.input :featured_image, as: :file
       f.input :video
       f.input :description, :as => :pagedown_text

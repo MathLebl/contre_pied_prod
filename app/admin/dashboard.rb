@@ -49,13 +49,10 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
       column id:'order-board' do
-        panel "Commandes" do
-          table_for Order.order('created_at ASC').first(8) do
+        panel "Commandes à préparer" do
+          table_for Order.where(state:"Payé").order('created_at ASC').first(8) do
             column "Num" do |order|
               link_to order.id, admin_order_path(order)
-            end
-            column "État" do |order|
-              order.state
             end
             column "Article" do |order|
               order.products.each do |product|
@@ -79,7 +76,6 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
-
     end
   end
 end
