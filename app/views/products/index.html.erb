@@ -7,28 +7,28 @@
 </div>
 
 <div class="bg-primary mb-20">
-  <div class="grid grid-cols-2 gap-20 mx-48 py-8">
+  <div class="grid grid-cols-2 gap-8 lg:gap-20 md:gap-10 mx-8 lg:mx-48 md:mx-12 py-8">
     <% @products.each do |product| %>
     <% if product.published_at? %>
     <% if product.stock > 0 %>
-      <%= link_to product_path(product), class:"transform hover:scale-105 duration-200" do %>
-        <div class="flex bg-white p-4">
-          <div class="bg-cover w-1/2 h-56" style="background-image: url('<%= image_path product.photo_url %>')"></div>
-          <div class="bg-white text-primary w-1/2 pl-6 flex flex-col justify-between">
-            <span class="font-bold text-lg"><%= product.name %></span>
-            <span><%= product.description %></span>
-            <span class="text-xl font-bold"><%= humanized_money product.price %> <%= currency_symbol %></span>
+      <%= link_to product_path(product), class:"col-span-2 lg:col-span-1 md:col-span-1 transform hover:scale-105 duration-200" do %>
+        <div class="flex bg-white lg:p-4 md:p-3">
+          <div class="bg-cover w-1/2 h-32 lg:h-56 md:h-40" style="background-image: url('<%= image_path product.photo_url %>')"></div>
+          <div class="bg-white text-primary w-1/2 pl-4 flex flex-col justify-between">
+            <span class="font-bold lg:text-lg md:text-base"><%= product.name %></span>
+            <span class="md:text-xs"><%= product.description %></span>
+            <span class="text-lg font-bold"><%= humanized_money product.price %> <%= currency_symbol %></span>
           </div>
         </div>
     <% end %>
     <% else %>
-      <div class="flex bg-white p-4 <%= "inactive" if product.stock == 0 %> transform hover:scale-105 duration-200">
-          <div id="shop-img" class="bg-cover w-1/2 h-56 relative" style="background-image: url('<%= image_path product.photo_url %>')"></div>
+      <div class="flex bg-white p-4 <%= "inactive" if product.stock == 0 %> col-span-2 lg:col-span-1 md:col-span-1 transform hover:scale-105 duration-200">
+          <div id="shop-img" class="bg-cover w-1/2 lg:h-56 md:h-40 relative" style="background-image: url('<%= image_path product.photo_url %>')"></div>
           <p id="rupture-flag" class="bg-white text-gray-700 px-2 py-1 text-xl font-bold absolute hidden" style="top: 45%; left: 18%">Rupture</p>
-          <div class="bg-white text-primary w-1/2 pl-6 flex flex-col justify-between">
-            <span class="font-bold text-lg"><%= product.name %></span>
-            <span><%= product.description %></span>
-            <span class="text-xl font-bold"><%= humanized_money product.price %> <%= currency_symbol %></span>
+          <div class="bg-white text-primary w-1/2 pl-4 flex flex-col justify-between">
+            <span class="font-bold lg:text-lg md:text-base"><%= product.name %></span>
+            <span class="md:text-xs"><%= product.description %></span>
+            <span class="text-lg font-bold"><%= humanized_money product.price %> <%= currency_symbol %></span>
           </div>
         </div>
     <% end %>
