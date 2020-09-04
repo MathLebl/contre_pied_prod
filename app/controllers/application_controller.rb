@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   def default_url_options
     # { host: ENV["DOMAIN"] || "localhost:3000" || "#{"HEROKU_APP_NAME"}.herokuapp.com" }
     return ENV["DOMAIN"] if ENV["DOMAIN"].present?
-    return "#{HEROKU_APP_NAME}.herokuapp.com" if ENV["HEROKU_APP_NAME"].present?
+    return "#{ENV["HEROKU_APP_NAME"]}.herokuapp.com" if ENV["HEROKU_APP_NAME"].present?
     "localhost:3000"
   end
   # Création du panier si celui ci n'existe pas ou est vide
