@@ -4,9 +4,10 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def default_url_options
-    return ENV["DOMAIN"] if ENV["DOMAIN"].present?
-    return "#{"HEROKU_APP_NAME"}.herokuapp.com" if ENV["HEROKU_APP_NAME"].present?
-    "localhost:3000"
+    { host: ENV["DOMAIN"] || "localhost:3000" || host:"#{"HEROKU_APP_NAME"}.herokuapp.com" }
+    # return ENV["DOMAIN"] if ENV["DOMAIN"].present?
+    # return "#{"HEROKU_APP_NAME"}.herokuapp.com" if ENV["HEROKU_APP_NAME"].present?
+    # "localhost:3000"
   end
   # Création du panier si celui ci n'existe pas ou est vide
   def cart
