@@ -1,13 +1,13 @@
 // Gestion de la class Inactive
 .inactive {
   #back-image {
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
   .card-style {
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
   #inactive-flag {
-    transition-delay: .3s in;
+    transition-delay: 0.3s in;
   }
 }
 
@@ -17,11 +17,17 @@
     #back-image {
       filter: blur(0.5rem);
     }
+    #shop-img {
+      filter: blur(0.5rem);
+    }
     .card-style {
       filter: blur(0.5rem);
     }
     #inactive-flag {
       visibility: visible;
+    }
+    #rupture-flag {
+      display: block;
     }
   }
 }
@@ -32,7 +38,7 @@
     height: 25rem;
     width: 25rem;
   }
-  .card-style{
+  .card-style {
     top: 27rem;
     left: 3rem;
   }
@@ -45,7 +51,7 @@
     height: 18rem;
     width: 18rem;
   }
-  .card-style{
+  .card-style {
     top: 19rem;
     left: 1rem;
   }
