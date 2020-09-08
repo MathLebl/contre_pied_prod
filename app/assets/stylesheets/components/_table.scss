@@ -75,11 +75,11 @@ tr:hover .table-name a {
   top: -1rem;
 }
 
-@media (max-width: 640px) {
+@media (min-width: 768px) {
   /* For mobile phones: */
   .table-title {
-    right: 1rem;
-    top: -2rem;
+    right: 11rem;
+    top: -1rem;
   }
 }
 
