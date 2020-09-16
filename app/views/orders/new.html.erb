@@ -2,7 +2,7 @@
   <div class="w-1/2">
     <%= form_with model: @order, local: true, class: "flex flex-col" do |f| %>
     <%= f.label :address, "Adresse *" %>
-    <%= f.text_field :address, value: @user.address, required: true, class: "my-2 border border-gray-500" %>
+    <%= f.text_field :address, value: "<%= @user.address %>", required: true, class: "my-2 border border-gray-500" %>
     <%= f.label :city, "Ville *" %>
     <%= f.text_field :city, value: @user.city, required: true, class: "my-2 border border-gray-500" %>
     <%= f.label :zip_code, "Code Postal *" %>
