@@ -1,5 +1,5 @@
-<div class="list-wraper flex justify-center items-center w-full sm:w-full">
-  <div class="<%= "sm:grid sm:grid-cols-2 sm:gap-4 grid grid-cols-1 gap-1" if @artists.count > 1 %> m-8">
+<div class="list-wraper flex justify-center items-center w-full">
+  <div class="<%= "grid grid-cols-1 gap-1 md:grid-cols-2 md:gap-4" if @artists.count > 1 %> m-8">
     <% @artists.each do |artist|%>
     <%= link_to artist.active == true ? (artist.category == "jeune_public" ? show_jp_artist_path(artist) : artist_path(artist)) : retraite_path  do %>
     <div class="list-card transform duration-200 <%= "hover:scale-110" if artist.active == true %> <%="inactive" if artist.active == false %> <%="jeunesse" if artist.category == "jeune_public" %>">

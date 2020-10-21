@@ -1,46 +1,48 @@
 <div class="artist-page">
-  <div class="bg-secondary h-40 w-5/6 z-0 absolute hidden sm:inline-block" style="left: 7.5%; bottom: 25%">
-  </div>
-  <div class="banner-2 z-10 relative my-16" style="background-image: url('<%= image_path url_for (@artist.banner_image) %>');">
-    <div class="container z-10">
-      <h1 class="absolute text-white text-3xl font-bold bg-white text-primary px-1 z-10"><%= @artist.name %></h1>
-      <%# if   @artist.category == "spectacle"%>
-      <%#= link_to spectacle_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
-      <!-- Retour -->
-      <%# end %>
-      <%# elsif @artist.category == "concert"%>
-      <%#= link_to concert_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
-      <!-- Retour -->
-      <%# end %>
-      <%# else %>
-      <%#= link_to jeune_public_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
-      <!-- Retour -->
-      <%# end %>
-      <%# end %>
+  <div class="relative">
+    <div class="bg-secondary h-40 w-5/6 z-0 absolute hidden md:inline-block left-0 bottom-0 lg:ml-32 md:ml-16 mb-32">
     </div>
-    <ul class="social-links flex absolute" style="bottom: -2.5rem; right: 22rem">
-      <% if @artist.insta? %>
-      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.insta %>" target="_blank"><i class="fab fa-instagram"></i></a></li>
-      <% end %>
-      <% if @artist.facebook? %>
-      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.facebook %>" target="_blank"><i class="fab fa-facebook"></i></a></li>
-      <% end %>
-      <% if @artist.twitter? %>
-      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.twitter %>" target="_blank"><i class="fab fa-twitter"></i></a></li>
-      <% end %>
-      <% if @artist.spotify? %>
-      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.spotify %>" target="_blank"><i class="fab fa-spotify"></i></a></li>
-      <% end %>
-      <% if @artist.youtube? %>
-      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.youtube %>" target="_blank"><i class="fab fa-youtube"></i></a></li>
-      <% end %>
-      <% if @artist.soundcloud? %>
-      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.soundcloud %>" target="_blank"><i class="fab fa-soundcloud"></i></a></li>
-      <% end %>
-      <% if @artist.slug? %>
-      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.slug %>" target="_blank"><i class="fas fa-link"></i></a></li>
-      <% end %>
-    </ul>
+    <div class="banner-2 z-10 relative my-16" style="background-image: url('<%= image_path url_for (@artist.banner_image) %>');">
+      <div class="container z-10">
+        <h1 class="absolute text-white text-xl lg:text-3xl md:text-3xl font-bold bg-white text-primary px-1 z-10"><%= @artist.name %></h1>
+        <%# if   @artist.category == "spectacle"%>
+        <%#= link_to spectacle_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
+        <!-- Retour -->
+        <%# end %>
+        <%# elsif @artist.category == "concert"%>
+        <%#= link_to concert_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
+        <!-- Retour -->
+        <%# end %>
+        <%# else %>
+        <%#= link_to jeune_public_artists_path, class: "text-white no-underline bg-primary hover:bg-secondary hover:text-primary p-1 font-bold" do %>
+        <!-- Retour -->
+        <%# end %>
+        <%# end %>
+      </div>
+      <ul class="social-links flex absolute" style="bottom: -2.5rem; right: 22rem">
+        <% if @artist.insta? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.insta %>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <% end %>
+        <% if @artist.facebook? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.facebook %>" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        <% end %>
+        <% if @artist.twitter? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.twitter %>" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <% end %>
+        <% if @artist.spotify? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.spotify %>" target="_blank"><i class="fab fa-spotify"></i></a></li>
+        <% end %>
+        <% if @artist.youtube? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.youtube %>" target="_blank"><i class="fab fa-youtube"></i></a></li>
+        <% end %>
+        <% if @artist.soundcloud? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.soundcloud %>" target="_blank"><i class="fab fa-soundcloud"></i></a></li>
+        <% end %>
+        <% if @artist.slug? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.slug %>" target="_blank"><i class="fas fa-link"></i></a></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
   <div class="artist-informations bg-tertiary sm:grid sm:grid-cols-2 sm:gap-4 py-8">
     <div class="info-block sm:col-span-1 flex justify-center items-center mx-auto sm:pl-32">
@@ -107,15 +109,15 @@
     </div>
   </div>
   <div class="centrale">
-    <div class="dice mx-auto my-16 grid sm:grid-cols-12 grid-cols-1 sm:grid-rows-2 grid-rows-10 sm:row-gap-16 row-gap-6 sm:col-gap-4 col-gap-1">
+    <div class="dice mx-auto my-16 grid lg:grid-cols-12 md:grid-cols-12 grid-cols-1 lg:grid-rows-2 md:grid-rows-2 grid-rows-10 lg:row-gap-16 md:row-gap-10 row-gap-6 lg:col-gap-4 md:col-gap-4 col-gap-1">
       <% if @artist.video? %>
-      <iframe class="sm:col-span-6 sm:row-span-1 sm:col-start-4 sm:w-full mx-auto col-span-1 row-span-2 col-start-1" src="<%= @artist.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="mx-auto col-span-1 row-span-2 col-start-1 md:col-span-6 md:row-span-1 md:col-start-4 md:w-full" src="<%= @artist.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <% elsif @artist.artist_video.attached? %>
       <%= video_tag rails_blob_path(@artist.artist_video), controls: true, class: "sm:col-span-6 sm:row-span-1 sm:col-start-4 mx-auto col-span-1 row-span-2 col-start-1" %>
       <% else %>
       <% end %>
       <% if @artist.show_image1.attached? %>
-      <div class="relative mx-auto w-56 h-40 sm:col-span-3 sm:row-span-1 sm:col-start-1 col-span-1 row-span-2 transform duration-200 hover:scale-110">
+      <div class="relative mx-auto w-56 h-40 lg:col-span-3 lg:row-span-1 lg:col-start-1 md:col-span-6 md:col-start-1 col-span-1 row-span-2 transform duration-200 hover:scale-110">
         <%= link_to @artist.show_image1, class: 'photo', data: { lightbox: "gallery-show"}  do %>
         <%= image_tag @artist.show_image1, class: 'absolute h-full w-full object-contain' %>
         <% end %>
@@ -123,7 +125,7 @@
       <% else %>
       <% end %>
       <% if @artist.show_image1.attached? %>
-      <div class="relative mx-auto w-56 h-40 sm:col-span-3 sm:row-span-1 sm:col-start-4 col-span-1 row-span-2  transform duration-200 hover:scale-110">
+      <div class="relative mx-auto w-56 h-40 lg:col-span-3 lg:row-span-1 lg:col-start-4 md:col-span-6 md:col-start-7 col-span-1 row-span-2  transform duration-200 hover:scale-110">
         <%= link_to @artist.show_image2, class: 'photo', data: { lightbox: "gallery-show"}  do %>
         <%= image_tag @artist.show_image2, class: 'absolute h-full w-full object-contain' %>
         <% end %>
@@ -131,7 +133,7 @@
       <% else %>
       <% end %>
       <% if @artist.show_image1.attached? %>
-      <div class="relative mx-auto w-56 h-40 sm:col-span-3 sm:row-span-1 sm:col-start-7 col-span-1 row-span-2  transform duration-200 hover:scale-110">
+      <div class="relative mx-auto w-56 h-40 lg:col-span-3 lg:row-span-1 lg:col-start-7 md:col-span-6 md:col-start-1 col-span-1 row-span-2  transform duration-200 hover:scale-110">
         <%= link_to @artist.show_image3, class: 'photo', data: { lightbox: "gallery-show"}  do %>
         <%= image_tag @artist.show_image3, class: 'absolute h-full w-full object-contain' %>
         <% end %>
@@ -139,7 +141,7 @@
       <% else %>
       <% end %>
       <% if @artist.show_image1.attached? %>
-      <div class="relative mx-auto w-56 h-40 sm:col-span-3 sm:row-span-1 sm:col-start-10 col-span-1 row-span-2  transform duration-200 hover:scale-110">
+      <div class="relative mx-auto w-56 h-40 lg:col-span-3 lg:row-span-1 lg:col-start-10 md:col-span-6 md:col-start-7 col-span-1 row-span-2  transform duration-200 hover:scale-110">
         <%= link_to @artist.show_image4, class: 'photo', data: { lightbox: "gallery-show"}  do %>
         <%= image_tag @artist.show_image4, class: 'absolute h-full w-full object-contain' %>
         <% end %>

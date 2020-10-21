@@ -1,5 +1,5 @@
-<div class="flex justify-center">
-  <div class="w-1/2">
+<div class="flex justify-center my-20">
+  <div class="w-10/12 lg:w-1/2 md:w-2/3">
     <%= form_with model: @order, local: true, class: "flex flex-col" do |f| %>
     <%= f.label :address, "Adresse *", class: "block uppercase text-gray-700 text-sm font-bold my-2" %>
     <%= f.text_field :address, value: @user.address, required: true, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4", autofocus: true %>
