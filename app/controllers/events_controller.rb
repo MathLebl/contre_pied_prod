@@ -7,13 +7,14 @@ class EventsController < ApplicationController
     @artists = Artist.all
     @months = Event.select(:month).group(:month).collect{|e| e.month}
     if params[:region].present?
-      @events = Event.all.select { |event| event.region == params[:region]}
+      @events = Event.all.order('date ASC').select { |event| event.region == params[:region]}.select { |event| event.date > DateTime.now }
     elsif params[:artist_id].present?
-      @events = Event.where(artist_id: params[:artist_id])
+      @events = Event.order('date ASC').where(artist_id: params[:artist_id]).select { |event| event.date > DateTime.now }
     elsif params[:month].present?
-      @events = Event.where(month: params[:month])
+      @events = Event.order('date ASC').where(month: params[:month]).select { |event| event.date > DateTime.now }
     else
-      @events = Event.all.order('date ASC')
+      # @events = Event.all.order('date ASC')
+      @events =Event.all.order('date ASC').select { |event| event.date > DateTime.now }
     end
   end
 
@@ -27,3 +28,4 @@ class EventsController < ApplicationController
   end
 
 end
+
