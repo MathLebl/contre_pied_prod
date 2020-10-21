@@ -19,7 +19,8 @@
             <span class="text-primary bg-secondary p-1 mt-1 mb-1" style="width: fit-content">Téléphone</span>
             <span class="mt-1 mb-1 p-1"><%= number_to_phone(@user.phone) %></span>
         </div>
-        <%= link_to "Modifier", edit_user_path(@user), class: "text-l text-white bg-primary font-bold mt-6 p-1 self-center hover:bg-secondary hover:text-primary" %>
+        <%= link_to "Modifier vos coordonnées", edit_user_path(@user), class: "text-l text-white bg-primary font-bold mt-2 p-1 self-center hover:bg-secondary hover:text-primary" %>
+        <%= link_to "Modifier données de connexion", edit_user_registration_path, class: "text-l text-white bg-primary font-bold mt-2 p-1 self-center hover:bg-secondary hover:text-primary" %>
     </div>
 
     <%# orders block %>
