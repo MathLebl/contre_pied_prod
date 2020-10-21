@@ -1,19 +1,36 @@
-  <div class="py-4">
-    <div class="mx-20">
-      <h1 class="text-gray-900">Commande n° #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
-      <ul class="">
-        <li class="my-2 text-gray-900"><strong>Effectuée le :</strong> <%= l @order.created_at.to_date %></li>
-        <li class="my-2 text-gray-900"><strong>TOTAL</strong> <%= humanized_money @order.amount %> <%= currency_symbol %></li>
-        <li class="my-2 text-gray-900"><strong>Produits :</strong></li>
-        <% @order.products.each do |product| %>
-        <li class="flex items-center">
-        <span class="text-gray-900"><%= image_tag product.photo_url, class: "w-20 m-2" %></span>
-        <span class="text-gray-900"><strong><%= product.name %></strong></span>
-        <span class="text-gray-900 ml-4"><strong><%= humanized_money product.price %> <%= currency_symbol %></strong></li></span>
-        <% end %>
-      </ul>
-      <p class="text-gray-900 my-8">Durée moyenne de livraison sous <strong>2 jours ouvrés</strong></p>
-      <%= link_to "Retour au site", products_path, class: "bg-primary text-white inline-block mt-6 py-2 px-4 mr-2 hover:bg-secondary hover:text-primary" %>
-      <%= link_to "Aller à mon profil", me_users_path, class: "bg-primary text-white inline-block mt-6 py-2 px-4 mr-2 hover:bg-secondary hover:text-primary" %>
+<div class="bg-secondary h-40 w-5/6 mx-auto my-20 lg:my-40 md:my-40 relative">
+  <div class="flex flex-col h-full justify-center" style="padding-left: 60%;">
+    <%= image_tag "delivery", alt: "Illustration d'un homme avec des cartons", class: "w-6/12 lg:w-4/12 md:w-6/12 absolute m-4 lg:m-24 md:m-8 left-0" %>
+    <h1 class="text-primary text-base mr-2 lg:mr-0 md:mr-0 lg:text-2xl md:text-xl font-bold bg-white px-2 py-1" style="width: fit-content">
+      Commande n°<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small>
+    </h1>
+  </div>
+</div>
+
+<div class="bg-primary flex flex-col mb-20">
+  <div class="flex flex-col justify-center items-center text-white">
+    <ul class="w-9/12 lg:w-1/3 md:w-3/5">
+      <li class="my-2"><strong>Effectuée le :</strong> <%= l @order.created_at.to_date %></li>
+      <li class="my-2"><strong>TOTAL</strong> <%= humanized_money @order.amount %> <%= currency_symbol %></li>
+      <li class="my-2"><strong>Produits :</strong></li>
+      <% @order.products.each do |product| %>
+      <li class="flex justify-center items-center border-white pb-2 mb-4 mt-6" style="border-bottom: 1px solid">
+      <span class=""><%= image_tag product.photo_url, class: "w-20 m-2" %></span>
+      <span class=""><strong><%= product.name %></strong></span>
+      <span class="ml-4"><strong><%= humanized_money product.price %> <%= currency_symbol %></strong></li></span>
+      <% end %>
+    </ul>
+    <div class="flex flex-col mt-2 text-white w-9/12 lg:w-1/3 md:w-3/5">
+      <span class="text-lg mb-4">Livrée à :</span>
+      <span><%= @user.address %></span>
+      <span><%= @user.city %></span>
+      <span><%= @user.zip_code %></span>
     </div>
   </div>
+  <div class="text-center mb-10">
+    <p class="text-white my-8">Durée moyenne de livraison sous <strong>2 jours ouvrés</strong></p>
+      <%= link_to "Retour au site", products_path, class: "font-bold bg-white text-primary inline-block mt-6 py-2 px-4 mr-2 hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200" %>
+      <%= link_to "Aller à mon profil", me_users_path, class: "font-bold bg-white text-primary inline-block mt-6 py-2 px-4 mr-2 hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200" %>
+    </div>
+  </div>
+</div>

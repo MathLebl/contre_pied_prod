@@ -36,6 +36,7 @@ class OrdersController < ApplicationController
   def show
     @order = current_user.orders.find(params[:id])
     Cart.reset_cart(session[:cart])
+    @user = current_user
   end
 
 
