@@ -39,6 +39,27 @@
                     placeholder: "**********",
                     input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
                     label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :address,
+                    # required: true,
+                    label: "Adresse",
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :city,
+                    # required: true,
+                    label: "Ville",
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :zip_code,
+                    # required: true,
+                    label: "Code Postal",
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :phone,
+                  # required: true,
+                  label: "Telephone",
+                  input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                  label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+
 
 
                     <div class="form-actions">
@@ -50,3 +71,8 @@
                   <br>
                 </div>
               </div>
+
+
+
+
+
