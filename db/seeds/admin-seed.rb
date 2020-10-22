@@ -23,7 +23,7 @@ user = User.new(
   admin: true,
   password: "tototo",
   address: "adresse test",
-  city: "Lyon",
+  city: "Paris",
   zip_code: "01234",
   phone: "01234567"
   )
