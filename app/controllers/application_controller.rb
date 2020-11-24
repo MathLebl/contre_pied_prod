@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
     unless session[:cart]
       session[:cart] = []
     end
+    @cart = session[:cart]
   end
 
   protected

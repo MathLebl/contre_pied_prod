@@ -14,7 +14,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    @events = Event.where(artist_id: @artist.id).order('date ASC')
+    @events = Event.where(artist_id: @artist.id).order('date ASC').select { |event| event.date > DateTime.now }
     @distributions = Distribution.where(artist_id: @artist.id)
     @presses = Presse.where(artist_id: @artist.id)
     @partenaires = Partenaire.where(artist_id: @artist.id)

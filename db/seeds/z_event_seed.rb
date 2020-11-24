@@ -7,7 +7,9 @@ puts 'Creating 15 fake Events...'
     user_id: User.last.id,
     city: "Lyon",
     artist_id: Artist.first.id,
-    location: "Le Théâtre de La Vie qui joue"
+    location: "Le Théâtre de La Vie qui joue",
+    region: "Ile de France",
+    month: "Avril"
   )
   event.save!
 end
@@ -19,7 +21,9 @@ end
     city: "Paris",
     artist_id: Artist.last.id,
     location: "Le Théâtre de La Vie qui joue",
-    ticket: "https://www.billetreduc.com/th/"
+    ticket: "https://www.billetreduc.com/th/",
+    region: "Ile de France",
+    month: "Avril"
   )
   event.save!
 end
@@ -30,7 +34,9 @@ end
     user_id: User.last.id,
     city: "Lyon",
     artist_id: Artist.first.id,
-    location: "Le Théâtre de Ta Mère qui Trticotte"
+    location: "Le Théâtre de Ta Mère qui Trticotte",
+    region: "Ile de France",
+    month: "Avril"
   )
   event.save!
 end
@@ -42,7 +48,9 @@ end
     city: "Valence",
     artist_id: Artist.last.id,
     location: "Le Théâtre de Ta Mère qui Trticotte",
-    ticket: "https://www.billetreduc.com/theatre/"
+    ticket: "https://www.billetreduc.com/theatre/",
+    region: "Hauts de France",
+    month: "Mai"
   )
   event.save!
 end
@@ -53,7 +61,9 @@ end
     user_id: User.last.id,
     city: "Lyon",
     artist_id: Artist.first.id,
-    location: "Le Théâtre de La Taupe qui pêche"
+    location: "Le Théâtre de La Taupe qui pêche",
+    region: "Hauts de France",
+    month: "Mai"
   )
   event.save!
 end
@@ -65,7 +75,9 @@ end
     city: "Toulouse",
     artist_id: Artist.last.id,
     location: "Le Théâtre de La Taupe qui pêche",
-    ticket: "https://www.billetreduc.com/theatre/"
+    ticket: "https://www.billetreduc.com/theatre/",
+    region: "Hauts de France",
+    month: "Mai"
   )
   event.save!
 end
@@ -77,7 +89,9 @@ end
     city: "Le Havre",
     artist_id: Artist.first.id,
     location: "Le Théâtre de La Joie qui danse",
-    ticket: "https://www.billetreduc.com/theatre/"
+    ticket: "https://www.billetreduc.com/theatre/",
+    region: "Hauts de France",
+    month: "Mai"
   )
   event.save!
 end
@@ -88,7 +102,9 @@ end
     user_id: User.last.id,
     city: "Marseille",
     artist_id: Artist.last.id,
-    location: "Le Théâtre de La Joie qui danse"
+    location: "Le Théâtre de La Joie qui danse",
+    region: "Hauts de France",
+    month: "Mai"
   )
   event.save!
 end

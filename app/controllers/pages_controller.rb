@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def home
-    events = Event.order('date ASC')
+    events =Event.all.order('date ASC').select { |event| event.date > DateTime.now }
     @events = events.first(8)
     actus = Actu.all
     @actus = actus.first(4)
@@ -42,7 +42,7 @@ class PagesController < ApplicationController
       # status 400
       return
     end
-  
+
     # Handle the event
     case event.type
     when 'payment_intent.succeeded'
@@ -69,7 +69,7 @@ class PagesController < ApplicationController
       # status 400
       return
     end
-  
+
     # status 200
   end
 end

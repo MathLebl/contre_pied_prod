@@ -10,10 +10,11 @@
 
 .actu-description {
   width: 50%;
-  margin-left: 0.5em;
+  margin-left: 1em;
   display: flex;
   align-items: center;
-  color: $primary;
+  color: black;
+  text-align: left;
 }
 
 .actu-title{
@@ -81,9 +82,12 @@
   .actu-card {
     display: flex;
     background: #ffffff;
-    height: 250px;
-    width: 450px;
+    height: 200px;
+    width: 400px;
     padding: 0.5em;
+    box-shadow: 3px 3px 3px;
+    // border: 10px solid $secondary ;
+    // border-bottom: 2px solid $secondary ;
 
   }
   .card-container{
