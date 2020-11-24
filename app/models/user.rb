@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :events
   has_many :orders
 
+  def full_name
+    "#{first_name} #{name}"
+  end
 end

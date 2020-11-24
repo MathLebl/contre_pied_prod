@@ -37,32 +37,31 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 14rem;
+  height: 28rem;
   width: 60%;
   margin: 20px auto;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .banner-2 {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 28rem;
-    width: 60%;
-    margin: 20px auto;
+    width: 90%;
+    margin: 4px auto;
   }
 }
 
-@media (min-width: 1024px) {
-  .banner-2 {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 28rem;
-    width: 60%;
-    margin: 20px auto;
-  }
-}
+// @media (min-width: 1024px) {
+//   .banner-2 {
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     height: 28rem;
+//     width: 60%;
+//     margin: 20px auto;
+//   }
+// }
 
 // .banner-2 {
 //   background-size: cover;
