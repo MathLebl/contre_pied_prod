@@ -32,10 +32,12 @@
       <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary">
         <%= link_to "E-boutique", products_path, class: "nav-link" %>
       </li>
+      <% if !@cart.empty? %>
         <%= link_to show_cart_products_path do %>
       <li class="nav-item cart-icon bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary">
         <i class="fas fa-shopping-cart"></i>
       </li>
+        <% end %>
         <% end %>
       <li class="dropdown inline-block relative">
         <button class="nav-item text-primary sm:ml-2 sm:mr-3 p-1 hover:text-secondary" id="dropdown-btn">
