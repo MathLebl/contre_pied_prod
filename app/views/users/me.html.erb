@@ -22,22 +22,25 @@
         <%= link_to "Modifier vos coordonnées", edit_user_path(@user), class: "text-l text-white bg-primary font-bold mt-2 p-1 self-center hover:bg-secondary hover:text-primary" %>
         <%= link_to "Modifier données de connexion", edit_user_registration_path, class: "text-l text-white bg-primary font-bold mt-2 p-1 self-center hover:bg-secondary hover:text-primary" %>
     </div>
+</div>
 
-    <%# orders block %>
-    <div class="bg-primary col-start-5 col-span-6 mt-16 overflow-scroll h-auto">
-        <% @orders.each do |order| %>
-        <%= link_to order.state == ("Payé" || "envoyée") ? order_path(order) : new_order_payment_path(order) do %>
-        <div class="bg-secondary flex justify-around m-4 transform hover:scale-105 duration-200">
+<%# orders block %>
+<div class="bg-primary flex flex-col pb-10 mb-20 overflow-scroll" style="height: 70vh;">
+    <% @orders.each do |order| %>
+    <div class="bg-white text-primary mt-10 mb-2 w-11/12 lg:w-1/2 md:w-2/3 mx-auto px-4 py-1">
+        <p>Commande du <strong><%= l order.created_at.to_date %></strong></p>
+    </div>
+    <%= link_to order.state == ("Payé" || "envoyée") ? order_path(order) : new_order_payment_path(order) do %>
+        <div class="text-primary bg-white w-11/12 lg:w-1/2 md:w-2/3 mx-auto flex justify-around transform hover:scale-105 duration-200">
             <div class="flex flex-col py-2">
-                <p>Commande du <strong><%= l order.created_at.to_date %></strong></p>
-                <p class="font-bold"><%= order.state %></p>
+                <p class="font-bold mb-2">Status : <%= order.state %></p>
                 <% if order.items.length < 2 %>
                 <p><%= order.items.length %> Article</p>
                 <% else %>
                     <p><%= order.items.length %> Articles</p>
                 <% end %>
-                <div>
-                    <span class="text-xl"><%= humanized_money order.amount %> <%= currency_symbol %></span>
+                <div class="mt-2">
+                    <span class="text-xl font-bold"><%= humanized_money order.amount %> <%= currency_symbol %></span>
                 </div>
             </div>
             <div class="flex flex-col py-2">
@@ -47,7 +50,36 @@
                 <span><%= order.zip_code %></span>
             </div>
         </div>
-        <% end %>
-        <% end %>
+    <% end %>
+    <% end %>
+</div>
+
+<%# user-infos block %>
+<div class="bg-secondary w-11/12 lg:w-3/6 md:w-2/3 mx-auto mb-20 flex flex-col items-center">
+    <div class="bg-primary text-white text-2xl font-bold inline-block mt-4">
+        <span>Mes informations</span>
     </div>
+    <div class="text-primary text-lg p-10 flex flex-col">
+        <div class="m-2">
+            <span class="font-bold">Nom : </span>
+            <span><%= @user.name %></span>
+        </div>
+        <div class="m-2">
+            <span class="font-bold">Adresse : </span>
+            <span><%= @user.address %></span>
+        </div>
+        <div class="m-2">
+            <span class="font-bold">Ville : </span>
+            <span><%= @user.city %></span>
+        </div>
+        <div class="m-2">
+            <span class="font-bold">Code postal : </span>
+            <span><%= @user.zip_code %></span>
+        </div>
+        <div class="m-2">
+            <span class="font-bold">Téléphone : </span>
+            <span><%= @user.phone %></span>
+        </div>
+    </div>
+    <%= link_to "Modifier", edit_user_path(@user), class: "text-lg text-white bg-primary font-bold mb-4 p-1 self-center hover:text-secondary transform hover:scale-110 duration-200" %>
 </div>

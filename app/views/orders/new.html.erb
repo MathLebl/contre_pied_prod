@@ -1,14 +1,14 @@
-<div class="flex justify-center">
-  <div class="w-1/2">
+<div class="flex justify-center my-20">
+  <div class="w-10/12 lg:w-1/2 md:w-2/3">
     <%= form_with model: @order, local: true, class: "flex flex-col" do |f| %>
-    <%= f.label :address, "Adresse *" %>
-    <%= f.text_field :address, value: @user.address, required: true, class: "my-2 border border-gray-500" %>
-    <%= f.label :city, "Ville *" %>
-    <%= f.text_field :city, value: @user.city, required: true, class: "my-2 border border-gray-500" %>
-    <%= f.label :zip_code, "Code Postal *" %>
-    <%= f.text_field :zip_code, value: @user.zip_code, required: true, class: "my-2 border border-gray-500" %>
-    <%= f.label :phone, "Téléphone *" %>
-    <%= f.text_field :phone, value: @user.phone, required: true, class: "my-2 border border-gray-500" %>
+    <%= f.label :address, "Adresse *", class: "block uppercase text-gray-700 text-sm font-bold my-2" %>
+    <%= f.text_field :address, value: @user.address, required: true, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4", autofocus: true %>
+    <%= f.label :city, "Ville *", class: "block uppercase text-gray-700 text-sm font-bold my-2" %>
+    <%= f.text_field :city, value: @user.city, required: true, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" %>
+    <%= f.label :zip_code, "Code Postal *", class: "block uppercase text-gray-700 text-sm font-bold my-2" %>
+    <%= f.text_field :zip_code, value: @user.zip_code, required: true, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" %>
+    <%= f.label :phone, "Téléphone *", class: "block uppercase text-gray-700 text-sm font-bold my-2" %>
+    <%= f.text_field :phone, value: @user.phone, required: true, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" %>
     <%= f.submit "suivant", class: "bg-primary text-white font-bold py-2 px-4 my-4 w-1/3 self-center text-center hover:bg-secondary hover:text-primary" %>
     <% end %>
     <p class="text-sm text-gray-800 mb-12 mt-6">* : Champs requis</p>

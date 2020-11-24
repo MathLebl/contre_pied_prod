@@ -1,47 +1,49 @@
 <div class="artist-page">
-  <div class="bg-secondary h-40 w-5/6 z-0 absolute hidden sm:inline-block" style="left: 7.5%; bottom: 25%">
-  </div>
-    <% if   @artist.category == "spectacle"%>
-    <%= link_to spectacle_artists_path, class: "inline-flex items-center absolute text-primary no-underline hover:text-secondary transform hover:scale-110 duration-200 text-3xl p-1 font-bold mt-4 ml-20", style: "top: 10rem", id: "back-button" do %>
-     <i class="fas fa-arrow-left"></i>
-     <span id="back-text" class="text-base ml-2">Retour</span>
-    <% end %>
-    <% elsif @artist.category == "concert"%>
-    <%= link_to concert_artists_path, class: "inline-flex items-center absolute text-primary no-underline hover:text-secondary transform hover:scale-110 duration-200 text-3xl p-1 font-bold mt-4 ml-20", style: "top: 10rem", id: "back-button" do %>
-    <i class="fas fa-arrow-left"></i>
-     <span id="back-text" class="text-base ml-2">Retour</span>
-    <% end %>
-    <% else %>
-    <%= link_to jeune_public_artists_path, class: "inline-flex items-center absolute text-primary no-underline hover:text-secondary transform hover:scale-110 duration-200 text-3xl p-1 font-bold mt-4 ml-20", style: "top: 10rem", id: "back-button" do %>
-    <i class="fas fa-arrow-left"></i>
-     <span id="back-text" class="text-base ml-2">Retour</span>
-    <% end %>
-    <% end %>
-  <div class="banner-2 z-10 relative my-16" style="background-image: url('<%= image_path url_for (@artist.banner_image) %>');">
-    <h1 class="absolute text-white text-3xl font-bold bg-white text-primary px-1 z-10"><%= @artist.name %></h1>
-    <ul class="social-links flex absolute" style="bottom: -2.5rem; right: 4rem">
-      <% if @artist.insta? %>
-      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.insta %>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+  <div class="relative">
+    <div class="bg-secondary h-40 w-5/6 z-0 absolute hidden sm:inline-block left-0 bottom-0 ml-16 mb-32">
+    </div>
+      <% if   @artist.category == "spectacle"%>
+      <%= link_to spectacle_artists_path, class: "inline-flex items-center absolute text-primary no-underline hover:text-secondary transform hover:scale-110 duration-200 text-3xl p-1 font-bold mt-4 ml-20", id: "back-button" do %>
+      <i class="fas fa-arrow-left"></i>
+      <span id="back-text" class="text-base ml-2">Retour</span>
       <% end %>
-      <% if @artist.facebook? %>
-      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.facebook %>" target="_blank"><i class="fab fa-facebook"></i></a></li>
+      <% elsif @artist.category == "concert"%>
+      <%= link_to concert_artists_path, class: "inline-flex items-center absolute text-primary no-underline hover:text-secondary transform hover:scale-110 duration-200 text-3xl p-1 font-bold mt-4 ml-20", id: "back-button" do %>
+      <i class="fas fa-arrow-left"></i>
+      <span id="back-text" class="text-base ml-2">Retour</span>
       <% end %>
-      <% if @artist.twitter? %>
-      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.twitter %>" target="_blank"><i class="fab fa-twitter"></i></a></li>
+      <% else %>
+      <%= link_to jeune_public_artists_path, class: "inline-flex items-center absolute text-primary no-underline hover:text-secondary transform hover:scale-110 duration-200 text-3xl p-1 font-bold mt-4 ml-20", id: "back-button" do %>
+      <i class="fas fa-arrow-left"></i>
+      <span id="back-text" class="text-base ml-2">Retour</span>
       <% end %>
-      <% if @artist.spotify? %>
-      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.spotify %>" target="_blank"><i class="fab fa-spotify"></i></a></li>
       <% end %>
-      <% if @artist.youtube? %>
-      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.youtube %>" target="_blank"><i class="fab fa-youtube"></i></a></li>
-      <% end %>
-      <% if @artist.soundcloud? %>
-      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.soundcloud %>" target="_blank"><i class="fab fa-soundcloud"></i></a></li>
-      <% end %>
-      <% if @artist.slug? %>
-      <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.slug %>" target="_blank"><i class="fas fa-link"></i></a></li>
-      <% end %>
-    </ul>
+    <div class="banner-2 z-10 relative my-16" style="background-image: url('<%= image_path url_for (@artist.banner_image) %>');">
+      <h1 class="absolute text-white text-xl lg:text-3xl md:text-3xl font-bold bg-white text-primary px-1 z-10"><%= @artist.name %></h1>
+      <ul class="social-links flex absolute right-0 mr-4 lg:mr-16 md:mr-12" style="bottom: -2.5rem;">
+        <% if @artist.insta? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.insta %>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <% end %>
+        <% if @artist.facebook? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.facebook %>" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        <% end %>
+        <% if @artist.twitter? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.twitter %>" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <% end %>
+        <% if @artist.spotify? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.spotify %>" target="_blank"><i class="fab fa-spotify"></i></a></li>
+        <% end %>
+        <% if @artist.youtube? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.youtube %>" target="_blank"><i class="fab fa-youtube"></i></a></li>
+        <% end %>
+        <% if @artist.soundcloud? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.soundcloud %>" target="_blank"><i class="fab fa-soundcloud"></i></a></li>
+        <% end %>
+        <% if @artist.slug? %>
+        <li class="bg-primary text-white p-1 transform duration-200 hover:scale-110 hover:bg-secondary h-8 w-8 mx-1"><a href="<%= @artist.slug %>" target="_blank"><i class="fas fa-link"></i></a></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
   <div class="artist-informations bg-primary sm:grid sm:grid-cols-2 sm:gap-4 py-8">
     <div class="info-block sm:col-span-1 flex justify-center items-center sm:pl-32">
@@ -155,7 +157,7 @@
     <div class="table-title-artist px-4 bg-primary inline-block absolute z-20">
       <h2 class="text-2xl font-bold">Agenda</h2>
     </div>
-    <table class="table-artist w-full sm:mx-20 z-10">
+    <table class="table-artist sm:mx-20 z-10">
       <%= render 'shared/event-table-artist' %>
     </table>
     <div class="bg-primary w-full z-0 absolute bottom-0" style="height: 50%">

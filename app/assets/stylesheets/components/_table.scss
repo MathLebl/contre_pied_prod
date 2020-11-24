@@ -71,15 +71,15 @@ tr:hover .table-name a {
 }
 
 .table-title-artist {
-  right: 22rem;
-  top: 3rem;
+  right: 2rem;
+  top: -1rem;
 }
 
-@media (max-width: 640px) {
+@media (min-width: 768px) {
   /* For mobile phones: */
   .table-title {
-    right: 1rem;
-    top: -2rem;
+    right: 11rem;
+    top: -1rem;
   }
 }
 
@@ -123,12 +123,6 @@ tr:hover .table-name a {
 
 // Gestion Table Artiste - Date et Lieu
 
-.table-artist {
-  // color: black;
-  width: 60%;
-  margin: 65px auto 50px auto;
-}
-
 .table-artist tr {
   border-bottom: 0.2px solid #d94496;
 }
@@ -149,4 +143,30 @@ tr:hover .table-name a {
 
 .table-artist .table-ticket a {
   font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .table-artist {
+    // color: black;
+    width: 80%;
+    margin: 65px auto 50px auto;
+  }
+
+  .table-title-artist {
+    right: 11rem;
+    top: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .table-artist {
+    // color: black;
+    width: 60%;
+    margin: 65px auto 50px auto;
+  }
+
+  .table-title-artist {
+    right: 22rem;
+    top: 3rem;
+  }
 }
