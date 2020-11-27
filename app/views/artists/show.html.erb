@@ -18,7 +18,7 @@
       <span id="back-text" class="text-base ml-2">Retour</span>
       <% end %>
       <% end %>
-    <div class="banner-2 z-10 relative mx-auto sm:my-16" style="background-image: url('<%= image_url (@artist.banner_image) %>');">
+    <div class="banner-2 z-10 relative mx-auto sm:my-16" style="background-image: url('<%= image_url(@artist.banner_image) %>');">
       <h1 class="absolute text-white text-xl lg:text-3xl md:text-3xl font-bold bg-white text-primary px-1 z-10"><%= @artist.name %></h1>
       <ul class="social-links flex absolute right-0 mr-4 lg:mr-16 md:mr-12" style="bottom: -2.5rem;">
         <% if @artist.insta? %>
