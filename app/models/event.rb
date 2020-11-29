@@ -9,4 +9,6 @@ class Event < ApplicationRecord
   def set_month
     self.month = I18n.t("date.month_names")[date.month]
   end
+
+
 end

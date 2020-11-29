@@ -8,8 +8,7 @@ puts 'Creating 15 fake Events...'
     city: "Lyon",
     artist_id: Artist.first.id,
     location: "Le Théâtre de La Vie qui joue",
-    region: "Ile de France",
-    month: "Avril"
+    region: "Ile de France"
   )
   event.save!
 end
@@ -22,8 +21,7 @@ end
     artist_id: Artist.last.id,
     location: "Le Théâtre de La Vie qui joue",
     ticket: "https://www.billetreduc.com/th/",
-    region: "Ile de France",
-    month: "Avril"
+    region: "Ile de France"
   )
   event.save!
 end
@@ -35,8 +33,7 @@ end
     city: "Lyon",
     artist_id: Artist.first.id,
     location: "Le Théâtre de Ta Mère qui Trticotte",
-    region: "Ile de France",
-    month: "Avril"
+    region: "Ile de France"
   )
   event.save!
 end
@@ -50,7 +47,7 @@ end
     location: "Le Théâtre de Ta Mère qui Trticotte",
     ticket: "https://www.billetreduc.com/theatre/",
     region: "Hauts de France",
-    month: "Mai"
+
   )
   event.save!
 end
@@ -62,8 +59,7 @@ end
     city: "Lyon",
     artist_id: Artist.first.id,
     location: "Le Théâtre de La Taupe qui pêche",
-    region: "Hauts de France",
-    month: "Mai"
+    region: "Hauts de France"
   )
   event.save!
 end
@@ -76,8 +72,7 @@ end
     artist_id: Artist.last.id,
     location: "Le Théâtre de La Taupe qui pêche",
     ticket: "https://www.billetreduc.com/theatre/",
-    region: "Hauts de France",
-    month: "Mai"
+    region: "Hauts de France"
   )
   event.save!
 end
@@ -90,8 +85,7 @@ end
     artist_id: Artist.first.id,
     location: "Le Théâtre de La Joie qui danse",
     ticket: "https://www.billetreduc.com/theatre/",
-    region: "Hauts de France",
-    month: "Mai"
+    region: "Hauts de France"
   )
   event.save!
 end
@@ -103,8 +97,7 @@ end
     city: "Marseille",
     artist_id: Artist.last.id,
     location: "Le Théâtre de La Joie qui danse",
-    region: "Hauts de France",
-    month: "Mai"
+    region: "Hauts de France"
   )
   event.save!
 end
