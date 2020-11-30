@@ -125,7 +125,7 @@
       </div>
       <% else %>
       <% end %>
-      <% if @artist.show_image1.attached? %>
+      <% if @artist.show_image2.attached? %>
       <div class="relative mx-auto w-56 h-40 sm:col-span-3 sm:row-span-1 sm:col-start-4 sm:row-start-3 col-span-1 row-span-2  transform duration-200 hover:scale-110">
         <%= link_to @artist.show_image2, class: 'photo', data: { lightbox: "gallery-show"}  do %>
         <%= image_tag @artist.show_image2, class: 'absolute h-full w-full object-contain' %>
@@ -133,7 +133,7 @@
       </div>
       <% else %>
       <% end %>
-      <% if @artist.show_image1.attached? %>
+      <% if @artist.show_image3.attached? %>
       <div class="relative mx-auto w-56 h-40 sm:col-span-3 sm:row-span-1 sm:col-start-7 sm:row-start-3 col-span-1 row-span-2  transform duration-200 hover:scale-110">
         <%= link_to @artist.show_image3, class: 'photo', data: { lightbox: "gallery-show"}  do %>
         <%= image_tag @artist.show_image3, class: 'absolute h-full w-full object-contain' %>
@@ -141,7 +141,7 @@
       </div>
       <% else %>
       <% end %>
-      <% if @artist.show_image1.attached? %>
+      <% if @artist.show_image4.attached? %>
       <div class="relative mx-auto w-56 h-40 sm:col-span-3 sm:row-span-1 sm:col-start-10 sm:row-start-3 col-span-1 row-span-2  transform duration-200 hover:scale-110">
         <%= link_to @artist.show_image4, class: 'photo', data: { lightbox: "gallery-show"}  do %>
         <%= image_tag @artist.show_image4, class: 'absolute h-full w-full object-contain' %>

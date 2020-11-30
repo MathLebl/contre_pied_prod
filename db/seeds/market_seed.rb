@@ -2,6 +2,9 @@
 puts 'Creating categories...'
 cd = ShopCategory.create!(name: 'cd')
 tshirt = ShopCategory.create!(name: 'Tshirt')
+tote_bag = ShopCategory.create!(name: 'ToteBag')
+briquet = ShopCategory.create!(name: 'Briquet')
+carte = ShopCategory.create!(name: 'Carte')
 
 puts 'Creating CD products'
 3.times do

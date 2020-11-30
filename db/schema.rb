@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_29_092756) do
+ActiveRecord::Schema.define(version: 2020_11_30_145609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -174,6 +174,14 @@ ActiveRecord::Schema.define(version: 2020_08_29_092756) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "sizes", force: :cascade do |t|
+    t.string "name"
+    t.bigint "product_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_sizes_on_product_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -212,4 +220,5 @@ ActiveRecord::Schema.define(version: 2020_08_29_092756) do
   add_foreign_key "presses", "artists"
   add_foreign_key "products", "artists"
   add_foreign_key "products", "shop_categories"
+  add_foreign_key "sizes", "products"
 end
