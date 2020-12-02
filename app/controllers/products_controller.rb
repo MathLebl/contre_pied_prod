@@ -13,8 +13,9 @@ class ProductsController < ApplicationController
 
   # Path pour ajout d'un produit dans le panier
   def add_to_cart
+    @product = Product.find(params[:id])
     Cart.add_to_cart(session[:cart], params[:id])
-    redirect_to products_path
+    redirect_to product_path(@product)
   end
 
   # Path vers la page index panier
