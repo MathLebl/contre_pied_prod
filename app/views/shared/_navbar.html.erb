@@ -30,7 +30,7 @@
       </li>
       <% end %>
       <li class="nav-item bg-primary text-white m-1 md:mx-2 py-1 px-1 md:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center hidden md:inline-flex lg:inline-flex">
-        <%= link_to "E-boutique", boutique_path, class: "nav-link" %>
+        <%= link_to "E-Boutique", products_path, class: "nav-link" %>
       </li>
       <% if !@cart.empty? %>
       <li class="nav-item cart-icon bg-primary text-white m-1 mx-2 py-1 px-1 md:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center hidden md:inline-flex lg:inline-flex">
@@ -49,8 +49,6 @@
           <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=spectacle_artists_path %>">Spectacles</a></li>
           <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=concert_artists_path %>">Concerts</a></li>
           <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=jeune_public_artists_path %>">Jeune Public</a></li>
-          <!-- <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=boutique_path %>">E-Boutique</a></li>
-          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=show_cart_products_path %>">Mon panier</a></li> -->
           <li class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap">
             <%= link_to "Se Déconnecter", destroy_user_session_path, method: :delete, data: { confirm: "Êtes vous sûr de vouloir vous déconncter" }, class: "nav-link" %>
           </li>
@@ -65,7 +63,7 @@
       </li>
 
       <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center">
-        <%= link_to "E-boutique", boutique_path, class: "nav-link" %>
+        <%= link_to "E-Boutique", products_path, class: "nav-link" %>
       </li>
       <% if @index %>
       <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center">
@@ -87,7 +85,6 @@
           <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=spectacle_artists_path %>">Spectacles</a></li>
           <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=concert_artists_path %>">Concerts</a></li>
           <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=jeune_public_artists_path %>">Jeune Public</a></li>
-          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=show_cart_products_path %>">Mon panier</a></li>
           <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=new_user_session_path %>">Se Connecter</a></li>
         </ul>
       </li>
