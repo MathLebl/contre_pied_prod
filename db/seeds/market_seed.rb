@@ -17,6 +17,14 @@ puts 'Creating CD products'
     artist_id: Artist.last.id,
     published_at: Time.zone.now
   )
+  product.product_image.attach(
+  io: File.open("app/assets/images/aranjuez/aranjuez-dice3.jpg"),
+  filename: "aranjuez-dice3.jpg"
+  )
+  product.product_image2.attach(
+  io: File.open("app/assets/images/aranjuez/aranjuez-dice3.jpg"),
+  filename: "aranjuez-dice3.jpg"
+  )
   product.save!
 end
 puts 'Creating Tshirt products'
@@ -29,6 +37,10 @@ puts 'Creating Tshirt products'
     price_cents: 2200,
     artist_id: Artist.last.id,
     published_at: Time.zone.now
+  )
+  product.product_image.attach(
+  io: File.open("app/assets/images/aranjuez/aranjuez-dice3.jpg"),
+  filename: "aranjuez-dice3.jpg"
   )
   product.save!
 end
