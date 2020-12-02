@@ -13,7 +13,7 @@
     <% if product.stock > 0 %>
       <%= link_to product_path(product), class:"col-span-2 lg:col-span-1 md:col-span-1 transform hover:scale-105 duration-200" do %>
         <div class="flex bg-white lg:p-4 md:p-3">
-          <div class="bg-cover w-1/2 h-32 lg:h-56 md:h-40" style="background-image: url('<%= image_path product.photo_url %>')"></div>
+          <div class="bg-cover w-1/2 h-32 lg:h-56 md:h-40" style="background-image: url('<%= image_path url_for (product.product_image) %>')"></div>
           <div class="bg-white text-primary w-1/2 pl-4 flex flex-col justify-between">
             <span class="font-bold lg:text-lg md:text-base"><%= product.name %></span>
             <span class="md:text-xs"><%= product.description %></span>

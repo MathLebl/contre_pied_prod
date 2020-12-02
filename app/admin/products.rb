@@ -2,7 +2,8 @@ ActiveAdmin.register Product do
   menu label: "Articles", priority: 7
 #   config.sort_order = 'date_asc'
 permit_params :stock, :name, :shop_category_id, :price_cents, :artist_id,
-              :product_image, :description
+              :product_image, :description, :product_image2, :product_image3,
+              :product_image4, :product_image5
 
 
 
@@ -65,7 +66,7 @@ index do
   end
   column "Photo" do |product|
     if product.product_image.attached?
-      image_tag product.photo_image, class:'photo-index'
+      image_tag product.product_image, class:'photo-index'
     elsif product.photo_url
       image_tag product.photo_url, class:'photo-index'
     end
@@ -92,9 +93,29 @@ show do
     row :shop_category
     row "Photo" do |product|
       if product.product_image.attached?
-        image_tag product.photo_image, class:'photo-show'
+        image_tag product.product_image, class:'photo-show'
       elsif product.photo_url
         image_tag product.photo_url, class:'photo-show'
+      end
+    end
+      if product.product_image2.attached?
+    row "Photo 2" do |product|
+        image_tag product.product_image2, class:'photo-show'
+    end
+      end
+      if product.product_image3.attached?
+    row "Photo 3" do |product|
+        image_tag product.product_image3, class:'photo-show'
+      end
+    end
+      if product.product_image4.attached?
+    row "Photo 4" do |product|
+        image_tag product.product_image4, class:'photo-show'
+      end
+    end
+      if product.product_image5.attached?
+    row "Photo 5" do |product|
+        image_tag product.product_image5, class:'photo-show'
       end
     end
   end
@@ -111,6 +132,10 @@ form do |f|
     f.input :artist_id, :label => 'Artist', :as => :select, :collection => Artist.all.map{|u| ["#{u.name}", u.id]}
     f.input :photo_url
     f.input :product_image, as: :file
+    f.input :product_image2, as: :file
+    f.input :product_image3, as: :file
+    f.input :product_image4, as: :file
+    f.input :product_image5, as: :file
     f.actions
   end
 end
