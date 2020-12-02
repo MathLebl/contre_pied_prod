@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @session = session[:cart]
+    @index = true
   end
 
   # Path pour ajout d'un produit dans le panier
