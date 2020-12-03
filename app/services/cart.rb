@@ -25,15 +25,15 @@ class Cart
     if total_weight == 0
       fees = 0
     elsif total_weight <= 200
-      fees = 2
+      fees = 200
     elsif total_weight <= 500
-      fees = 4
+      fees = 400
     elsif total_weight <= 1000
-      fees = 6
+      fees = 600
     elsif total_weight < 2000
-      fees = 7
+      fees = 700
     else
-      fees = 8
+      fees = 800
     end
     fees
   end
@@ -45,7 +45,6 @@ class Cart
     end
     amount
   end
-
 
   def self.reset_cart(cookie)
     cookie.clear

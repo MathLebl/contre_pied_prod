@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+
   def new
     @order = Order.new
     @user = current_user
@@ -8,7 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    amount = Cart.cart_amount(session[:cart]) + Cart.cart_fees(session[:cart])
+    amount = Cart.cart_amount(session[:cart])
     order_attributes = {state: 'pending', user: current_user, amount: amount}
     order  = Order.new(order_params)
     order.update(order_attributes)
