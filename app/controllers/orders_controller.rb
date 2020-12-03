@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    amount = Cart.cart_amount(session[:cart])
+    amount = Cart.cart_amount(session[:cart]) + Cart.cart_feessession[:cart])
     order_attributes = {state: 'pending', user: current_user, amount: amount}
     order  = Order.new(order_params)
     order.update(order_attributes)
@@ -54,7 +54,7 @@ class OrdersController < ApplicationController
     items.map do |item|
       {
         name: item["name"],
-        images: [item["photo_url"]],
+        images: [item["product_image"]],
         amount: item["price_cents"],
         currency: 'eur',
         quantity: 1
