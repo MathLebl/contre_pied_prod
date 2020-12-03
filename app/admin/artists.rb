@@ -16,7 +16,7 @@ ActiveAdmin.register Artist do
   :facebook, :soundcloud, :category, :artist_video, :slug,
   :press_file, :banner_image, :show_image1, :show_image2, :show_image3,
   :show_image4, distribution_attributes: [:id, :name, :_destroy],
-  credits_attributes: [:id, :name, :_destroy], presse_attributes: [:id, :name, :_destroy],
+  credits_attributes: [:id, :name, :role, :_destroy], presse_attributes: [:id, :name, :_destroy],
   partenaires_attributes: [:id, :name, :_destroy]
 
   menu priority: 4
@@ -99,6 +99,7 @@ ActiveAdmin.register Artist do
       end
       f.inputs do
         f.has_many :credits, allow_destroy: true do |t|
+          t.input :role
           t.input :name
         end
       end
