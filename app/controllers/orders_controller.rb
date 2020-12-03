@@ -55,7 +55,7 @@ class OrdersController < ApplicationController
     items.map do |item|
       {
         name: item["name"],
-        images: [item["product_image"]],
+        images: [item["photo_url"]],
         amount: item["price_cents"],
         currency: 'eur',
         quantity: 1
