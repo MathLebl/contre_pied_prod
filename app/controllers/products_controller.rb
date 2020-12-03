@@ -24,6 +24,8 @@ class ProductsController < ApplicationController
     @cart = session[:cart]
     @products = Product.all
     @amount = Cart.cart_amount(@cart)
+    @fees = Cart.cart_fees(@cart)
+    @total_weight = Cart.cart_weight(@cart)
   end
 
   # Path pour suppression d'un produit du panier
