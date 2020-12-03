@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :artists
   has_many :events
-  has_many :orders
+  has_many :orders, dependent: :destroy
 
   def full_name
     "#{first_name} #{name}"
