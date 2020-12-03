@@ -85,7 +85,7 @@
         <% if !@credits.empty? %>
         <ul class="info-text absolute hidden bg-white text-primary p-4 m-2">
           <% @credits.each do |credit| %>
-          <li><%= credit.role %> : <%=credit.name %></li>
+          <li><span class="font-bold"><%= credit.role %> :</span> <%=credit.name %></li>
           <% end %>
         </ul>
         <% end %>
