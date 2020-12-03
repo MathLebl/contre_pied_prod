@@ -30,7 +30,7 @@
       </li>
       <% end %>
       <li class="nav-item bg-primary text-white m-1 md:mx-2 py-1 px-1 md:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center hidden md:inline-flex lg:inline-flex">
-        <%= link_to "E-Boutique", products_path, class: "nav-link" %>
+        <%= link_to "E-Boutique", boutique_path, class: "nav-link" %>
       </li>
       <% if !@cart.empty? && @index %>
       <li class="nav-item cart-icon bg-primary text-white m-1 mx-2 py-1 px-1 md:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center hidden md:inline-flex lg:inline-flex">
@@ -63,7 +63,7 @@
       </li>
 
       <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center">
-        <%= link_to "E-Boutique", products_path, class: "nav-link" %>
+        <%= link_to "E-Boutique", boutique_path, class: "nav-link" %>
       </li>
       <% if @index %>
       <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center">
