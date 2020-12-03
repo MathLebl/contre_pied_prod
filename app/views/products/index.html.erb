@@ -8,32 +8,33 @@
 
 <div class="bg-primary mb-20">
   <div class="grid grid-cols-2 gap-8 lg:gap-20 md:gap-10 mx-8 lg:mx-48 md:mx-12 py-8">
-    <% @products.each do |product| %>
-    <% if product.published_at? %>
-    <% if product.stock > 0 %>
-      <%= link_to product_path(product), class:"col-span-2 lg:col-span-1 md:col-span-1 transform hover:scale-105 duration-200" do %>
-        <div class="flex bg-white lg:p-4 md:p-3">
-          <div class="bg-cover w-1/2 h-36 lg:h-56 md:h-40" style="background-image: url('<%= image_path url_for (product.product_image) %>'); background-size: cover;"></div>
-          <div class="bg-white text-primary w-1/2 pl-4 flex flex-col">
-            <span class="text-center font-bold lg:text-lg md:text-base mt-4"><%= product.name %></span>
-            <div class="flex mt-32 justify-between">
-            <span class="lg:text-base md:text-base"><%= product.shop_category.name %></span>
-            <span class="text-lg font-bold"><%= humanized_money product.price %> <%= currency_symbol %></span>
+    <% @products.each do |product|%>
+      <% if product.published_at? %>
+      <% if product.stock > 0 %>
+        <%= link_to product_path(product), class:"col-span-2 lg:col-span-1 md:col-span-1 transform hover:scale-105 duration-200" do %>
+          <div class="list-card transform duration-200 hover:scale-105">
+            <div class="card-body py-4 sm:p-8 relative">
+              <h5 class="card-name bg-white text-primary font-bold p-2 mb-4" style="width: fit-content"><span class="lg:text-base md:text-base"><%= product.shop_category.name %> - </span><span> <%= product.name %></span></h5>
+              <div id="back-image" class="bg-cover bg-top" style="background-image: url('<%= image_path url_for (product.product_image) %>'); background-color: #F7C0D2;"></div>
+              <h6 class="card-style absolute bg-white text-primary font-bold p-2"><span class="text-lg font-bold"><%= humanized_money product.price %> <%= currency_symbol %></span></h6>
+            </div>
+          </div>
+        <% end %>
+        <% elsif product.stock == 0 %>
+        <div class="col-span-2 lg:col-span-1 md:col-span-1 transform hover:scale-105 duration-200 inactive" >
+          <div class="list-card transform duration-200 hover:scale-105">
+            <div class="card-body py-4 sm:p-8 relative">
+              <h5 class="card-name bg-white text-primary font-bold p-2 mb-4" style="width: fit-content"><span class="lg:text-base md:text-base"><%= product.shop_category.name %> - </span><span> <%= product.name %></span></h5>
+              <div id="back-image" class="bg-cover bg-top" style="background-image: url('<%= image_path url_for (product.product_image) %>'); background-color: #F7C0D2;">
+              </div>
+              <h6 class="card-style absolute bg-white text-primary font-bold p-2"><span class="text-lg font-bold"><%= humanized_money product.price %> <%= currency_symbol %></span></h6>
+              <div id="inactive-flag" class="absolute text-black font-bold text-2xl invisible">
+                <h2>En Rupture</h2>
+              </div>
             </div>
           </div>
         </div>
-    <% end %>
-    <% else %>
-      <div class="flex bg-white p-4 <%= "inactive" if product.stock == 0 %> col-span-2 lg:col-span-1 md:col-span-1 transform hover:scale-105 duration-200">
-          <div id="shop-img" class="bg-cover w-1/2 lg:h-56 md:h-40 relative" style="background-image: url('<%= image_path product.photo_url %>')"></div>
-          <p id="rupture-flag" class="bg-white text-gray-700 px-2 py-1 text-xl font-bold absolute hidden" style="top: 45%; left: 18%">Rupture</p>
-          <div class="bg-white text-primary w-1/2 pl-4 flex flex-col justify-between">
-            <span class="font-bold lg:text-lg md:text-base"><%= product.name %></span>
-            <span class="lg:text-base md:text-xs"><%= product.description %></span>
-            <span class="text-lg font-bold"><%= humanized_money product.price %> <%= currency_symbol %></span>
-          </div>
-        </div>
-    <% end %>
+        <% end %>
     <% end %>
     <% end %>
   </div>
