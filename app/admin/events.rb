@@ -44,4 +44,16 @@ ActiveAdmin.register Event do
       end
     end
   end
+  form do |f|
+    f.inputs do
+      f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.first_name}", u.id]}
+      f.input :artist_id
+      f.input :date
+      f.input :location
+      f.input :city
+      f.input :region
+      f.input :ticket
+      f.actions
+    end
+  end
 end
