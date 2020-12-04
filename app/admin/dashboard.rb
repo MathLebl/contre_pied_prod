@@ -75,6 +75,32 @@ ActiveAdmin.register_page "Dashboard" do
             end
           end
         end
+        panel "Commandes envoyées" do
+          table_for Order.where(state:"envoyée").order('created_at ASC').first(8) do
+            column "Num" do |order|
+              link_to order.id, admin_order_path(order)
+            end
+            column "Article" do |order|
+              order.products.each do |product|
+                link_to product.name, admin_product_path(product)
+              end
+            end
+            column "Client" do |order|
+              link_to order.user.first_name + " " + order.user.name, admin_user_path(order.user)
+            end
+            column "adresse" do |order|
+              order.address
+            end
+            column "Total" do |order|
+              order.amount
+            end
+          end
+          div class:'links'do
+            div do |order|
+              link_to "Toutes les commandes", admin_orders_path
+            end
+          end
+        end
       end
     end
   end
