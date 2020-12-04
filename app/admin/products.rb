@@ -124,18 +124,17 @@ end
 
 form do |f|
   f.inputs do
-    f.input :stock
     f.input :name
-    f.input :description
-    f.input :shop_category_id, :as => :select, :collection => ShopCategory.all.map{|u| ["#{u.name}", u.id]}
-    f.input :price_cents
     f.input :artist_id, :label => 'Artist', :as => :select, :collection => Artist.all.map{|u| ["#{u.name}", u.id]}
-    f.input :photo_url
+    f.input :shop_category_id, :as => :select, :collection => ShopCategory.all.map{|u| ["#{u.name}", u.id]}
+    f.input :description
+    f.input :price_cents
     f.input :product_image, as: :file
     f.input :product_image2, as: :file
     f.input :product_image3, as: :file
     f.input :product_image4, as: :file
     f.input :product_image5, as: :file
+    f.input :stock
     f.actions
   end
 end

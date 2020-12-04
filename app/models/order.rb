@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :user
   # belongs_to :product
-  has_many :items
+  has_many :items, dependent: :destroy
   has_many :products, through: :items
   accepts_nested_attributes_for :products
   monetize :amount_cents

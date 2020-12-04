@@ -11,6 +11,33 @@ class Cart
     end
   end
 
+  def self.cart_weight(cookie)
+    total_weight = 0
+    cookie.each do |item|
+      total_weight += Product.find(item["id"]).shop_category.weight
+    end
+    total_weight
+  end
+
+  def self.cart_fees(cookie)
+    total_weight = cart_weight(cookie)
+    fees = 0
+    if total_weight == 0
+      fees = 0
+    elsif total_weight <= 200
+      fees = 200
+    elsif total_weight <= 500
+      fees = 400
+    elsif total_weight <= 1000
+      fees = 600
+    elsif total_weight < 2000
+      fees = 700
+    else
+      fees = 800
+    end
+    fees
+  end
+
   def self.cart_amount(cookie)
     amount = 0
     cookie.each do |item|
