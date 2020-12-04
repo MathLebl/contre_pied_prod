@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :email, :admin, :name, :first_name
+  permit_params :email, :name, :first_name, :password, :password_confirmation, :address, :city, :zip_code, :phone, :admin
   config.filters = false
   menu priority: 5, label: "Utilisateurs"
 
