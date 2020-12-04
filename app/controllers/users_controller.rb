@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [ :full_name ]
-  
+
   def edit
     @user = find_user
   end
@@ -10,13 +10,10 @@ class UsersController < ApplicationController
     @user.update(user_params)
     redirect_to me_users_path
   end
-  
+
   def me
     @user = current_user
     @orders = find_orders(@user.id)
-  end
-
-  def full_name
   end
 
   private
@@ -30,6 +27,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:address, :city, :zip_code, :phone)
+    params.require(:user).permit(:first_name, :name, :address, :city, :zip_code, :phone)
   end
 end
