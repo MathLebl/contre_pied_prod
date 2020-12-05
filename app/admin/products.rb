@@ -129,6 +129,7 @@ form do |f|
     f.input :shop_category_id, :as => :select, :collection => ShopCategory.all.map{|u| ["#{u.name}", u.id]}
     f.input :description
     f.input :price_cents
+    f.input :photo_url
     f.input :product_image, as: :file
     f.input :product_image2, as: :file
     f.input :product_image3, as: :file
