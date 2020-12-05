@@ -1,17 +1,17 @@
 
 puts 'Creating categories...'
-cd = ShopCategory.create!(name: 'cd')
-tshirt = ShopCategory.create!(name: 'Tshirt')
-tote_bag = ShopCategory.create!(name: 'ToteBag')
-briquet = ShopCategory.create!(name: 'Briquet')
-carte = ShopCategory.create!(name: 'Carte')
+cd = ShopCategory.create!(name: 'cd', weight:'80')
+tote_bag = ShopCategory.create!(name: 'ToteBag', weight:'90')
+briquet = ShopCategory.create!(name: 'Briquet', weight:'80')
+carte = ShopCategory.create!(name: 'Carte', weight:'80')
+tshirt = ShopCategory.create!(name: 'Tshirt', weight:'120')
 
 puts 'Creating CD products'
 3.times do
   product = Product.new(
     stock: 4,
     name: "Le CD de ouf",
-    shop_category_id: ShopCategory.last.id,
+    shop_category_id: ShopCategory.first.id,
     photo_url: "https://images.unsplash.com/photo-1571173069043-82a7a13cee9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
     price_cents: 1400,
     artist_id: Artist.last.id,
@@ -32,7 +32,7 @@ puts 'Creating Tshirt products'
   product = Product.new(
     stock: 8,
     name: "Le Tshirt de ouf",
-    shop_category_id: ShopCategory.first.id,
+    shop_category_id: ShopCategory.last.id,
     photo_url: "https://boutique.tennislegend.fr/37-large_default/tshirt-la-chatte-homme.jpg",
     price_cents: 2200,
     artist_id: Artist.last.id,
