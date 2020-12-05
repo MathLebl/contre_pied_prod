@@ -15,7 +15,7 @@
       <li class="my-2"><strong>Produits :</strong></li>
       <% @order.products.each do |product| %>
       <li class="flex justify-center items-center border-white pb-2 mb-4 mt-6" style="border-bottom: 1px solid">
-      <span class=""><%= image_tag product.product_image, class: "w-20 m-2" %></span>
+      <span class=""><%= image_tag product.photo_url, class: "w-20 m-2" %></span>
       <span class=""><strong><%= product.name %></strong></span>
       <span class="ml-4"><strong><%= humanized_money product.price %> <%= currency_symbol %></strong></li></span>
       <% end %>

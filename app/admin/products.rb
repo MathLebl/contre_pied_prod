@@ -3,7 +3,7 @@ ActiveAdmin.register Product do
 #   config.sort_order = 'date_asc'
 permit_params :stock, :name, :shop_category_id, :price_cents, :artist_id,
               :product_image, :description, :product_image2, :product_image3,
-              :product_image4, :product_image5
+              :product_image4, :product_image5, :photo_url
 
 
 
