@@ -21,20 +21,21 @@ class Cart
 
   def self.cart_fees(cookie)
     total_weight = cart_weight(cookie)
-    fees = 0
+    c_fees = 0
     if total_weight == 0
-      fees = 0
+      c_fees = 0
     elsif total_weight <= 200
-      fees = 200
+      c_fees = 200
     elsif total_weight <= 500
-      fees = 400
+      c_fees = 400
     elsif total_weight <= 1000
-      fees = 600
+      c_fees = 600
     elsif total_weight < 2000
-      fees = 700
+      c_fees = 700
     else
-      fees = 800
+      c_fees = 800
     end
+    fees = Money.new(c_fees)
     fees
   end
 
@@ -44,6 +45,13 @@ class Cart
       amount += Product.find(item["id"]).price #methode find pour avoir le money object via .price (car non dispo dans le cookie session[:cart])
     end
     amount
+  end
+
+  def self.total_amount(cookie)
+    amount = cart_amount(cookie)
+    fees = cart_fees(cookie)
+    total_amount = amount + fees
+    total_amount
   end
 
   def self.reset_cart(cookie)
