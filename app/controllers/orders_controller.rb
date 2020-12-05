@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    amount = Cart.cart_amount(session[:cart])
+    amount = Cart.total_amount(session[:cart])
     order_attributes = {state: 'pending', user: current_user, amount: amount}
     order  = Order.new(order_params)
     order.update(order_attributes)
