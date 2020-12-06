@@ -24,16 +24,26 @@ class Cart
     c_fees = 0
     if total_weight == 0
       c_fees = 0
-    elsif total_weight <= 200
-      c_fees = 200
+    elsif total_weight <= 250
+      c_fees = 495
     elsif total_weight <= 500
-      c_fees = 400
+      c_fees = 645
+    elsif total_weight <= 750
+      c_fees = 735
     elsif total_weight <= 1000
-      c_fees = 600
-    elsif total_weight < 2000
-      c_fees = 700
+      c_fees = 799
+    elsif total_weight <= 2000
+      c_fees = 915
+    elsif total_weight <= 5000
+      c_fees = 1410
+    elsif total_weight <= 10000
+      c_fees = 2050
+    elsif total_weight <= 15000
+      c_fees = 2600
+    elsif total_weight <= 30000
+      c_fees = 3220
     else
-      c_fees = 800
+      c_fees = 4000
     end
     fees = Money.new(c_fees)
     fees

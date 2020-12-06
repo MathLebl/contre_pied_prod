@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_183444) do
+ActiveRecord::Schema.define(version: 2020_12_06_183029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -135,6 +135,8 @@ ActiveRecord::Schema.define(version: 2020_12_02_183444) do
     t.string "city"
     t.string "zip_code"
     t.string "phone"
+    t.integer "fees_cents", default: 0, null: false
+    t.string "payment_intent_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -165,6 +167,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_183444) do
     t.bigint "artist_id", null: false
     t.date "published_at"
     t.text "description"
+    t.integer "ranking"
     t.index ["artist_id"], name: "index_products_on_artist_id"
     t.index ["shop_category_id"], name: "index_products_on_shop_category_id"
   end
