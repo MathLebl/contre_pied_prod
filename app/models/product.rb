@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+
+  before_save :set_photo_url
+
   has_many :items, dependent: :destroy
   has_many :orders
   has_many :sizes
@@ -10,5 +13,12 @@ class Product < ApplicationRecord
   has_one_attached :product_image3
   has_one_attached :product_image4
   has_one_attached :product_image5
+
+private
+
+def set_photo_url
+    self.photo_url = product_image.url
+  end
+
 
 end
