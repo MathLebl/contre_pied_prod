@@ -1,7 +1,7 @@
 ActiveAdmin.register Product do
   menu label: "Articles", priority: 7
 #   config.sort_order = 'date_asc'
-permit_params :stock, :name, :shop_category_id, :price_cents, :artist_id,
+permit_params :stock, :name, :shop_category_id, :price_cents, :artist_id, :ranking,
               :product_image, :description, :product_image2, :product_image3,
               :product_image4, :product_image5
 
@@ -56,6 +56,7 @@ index do
   column "Nom" do |product|
     link_to product.name, admin_product_path(product)
   end
+  column "Classement", :ranking
   column "Artist" do |product|
     product.artist.name
   end
@@ -85,6 +86,9 @@ show do
   attributes_table do
     row :name
     row :artist
+    row "Classement" do |prod|
+        prod.ranking
+      end
     row :stock
     row :price_cents
     row "Description" if product.description? do |product|
@@ -126,6 +130,7 @@ form do |f|
   f.inputs do
     f.input :name
     f.input :artist_id, :label => 'Artist', :as => :select, :collection => Artist.all.map{|u| ["#{u.name}", u.id]}
+    f.input :ranking, label: "Classement", as: :select, collection: (1..Product.count)
     f.input :shop_category_id, :as => :select, :collection => ShopCategory.all.map{|u| ["#{u.name}", u.id]}
     f.input :description
     f.input :price_cents

@@ -1,4 +1,17 @@
-<p>Bonjour <%= @user.first_name %>!</p>
+<h1> Bonjour <%= @user.first_name %>! </h1>
 
-<p>Votre commande numero <%= @order.id %> a bien été prise en compte et
-est en cours de préparation</p>
+<p>Votre commande <%= @order.id %> a bien été prise en compte. Elle est en cours de préparation.
+Nous vous remercions d'avoir commandé sur notre boutique en ligne Contrepied Productions.</p>
+
+<p>
+
+Votre commande est la meilleure des commandes !
+Mais n'hésitez pas à refaire un tour sur la boutique ou à la conseiller à vos ami(e)s.
+Et surtout, à suivre la tournée de nos artistes pour venir les voir quand ils passeront près de chez vous...
+</p>
+
+<p>À bientôt,
+L'équipe Contrepied.</p>
+
+<p>Post-scriptum : Si vous aviez un problème avec votre commande,
+écrivez-nous sur cette adresse mail : <%= mail_to commandes@contrepiedproductions.fr %></p>
