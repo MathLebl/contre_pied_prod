@@ -1,6 +1,6 @@
 
 puts 'Creating categories...'
-cd = ShopCategory.create!(name: 'cd', weight:'80')
+cd = ShopCategory.create!(name: 'Album', weight:'80')
 tote_bag = ShopCategory.create!(name: 'ToteBag', weight:'90')
 briquet = ShopCategory.create!(name: 'Briquet', weight:'80')
 carte = ShopCategory.create!(name: 'Carte', weight:'80')
