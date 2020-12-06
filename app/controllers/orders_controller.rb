@@ -28,6 +28,7 @@ class OrdersController < ApplicationController
       line_items: line_items,
       success_url: order_url(order),
       cancel_url: new_order_payment_url(order),
+      customer_email: @current_user.email
 
     )
 
