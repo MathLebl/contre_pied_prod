@@ -10,8 +10,10 @@ class Order < ApplicationRecord
   validates :city, presence: :true
   validates :zip_code, presence: :true
   validates :phone, presence: :true
-  scope :payées, -> { where.not(state:"pending") }
+  scope :payées, -> { where(state:"Payé") }
   scope :enAttente, -> { where(state:"pending") }
+  scope :envoyées, -> { where(state:"envoyée") }
+  scope :archivées, -> { where(state:"Archivée") }
 
 
   after_update :order_send,

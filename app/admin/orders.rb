@@ -7,8 +7,11 @@ ActiveAdmin.register Order do
                 item_attributes: [:order_id, :product_id]
 
   scope :all
-  scope :payées
   scope :enAttente
+  scope :payées
+  scope :envoyées
+  scope :archivées
+
 
 
 
@@ -23,7 +26,7 @@ ActiveAdmin.register Order do
     link_to "Envoyée", send_order_admin_order_path(order), method: :put if order.state == 'Payé'
   end
   action_item :unsend_order, only: :show do
-    link_to "Payée", unsend_order_admin_order_path(order), method: :put if order.state == 'envoyée'
+    link_to "Archivée", unsend_order_admin_order_path(order), method: :put if order.state == 'envoyée'
   end
 
   member_action :send_order, method: :put do
@@ -34,7 +37,7 @@ ActiveAdmin.register Order do
 
   member_action :unsend_order, method: :put do
     order = Order.find(params[:id])
-    order.update(state: 'Payé')
+    order.update(state: 'Archivée')
     redirect_to admin_order_path(order)
   end
 
@@ -46,7 +49,7 @@ ActiveAdmin.register Order do
 
   member_action :unsend_order_index, method: :put do
     order = Order.find(params[:id])
-    order.update(state: 'Payé')
+    order.update(state: 'Archivée')
     redirect_to admin_orders_path
   end
 
@@ -71,7 +74,7 @@ ActiveAdmin.register Order do
     end
     actions do |order|
       item "Envoyée", send_order_index_admin_order_path(order), method: :put if order.state == 'Payé'
-      item "Payée", unsend_order_index_admin_order_path(order), method: :put if order.state == 'envoyée'
+      item "Archivée", unsend_order_index_admin_order_path(order), method: :put if order.state == 'envoyée'
     end
   end
 
