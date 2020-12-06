@@ -29,7 +29,6 @@ class OrdersController < ApplicationController
       success_url: order_url(order),
       cancel_url: new_order_payment_url(order),
       customer_email: @current_user.email
-
     )
 
     order.update(checkout_session_id: session.id)
