@@ -17,7 +17,7 @@ class Product < ApplicationRecord
 private
 
 def set_photo_url
-    self.photo_url = product_image.url
+    self.photo_url = product_image.service_url
   end
 
 
