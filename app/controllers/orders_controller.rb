@@ -27,7 +27,8 @@ class OrdersController < ApplicationController
       payment_method_types: ['card'],
       line_items: line_items,
       success_url: order_url(order),
-      cancel_url: new_order_payment_url(order)
+      cancel_url: new_order_payment_url(order),
+
     )
 
     order.update(checkout_session_id: session.id)
@@ -52,16 +53,26 @@ class OrdersController < ApplicationController
   end
 
   def set_line_items(items)
-    items.map do |item|
-      {
-        name: item["name"],
-        images: [item["photo_url"]],
-        amount: item["price_cents"],
+    fees = Cart.total_amount(session[:cart])
+      [{
+        name: "Payement de le commande",
+        amount: fees.amount.to_i * 100,
         currency: 'eur',
         quantity: 1
-      }
-    end
+      }]
   end
+
+  # def set_line_items(items)
+  #   items.map do |item|
+  #     {
+  #       name: item["name"],
+  #       images: [item["photo_url"]],
+  #       amount: item["price_cents"],
+  #       currency: 'eur',
+  #       quantity: 1
+  #     }
+  #   end
+  # end
 
   def order_params
     params.require(:order).permit(:address, :city, :zip_code, :phone)
