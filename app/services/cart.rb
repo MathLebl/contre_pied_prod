@@ -6,9 +6,8 @@ class Cart
 
   def self.remove_from_cart(cookie, id)
     @product = Product.find(id)
-    cookie.reject! do |item|
-      Product.find(item)
-    end
+    a= cookie.find_index(@product.id)
+    cookie.delete_at(a)
   end
 
   def self.cart_weight(cookie)
