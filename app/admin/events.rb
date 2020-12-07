@@ -46,7 +46,7 @@ ActiveAdmin.register Event do
   end
   form do |f|
     f.inputs do
-      f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.first_name}", u.id]}
+      f.input :user_id, :label => 'User', :as => :select, :collection => User.where(admin:true).map{|u| ["#{u.first_name}", u.id]}
       f.input :artist_id
       f.input :date
       f.input :location
