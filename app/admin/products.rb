@@ -132,7 +132,7 @@ form do |f|
     f.input :artist_id, :label => 'Artist', :as => :select, :collection => Artist.all.map{|u| ["#{u.name}", u.id]}
     f.input :ranking, label: "Classement", as: :select, collection: (1..Product.count)
     f.input :shop_category_id, :as => :select, :collection => ShopCategory.all.map{|u| ["#{u.name}", u.id]}
-    f.input :description
+    f.input :description, :as => :pagedown_text
     f.input :price_cents
     f.input :product_image, as: :file
     f.input :product_image2, as: :file
