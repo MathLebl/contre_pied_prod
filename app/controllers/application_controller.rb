@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :admin, :name, :first_name, :address, :city, :zip_code, :phone])
+    devise_parameter_sanitizer.permit(:edit, keys: [:email, :admin, :name, :first_name, :address, :city, :zip_code, :phone, :password, :password_confirmation])
   end
 
   private
@@ -29,6 +30,5 @@ class ApplicationController < ActionController::Base
   #   "localhost:3000"
   # end
 end
-
 
 

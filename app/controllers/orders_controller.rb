@@ -53,10 +53,10 @@ class OrdersController < ApplicationController
   end
 
   def set_line_items(items)
-    fees = Cart.total_amount(session[:cart])
+    fees = Cart.total_amount(session[:cart])*100
       [{
         name: "Payement de le commande",
-        amount: fees.amount.to_i * 100,
+        amount: fees.to_i,
         currency: 'eur',
         quantity: 1
       }]
