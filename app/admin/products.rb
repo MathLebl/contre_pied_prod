@@ -3,8 +3,10 @@ ActiveAdmin.register Product do
 #   config.sort_order = 'date_asc'
 permit_params :stock, :name, :shop_category_id, :price_cents, :artist_id, :ranking,
               :product_image, :description, :product_image2, :product_image3,
-              :product_image4, :product_image5, :photo_url
-
+              :product_image4, :product_image5, :product_image6, :product_image7,
+              :product_image8, :product_image9, :product_image10, :product_image11,
+              :product_image12, :product_image13, :product_image14, :product_image15,
+              :photo_url
 
 
 action_item :publish, only: :index do
@@ -136,10 +138,65 @@ form do |f|
     f.input :price_cents
     f.input :photo_url
     f.input :product_image, as: :file
+    if product.product_image.attached?
+      span "photo présente"
+    end
     f.input :product_image2, as: :file
+    if product.product_image2.attached?
+      span "photo présente"
+    end
     f.input :product_image3, as: :file
+    if product.product_image3.attached?
+      span "photo présente"
+    end
     f.input :product_image4, as: :file
+    if product.product_image4.attached?
+      span "photo présente"
+    end
     f.input :product_image5, as: :file
+    if product.product_image5.attached?
+      span "photo présente"
+    end
+    f.input :product_image6, as: :file
+    if product.product_image6.attached?
+      span "photo présente"
+    end
+    f.input :product_image7, as: :file
+    if product.product_image7.attached?
+      span "photo présente"
+    end
+    f.input :product_image8, as: :file
+    if product.product_image8.attached?
+      span "photo présente"
+    end
+    f.input :product_image9, as: :file
+    if product.product_image9.attached?
+      span "photo présente"
+    end
+    f.input :product_image10, as: :file
+    if product.product_image10.attached?
+      span "photo présente"
+    end
+    f.input :product_image11, as: :file
+    if product.product_image11.attached?
+      span "photo présente"
+    end
+    f.input :product_image12, as: :file
+    if product.product_image12.attached?
+      span "photo présente"
+    end
+    f.input :product_image13, as: :file
+    if product.product_image13.attached?
+      span "photo présente"
+    end
+    f.input :product_image14, as: :file
+    if product.product_image14.attached?
+      span "photo présente"
+    end
+    f.input :product_image15, as: :file
+    if product.product_image15.attached?
+      span "photo présente"
+    end
     f.input :stock
     f.actions
   end
