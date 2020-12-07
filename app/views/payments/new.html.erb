@@ -13,7 +13,6 @@
       <% @order.products.each do |product| %>
       <li class="flex items-center pb-2 mb-4 mt-6" style="border-bottom: 1px solid; border-color: white;">
         <%= image_tag product.product_image, class: "w-20 m-2" %>
-
         <div class="flex flex-col w-full justify-center">
           <span class="text-white ml-8">
             <strong><%= product.name %></strong>
