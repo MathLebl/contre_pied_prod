@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
 
-before_save :set_photo_url
+  unless Rails.env.development?
+    before_save :set_photo_url
+  end
 
   has_many :items, dependent: :destroy
   has_many :orders
