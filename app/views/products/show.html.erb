@@ -12,7 +12,7 @@
     <% end %>
   </div>
 </div>
-<div class="img-zone mx-12 grid sm:grid-cols-14 grid-cols-1 sm:grid-rows-1 grid-rows-10 row-gap-6 sm:col-gap-1 col-gap-1">
+<div class="img-zone mx-auto grid">
   <% if @product.product_image2.attached? %>
     <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-1 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
       <%= link_to @product.product_image2, class: 'photo', data: { lightbox: "gallery-show"}  do %>
