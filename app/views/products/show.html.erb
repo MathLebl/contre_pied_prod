@@ -1,130 +1,130 @@
-<div class="bg-secondary h-40 w-5/6 mx-auto my-20 lg:my-40 md:my-40 relative">
+<div class="bg-secondary h-40 w-5/6 mx-auto my-32 relative">
   <div class="flex flex-col h-full justify-center" style="padding-left: 60%;">
     <div class="img-product w-6/12 lg:w-5/12 md:w-6/12 absolute m-4 lg:m-24 md:m-8 left-0 object-contain">
-    <%= link_to @product.product_image, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image, class: 'absolute h-full w-full object-contain' %>
+      <%= link_to @product.product_image, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+        <%= image_tag @product.product_image, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
+    <h1 class="text-base lg:text-3xl md:text-3xl text-primary bg-white font-bold mb-4 px-2" style="width: fit-content"><%= @product.name %>  -  <span class="font-light"><%= humanized_money @product.price %> <%= currency_symbol %></span></h1>
+    <%= link_to products_path, class: "inline-flex items-center absolute text-primary left-0 bottom-0 no-underline hover:text-white transform hover:scale-110 duration-200 text-3xl p-1 font-bold mb-12", style: "top: 3rem", id: "back-button" do %>
+      <i class="fas fa-arrow-left"></i>
+      <span id="back-text" class="text-base ml-2">Retour</span>
     <% end %>
   </div>
-      <h1 class="text-base lg:text-3xl md:text-3xl text-primary bg-white font-bold mb-4 px-2" style="width: fit-content"><%= @product.name %>  -  <span class="font-light"><%= humanized_money @product.price %> <%= currency_symbol %></span></h1>
-  <%= link_to products_path, class: "inline-flex items-center absolute text-primary left-0 bottom-0 no-underline hover:text-white transform hover:scale-110 duration-200 text-3xl p-1 font-bold mb-12", style: "top: 3rem", id: "back-button" do %>
-     <i class="fas fa-arrow-left"></i>
-     <span id="back-text" class="text-base ml-2">Retour</span>
-    <% end %>
-  </div>
-<div class="img-zone absolute mr-24 my-2 right-0 grid sm:grid-cols-14 grid-cols-1 sm:grid-rows-1 grid-rows-10 row-gap-6 sm:col-gap-4 col-gap-1">
+</div>
+<div class="img-zone mx-12 grid sm:grid-cols-14 grid-cols-1 sm:grid-rows-1 grid-rows-10 row-gap-6 sm:col-gap-1 col-gap-1">
   <% if @product.product_image2.attached? %>
-  <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-1 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
-    <%= link_to @product.product_image2, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image2, class: 'absolute h-full w-full object-contain' %>
-    <% end %>
-  </div>
+    <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-1 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
+      <%= link_to @product.product_image2, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image2, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
   <% else %>
   <% end %>
   <% if @product.product_image3.attached? %>
-  <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-2 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
-    <%= link_to @product.product_image3, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image3, class: 'absolute h-full w-full object-contain' %>
-    <% end %>
-  </div>
+    <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-2 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
+      <%= link_to @product.product_image3, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image3, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
   <% else %>
   <% end %>
   <% if @product.product_image4.attached? %>
-  <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-3 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
-    <%= link_to @product.product_image4, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image4, class: 'absolute h-full w-full object-contain' %>
-    <% end %>
-  </div>
+    <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-3 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
+      <%= link_to @product.product_image4, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image4, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
   <% else %>
   <% end %>
   <% if @product.product_image5.attached? %>
-  <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-4 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
-    <%= link_to @product.product_image5, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image5, class: 'absolute h-full w-full object-contain' %>
-    <% end %>
-  </div>
+    <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-4 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
+      <%= link_to @product.product_image5, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image5, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
   <% else %>
   <% end %>
   <% if @product.product_image6.attached? %>
-  <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-5 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
-    <%= link_to @product.product_image6, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image6, class: 'absolute h-full w-full object-contain' %>
-    <% end %>
-  </div>
+    <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-5 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
+      <%= link_to @product.product_image6, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image6, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
   <% else %>
   <% end %>
   <% if @product.product_image7.attached? %>
-  <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-6 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
-    <%= link_to @product.product_image7, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image7, class: 'absolute h-full w-full object-contain' %>
-    <% end %>
-  </div>
+    <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-6 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
+      <%= link_to @product.product_image7, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image7, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
   <% else %>
   <% end %>
   <% if @product.product_image8.attached? %>
-  <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-7 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
-    <%= link_to @product.product_image8, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image8, class: 'absolute h-full w-full object-contain' %>
-    <% end %>
-  </div>
+    <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-7 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
+      <%= link_to @product.product_image8, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image8, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
   <% else %>
   <% end %>
   <% if @product.product_image9.attached? %>
-  <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-8 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
-    <%= link_to @product.product_image9, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image9, class: 'absolute h-full w-full object-contain' %>
-    <% end %>
-  </div>
+    <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-8 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
+      <%= link_to @product.product_image9, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image9, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
   <% else %>
   <% end %>
   <% if @product.product_image10.attached? %>
-  <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-9 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
-    <%= link_to @product.product_image10, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image10, class: 'absolute h-full w-full object-contain' %>
-    <% end %>
-  </div>
+    <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-9 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
+      <%= link_to @product.product_image10, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image10, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
   <% else %>
   <% end %>
   <% if @product.product_image11.attached? %>
-  <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-10 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
-    <%= link_to @product.product_image11, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image11, class: 'absolute h-full w-full object-contain' %>
-    <% end %>
-  </div>
+    <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-10 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
+      <%= link_to @product.product_image11, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image11, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
   <% else %>
   <% end %>
   <% if @product.product_image12.attached? %>
-  <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-11 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
-    <%= link_to @product.product_image12, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image12, class: 'absolute h-full w-full object-contain' %>
-    <% end %>
-  </div>
+    <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-11 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
+      <%= link_to @product.product_image12, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image12, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
   <% else %>
   <% end %>
   <% if @product.product_image13.attached? %>
-  <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-12 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
-    <%= link_to @product.product_image13, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image13, class: 'absolute h-full w-full object-contain' %>
-    <% end %>
-  </div>
+    <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-12 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
+      <%= link_to @product.product_image13, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image13, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
   <% else %>
   <% end %>
   <% if @product.product_image14.attached? %>
-  <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-13 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
-    <%= link_to @product.product_image14, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image14, class: 'absolute h-full w-full object-contain' %>
-    <% end %>
-  </div>
+    <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-13 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
+      <%= link_to @product.product_image14, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image14, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
   <% else %>
   <% end %>
   <% if @product.product_image15.attached? %>
-  <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-14 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
-    <%= link_to @product.product_image15, class: 'photo', data: { lightbox: "gallery-show"}  do %>
-    <%= image_tag @product.product_image15, class: 'absolute h-full w-full object-contain' %>
-    <% end %>
-  </div>
+    <div class="mx-auto w-20 h-16 sm:col-span-1 sm:row-span-1 sm:col-start-14 sm:row-start-1 col-span-1 row-span-1  transform duration-200 hover:scale-110">
+      <%= link_to @product.product_image15, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image15, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
   <% else %>
   <% end %>
-</div>
 </div>
 <div class="bg-primary p-4 lg:p-12 md:p-6 mt-8 mb-20 grid grid-cols-1 lg:grid-cols-12 md:grid-cols-12 gap-2">
   <div class="flex flex-col col-span-1 row-start-1 lg:col-span-3 lg-row-span-2 md:col-span-3 md:row-span-1 lg:col-start-3 lg:row-start-1 md:col-start-2 md:row-start-1">
