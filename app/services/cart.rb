@@ -1,7 +1,7 @@
 class Cart
   def self.add_to_cart(cookie, id)
     @product = Product.find(id)
-    cookie << @product
+    cookie << @product.id
   end
 
   def self.remove_from_cart(cookie, id)
@@ -14,7 +14,7 @@ class Cart
   def self.cart_weight(cookie)
     total_weight = 0
     cookie.each do |item|
-      total_weight += Product.find(item["id"]).shop_category.weight
+      total_weight += Product.find(item).shop_category.weight
     end
     total_weight
   end
@@ -52,7 +52,7 @@ class Cart
   def self.cart_amount(cookie)
     amount = 0
     cookie.each do |item|
-      amount += Product.find(item["id"]).price #methode find pour avoir le money object via .price (car non dispo dans le cookie session[:cart])
+      amount += Product.find(item).price #methode find pour avoir le money object via .price (car non dispo dans le cookie session[:cart])
     end
     amount
   end
