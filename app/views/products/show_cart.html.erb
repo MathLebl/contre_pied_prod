@@ -7,14 +7,14 @@
     <% unless @cart.empty? %>
         <% @cart.each do |item| %>
         <div class="col-span-1 flex items-center pb-1" style="border-bottom: 2px solid; border-color: #BA184D">
-            <%= image_tag item["photo_url"], class:"w-3/12 lg:w-1/12 md:w-3/12" %>
+            <%= image_tag @products.find(item).product_image, class:"w-3/12 lg:w-1/12 md:w-3/12" %>
             <div class="ml-4 lg:ml-20 md:ml-20 flex w-full justify-between items-center">
                 <div>
-                    <h3 class="text-xl text-gray-900"><%= item["name"] %></h3>
-                    <p class="text-gray-900 text-lg"><%= humanized_money @products.find(item["id"]).price %> <%= currency_symbol %></p>
+                    <h3 class="text-xl text-gray-900"><%= @products.find(item).name %></h3>
+                    <p class="text-gray-900 text-lg"><%= humanized_money @products.find(item).price %> <%= currency_symbol %></p>
                 </div>
                 <div>
-                    <%= link_to "Retirer", remove_from_cart_product_path(@products.find(item["id"])), class: "bg-primary text-white font-bold py-2 px-4 my-1 text-center hover:bg-secondary hover:text-primary" %>
+                    <%= link_to "Retirer", remove_from_cart_product_path(@products.find(item)), class: "bg-primary text-white font-bold py-2 px-4 my-1 text-center hover:bg-secondary hover:text-primary" %>
                 </div>
             </div>
         </div>

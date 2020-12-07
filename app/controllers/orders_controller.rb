@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
   # création des entrées dans la table Items
   def create_items_objects(items, order)
     items.each do |element|
-      Item.create!(product_id: element["id"], order_id: order.id)
+      Item.create!(product_id: element, order_id: order.id)
     end
   end
 
