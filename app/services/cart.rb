@@ -7,7 +7,7 @@ class Cart
   def self.remove_from_cart(cookie, id)
     @product = Product.find(id)
     cookie.reject! do |item|
-      item["id"] == @product.id
+      Product.find(item)
     end
   end
 
