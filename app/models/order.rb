@@ -20,6 +20,8 @@ class Order < ApplicationRecord
     if: Proc.new { |order| order.state == "envoyée" }
   after_update :order_paid,
     if: Proc.new { |order| order.state == "Payé" }
+  after_update :cp_mailer,
+    if: Proc.new { |order| order.state == "Payé" }
 
   def order_send
       OrderSendMailer.order_send(self).deliver
@@ -27,5 +29,9 @@ class Order < ApplicationRecord
 
   def order_paid
       OrderMailer.order_paid(self).deliver
+  end
+
+  def cp_mailer
+      CpMailer.cp_mailer(self).deliver
   end
 end
