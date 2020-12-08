@@ -5,8 +5,7 @@ class PagesController < ApplicationController
   def home
     events =Event.all.order('date ASC').select { |event| event.date > DateTime.now }
     @events = events.first(8)
-    actus = Actu.all
-    @actus = actus.first(4)
+    @actus = Actu.all
   end
 
   def legals
