@@ -5,7 +5,7 @@ puts 'Creating Admins'
 user = User.new(
   name: "Leblond",
   first_name: 'Mathieu',
-  email: "leblond.mathieu@gmail.com",
+  email: "leblond.mathieu.kesemale@gmail.com",
   admin: true,
   password: "tototo",
   address: "adresse test",
