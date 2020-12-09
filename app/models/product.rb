@@ -1,7 +1,4 @@
 class Product < ApplicationRecord
-
-
-
   has_many :items, dependent: :destroy
   has_many :orders
   has_many :sizes
@@ -23,7 +20,4 @@ class Product < ApplicationRecord
   has_one_attached :product_image13
   has_one_attached :product_image14
   has_one_attached :product_image15
-
-
-
 end
