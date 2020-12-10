@@ -135,8 +135,6 @@ ActiveRecord::Schema.define(version: 2020_12_06_183029) do
     t.string "city"
     t.string "zip_code"
     t.string "phone"
-    t.integer "fees_cents", default: 0, null: false
-    t.string "payment_intent_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
