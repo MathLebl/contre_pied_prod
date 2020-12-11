@@ -16,7 +16,7 @@
     <%= f.label :phone, "Téléphone *" %>
     <%= f.text_field :phone, value: @user.phone, required: true, class: "my-2 border border-gray-500" %>
     <h4>Précisez la taille des T-shirts ici</h4>
-    <%= f.text_field :com, placeholder:"Exemple: N°1 = M/N°3 = S", required: true, class: "my-2 border border-gray-500 text-black" %>
+    <%= f.text_field :com, placeholder:"Exemple: N°1 = M/N°3 = S", class: "my-2 border border-gray-500 text-black" %>
     <%= f.submit "suivant", class: "bg-primary text-white font-bold py-2 px-4 my-4 w-1/3 self-center text-center hover:bg-secondary hover:text-primary" %>
     <% end %>
     <p class="text-sm text-gray-800 mb-12 mt-6">* : Champs requis</p>
