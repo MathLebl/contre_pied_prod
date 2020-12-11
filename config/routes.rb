@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       get :show_cart
     end
   end
-  resources :orders, only: [:show, :new, :create] do
+  resources :orders, only: [:show, :new, :create, :update] do
     resources :payments, only: :new
   end
 

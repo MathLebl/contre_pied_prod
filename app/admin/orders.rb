@@ -1,7 +1,7 @@
 ActiveAdmin.register Order do
   menu label: "Commandes", priority: 6
   config.sort_order = 'created_at_asc'
-  permit_params :state, :amount_cents, :checkout_session_id, :user_id,
+  permit_params :state, :amount_cents, :checkout_session_id, :user_id, :com,
                 :created_at, :updated_at, :address, :city, :zip_code, :phone,
                 product_attributes: [:id, :name],
                 item_attributes: [:order_id, :product_id]
@@ -100,6 +100,7 @@ ActiveAdmin.register Order do
         row :city
         row :zip_code
         row :phone
+        row :com
       end
     end
     active_admin_comments
