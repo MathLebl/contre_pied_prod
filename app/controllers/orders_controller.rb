@@ -41,7 +41,11 @@ class OrdersController < ApplicationController
     @user = current_user
   end
 
-
+  def update
+     @order = Order.find(params[:id])
+    @order.update(order_params)
+    redirect_to new_order_payment_path(@order)
+  end
 
   private
 
@@ -75,6 +79,7 @@ class OrdersController < ApplicationController
   # end
 
   def order_params
-    params.require(:order).permit(:address, :city, :zip_code, :phone)
+    params.require(:order).permit(:address, :city, :zip_code, :phone, :comment, :com)
   end
+
 end
