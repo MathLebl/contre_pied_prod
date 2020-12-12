@@ -16,6 +16,8 @@
             <span class="mt-1 mb-1 p-1"><%= @user.city %></span>
             <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Code postal</span>
             <span class="mt-1 mb-1 p-1"><%= @user.zip_code %></span>
+            <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Pays</span>
+            <span class="mt-1 mb-1 p-1"><%= @user.country %></span>
             <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Téléphone</span>
             <span class="mt-1 mb-1 p-1"><%= number_to_phone(@user.phone) %></span>
         </div>
@@ -46,6 +48,7 @@
                     <span><%= order.address %></span>
                     <span><%= order.city %></span>
                     <span><%= order.zip_code %></span>
+                    <span><%= order.country %></span>
                 </div>
             </div>
           <% end %>
