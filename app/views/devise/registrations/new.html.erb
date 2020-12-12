@@ -56,6 +56,11 @@
                     label: "Code Postal",
                     input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
                     label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :country,
+                    required: true,
+                    label: "Pays",
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
       <%= f.input :phone,
                   required: true,
                   label: "Telephone",

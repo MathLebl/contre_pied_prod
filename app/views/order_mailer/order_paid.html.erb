@@ -1,6 +1,6 @@
 <h1> Bonjour <%= @user.first_name %>! </h1>
 
-<p>Votre commande numéro <%= @order.id %> a bien été prise en compte. </p>
+<p>Votre commande numéro <%= @order.id %> d'un montant de <%= humanized_money @order.amount %> <%= currency_symbol %> a bien été prise en compte. </p>
 <p>Elle est en cours de préparation.
 Nous vous remercions d'avoir commandé sur notre boutique en ligne Contrepied Productions.</p>
 
@@ -15,4 +15,4 @@ Et surtout, à suivre la tournée de nos artistes pour venir les voir quand ils 
 L'équipe Contrepied.</p>
 <br>
 <p>Post-scriptum : Si vous aviez un problème avec votre commande,
-écrivez-nous sur cette adresse mail : <%= mail_to "commandes@contrepiedproductions.fr" %></p>
+écrivez-nous sur cette adresse mail : <%= mail_to "commande.contrepied@gmail.com" %></p>

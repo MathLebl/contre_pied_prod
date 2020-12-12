@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
   permit_params :email, :name, :first_name, :password, :password_confirmation,
-                :address, :city, :zip_code, :phone, :admin
+                :address, :city, :zip_code, :phone, :admin, :country
   config.filters = false
   menu priority: 5, label: "Utilisateurs"
 
@@ -39,6 +39,7 @@ ActiveAdmin.register User do
           row :address
           row :city
           row :zip_code
+          row :country
         end
       else
         row 'Administrateur' do |user|
@@ -60,6 +61,7 @@ ActiveAdmin.register User do
       f.input :address
       f.input :city
       f.input :zip_code
+      f.input :country
       f.input :admin
       f.actions
     end
