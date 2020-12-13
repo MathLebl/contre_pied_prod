@@ -13,7 +13,7 @@
   <div class="collapse navbar-collapse flex items-center" id="navbarSupportedContent">
     <ul class="navbar-nav sm:mr-auto m-auto flex">
       <% if user_signed_in? %>
-      <% if current_user.admin %>
+      <% if current_user.admin && !@index %>
       <li class="nav-item bg-primary text-white m-1 md:mx-2 py-1 px-1 md:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center">
         <%= link_to "Gestion", admin_root_path, class: "nav-link" %>
       </li>
@@ -21,19 +21,21 @@
       <li class="nav-item bg-primary text-white m-1 md:mx-2 py-1 px-1 md:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center">
         <%= link_to "Nos Artistes", artists_path, class: "nav-link" %>
       </li>
+      <% if !@index %>
       <li class="nav-item bg-primary text-white m-1 md:mx-2 py-1 px-1 md:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center">
         <%= link_to "Agenda", events_path, class: "nav-link" %>
       </li>
+      <% end %>
       <% if @index %>
       <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center">
         <%= link_to "Mon Profil", me_users_path, class: "nav-link" %>
       </li>
       <% end %>
-      <li class="nav-item bg-primary text-white m-1 md:mx-2 py-1 px-1 md:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center hidden md:inline-flex lg:inline-flex">
+      <li class="nav-item bg-primary text-white m-1 md:mx-2 py-1 px-1 md:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center">
         <%= link_to "E-Boutique", products_path, class: "nav-link" %>
       </li>
       <% if !@cart.empty? && @index %>
-      <li class="nav-item cart-icon bg-primary text-white m-1 mx-2 py-1 px-1 md:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center hidden md:inline-flex lg:inline-flex">
+      <li class="nav-item bg-primary text-white m-1 md:mx-2 py-1 px-1 md:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center">
         <%= link_to show_cart_products_path do %>
           <i class="fas fa-shopping-cart"></i>
         <% end %>
@@ -46,9 +48,9 @@
         </button>
         <ul class="dropdown-menu z-20 absolute right-0 m-2" id="dropdown-block">
           <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=about_path %>">A Propos</a></li>
-          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=spectacle_artists_path %>">Spectacles</a></li>
-          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=concert_artists_path %>">Concerts</a></li>
-          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=jeune_public_artists_path %>">Jeune Public</a></li>
+          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap hidden sm:block" data-role="button" href="<%=spectacle_artists_path %>">Spectacles</a></li>
+          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap hidden sm:block" data-role="button" href="<%=concert_artists_path %>">Concerts</a></li>
+          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap hidden sm:block" data-role="button" href="<%=jeune_public_artists_path %>">Jeune Public</a></li>
           <li class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap">
             <%= link_to "Se Déconnecter", destroy_user_session_path, method: :delete, data: { confirm: "Êtes vous sûr de vouloir vous déconncter" }, class: "nav-link" %>
           </li>
@@ -58,10 +60,11 @@
       <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center">
         <%= link_to "Nos Artistes", artists_path, class: "nav-link" %>
       </li>
+      <% if !@index %>
       <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center">
         <%= link_to "Agenda", events_path, class: "nav-link" %>
       </li>
-
+      <% end %>
       <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center">
         <%= link_to "E-Boutique", products_path, class: "nav-link" %>
       </li>
@@ -71,7 +74,7 @@
       </li>
       <% end %>
       <% if !@cart.empty? && @index %>
-      <li class="nav-item cart-icon bg-primary text-white m-1 mx-2 py-1 px-1 md:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center hidden md:inline-flex lg:inline-flex">
+      <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center">
         <%= link_to show_cart_products_path do %>
           <i class="fas fa-shopping-cart"></i>
         <% end %>
@@ -82,9 +85,9 @@
         </button>
         <ul class="dropdown-menu absolute right-0 m-2 z-20" id="dropdown-block">
           <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=about_path %>">A Propos</a></li>
-          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=spectacle_artists_path %>">Spectacles</a></li>
-          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=concert_artists_path %>">Concerts</a></li>
-          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=jeune_public_artists_path %>">Jeune Public</a></li>
+          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap hidden sm:block" data-role="button" href="<%=spectacle_artists_path %>">Spectacles</a></li>
+          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap hidden sm:block" data-role="button" href="<%=concert_artists_path %>">Concerts</a></li>
+          <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap hidden sm:block" data-role="button" href="<%=jeune_public_artists_path %>">Jeune Public</a></li>
           <li class=""><a class="bg-secondary text-primary hover:bg-primary hover:text-white py-2 px-4 mr-1 block whitespace-no-wrap" data-role="button" href="<%=new_user_session_path %>">Se Connecter</a></li>
         </ul>
       </li>
