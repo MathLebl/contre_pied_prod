@@ -4,7 +4,7 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       column id:'event-board' do
         panel "Prochaines dates" do
-          table_for Event.order('date ASC').first(8) do
+          table_for Event.order('date ASC') do
             column "Dates" do |event|
               link_to event.date, admin_event_path(event)
             end
@@ -50,7 +50,7 @@ ActiveAdmin.register_page "Dashboard" do
       end
       column id:'order-board' do
         panel "Commandes à préparer" do
-          table_for Order.where(state:"Payé").order('created_at ASC').first(8) do
+          table_for Order.where(state:"Payé").order('created_at ASC') do
             column "Num" do |order|
               link_to order.id, admin_order_path(order)
             end
