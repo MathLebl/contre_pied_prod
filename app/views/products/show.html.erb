@@ -129,7 +129,25 @@
 <div class="bg-primary p-4 lg:p-12 md:p-6 mt-8 mb-20 grid grid-cols-1 lg:grid-cols-12 md:grid-cols-12 gap-2">
   <div class="flex flex-col col-span-1 row-start-1 lg:col-span-3 lg-row-span-2 md:col-span-3 md:row-span-1 lg:col-start-3 col-start-1 lg:row-start-1 md:col-start-2 md:row-start-1">
     <%#= link_to "Acheter ce produit", new_order_path(product_id: @product), class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200'  %>
-    <%= link_to "Ajouter à mon pannier", add_to_cart_product_path(@product), class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200'  %>
+    <%#= link_to "Ajouter à mon pannier", add_to_cart_product_path(@product), class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200'  %>
+    <%= form_for :cart, url: { controller: 'products', action: 'add_to_cart', method: :post }, remote: true  do |f|%>
+          <%= f.hidden_field :product_id, :value => @product.id %>
+          <%= f.number_field :quantity, :value => 1, :min =>  1%>
+          <%= f.radio_button :size, 'S' %>
+          <%= f.label :size, 'S', :value => 'S' %>
+          <%= f.radio_button :size, 'L' %>
+          <%= f.label :size, 'L', :value => 'L' %>
+          <%= f.submit "Add to Card "%>
+    <% end %>
+
+    <%#= form_tag("@product.id/add_to_cart") do %>
+      <%#= label_tag(:quantity, "Quantité:") %>
+      <%#= number_field_tag(:quantity) %>
+      <%#= label_tag(:tsize, "Taille T-shirt:") %>
+      <%#= radio_button_tag 'tsize', 'S' %>
+      <%#= radio_button_tag 'tsize', 'M' %>
+      <%#= submit_tag("Ajouter au panier") %>
+  <%# end %>
   </div>
 
   <div class="relative bg-white text-primary p-6 lg:p-8 md:p-4 col-span-1 row-start-2 lg:col-span-4 md:col-span-5 lg:col-start-8 lg:row-start-1 md:col-start-7 md:row-start-1">
