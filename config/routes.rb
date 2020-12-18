@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     member do
       post :add_to_cart
       get :remove_from_cart
+      get :change_from_cart
     end
     collection do
       get :show_cart

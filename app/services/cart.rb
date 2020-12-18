@@ -10,9 +10,23 @@ class Cart
 
   def self.remove_from_cart(cookie, id)
     @product = Product.find(id)
-    b = cookie.find {|item| item["product_id"] = id }
+    b = cookie.find {|item| item["product_id"] == @product.id }
     a= cookie.find_index(b)
     cookie.delete_at(a)
+  end
+
+  def self.change_from_cart(cookie, id)
+    @product = Product.find(id)
+    b = cookie.find {|item| item["product_id"] == @product.id }
+    @quantity = b["quantity"]
+    @size = b["size"]
+
+  end
+
+  def self.cart_count(cookie)
+    cart_count = 0
+    cookie
+    cart_count = cookie.map {|s| s['quantity'].to_i}.reduce(0, :+)
   end
 
   def self.cart_weight(cookie)
