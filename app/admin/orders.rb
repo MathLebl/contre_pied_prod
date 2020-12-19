@@ -76,6 +76,7 @@ ActiveAdmin.register Order do
           end
       end
     end
+  end
     column "Date" do |order|
       order.created_at
     end
@@ -107,11 +108,15 @@ ActiveAdmin.register Order do
         # end
         row 'Articles' do |order|
           order.items.map do |truc|
-          if truc.product.shop_category.name == "T-Shirt"
-            truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
-          else
-            truc.quantity.to_s + "x " + truc.product.name
-          end
+            if truc.quantity.nil? && truc.tsize.nil?
+              truc.product.name
+            else
+              if truc.product.shop_category.name == "T-Shirt"
+                truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
+              else
+                truc.quantity.to_s + "x " + truc.product.name
+              end
+            end
           end
         end
         row :amount
