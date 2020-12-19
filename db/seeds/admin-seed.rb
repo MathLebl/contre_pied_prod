@@ -10,6 +10,7 @@ user = User.new(
   password: "tototo",
   address: "adresse test",
   city: "Lyon",
+  country: "France"
   zip_code: "01234",
   phone: "01234567"
   )
@@ -24,6 +25,7 @@ user = User.new(
   password: "tototo",
   address: "adresse test",
   city: "Paris",
+  country: "France"
   zip_code: "01234",
   phone: "01234567"
   )
