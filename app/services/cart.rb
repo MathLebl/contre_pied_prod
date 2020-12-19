@@ -1,8 +1,12 @@
 class Cart
-  def self.add_to_cart(cookie, id, quantity, size)
+  def self.add_to_cart(cookie, id, quantity, size, size2)
     @product = Product.find(id)
     @quantity = quantity
-    @size = size
+    if size2.nil?
+      @size = size
+    else
+      @size = size, size2
+    end
     cart_element = { product_id: @product.id, size: @size, quantity: @quantity}
 
     cookie << cart_element
