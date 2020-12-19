@@ -134,7 +134,7 @@
       <%= form_for :cart, url: { controller: 'products', action: 'add_to_cart', method: :post }, remote: true  do |f|%>
             <%= f.hidden_field :product_id, :value => @product.id %>
             <%= f.hidden_field :quantity, :value => 1 %>
-            <%= f.radio_button :size, 'S' %>
+            <%= f.radio_button :size, 'S' , required: true%>
             <%= f.label :size, 'S', :value => 'S', class: "text-secondary font-bold" %>
             <%= f.radio_button :size, 'M' %>
             <%= f.label :size, 'M', :value => 'M', class: "text-secondary font-bold" %>
@@ -143,8 +143,7 @@
             <%= f.radio_button :size, 'XL' %>
             <%= f.label :size, 'XL', :value => 'XL', class: "text-secondary font-bold" %> <br>
             <%= f.submit "Ajouter au Panier", id:'submit',
-                          class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200',
-                          :onclick => 'setTimeout(reload, 1500)'%>
+                          class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200'%>
       <% end %>
     <% elsif  @product.shop_category.name == "Pack Goguettes n°2" %>
       <%= form_for :cart, url: { controller: 'products', action: 'add_to_cart', method: :post }, remote: true  do |f|%>
@@ -152,7 +151,7 @@
             <%= f.label :quantity, 'Quantité', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %>
             <%= f.number_field :quantity, :value => 1, :min =>  1, class: "bg-white text-primary w-12 text-center" %><br>
             <%= f.label :size, 'Taille du T-Shirt', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %><br>
-            <%= f.radio_button :size, 'S' %>
+            <%= f.radio_button :size, 'S' , required: true %>
             <%= f.label :size, 'S', :value => 'S', class: "text-secondary font-bold" %>
             <%= f.radio_button :size, 'M' %>
             <%= f.label :size, 'M', :value => 'M', class: "text-secondary font-bold" %>
@@ -161,8 +160,7 @@
             <%= f.radio_button :size, 'XL' %>
             <%= f.label :size, 'XL', :value => 'XL', class: "text-secondary font-bold" %> <br>
             <%= f.submit "Ajouter au Panier", id:'submit',
-                          class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200',
-                          :onclick => 'setTimeout(reload, 1500)'%>
+                          class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200'%>
       <% end %>
     <% elsif  @product.shop_category.name == "Pack Goguettes n°3" %>
       <%= form_for :cart, url: { controller: 'products', action: 'add_to_cart', method: :post }, remote: true  do |f|%>
@@ -172,7 +170,7 @@
             <div>
             <%= f.label :quantity, 'Taille du T-shirt', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %> <br>
 
-            <%= f.radio_button :size, 'S' %>
+            <%= f.radio_button :size, 'S' , required: true %>
             <%= f.label :size, 'S', :value => 'S', class: "text-secondary font-bold" %>
             <%= f.radio_button :size, 'M' %>
             <%= f.label :size, 'M', :value => 'M', class: "text-secondary font-bold" %>
@@ -184,7 +182,7 @@
             <div>
             <%= f.label :quantity, 'Taille du T-Shirt 2', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %> <br>
 
-                <%= radio_button_tag 'cart[size2]', 'S' %>
+                <%= radio_button_tag 'cart[size2]', 'S', required: true %>
               <%= f.label 'S', class: "text-secondary font-bold capitalize" %>
                 <%= radio_button_tag 'cart[size2]', 'M' %>
               <%= f.label 'M', class: "text-secondary font-bold capitalize" %>
@@ -204,8 +202,7 @@
             </div>
 
             <%= f.submit "Ajouter au Panier", id:'submit',
-                          class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200',
-                          :onclick => 'setTimeout(reload, 1500)'%>
+                          class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200'%>
       <% end %>
     <% else %>
       <%= form_for :cart, url: { controller: 'products', action: 'add_to_cart', method: :post }, remote: true  do |f|%>
@@ -214,8 +211,7 @@
             <%= f.number_field :quantity, :value => 1, :min =>  1, class: "bg-white text-primary w-12 text-center"%><br>
             <%= f.hidden_field :size, :value => nil %>
             <%= f.submit "Ajouter au Panier", id:'submit',
-                          class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200',
-                          :onclick => 'setTimeout(reload, 1500)'%>
+                          class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200'%>
       <% end %>
     <% end %>
   </div>
@@ -230,16 +226,19 @@
 <script>
 
 const submit = document.getElementById("submit");
-console.log(submit.value)
+console.log(submit.value);
+const form = document.querySelector(" form ");
+console.log(form);
 const cartCount = document.getElementById("cartCount");
 // const myVar = setTimeout(function, milliseconds);
 function reload() {
     reload = location.reload();
 }
-submit.addEventListener("click", (event) => {
+form.addEventListener("submit", (event) => {
   console.log(event)
 const change = submit.value = "             👍             "
   setTimeout(change, 3000);
+  setTimeout(reload, 3100);
 });
 </script>
 
