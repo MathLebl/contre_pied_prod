@@ -55,7 +55,7 @@ class OrdersController < ApplicationController
       if item.class == Hash
         Item.create!(product_id: element["product_id"], order_id: order.id, quantity: element["quantity"], tsize: element["size"])
       else
-        Item.create!(product_id:, order_id: order.id)
+        Item.create!(product_id:element, order_id: order.id)
       end
     end
   end
