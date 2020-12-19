@@ -24,6 +24,8 @@
                 <div>
                   <% if item.class == Hash %>
                     <p class="text-gray-900 text-lg mr-4"> sous total : <%= humanized_money item["quantity"].to_i * @products.find(item["product_id"]).price %><%= currency_symbol %></p>
+                  <% else %>
+                    <p class="text-gray-900 text-lg mr-4"> sous total : <%= humanized_money @products.find(item).price %><%= currency_symbol %></p>
                   <% end %>
                 </div>
                 <div>
