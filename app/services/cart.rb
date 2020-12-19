@@ -1,19 +1,38 @@
 class Cart
-  def self.add_to_cart(cookie, id)
+  def self.add_to_cart(cookie, id, quantity, size)
     @product = Product.find(id)
-    cookie << @product.id
+    @quantity = quantity
+    @size = size
+    cart_element = { product_id: @product.id, size: @size, quantity: @quantity}
+
+    cookie << cart_element
   end
 
   def self.remove_from_cart(cookie, id)
     @product = Product.find(id)
-    a= cookie.find_index(@product.id)
+    b = cookie.find {|item| item["product_id"] == @product.id }
+    a= cookie.find_index(b)
     cookie.delete_at(a)
+  end
+
+  def self.change_from_cart(cookie, id)
+    @product = Product.find(id)
+    b = cookie.find {|item| item["product_id"] == @product.id }
+    @quantity = b["quantity"]
+    @size = b["size"]
+
+  end
+
+  def self.cart_count(cookie)
+    cart_count = 0
+    cookie
+    cart_count = cookie.map {|s| s['quantity'].to_i}.reduce(0, :+)
   end
 
   def self.cart_weight(cookie)
     total_weight = 0
     cookie.each do |item|
-      total_weight += Product.find(item).shop_category.weight
+      total_weight += Product.find(item["product_id"]).shop_category.weight * item["quantity"].to_i
     end
     total_weight
   end
@@ -51,7 +70,7 @@ class Cart
   def self.cart_amount(cookie)
     amount = 0
     cookie.each do |item|
-      amount += Product.find(item).price #methode find pour avoir le money object via .price (car non dispo dans le cookie session[:cart])
+      amount += Product.find(item["product_id"]).price * item["quantity"].to_i #methode find pour avoir le money object via .price (car non dispo dans le cookie session[:cart])
     end
     amount
   end

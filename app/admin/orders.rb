@@ -1,10 +1,14 @@
 ActiveAdmin.register Order do
+  ActiveAdmin.register Item do
+    belongs_to :order
+  end
+  # includes :item
   menu label: "Commandes", priority: 6
   config.sort_order = 'created_at_asc'
   permit_params :state, :amount_cents, :checkout_session_id, :user_id, :com, :country,
                 :created_at, :updated_at, :address, :city, :zip_code, :phone,
-                product_attributes: [:id, :name],
-                item_attributes: [:order_id, :product_id]
+                # product_attributes: [:id, :name],
+                item_attributes: [:order_id, :product_id, :tsize, :quantity]
 
   scope :all
   scope :enAttente
@@ -60,9 +64,13 @@ ActiveAdmin.register Order do
     column "Etat" do |order|
       order.state
     end
-    column "Article" do |order|
-      order.products.each do |product|
-        link_to product.name, admin_product_path(product)
+    column "Articles" do |order|
+      order.items.map do |truc|
+          if truc.product.shop_category.name == "T-Shirt"
+            truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
+          else
+            truc.quantity.to_s + "x " + truc.product.name
+          end
       end
     end
     column "Date" do |order|
@@ -89,9 +97,18 @@ ActiveAdmin.register Order do
           order.user.first_name + " " + order.user.name
         end
         row :state
-        row "products" do |order|
-          order.products.each do |product|
-            link_to product.name, admin_product_path(product)
+        # row "products" do |order|
+        #   order.products.each do |product|
+        #     product.name
+        #   end
+        # end
+        row 'Articles' do |order|
+          order.items.map do |truc|
+          if truc.product.shop_category.name == "T-Shirt"
+            truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
+          else
+            truc.quantity.to_s + "x " + truc.product.name
+          end
           end
         end
         row :amount

@@ -16,7 +16,13 @@ class ProductsController < ApplicationController
   # Path pour ajout d'un produit dans le panier
   def add_to_cart
     @product = Product.find(params[:id])
-    Cart.add_to_cart(session[:cart], params[:id])
+    Cart.add_to_cart(session[:cart], params[:id], params[:cart][:quantity], params[:cart][:size])
+    redirect_to product_path(@product)
+  end
+
+  def change_from_cart
+    @product = Product.find(params[:id])
+    Cart.change_from_cart(session[:cart], params[:id])
     redirect_to product_path(@product)
   end
 
@@ -28,7 +34,8 @@ class ProductsController < ApplicationController
     @fees = Cart.cart_fees(@cart)
     @total_weight = Cart.cart_weight(@cart)
     @total_amount = Cart.total_amount(@cart)
-
+    @cart_count = Cart.cart_count(@cart)
+    @index = true
   end
 
   # Path pour suppression d'un produit du panier
