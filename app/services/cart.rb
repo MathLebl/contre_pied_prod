@@ -32,7 +32,7 @@ class Cart
   def self.cart_weight(cookie)
     total_weight = 0
     cookie.each do |item|
-      total_weight += Product.find(item["product_id"]).shop_category.weight * item["quantity"].to_i
+      total_weight += item.class == Hash ? Product.find(item["product_id"]).shop_category.weight * item["quantity"].to_i : Product.find(item).shop_category.weight
     end
     total_weight
   end
@@ -70,7 +70,7 @@ class Cart
   def self.cart_amount(cookie)
     amount = 0
     cookie.each do |item|
-      amount += Product.find(item["product_id"]).price * item["quantity"].to_i #methode find pour avoir le money object via .price (car non dispo dans le cookie session[:cart])
+      amount += item.class == Hash ? Product.find(item["product_id"]).price * item["quantity"].to_i : Product.find(item).price
     end
     amount
   end
