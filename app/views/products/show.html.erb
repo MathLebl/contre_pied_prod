@@ -146,10 +146,71 @@
                           class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200',
                           :onclick => 'setTimeout(reload, 1500)'%>
       <% end %>
+    <% elsif  @product.shop_category.name == "Pack Goguettes n°2" %>
+      <%= form_for :cart, url: { controller: 'products', action: 'add_to_cart', method: :post }, remote: true  do |f|%>
+            <%= f.hidden_field :product_id, :value => @product.id %>
+            <%= f.label :quantity, 'Quantité', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %>
+            <%= f.number_field :quantity, :value => 1, :min =>  1, class: "bg-white text-primary w-12 text-center" %><br>
+            <%= f.label :size, 'Taille du T-Shirt', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %><br>
+            <%= f.radio_button :size, 'S' %>
+            <%= f.label :size, 'S', :value => 'S', class: "text-secondary font-bold" %>
+            <%= f.radio_button :size, 'M' %>
+            <%= f.label :size, 'M', :value => 'M', class: "text-secondary font-bold" %>
+            <%= f.radio_button :size, 'L' %>
+            <%= f.label :size, 'L', :value => 'L', class: "text-secondary font-bold" %>
+            <%= f.radio_button :size, 'XL' %>
+            <%= f.label :size, 'XL', :value => 'XL', class: "text-secondary font-bold" %> <br>
+            <%= f.submit "Ajouter au Panier", id:'submit',
+                          class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200',
+                          :onclick => 'setTimeout(reload, 1500)'%>
+      <% end %>
+    <% elsif  @product.shop_category.name == "Pack Goguettes n°3" %>
+      <%= form_for :cart, url: { controller: 'products', action: 'add_to_cart', method: :post }, remote: true  do |f|%>
+            <%= f.hidden_field :product_id, :value => @product.id %>
+            <%= f.label :quantity, 'Quantité', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center" %>
+            <%= f.number_field :quantity, :value => 1, :min =>  1, class: "bg-white text-primary w-12 text-center" %>
+            <div>
+            <%= f.label :quantity, 'Taille du T-shirt', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %> <br>
+
+            <%= f.radio_button :size, 'S' %>
+            <%= f.label :size, 'S', :value => 'S', class: "text-secondary font-bold" %>
+            <%= f.radio_button :size, 'M' %>
+            <%= f.label :size, 'M', :value => 'M', class: "text-secondary font-bold" %>
+            <%= f.radio_button :size, 'L' %>
+            <%= f.label :size, 'L', :value => 'L', class: "text-secondary font-bold" %>
+            <%= f.radio_button :size, 'XL' %>
+            <%= f.label :size, 'XL', :value => 'XL', class: "text-secondary font-bold" %> <br>
+            </div>
+            <div>
+            <%= f.label :quantity, 'Taille du T-Shirt 2', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %> <br>
+
+                <%= radio_button_tag 'cart[size2]', 'S' %>
+              <%= f.label 'S', class: "text-secondary font-bold capitalize" %>
+                <%= radio_button_tag 'cart[size2]', 'M' %>
+              <%= f.label 'M', class: "text-secondary font-bold capitalize" %>
+              <%= radio_button_tag 'cart[size2]', 'L' %>
+              <%= f.label 'L', class: "text-secondary font-bold capitalize" %>
+                <%= radio_button_tag 'cart[size2]', 'XL' %>
+              <%= f.label 'XL', class: "text-secondary font-bold capitalize" %>
+
+            <%#= f.radio_button :size2, 'S' %>
+            <%#= f.label :size2, 'S', :value => 'S', class: "text-secondary font-bold" %>
+            <%#= f.radio_button :size2, 'M' %>
+            <%#= f.label :size2, 'M', :value => 'M', class: "text-secondary font-bold" %>
+            <%#= f.radio_button :size2, 'L' %>
+            <%#= f.label :size2, 'L', :value => 'L', class: "text-secondary font-bold" %>
+            <%#= f.radio_button :size2, 'XL' %>
+            <%#= f.label :size2, 'XL', :value => 'XL', class: "text-secondary font-bold" %> <br>
+            </div>
+
+            <%= f.submit "Ajouter au Panier", id:'submit',
+                          class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200',
+                          :onclick => 'setTimeout(reload, 1500)'%>
+      <% end %>
     <% else %>
       <%= form_for :cart, url: { controller: 'products', action: 'add_to_cart', method: :post }, remote: true  do |f|%>
             <%= f.hidden_field :product_id, :value => @product.id %>
-            <%= f.label :quantity, 'Quantité', class: "text-secondary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center " %>
+            <%= f.label :quantity, 'Quantité', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %>
             <%= f.number_field :quantity, :value => 1, :min =>  1, class: "bg-white text-primary w-12 text-center"%><br>
             <%= f.hidden_field :size, :value => nil %>
             <%= f.submit "Ajouter au Panier", id:'submit',

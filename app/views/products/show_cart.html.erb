@@ -15,6 +15,10 @@
                       <p class="text-gray-900 text-lg mr-4"><%= humanized_money @products.find(item.class == Hash ? item["product_id"] : item).price %> <%= currency_symbol %></p>
                       <% if @products.find(item.class == Hash ? item["product_id"] : item).shop_category.name == "T-Shirt" %>
                         <p class="text-gray-900 text-lg mr-4"> taille : <%= item.class == Hash ? item["size"] : "" %></p>
+                      <% elsif @products.find(item.class == Hash ? item["product_id"] : item).shop_category.name == "Pack Goguettes n°2" %>
+                        <p class="text-gray-900 text-lg mr-4"> taille du T-shirt : <%= item.class == Hash ? item["size"] : "" %></p>
+                      <% elsif @products.find(item.class == Hash ? item["product_id"] : item).shop_category.name == "Pack Goguettes n°3" %>
+                        <p class="text-gray-900 text-lg mr-4"> tailles des T-shirt : <%= item.class == Hash ? "#{item["size"][0]} et #{item["size"][1]}" : "" %></p>
                       <% else %>
                         <p class="text-gray-900 text-lg mr-4"> quantité : <%= item.class == Hash ? item["quantity"] : 1 %></p>
                       <% end %>

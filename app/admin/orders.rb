@@ -71,6 +71,10 @@ ActiveAdmin.register Order do
         else
           if truc.product.shop_category.name == "T-Shirt"
             truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
+          elsif truc.product.shop_category.name == "Pack Goguettes n°2"
+            truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
+          elsif truc.product.shop_category.name == "Pack Goguettes n°3"
+            truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
           else
             truc.quantity.to_s + "x " + truc.product.name
           end
@@ -112,6 +116,10 @@ ActiveAdmin.register Order do
               truc.product.name
             else
               if truc.product.shop_category.name == "T-Shirt"
+                truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
+              elsif truc.product.shop_category.name == "Pack Goguettes n°2"
+                truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
+              elsif truc.product.shop_category.name == "Pack Goguettes n°3"
                 truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
               else
                 truc.quantity.to_s + "x " + truc.product.name
