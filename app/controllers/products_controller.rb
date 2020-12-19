@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
     @total_weight = Cart.cart_weight(@cart)
     @total_amount = Cart.total_amount(@cart)
     @cart_count = Cart.cart_count(@cart)
-
+    @index = true
   end
 
   # Path pour suppression d'un produit du panier

@@ -135,32 +135,28 @@
             <%= f.hidden_field :product_id, :value => @product.id %>
             <%= f.hidden_field :quantity, :value => 1 %>
             <%= f.radio_button :size, 'S' %>
-            <%= f.label :size, 'S', :value => 'S' %>
+            <%= f.label :size, 'S', :value => 'S', class: "text-secondary font-bold" %>
             <%= f.radio_button :size, 'M' %>
-            <%= f.label :size, 'M', :value => 'M' %>
+            <%= f.label :size, 'M', :value => 'M', class: "text-secondary font-bold" %>
             <%= f.radio_button :size, 'L' %>
-            <%= f.label :size, 'L', :value => 'L' %>
+            <%= f.label :size, 'L', :value => 'L', class: "text-secondary font-bold" %>
             <%= f.radio_button :size, 'XL' %>
-            <%= f.label :size, 'XL', :value => 'XL' %>
-            <%= f.submit "Add to Card "%>
+            <%= f.label :size, 'XL', :value => 'XL', class: "text-secondary font-bold" %> <br>
+            <%= f.submit "Ajouter au Panier",
+                          class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200',
+                          :onclick => 'alert("Vous avez ajouté ce produit au Panier")'%>
       <% end %>
     <% else %>
       <%= form_for :cart, url: { controller: 'products', action: 'add_to_cart', method: :post }, remote: true  do |f|%>
             <%= f.hidden_field :product_id, :value => @product.id %>
-            <%= f.number_field :quantity, :value => 1, :min =>  1%>
+            <%= f.label :quantity, 'Quantité', class: "text-secondary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center " %>
+            <%= f.number_field :quantity, :value => 1, :min =>  1, class: "bg-white text-primary w-12 text-center"%><br>
             <%= f.hidden_field :size, :value => nil %>
-            <%= f.submit "Add to Card "%>
+            <%= f.submit "Ajouter au Panier",
+                          class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200',
+                          :onclick => 'alert("Vous avez ajouté ce produit au Panier")'%>
       <% end %>
     <% end %>
-
-    <%#= form_tag("@product.id/add_to_cart") do %>
-      <%#= label_tag(:quantity, "Quantité:") %>
-      <%#= number_field_tag(:quantity) %>
-      <%#= label_tag(:tsize, "Taille T-shirt:") %>
-      <%#= radio_button_tag 'tsize', 'S' %>
-      <%#= radio_button_tag 'tsize', 'M' %>
-      <%#= submit_tag("Ajouter au panier") %>
-  <%# end %>
   </div>
 
   <div class="relative bg-white text-primary p-6 lg:p-8 md:p-4 col-span-1 row-start-2 lg:col-span-4 md:col-span-5 lg:col-start-8 lg:row-start-1 md:col-start-7 md:row-start-1">
