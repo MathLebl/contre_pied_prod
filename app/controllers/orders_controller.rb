@@ -52,7 +52,11 @@ class OrdersController < ApplicationController
   # création des entrées dans la table Items
   def create_items_objects(items, order)
     items.each do |element|
-      Item.create!(product_id: element["product_id"], order_id: order.id, quantity: element["quantity"], tsize: element["size"])
+      if item.class == Hash
+        Item.create!(product_id: element["product_id"], order_id: order.id, quantity: element["quantity"], tsize: element["size"])
+      else
+        Item.create!(product_id:, order_id: order.id)
+      end
     end
   end
 
