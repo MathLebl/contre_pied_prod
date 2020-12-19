@@ -1,56 +1,52 @@
 <h1 class="text-center text-2xl text-primary font-bold mx-auto mt-4 mb-4 p-1" style="width: fit-content">Bonjour <%= @user.first_name %></h1>
 <%= link_to products_path, class: "inline-flex items-center absolute text-primary no-underline hover:text-secondary transform hover:scale-110 duration-200 text-3xl p-1 font-bold mt-4 ml-20", style: "top: 10rem", id: "back-button" do %>
-   <i class="fas fa-arrow-left"></i>
-   <span id="back-text" class="text-base ml-2">Retour</span>
+<i class="fas fa-arrow-left"></i>
+<span id="back-text" class="text-base ml-2">Retour</span>
 <% end %>
 <div class="grid grid-cols-12 mb-12 hidden sm:grid" style="grid-template-rows: 27.5rem">
-    <%# Personnal infos block %>
-    <div class="border-2 border-primary px-4 py-8 inline-block ml-4 mt-16 flex flex-col col-span-4">
-        <h2 class="text-l text-white bg-primary font-bold mb-4 p-1 self-center" style="width: fit-content">Mes coordonnées</h2>
-        <div class="grid grid-cols-2">
-            <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Nom</span>
-            <span class="mt-1 mb-1 p-1"><%= @user.full_name %></span>
-            <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Adresse</span>
-            <span class="mt-1 mb-1 p-1"><%= @user.address %></span>
-            <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Ville</span>
-            <span class="mt-1 mb-1 p-1"><%= @user.city %></span>
-            <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Code postal</span>
-            <span class="mt-1 mb-1 p-1"><%= @user.zip_code %></span>
-            <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Pays</span>
-            <span class="mt-1 mb-1 p-1"><%= @user.country %></span>
-            <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Téléphone</span>
-            <span class="mt-1 mb-1 p-1"><%= number_to_phone(@user.phone) %></span>
-        </div>
-        <%= link_to "Modifier vos coordonnées", edit_user_path(@user), class: "text-l text-white bg-primary font-bold mt-2 p-1 self-center hover:bg-secondary hover:text-primary" %>
-        <%= link_to "Modifier données de connexion", edit_user_registration_path, class: "text-l text-white bg-primary font-bold mt-2 p-1 self-center hover:bg-secondary hover:text-primary" %>
+  <%# Personnal infos block %>
+  <div class="border-2 border-primary px-4 py-8 inline-block ml-4 mt-16 flex flex-col col-span-4">
+    <h2 class="text-l text-white bg-primary font-bold mb-4 p-1 self-center" style="width: fit-content">Mes coordonnées</h2>
+    <div class="grid grid-cols-2">
+      <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Nom</span>
+      <span class="mt-1 mb-1 p-1"><%= @user.full_name %></span>
+      <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Adresse</span>
+      <span class="mt-1 mb-1 p-1"><%= @user.address %></span>
+      <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Ville</span>
+      <span class="mt-1 mb-1 p-1"><%= @user.city %></span>
+      <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Code postal</span>
+      <span class="mt-1 mb-1 p-1"><%= @user.zip_code %></span>
+      <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Pays</span>
+      <span class="mt-1 mb-1 p-1"><%= @user.country %></span>
+      <span class="text-primary bg-secondary p-1 my-1 ml-4 w-32 text-center">Téléphone</span>
+      <span class="mt-1 mb-1 p-1"><%= number_to_phone(@user.phone) %></span>
     </div>
-    <div class="bg-primary flex flex-col pb-10 mb-20 pt-8 overflow-scroll col-span-7 col-start-6 mt-16 mr-4" style="height: 376px;">
-      <h2 class="text-l text-primary bg-white font-bold mb-4 p-1 self-center" style="width: fit-content">Mes commandes</h2>
-        <% @orders.each do |order| %>
-        <div class="bg-white text-primary mt-4 mb-2 w-11/12 lg:w-4/5 md:w-2/3 mx-auto px-4 py-1">
-            <p>Commande du <strong><%= l order.created_at.to_date %></strong></p>
-        </div>
-        <%= link_to order.state == ("Payé" || "envoyée") ? order_path(order) : new_order_payment_path(order) do %>
-            <div class="text-primary bg-white w-11/12 lg:w-4/5 md:w-2/3 mx-auto flex justify-around transform hover:scale-105 duration-200">
-                <div class="flex flex-col py-2">
-                    <p class="font-bold mb-2">Status : <%= order.state %></p>
-                    <div class="mt-2">
-                        <span class="text-xl font-bold"><%= humanized_money order.amount %> <%= currency_symbol %></span>
-                    </div>
-                </div>
-                <div class="flex flex-col py-2">
-                    <p class="font-bold">Livraison à :</p>
-                    <span><%= order.address %></span>
-                    <span><%= order.city %></span>
-                    <span><%= order.zip_code %></span>
-                    <span><%= order.country %></span>
-                </div>
-            </div>
-          <% end %>
-        <% end %>
+    <%= link_to "Modifier vos coordonnées", edit_user_path(@user), class: "text-l text-white bg-primary font-bold mt-2 p-1 self-center hover:bg-secondary hover:text-primary" %>
+    <%= link_to "Modifier données de connexion", edit_user_registration_path, class: "text-l text-white bg-primary font-bold mt-2 p-1 self-center hover:bg-secondary hover:text-primary" %>
+  </div>
+  <div class="bg-primary flex flex-col pb-10 mb-20 pt-8 overflow-scroll col-span-7 col-start-6 mt-16 mr-4" style="height: 376px;">
+    <h2 class="text-l text-primary bg-white font-bold mb-4 p-1 self-center" style="width: fit-content">Mes commandes</h2>
+    <% @orders.each do |order| %>
+    <div class="bg-white text-primary mt-4 mb-2 w-11/12 lg:w-4/5 md:w-2/3 mx-auto px-4 py-1">
+      <p>Commande du <strong><%= l order.created_at.to_date %></strong></p>
     </div>
+    <%= link_to order.state == ("Payé" || "envoyée") ? order_path(order) : new_order_payment_path(order) do %>
+    <div class="text-primary bg-white w-11/12 lg:w-4/5 md:w-2/3 mx-auto flex justify-around transform hover:scale-105 duration-200">
+      <div class="flex flex-col py-2">
+        <p class="font-bold mb-2">Status : <%= order.state %></p>
+        <div class="mt-2">
+          <span class="text-xl font-bold"><%= humanized_money order.amount %> <%= currency_symbol %></span>
+        </div>
+      </div>
+      <div class="flex flex-col py-2">
+        <p class="font-bold">Livraison à :</p>
+        <span><%= order.address %></span>
+        <span><%= order.city %></span>
+        <span><%= order.zip_code %></span>
+        <span><%= order.country %></span>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>
-
-<%# orders block %>
-
-<%# user-infos block %>

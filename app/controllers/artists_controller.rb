@@ -5,11 +5,6 @@ class ArtistsController < ApplicationController
 
 
   def index
-    # if params[:id].present?
-    #   @artists = Artist.all.select { |artist| artist.id == params[:id].to_i }
-    # else
-    #   @artists = Artist.all
-    # end
     @artists = Artist.order(ranking: :asc)
   end
 
@@ -31,8 +26,6 @@ class ArtistsController < ApplicationController
 
   def jeune_public
     @artists = Artist.where(category: "jeune_public").order(ranking: :asc)
-    # events = Event.where(category: "jeune_public").order('date ASC')
-    # @events = events.first(8)
     @all_events = []
     @artists.each do |art|
       @all_events << art.events

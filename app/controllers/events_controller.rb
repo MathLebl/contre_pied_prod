@@ -13,7 +13,6 @@ class EventsController < ApplicationController
     elsif params[:month].present?
       @events = Event.order('date ASC').where(month: params[:month]).select { |event| event.date > DateTime.now }
     else
-      # @events = Event.all.order('date ASC')
       @events =Event.all.order('date ASC').select { |event| event.date > DateTime.now }
     end
   end
@@ -21,7 +20,7 @@ class EventsController < ApplicationController
   def show
   end
 
-   private
+  private
 
   def find_event
     @event = Event.find(params[:id])

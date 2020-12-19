@@ -14,7 +14,6 @@ class OrdersController < ApplicationController
     order  = Order.new(order_params)
     order.update(order_attributes)
     order.save!
-
     items = session[:cart]
 
     # Création des modèles Items pour chaque produit dans la commande, et récupération des infos pour la variable line_items
@@ -29,7 +28,7 @@ class OrdersController < ApplicationController
       success_url: order_url(order),
       cancel_url: new_order_payment_url(order),
       customer_email: @current_user.email
-    )
+      )
 
     order.update(checkout_session_id: session.id)
     redirect_to new_order_payment_path(order)
@@ -42,12 +41,12 @@ class OrdersController < ApplicationController
   end
 
   def update
-     @order = Order.find(params[:id])
-    @order.update(order_params)
-    redirect_to new_order_payment_path(@order)
-  end
+   @order = Order.find(params[:id])
+   @order.update(order_params)
+   redirect_to new_order_payment_path(@order)
+ end
 
-  private
+ private
 
   # création des entrées dans la table Items
   def create_items_objects(items, order)
@@ -62,12 +61,12 @@ class OrdersController < ApplicationController
 
   def set_line_items(items)
     fees = Cart.total_amount(session[:cart])*100
-      [{
-        name: "Payement de le commande",
-        amount: fees.to_i,
-        currency: 'eur',
-        quantity: 1
-      }]
+    [{
+      name: "Payement de le commande",
+      amount: fees.to_i,
+      currency: 'eur',
+      quantity: 1
+    }]
   end
 
   # def set_line_items(items)
@@ -84,7 +83,7 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:address, :city, :zip_code, :phone, :comment,
-                                  :com, :country)
+      :com, :country)
   end
 
 end

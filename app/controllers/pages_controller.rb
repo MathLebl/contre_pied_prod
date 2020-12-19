@@ -35,7 +35,7 @@ class PagesController < ApplicationController
     begin
       event = Stripe::Event.construct_from(
         JSON.parse(payload, symbolize_names: true)
-      )
+        )
     rescue JSON::ParserError => e
       # Invalid payload
       # status 400

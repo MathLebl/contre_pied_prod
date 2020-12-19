@@ -105,11 +105,6 @@ ActiveAdmin.register Order do
           order.user.first_name + " " + order.user.name
         end
         row :state
-        # row "products" do |order|
-        #   order.products.each do |product|
-        #     product.name
-        #   end
-        # end
         row 'Articles' do |order|
           order.items.map do |truc|
             if truc.quantity.nil? && truc.tsize.nil?

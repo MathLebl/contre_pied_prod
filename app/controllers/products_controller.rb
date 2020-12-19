@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    # @products = Product.all
     @products = Product.order(ranking: :asc)
     @index = true
   end
@@ -20,11 +19,11 @@ class ProductsController < ApplicationController
     redirect_to product_path(@product)
   end
 
-  def change_from_cart
-    @product = Product.find(params[:id])
-    Cart.change_from_cart(session[:cart], params[:id])
-    redirect_to product_path(@product)
-  end
+  # def change_from_cart
+  #   @product = Product.find(params[:id])
+  #   Cart.change_from_cart(session[:cart], params[:id])
+  #   redirect_to product_path(@product)
+  # end
 
   # Path vers la page index panier
   def show_cart
