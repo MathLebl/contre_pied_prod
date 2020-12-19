@@ -61,7 +61,7 @@ ActiveAdmin.register User do
       f.input :address
       f.input :city
       f.input :zip_code
-      f.input :country
+      f.input :country, as: :text
       f.input :admin
       f.actions
     end

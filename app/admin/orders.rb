@@ -66,6 +66,9 @@ ActiveAdmin.register Order do
     end
     column "Articles" do |order|
       order.items.map do |truc|
+        if truc.quantity.nil? && truc.tsize.nil?
+          truc.product.name
+        else
           if truc.product.shop_category.name == "T-Shirt"
             truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
           else
