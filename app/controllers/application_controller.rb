@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
       session[:cart] = []
     end
     @cart = session[:cart]
-    # @cart_count = Cart.cart_count(@cart)
+    @cart_count = Cart.cart_count(@cart)
   end
 
   protected
