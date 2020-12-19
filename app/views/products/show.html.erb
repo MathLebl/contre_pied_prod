@@ -168,7 +168,7 @@
             <%= f.label :quantity, 'Quantité', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center" %>
             <%= f.number_field :quantity, :value => 1, :min =>  1, class: "bg-white text-primary w-12 text-center" %>
             <div>
-            <%= f.label :quantity, 'Taille du T-shirt', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %> <br>
+            <%= f.label :quantity, 'Taille du T-shirt Rouge', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %> <br>
 
             <%= f.radio_button :size, 'S' , required: true %>
             <%= f.label :size, 'S', :value => 'S', class: "text-secondary font-bold" %>
@@ -180,7 +180,7 @@
             <%= f.label :size, 'XL', :value => 'XL', class: "text-secondary font-bold" %> <br>
             </div>
             <div>
-            <%= f.label :quantity, 'Taille du T-Shirt 2', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %> <br>
+            <%= f.label :quantity, 'Taille du T-shirt Blanc', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %> <br>
 
                 <%= radio_button_tag 'cart[size2]', 'S', required: true %>
               <%= f.label 'S', class: "text-secondary font-bold capitalize" %>

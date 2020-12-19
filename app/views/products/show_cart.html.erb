@@ -9,18 +9,21 @@
         <div class="col-span-1 flex items-center pb-1" style="border-bottom: 2px solid; border-color: #BA184D">
             <%= image_tag @products.find(item.class == Hash ? item["product_id"] : item).product_image, class:"w-3/12 lg:w-1/12 md:w-3/12" %>
             <div class="ml-4 lg:ml-20 md:ml-20 flex w-full justify-between items-center">
-                <div>
-                    <h3 class="text-xl text-gray-900"><%= @products.find(item.class == Hash ? item["product_id"] : item).name %></h3>
-                    <div class="flex justify-between items-center">
-                      <p class="text-gray-900 text-lg mr-4"><%= humanized_money @products.find(item.class == Hash ? item["product_id"] : item).price %> <%= currency_symbol %></p>
+                <div class="w-64">
+                    <h3 class="text-xl text-gray-900"><span><%= @products.find(item.class == Hash ? item["product_id"] : item).name %></span><span> - </span><span class="text-gray-900 text-lg mr-4"><%= humanized_money @products.find(item.class == Hash ? item["product_id"] : item).price %> <%= currency_symbol %></span> </h3>
+                    <div class="justify-between items-center">
                       <% if @products.find(item.class == Hash ? item["product_id"] : item).shop_category.name == "T-Shirt" %>
-                        <p class="text-gray-900 text-lg mr-4"> taille : <%= item.class == Hash ? item["size"] : "" %></p>
+                        <p class="text-gray-900 text-sm mr-4"> taille : <%= item.class == Hash ? item["size"] : "" %></p>
+                        <p class="text-gray-900 text-sm mr-4"> quantité : <%= item.class == Hash ? item["quantity"] : 1 %></p>
                       <% elsif @products.find(item.class == Hash ? item["product_id"] : item).shop_category.name == "Pack Goguettes n°2" %>
-                        <p class="text-gray-900 text-lg mr-4"> taille du T-shirt : <%= item.class == Hash ? item["size"] : "" %></p>
+                        <p class="text-gray-900 text-sm mr-4"> taille du T-shirt : <%= item.class == Hash ? item["size"] : "" %></p>
+                        <p class="text-gray-900 text-sm mr-4"> quantité : <%= item.class == Hash ? item["quantity"] : 1 %></p>
                       <% elsif @products.find(item.class == Hash ? item["product_id"] : item).shop_category.name == "Pack Goguettes n°3" %>
-                        <p class="text-gray-900 text-lg mr-4"> tailles des T-shirt : <%= item.class == Hash ? "#{item["size"][0]} et #{item["size"][1]}" : "" %></p>
+                        <p class="text-gray-900 text-sm mr-4"><%= item.class == Hash ? "T-shirt Rouge : #{item["size"][0]}" : "" %></p>
+                        <p class="text-gray-900 text-sm mr-4"><%= item.class == Hash ? "T-shirt Blanc : #{item["size"][1]}" : "" %></p>
+                        <p class="text-gray-900 text-sm mr-4"> quantité : <%= item.class == Hash ? item["quantity"] : 1 %></p>
                       <% else %>
-                        <p class="text-gray-900 text-lg mr-4"> quantité : <%= item.class == Hash ? item["quantity"] : 1 %></p>
+                        <p class="text-gray-900 text-sm mr-4"> quantité : <%= item.class == Hash ? item["quantity"] : 1 %></p>
                       <% end %>
                     </div>
                 </div>

@@ -74,7 +74,7 @@ ActiveAdmin.register Order do
           elsif truc.product.shop_category.name == "Pack Goguettes n°2"
             truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
           elsif truc.product.shop_category.name == "Pack Goguettes n°3"
-            truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
+            truc.quantity.to_s + "x " + truc.product.name + " " + "Rouge-#{truc.tsize[2]} " + "Blanc-#{truc.tsize[7]}"
           else
             truc.quantity.to_s + "x " + truc.product.name
           end
@@ -120,7 +120,7 @@ ActiveAdmin.register Order do
               elsif truc.product.shop_category.name == "Pack Goguettes n°2"
                 truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
               elsif truc.product.shop_category.name == "Pack Goguettes n°3"
-                truc.quantity.to_s + "x " + truc.product.name + " " + "-" + truc.tsize + "-"
+            truc.quantity.to_s + "x " + truc.product.name + " " + "Rouge-#{truc.tsize[2]} " + "Blanc-#{truc.tsize[7]}"
               else
                 truc.quantity.to_s + "x " + truc.product.name
               end

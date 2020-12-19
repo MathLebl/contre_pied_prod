@@ -34,11 +34,6 @@
             <div class="text-primary bg-white w-11/12 lg:w-4/5 md:w-2/3 mx-auto flex justify-around transform hover:scale-105 duration-200">
                 <div class="flex flex-col py-2">
                     <p class="font-bold mb-2">Status : <%= order.state %></p>
-                    <% if order.items.length < 2 %>
-                    <p><%= order.items.length %> Article</p>
-                    <% else %>
-                        <p><%= order.items.length %> Articles</p>
-                    <% end %>
                     <div class="mt-2">
                         <span class="text-xl font-bold"><%= humanized_money order.amount %> <%= currency_symbol %></span>
                     </div>
