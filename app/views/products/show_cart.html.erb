@@ -22,11 +22,13 @@
                 </div>
                   <%# if @products.find(item["product_id"]).shop_category.name == "T-Shirt" %>
                 <div>
-                  <p class="text-gray-900 text-lg mr-4"> sous total : <%= humanized_money item.class == Hash ? item["quantity"].to_i : 1 * @products.find(item.class == Hash ? item["product_id"] : item).price %><%= currency_symbol %></p>
+                  <% if item.class == Hash %>
+                    <p class="text-gray-900 text-lg mr-4"> sous total : <%= humanized_money item["quantity"].to_i * @products.find(item["product_id"]).price %><%= currency_symbol %></p>
+                  <% end %>
                 </div>
                 <div>
                     <%#= link_to "Modifier", change_from_cart_product_path(@products.find(item["product_id"])), class: "bg-primary text-white font-bold py-2 px-4 my-1 text-center hover:bg-secondary hover:text-primary" %>
-                    <%= link_to "Retirer", remove_from_cart_product_path(@products.find(item.class == Hash ? item["product_id"] : item), class: "bg-primary text-white font-bold py-2 px-4 my-1 text-center hover:bg-secondary hover:text-primary" %>
+                    <%= link_to "Retirer", remove_from_cart_product_path(@products.find(item.class == Hash ? item["product_id"] : item)), class: "bg-primary text-white font-bold py-2 px-4 my-1 text-center hover:bg-secondary hover:text-primary" %>
                 </div>
             </div>
         </div>
