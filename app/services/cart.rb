@@ -25,7 +25,7 @@ class Cart
 
   def self.cart_count(cookie)
       cart_count = 0
-      cart_count = cookie.map {|s| s.class == Hash ? s['quantity'].to_i : s.count }.reduce(0, :+)
+      cart_count = cookie.map {|s| s.class == Hash ? s['quantity'].to_i : 1 }.reduce(0, :+)
 
   end
 
