@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'informations@contrepiedproductions.fr'
+  default from: 'mathjunckmail@gmail.com'
   layout 'mailer'
 end
