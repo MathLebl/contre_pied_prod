@@ -117,8 +117,8 @@ Rails.application.configure do
   :port                 => 587,
   :user_name            => ENV['ovh_username'],
   :password             => ENV['ovh_password'],
-  :authentication       => "plain",
-  :enable_starttls_auto => true
+  :authentication       => "plain"
+  # :enable_starttls_auto => true
   }
 
 end
