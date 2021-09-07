@@ -1,0 +1,29 @@
+<div class="sm:flex sm:justify-center sm:items-center block" id="bigdiv">
+  <%= link_to spectacle_artists_path, class: "z-10" do %>
+  <div class="w-full my-2 px-2 bg-center sm:w-40 bg-cover sm:bg-cover bg-bottom-left bg-no-repeat sm:m-4 sm:transform sm:duration-700 flex items-center justify-center categoryimg" id="pif" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)), url('<%= image_path "home-spectacles.jpg" %>')">
+    <h1 class="text-3xl text-center "><br><br> Spectacles</h1>
+  </div>
+  <% end %>
+  <%= link_to concert_artists_path, class: "z-10" do %>
+  <div class="w-full my-2 px-2 bg-center sm:w-48 bg-cover sm:bg-cover sm:bg-center bg-no-repeat sm:m-4 sm:transform sm:duration-700 flex items-center justify-center categoryimg" id="paf" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)), url('<%= image_path "home-concerts.jpg" %>')">
+    <h1 class="text-3xl text-center"><br><br> Concerts</h1>
+  </div>
+  <% end %>
+  <%= link_to jeune_public_artists_path, class: "z-10" do %>
+  <div class="w-full my-2 px-2 bg-center sm:w-40 bg-cover sm:bg-cover sm:bg-right-bottom bg-no-repeat sm:m-4 sm:transform sm:duration-700 flex items-center justify-center categoryimg" id="pouf" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)), url('<%= image_path "home-jeunePublic.JPG" %>')">
+    <h1 class="text-3xl text-center"><br><br><br> Jeune public</h1>
+  </div>
+  <% end %>
+  <div class="bg-secondary h-40 w-2/3 z-0 absolute hidden sm:inline-block">
+  </div>
+</div>
+<%= render 'shared/actus' %>
+<div class="wraper relative my-24">
+  <!-- Section Agenda -->
+
+  <div class="w-full sm:w-2/3 sm:p-12 bg-secondary">
+    <table class="table-general">
+      <%= render 'shared/event-table' %>
+    </table>
+  </div>
+</div>

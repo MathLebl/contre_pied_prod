@@ -1,0 +1,75 @@
+// Gestion de la class Inactive
+.inactive {
+  #back-image {
+    transition: all 0.4s ease-in-out;
+  }
+  .card-style {
+    transition: all 0.4s ease-in-out;
+  }
+  #inactive-flag {
+    transition-delay: 0.3s in;
+  }
+}
+
+.inactive {
+  filter: grayscale(100%);
+  &:hover {
+    #back-image {
+      filter: blur(0.5rem);
+    }
+    #shop-img {
+      filter: blur(0.5rem);
+    }
+    .card-style {
+      filter: blur(0.5rem);
+    }
+    #inactive-flag {
+      visibility: visible;
+    }
+    #rupture-flag {
+      display: visible;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  /* For mobile phones: */
+  #back-image {
+    border: solid 1em white;
+    height: 18rem;
+    width: 18rem;
+  }
+  .card-style {
+    top: 19.3rem;
+    left: 0.8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #back-image {
+    border: solid 1em white;
+    height: 16rem;
+    width: 16rem;
+  }
+  .card-style {
+    top: 18rem;
+    left: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #back-image {
+    border: solid 1em white;
+    height: 25rem;
+    width: 25rem;
+  }
+  .card-style {
+    top: 27rem;
+    left: 3rem;
+  }
+}
+
+#inactive-flag {
+  top: 50%;
+  left: 40%;
+}

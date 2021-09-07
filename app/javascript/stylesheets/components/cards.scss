@@ -1,0 +1,9 @@
+.card{
+  @apply p-2 bg-white h-64 flex;
+  .illu .vid{
+   @apply mr-2 h-full w-1/2 ;
+ }
+ p{
+  @apply text-primary;
+}
+}

@@ -1,0 +1,32 @@
+<% content_for :meta_title, "Agenda #{DEFAULT_META["meta_product_name"]}" %>
+<div class="relative">
+  <div class="bg-secondary h-40 w-5/6 z-0 absolute hidden sm:inline-block left-0 bottom-0 ml-16 mb-32">
+  </div>
+  <div class="banner relative z-1" style="background-image: url('<%= image_path "bandeau-agenda.JPG" %>')">
+    <h1 class="absolute bg-white text-primary text-3xl font-bold px-1">Agenda</h1>
+  </div>
+</div>
+<!-- Section Search -->
+<p class="text-2xl text-center m-4">Retrouvez nos artistes, partout en France</p>
+<div class="w-3/4 m-auto">
+
+  <form class="grid grid-flow-col grid-cols-1 grid-rows-4 sm:grid-cols-4 sm:grid-rows-1 sm:gap-2 m-auto lg:align-bottom">
+    <%= form_with url: events_path, method: :get, local: true do |form| %>
+    <%= form.select :region, @regions, {:include_blank => 'Où ?'}, {:class => 'shadow appearance-none border rounded py-2 px-4 m-2 font-bold text-gray-700 leading-tight focus:outline-none focus:shadow-outline'} %>
+    <%= form.collection_select :artist_id, @artists, :id, :name, {:include_blank => 'Qui ?'}, {:class => 'shadow appearance-none border rounded py-2 px-4 m-2 font-bold text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}  %>
+    <%= form.select :month, @months, {:include_blank => 'Quand ?'}, {:class => 'shadow appearance-none border rounded py-2 px-4 m-2 font-bold text-gray-700 leading-tight focus:outline-none focus:shadow-outline'} %>
+    <%= form.submit value:"Recherche", class:'bg-primary hover:bg-secondary hover:text-primary text-white font-bold py-2 px-4 m-2 rounded focus:outline-none focus:shadow-outline' %>
+    <% end %>
+  </form>
+</div>
+<!-- Section Agenda -->
+<div class="wraper relative my-24">
+  <div class="table-title px-4 bg-primary hidden sm:inline-block absolute">
+    <h2 class="text-2xl font-bold">Agenda</h2>
+  </div>
+  <div class="w-full sm:w-5/6 sm:p-12 bg-secondary">
+    <table class="table-agenda">
+      <%= render 'shared/event-table' %>
+    </table>
+  </div>
+</div>

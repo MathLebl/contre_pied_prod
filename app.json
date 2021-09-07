@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "postdeploy": "bundle exec rake db:seed"
+  },
+  "env": {
+    "HEROKU_APP_NAME": {
+      "required": true
+    }
+  }
+}
+

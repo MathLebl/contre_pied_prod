@@ -1,0 +1,24 @@
+<div class="actus-wraper relative">
+  <div class="hello">
+    <div class="actu-title bg-secondary text-2xl text-primary font-bold absolute px-4">Actus</div>
+    <% @actus.each do |actu| %>
+    <% if actu.published_at? %>
+    <div class="card-container my-2">
+      <div class="actu-card">
+        <div class="actu-illustration">
+          <% if actu.featured_image.attached?  %>
+          <%= image_tag actu.featured_image %>
+          <% elsif !actu.video.nil? %>
+          <iframe width="200" height="133.19" src="<%= actu.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <% else %>
+          <% end %>
+        </div>
+        <div class="actu-description">
+          <p ><%= markdown(actu.description) %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>

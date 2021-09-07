@@ -1,0 +1,172 @@
+// Gestion du Ticket - Toutes les tables
+
+.table-ticket a {
+  text-decoration: none;
+  font-size: 24px;
+  text-align: right;
+  transition: all 0.2s;
+}
+
+tr:hover {
+  background-color: #ba184d;
+  td {
+    color: #f7c0d2;
+  }
+  p {
+    color: #f7c0d2;
+  }
+  i {
+    color: #f7c0d2;
+  }
+}
+
+// Gestion du Link Name - Toutes les tables
+
+.table-name a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.7s;
+}
+
+tr:hover .table-name a {
+  color: black;
+  opacity: 0.5;
+  font-size: 25px;
+}
+
+// Gestion Table Agenda
+
+.table-agenda {
+  width: 100%;
+}
+
+.table-agenda tr {
+  border-bottom: 2px solid #ba184d;
+}
+
+.table-agenda td {
+  padding: 1rem 0.5rem 1rem 1rem;
+  vertical-align: bottom;
+}
+
+.table-agenda .table-date {
+  padding: 1rem 0.5rem 1rem 1rem;
+  font-size: 18px;
+}
+
+.table-agenda .table-name {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.table-agenda .table-location {
+  font-size: 18px;
+}
+
+// Gestion Table Générale - pages Home, Concert, Spectacle, JP
+
+.table-title {
+  right: 2rem;
+  top: -1rem;
+}
+
+.table-title-artist {
+  right: 2rem;
+  top: -1rem;
+}
+
+@media (min-width: 768px) {
+  /* For mobile phones: */
+  .table-title {
+    right: 18rem;
+    top: -2rem;
+  }
+}
+
+.table-title h2 {
+  color: white;
+}
+
+.table-title-artist h2 {
+  color: white;
+}
+
+.table-general {
+  width: 100%;
+}
+
+.table-general tr {
+  border-bottom: 2px solid #ba184d;
+}
+
+#ticket {
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.table-general td {
+  padding: 1rem 0.5rem 1rem 1rem;
+  vertical-align: bottom;
+}
+
+.table-general .table-date {
+  font-size: 16px;
+  padding: 1rem 0.5rem 1rem 1rem;
+}
+
+.table-general .table-name {
+  font-size: 24px;
+}
+
+.table-general .table-location {
+  font-size: 12px;
+}
+
+// Gestion Table Artiste - Date et Lieu
+
+.table-artist tr {
+  border-bottom: 0.2px solid #d94496;
+}
+
+.table-artist td {
+  padding: 1rem 0.5rem 1rem 1rem;
+  vertical-align: bottom;
+}
+
+.table-artist .table-date {
+  padding: 1rem 0.5rem 1rem 1rem;
+  font-size: 20px;
+}
+
+.table-artist .table-location {
+  font-size: 20px;
+}
+
+.table-artist .table-ticket a {
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .table-artist {
+    // color: black;
+    width: 80%;
+    margin: 65px auto 50px auto;
+  }
+
+  .table-title-artist {
+    right: 11rem;
+    top: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .table-artist {
+    // color: black;
+    width: 60%;
+    margin: 65px auto 50px auto;
+  }
+
+  .table-title-artist {
+    right: 22rem;
+    top: 3rem;
+  }
+}

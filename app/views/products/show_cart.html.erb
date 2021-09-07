@@ -1,0 +1,66 @@
+<h1 class="text-2xl bg-primary text-white inline-block mt-20 ml-10 py-2 px-4">Mon panier</h1>
+<%= link_to products_path, class: "inline-flex items-center absolute text-primary no-underline hover:text-secondary transform hover:scale-110 duration-200 text-3xl p-1 font-bold mt-4 ml-20 top-0 mt-56 lg:mt-40 md:mt-40", id: "back-button" do %>
+<i class="fas fa-arrow-left"></i>
+<span id="back-text" class="text-base ml-2">Retour</span>
+<% end %>
+<div class="grid mx-4 my-12 lg:mx-40 lg:my-20 md:mx-20">
+  <% unless @cart.empty? %>
+  <% @cart.each do |item| %>
+  <div class="col-span-1 flex items-center pb-1" style="border-bottom: 2px solid; border-color: #BA184D">
+    <%= image_tag @products.find(item.class == Hash ? item["product_id"] : item).product_image, class:"w-3/12 lg:w-1/12 md:w-3/12" %>
+    <div class="ml-4 lg:ml-20 md:ml-20 flex w-full justify-between items-center">
+      <div class="w-64">
+        <h3 class="text-xl text-gray-900"><span><%= @products.find(item.class == Hash ? item["product_id"] : item).name %></span><span> - </span><span class="text-gray-900 text-lg mr-4"><%= humanized_money @products.find(item.class == Hash ? item["product_id"] : item).price %> <%= currency_symbol %></span> </h3>
+        <div class="justify-between items-center">
+          <% if @products.find(item.class == Hash ? item["product_id"] : item).shop_category.name == "T-Shirt" %>
+          <p class="text-gray-900 text-sm mr-4"> taille : <%= item.class == Hash ? item["size"] : "" %></p>
+          <p class="text-gray-900 text-sm mr-4"> quantité : <%= item.class == Hash ? item["quantity"] : 1 %></p>
+          <% elsif @products.find(item.class == Hash ? item["product_id"] : item).shop_category.name == "Pack Goguettes n°2" %>
+          <p class="text-gray-900 text-sm mr-4"> taille du T-shirt : <%= item.class == Hash ? item["size"] : "" %></p>
+          <p class="text-gray-900 text-sm mr-4"> quantité : <%= item.class == Hash ? item["quantity"] : 1 %></p>
+          <% elsif @products.find(item.class == Hash ? item["product_id"] : item).shop_category.name == "Pack Goguettes n°3" %>
+          <p class="text-gray-900 text-sm mr-4"><%= item.class == Hash ? "T-shirt Rouge : #{item["size"][0]}" : "" %></p>
+          <p class="text-gray-900 text-sm mr-4"><%= item.class == Hash ? "T-shirt Blanc : #{item["size"][1]}" : "" %></p>
+          <p class="text-gray-900 text-sm mr-4"> quantité : <%= item.class == Hash ? item["quantity"] : 1 %></p>
+          <% else %>
+          <p class="text-gray-900 text-sm mr-4"> quantité : <%= item.class == Hash ? item["quantity"] : 1 %></p>
+          <% end %>
+        </div>
+      </div>
+      <%# if @products.find(item["product_id"]).shop_category.name == "T-Shirt" %>
+      <div>
+        <% if item.class == Hash %>
+        <p class="text-gray-900 text-lg mr-4"> sous total : <%= humanized_money item["quantity"].to_i * @products.find(item["product_id"]).price %><%= currency_symbol %></p>
+        <% else %>
+        <p class="text-gray-900 text-lg mr-4"> sous total : <%= humanized_money @products.find(item).price %><%= currency_symbol %></p>
+        <% end %>
+      </div>
+      <div>
+        <%#= link_to "Modifier", change_from_cart_product_path(@products.find(item["product_id"])), class: "bg-primary text-white font-bold py-2 px-4 my-1 text-center hover:bg-secondary hover:text-primary" %>
+        <%= link_to "Retirer", remove_from_cart_product_path(@products.find(item.class == Hash ? item["product_id"] : item)), class: "bg-primary text-white font-bold py-2 px-4 my-1 text-center hover:bg-secondary hover:text-primary" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<div class="mx-4 mb-20 lg:mx-40 md:mx-40 flex flex-col">
+  <h2 class="text-2xl text-gray-900">Récapitulatif de la commande</h2>
+  <% if @cart_count <= 1 %>
+  <p class="text-lg text-gray-800 mt-4">- <%= @cart_count %> Article -</p>
+  <% else %>
+  <p class="text-lg text-gray-800 mt-4">- <%= @cart_count %> Articles -</p>
+  <% end %>
+  <p class="text-lg text-gray-900 mt-4"><span>Total Articles :        </span> <%= humanized_money @amount %> <%= currency_symbol %></p>
+  <p class="text-lg text-gray-900 mt-4"><span>Frais de port :         </span> <%= humanized_money @fees %> <%= currency_symbol %></p>
+  <p class="text-lg text-gray-900 mt-4"><span>Total de la commande :  </span> <%= humanized_money @total_amount %> <%= currency_symbol %></p>
+
+  <% unless @cart.empty? %>
+  <%= link_to "Passer la commande", new_order_path, class: 'bg-primary text-white font-bold py-2 px-4 my-1 mt-10 lg:w-1/3 md:w-1/2 self-center text-center hover:bg-secondary hover:text-primary' %>
+  <% end %>
+</div>
+<% else %>
+<div class="h-screen flex justify-center align-middle">
+  <p class="text-5xl">Votre Panier est vide...</p>
+</div>
+<% end %>

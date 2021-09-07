@@ -1,0 +1,244 @@
+<div class="bg-secondary h-40 w-5/6 mx-auto mt-32 mb-24 relative">
+  <div class="flex flex-col h-full justify-center" style="padding-left: 60%;">
+    <div class="img-product w-6/12 lg:w-5/12 md:w-6/12 absolute m-4 lg:m-24 md:m-8 left-0 object-contain">
+      <%= link_to @product.product_image, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+      <%= image_tag @product.product_image, class: 'absolute h-full w-full object-contain' %>
+      <% end %>
+    </div>
+    <h1 class="text-base lg:text-3xl md:text-3xl text-primary bg-white font-bold mb-4 px-2" style="width: fit-content"><%= @product.name %>  -  <span class="font-light"><%= humanized_money @product.price %> <%= currency_symbol %></span></h1>
+    <%= link_to products_path, class: "inline-flex items-center absolute text-primary left-0 bottom-0 no-underline hover:text-white transform hover:scale-110 duration-200 text-3xl p-1 font-bold mb-12", style: "top: 3rem", id: "back-button" do %>
+    <i class="fas fa-arrow-left"></i>
+    <span id="back-text" class="text-base ml-2">Retour</span>
+    <% end %>
+  </div>
+</div>
+<div class="img-zone mx-auto flex w-5/6 overflow-x-vivible">
+  <% if @product.product_image2.attached? %>
+  <div class=" w-20 h-16 transform duration-200 hover:scale-110">
+    <%= link_to @product.product_image2, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+    <%= image_tag @product.product_image2, class: ' w-20 h-16 object-contain' %>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+  <% if @product.product_image3.attached? %>
+  <div class=" w-20 h-16 transform duration-200 hover:scale-110">
+    <%= link_to @product.product_image3, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+    <%= image_tag @product.product_image3, class: 'w-20 h-16 object-contain' %>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+  <% if @product.product_image4.attached? %>
+  <div class=" w-20 h-16 transform duration-200 hover:scale-110">
+    <%= link_to @product.product_image4, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+    <%= image_tag @product.product_image4, class: 'w-20 h-16 object-contain' %>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+  <% if @product.product_image5.attached? %>
+  <div class=" w-20 h-16 transform duration-200 hover:scale-110">
+    <%= link_to @product.product_image5, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+    <%= image_tag @product.product_image5, class: 'w-20 h-16 object-contain' %>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+  <% if @product.product_image6.attached? %>
+  <div class=" w-20 h-16 transform duration-200 hover:scale-110">
+    <%= link_to @product.product_image6, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+    <%= image_tag @product.product_image6, class: 'w-20 h-16 object-contain' %>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+  <% if @product.product_image7.attached? %>
+  <div class=" w-20 h-16 transform duration-200 hover:scale-110">
+    <%= link_to @product.product_image7, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+    <%= image_tag @product.product_image7, class: 'w-20 h-16 object-contain' %>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+  <% if @product.product_image8.attached? %>
+  <div class=" w-20 h-16 transform duration-200 hover:scale-110">
+    <%= link_to @product.product_image8, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+    <%= image_tag @product.product_image8, class: 'w-20 h-16 object-contain' %>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+  <% if @product.product_image9.attached? %>
+  <div class=" w-20 h-16 transform duration-200 hover:scale-110">
+    <%= link_to @product.product_image9, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+    <%= image_tag @product.product_image9, class: 'w-20 h-16 object-contain' %>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+  <% if @product.product_image10.attached? %>
+  <div class=" w-20 h-16 transform duration-200 hover:scale-110">
+    <%= link_to @product.product_image10, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+    <%= image_tag @product.product_image10, class: 'w-20 h-16 object-contain' %>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+  <% if @product.product_image11.attached? %>
+  <div class=" w-20 h-16 transform duration-200 hover:scale-110">
+    <%= link_to @product.product_image11, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+    <%= image_tag @product.product_image11, class: 'w-20 h-16 object-contain' %>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+  <% if @product.product_image12.attached? %>
+  <div class=" w-20 h-16 transform duration-200 hover:scale-110">
+    <%= link_to @product.product_image12, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+    <%= image_tag @product.product_image12, class: 'w-20 h-16 object-contain' %>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+  <% if @product.product_image13.attached? %>
+  <div class=" w-20 h-16 transform duration-200 hover:scale-110">
+    <%= link_to @product.product_image13, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+    <%= image_tag @product.product_image13, class: 'w-20 h-16 object-contain' %>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+  <% if @product.product_image14.attached? %>
+  <div class=" w-20 h-16 transform duration-200 hover:scale-110">
+    <%= link_to @product.product_image14, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+    <%= image_tag @product.product_image14, class: 'w-20 h-16 object-contain' %>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+  <% if @product.product_image15.attached? %>
+  <div class=" w-20 h-16 transform duration-200 hover:scale-110">
+    <%= link_to @product.product_image15, class: 'photo', data: { lightbox: "gallery-show"}  do %>
+    <%= image_tag @product.product_image15, class: 'w-20 h-16 object-contain' %>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+</div>
+<div class="bg-primary p-4 lg:p-12 md:p-6 mt-8 mb-20 grid grid-cols-1 lg:grid-cols-12 md:grid-cols-12 gap-2">
+  <div class="flex flex-col col-span-1 row-start-1 lg:col-span-3 lg-row-span-2 md:col-span-3 md:row-span-1 lg:col-start-3 col-start-1 lg:row-start-1 md:col-start-2 md:row-start-1">
+    <%#= link_to "Acheter ce produit", new_order_path(product_id: @product), class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200'  %>
+    <%#= link_to "Ajouter à mon pannier", add_to_cart_product_path(@product), class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200'  %>
+    <% if @product.shop_category.name == "T-Shirt" %>
+    <%= form_for :cart, url: { controller: 'products', action: 'add_to_cart', method: :post }, remote: true  do |f|%>
+    <%= f.hidden_field :product_id, :value => @product.id %>
+    <%= f.hidden_field :quantity, :value => 1 %>
+    <%= f.radio_button :size, 'S' , required: true%>
+    <%= f.label :size, 'S', :value => 'S', class: "text-secondary font-bold" %>
+    <%= f.radio_button :size, 'M' %>
+    <%= f.label :size, 'M', :value => 'M', class: "text-secondary font-bold" %>
+    <%= f.radio_button :size, 'L' %>
+    <%= f.label :size, 'L', :value => 'L', class: "text-secondary font-bold" %>
+    <%= f.radio_button :size, 'XL' %>
+    <%= f.label :size, 'XL', :value => 'XL', class: "text-secondary font-bold" %> <br>
+    <%= f.submit "Ajouter au Panier", id:'submit',
+    class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200'%>
+    <% end %>
+    <% elsif  @product.shop_category.name == "Pack Goguettes n°2" %>
+    <%= form_for :cart, url: { controller: 'products', action: 'add_to_cart', method: :post }, remote: true  do |f|%>
+    <%= f.hidden_field :product_id, :value => @product.id %>
+    <%= f.label :quantity, 'Quantité', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %>
+    <%= f.number_field :quantity, :value => 1, :min =>  1, class: "bg-white text-primary w-12 text-center" %><br>
+    <%= f.label :size, 'Taille du T-Shirt', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %><br>
+    <%= f.radio_button :size, 'S' , required: true %>
+    <%= f.label :size, 'S', :value => 'S', class: "text-secondary font-bold" %>
+    <%= f.radio_button :size, 'M' %>
+    <%= f.label :size, 'M', :value => 'M', class: "text-secondary font-bold" %>
+    <%= f.radio_button :size, 'L' %>
+    <%= f.label :size, 'L', :value => 'L', class: "text-secondary font-bold" %>
+    <%= f.radio_button :size, 'XL' %>
+    <%= f.label :size, 'XL', :value => 'XL', class: "text-secondary font-bold" %> <br>
+    <%= f.submit "Ajouter au Panier", id:'submit',
+    class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200'%>
+    <% end %>
+    <% elsif  @product.shop_category.name == "Pack Goguettes n°3" %>
+    <%= form_for :cart, url: { controller: 'products', action: 'add_to_cart', method: :post }, remote: true  do |f|%>
+    <%= f.hidden_field :product_id, :value => @product.id %>
+    <%= f.label :quantity, 'Quantité', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center" %>
+    <%= f.number_field :quantity, :value => 1, :min =>  1, class: "bg-white text-primary w-12 text-center" %>
+    <div>
+      <%= f.label :quantity, 'Taille du T-shirt Rouge', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %> <br>
+
+      <%= f.radio_button :size, 'S' , required: true %>
+      <%= f.label :size, 'S', :value => 'S', class: "text-secondary font-bold" %>
+      <%= f.radio_button :size, 'M' %>
+      <%= f.label :size, 'M', :value => 'M', class: "text-secondary font-bold" %>
+      <%= f.radio_button :size, 'L' %>
+      <%= f.label :size, 'L', :value => 'L', class: "text-secondary font-bold" %>
+      <%= f.radio_button :size, 'XL' %>
+      <%= f.label :size, 'XL', :value => 'XL', class: "text-secondary font-bold" %> <br>
+    </div>
+    <div>
+      <%= f.label :quantity, 'Taille du T-shirt Blanc', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %> <br>
+
+      <%= radio_button_tag 'cart[size2]', 'S', required: true %>
+      <%= f.label 'S', class: "text-secondary font-bold capitalize" %>
+      <%= radio_button_tag 'cart[size2]', 'M' %>
+      <%= f.label 'M', class: "text-secondary font-bold capitalize" %>
+      <%= radio_button_tag 'cart[size2]', 'L' %>
+      <%= f.label 'L', class: "text-secondary font-bold capitalize" %>
+      <%= radio_button_tag 'cart[size2]', 'XL' %>
+      <%= f.label 'XL', class: "text-secondary font-bold capitalize" %>
+
+      <%#= f.radio_button :size2, 'S' %>
+      <%#= f.label :size2, 'S', :value => 'S', class: "text-secondary font-bold" %>
+      <%#= f.radio_button :size2, 'M' %>
+      <%#= f.label :size2, 'M', :value => 'M', class: "text-secondary font-bold" %>
+      <%#= f.radio_button :size2, 'L' %>
+      <%#= f.label :size2, 'L', :value => 'L', class: "text-secondary font-bold" %>
+      <%#= f.radio_button :size2, 'XL' %>
+      <%#= f.label :size2, 'XL', :value => 'XL', class: "text-secondary font-bold" %> <br>
+    </div>
+
+    <%= f.submit "Ajouter au Panier", id:'submit',
+    class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200'%>
+    <% end %>
+    <% else %>
+    <%= form_for :cart, url: { controller: 'products', action: 'add_to_cart', method: :post }, remote: true  do |f|%>
+    <%= f.hidden_field :product_id, :value => @product.id %>
+    <%= f.label :quantity, 'Quantité', class: "text-secondary font-bold md:text-sm py-2 my-2 text-center " %>
+    <%= f.number_field :quantity, :value => 1, :min =>  1, class: "bg-white text-primary w-12 text-center"%><br>
+    <%= f.hidden_field :size, :value => nil %>
+    <%= f.submit "Ajouter au Panier", id:'submit',
+    class: 'bg-white text-primary font-bold md:text-sm py-2 lg:px-4 md:px-2 my-2 text-center hover:bg-secondary hover:text-primary transform hover:scale-105 duration-200'%>
+    <% end %>
+    <% end %>
+  </div>
+
+  <div class="relative bg-white text-primary p-6 lg:p-8 md:p-4 col-span-1 row-start-2 lg:col-span-4 md:col-span-5 lg:col-start-8 lg:row-start-1 md:col-start-7 md:row-start-1">
+    <span class="product-description-title absolute right-0 mr-8 bg-secondary text-primary px-2 py-1 font-bold text-xl">
+      Description
+    </span>
+    <p><%= markdown(@product.description) %></p>
+  </div>
+</div>
+<script>
+
+  const submit = document.getElementById("submit");
+  console.log(submit.value);
+  const form = document.querySelector(" form ");
+  console.log(form);
+  const cartCount = document.getElementById("cartCount");
+// const myVar = setTimeout(function, milliseconds);
+function reload() {
+  reload = location.reload();
+}
+form.addEventListener("submit", (event) => {
+  console.log(event)
+  const change = submit.value = "             👍             "
+  setTimeout(change, 3000);
+  setTimeout(reload, 3100);
+});
+</script>
+

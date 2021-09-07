@@ -1,0 +1,2 @@
+class ActusController < ApplicationController
+end

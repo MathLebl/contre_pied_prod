@@ -1,0 +1,23 @@
+<h2 class="text-center text-3xl text-white bg-primary font-bold mx-auto mb-4 p-1" style="width: fit-content">Mot de passe oublié ?</h2>
+
+<div class="bg-white shadow-md rounded w-full max-w-lg mx-auto mb-2 pb-4">
+  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <form class="w-full max-w-lg mx-auto mb-2">
+    <div class=" px-8 pt-6 pb-8 mb-4">
+      <%= f.error_notification %>
+      <div class="block uppercase text-gray-700 text-sm font-bold my-2">
+        <%= f.input :email,
+        required: true,
+        autofocus: true,
+        input_html: { autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Envoyer un email", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4" %>
+      </div>
+    </div>
+  </form>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>

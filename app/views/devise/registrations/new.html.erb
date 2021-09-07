@@ -1,0 +1,82 @@
+<!-- container -->
+<div>
+  <h2 class="text-center text-3xl text-white bg-primary font-bold mx-auto mb-4 p-1" style="width: fit-content">Inscription</h2>
+
+  <!-- registration card -->
+  <div class="bg-white shadow-md rounder w-full max-w-lg mx-auto mb-10">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs px-8 pt-6 pb-8 mb-4">
+      <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    placeholder: "exemple@example.fr",
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :name,
+                    required: true,
+                    autofocus: true,
+                    label: "Nom",
+                    placeholder: "Martin",
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :first_name,
+                    required: true,
+                    label: "Prénom",
+                    autofocus: true,
+                    placeholder: "Jean-Michel",
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :password,
+                    required: true,
+                    label: "Mot de passe",
+                    placeholder: "**********",
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :password_confirmation,
+                    required: true,
+                    label: "Confirmation du mot de passe",
+                    placeholder: "**********",
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :address,
+                    required: true,
+                    label: "Adresse",
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :city,
+                    required: true,
+                    label: "Ville",
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :zip_code,
+                    required: true,
+                    label: "Code Postal",
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :country,
+                    required: true,
+                    label: "Pays",
+                    input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                    label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+      <%= f.input :phone,
+                  required: true,
+                  label: "Telephone",
+                  input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" },
+                  label_html: { class: "block uppercase text-gray-700 text-sm font-bold my-2" } %>
+                    <div class="form-actions">
+                      <%= f.button :submit, "Créer un compte", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4" %>
+                    </div>
+                  </div>
+                  <% end %>
+                  <%= render "devise/shared/links" %>
+                  <br>
+                </div>
+              </div>
+
+
+
+
+
