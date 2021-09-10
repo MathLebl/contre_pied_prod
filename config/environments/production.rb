@@ -121,11 +121,12 @@ Rails.application.configure do
   # # :enable_starttls_auto => true
   # }
   config.action_mailer.smtp_settings = {
-  :address              => "ns0.ovh.net",
+  :address              => "ssl0.ovh.net",
   :port                 => 587,
   :user_name            => ENV['ovh_username'],
   :password             => ENV['ovh_password'],
   :authentication       => "plain",
+  :domain               => "www.contrepiedproductions.fr",
   :enable_starttls_auto => true
   }
 end
