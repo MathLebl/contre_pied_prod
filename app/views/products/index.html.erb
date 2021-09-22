@@ -2,7 +2,7 @@
   <div class="flex flex-col h-full justify-center" style="padding-left: 35%;">
     <%= image_tag "shop", alt: "illustration graphique d'une photo de profil", class: "w-3/12 lg:w-1/5 md:w-1/3 absolute m-4 lg:m-24 md:m-0 left-0" %>
     <h1 class="text-xl lg:text-3xl md:text-3xl text-primary font-bold mb-4">Boutique</h1>
-    <p class="text-xs lg:text-sm md:text-sm text-primary">Goodies, CD, T-shirts... Craquez pour un produit de votre artiste préféré !</p>
+    <p class="text-xs lg:text-sm md:text-sm text-primary">Goodies, Cd, t-shirts... Tout est là !</p>
   </div>
 </div>
 
@@ -14,8 +14,9 @@
     <%= link_to product_path(product), class:"col-span-2 lg:col-span-1 md:col-span-1 transform hover:scale-105 duration-200" do %>
     <div class="list-card transform duration-200 hover:scale-105">
       <div class="card-body py-4 sm:p-8 relative">
-        <h5 class="card-name bg-white text-primary font-bold p-2 mb-4" style="width: fit-content"><span class="lg:text-base md:text-base"><%= product.shop_category.name %> - </span><span> <%= product.name %></span></h5>
-        <div id="back-image" class="bg-contain bg-no-repeat bg-center" style="background-image: url('<%= image_path url_for (product.product_image) %>'); background-color: #F7C0D2;"></div>
+        <div id="back-image" class="bg-contain bg-no-repeat bg-center" style="background-image: url('<%= image_path url_for (product.product_image) %>'); "></div>
+        <hr>
+        <h5 class="card-name text-white font-bold p-2 mb-4" style="width: fit-content"><span class="lg:text-base md:text-base"><%= product.shop_category.name %> - </span><span> <%= product.name %></span></h5>
         <h6 class="card-style absolute bg-white text-primary font-bold p-2"><span class="text-lg font-bold"><%= humanized_money product.price %> <%= currency_symbol %></span></h6>
       </div>
     </div>

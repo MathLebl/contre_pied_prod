@@ -4,8 +4,8 @@ cd = ShopCategory.create!(name: 'Album', weight:'80')
 tote_bag = ShopCategory.create!(name: 'ToteBag', weight:'90')
 briquet = ShopCategory.create!(name: 'Briquet', weight:'80')
 carte = ShopCategory.create!(name: 'Carte', weight:'80')
-pack_goguette_2 = = ShopCategory.create!(name: 'Pack Goguettes n°2', weight:'380')
-pack_goguette_3 = = ShopCategory.create!(name: 'Pack Goguettes n°3', weight:'780')
+pack_goguette_2 = ShopCategory.create!(name: 'Pack Goguettes n°2', weight:'380')
+pack_goguette_3 = ShopCategory.create!(name: 'Pack Goguettes n°3', weight:'780')
 tshirt = ShopCategory.create!(name: 'Tshirt', weight:'120')
 
 puts 'Creating CD products'
