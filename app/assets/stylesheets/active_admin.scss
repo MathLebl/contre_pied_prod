@@ -41,8 +41,7 @@ body {
 .name {
   font-weight: bold;
 }
-.important {
-}
+
 
 .columns {
   display: grid;
@@ -69,10 +68,10 @@ h3 {
   font-size: 13px;
 }
 
-table tr th {
-  // text-align: center !important;
-  // background: blue;
-}
+// table tr th {
+//   // text-align: center !important;
+//   // background: blue;
+// }
 
 #event-board {
   grid-column-start: 1;
