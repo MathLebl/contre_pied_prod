@@ -6,27 +6,28 @@
   </div>
 </div>
 
-<div class="bg-primary mb-20">
+<div class="mb-20">
   <div class="grid grid-cols-2 gap-8 lg:gap-20 md:gap-10 mx-8 lg:mx-48 md:mx-12 py-8">
     <% @products.each do |product|%>
     <% if product.published_at? %>
     <% if product.stock > 0 %>
-    <%= link_to product_path(product), class:"col-span-2 lg:col-span-1 md:col-span-1 transform hover:scale-105 duration-200" do %>
-    <div class="list-card transform duration-200 hover:scale-105">
-      <div class="card-body py-4 sm:p-8 relative">
-        <div id="back-image" class="bg-contain bg-no-repeat bg-center" style="background-image: url('<%= image_path url_for (product.product_image) %>'); "></div>
-        <hr>
-        <h5 class="card-name text-white font-bold p-2 mb-4" style="width: fit-content"><span class="lg:text-base md:text-base"><%= product.shop_category.name %> - </span><span> <%= product.name %></span></h5>
-        <h6 class="card-style absolute bg-white text-primary font-bold p-2"><span class="text-lg font-bold"><%= humanized_money product.price %> <%= currency_symbol %></span></h6>
+    <%= link_to product_path(product), class:"col-span-2 lg:col-span-1 md:col-span-1 text-black transform hover:text-gray-600 duration-200" do %>
+    <div class="list-card ">
+      <div class="card-body py-4 relative">
+        <div id="back-image-shopping" class="bg-contain bg-no-repeat bg-center m-auto" style="background-image: url('<%= image_path url_for (product.product_image) %>'); "></div>
+        <hr class="line-shopping">
+        <h5 class="card-name font-bold" style="width: fit-content"><span class="lg:text-base md:text-base"><%= product.shop_category.name %> - </span><span> <%= product.name %></span></h5>
+        <h5 class="card-descro text-sm" style="width: fit-content"><span> <%= product.description %></span></h5>
+        <h6 class="card-style"><span class="text-sm"><%= humanized_money product.price %> <%= currency_symbol %></span></h6>
       </div>
     </div>
     <% end %>
     <% elsif product.stock == 0 %>
     <div class="col-span-2 lg:col-span-1 md:col-span-1 transform hover:scale-105 duration-200 inactive" >
-      <div class="list-card transform duration-200 hover:scale-105">
-        <div class="card-body py-4 sm:p-8 relative">
+      <div class="list-card ">
+        <div class="card-body py-4 relative">
           <h5 class="card-name bg-white text-primary font-bold p-2 mb-4" style="width: fit-content"><span class="lg:text-base md:text-base"><%= product.shop_category.name %> - </span><span> <%= product.name %></span></h5>
-          <div id="back-image" class="bg-cover bg-top" style="background-image: url('<%= image_path url_for (product.product_image) %>'); background-color: #F7C0D2;">
+          <div id="back-image-shopping" class="bg-cover bg-top" style="background-image: url('<%= image_path url_for (product.product_image) %>'); background-color: #F7C0D2;">
           </div>
           <h6 class="card-style absolute bg-white text-primary font-bold p-2"><span class="text-lg font-bold"><%= humanized_money product.price %> <%= currency_symbol %></span></h6>
           <div id="inactive-flag" class="absolute text-black font-bold text-2xl invisible">

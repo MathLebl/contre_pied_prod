@@ -112,21 +112,21 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
   config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   :address              => "smtp.gmail.com",
-  # :port                 => 587,
-  # :user_name            => ENV['gmail_username'],
-  # :password             => ENV['gmail_password'],
-  # :authentication       => "plain"
-  # # :enable_starttls_auto => true
-  # }
   config.action_mailer.smtp_settings = {
-  :address              => "ssl0.ovh.net",
-  :port                 => 465,
-  :user_name            => ENV['ovh_username'],
-  :password             => ENV['ovh_password'],
-  :authentication       => "plain",
-  
+    :address              => "smtp.gmail.com",
+  :port                 => 587,
+  :user_name            => ENV['gmail_username'],
+  :password             => ENV['gmail_password'],
+  :authentication       => "plain"
   :enable_starttls_auto => true
   }
+  # config.action_mailer.smtp_settings = {
+  # :address              => "SSL0.OVH.NET",
+  # :port                 => 587,
+  # :user_name            => ENV['ovh_username'],
+  # :password             => ENV['ovh_password'],
+  # # :authentication       => "plain",
+  # :authentication => 'login',
+  # :enable_starttls_auto => true
+  # }
 end
