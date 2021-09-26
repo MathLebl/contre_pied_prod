@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/activeadmin/activeadmin.git
-  revision: 334343f3d92f80aef1529a2653550611dbb86059
+  revision: f310596bdf11f30ff3c21501b26fc02cafee2374
   specs:
     activeadmin (2.9.0)
       arbre (~> 1.2, >= 1.2.1)
@@ -90,8 +90,8 @@ GEM
     autoprefixer-rails (10.3.3.0)
       execjs (~> 2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.500.0)
-    aws-sdk-core (3.121.0)
+    aws-partitions (1.506.0)
+    aws-sdk-core (3.121.1)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
       aws-sigv4 (~> 1.1)
@@ -99,7 +99,7 @@ GEM
     aws-sdk-kms (1.48.0)
       aws-sdk-core (~> 3, >= 3.120.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.102.0)
+    aws-sdk-s3 (1.103.0)
       aws-sdk-core (~> 3, >= 3.120.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.4)
@@ -107,7 +107,7 @@ GEM
       aws-eventstream (~> 1, >= 1.0.2)
     bcrypt (3.1.16)
     bindex (0.8.1)
-    bootsnap (1.8.1)
+    bootsnap (1.9.1)
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
@@ -226,8 +226,6 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.12.4-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.12.4-x86_64-linux)
-      racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (0.21.0)
     pry (0.13.1)
@@ -239,7 +237,7 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.6)
-    puma (5.4.0)
+    puma (5.5.0)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
@@ -331,7 +329,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webpacker (5.4.2)
+    webpacker (5.4.3)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
@@ -343,7 +341,6 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
-  x86_64-linux
 
 DEPENDENCIES
   activeadmin!
