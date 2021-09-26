@@ -126,7 +126,6 @@ Rails.application.configure do
   :user_name            => ENV['ovh_username'],
   :password             => ENV['ovh_password'],
   :authentication       => "plain",
-  
   :enable_starttls_auto => true
   }
 end
