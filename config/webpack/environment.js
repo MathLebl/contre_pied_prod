@@ -1,17 +1,17 @@
-import { environment } from '@rails/webpacker';
+const { environment } = require('@rails/webpacker')
 
-import { ProvidePlugin } from 'webpack';
+const webpack = require('webpack')
 
 // Preventing Babel from transpiling NodeModules packages
 environment.loaders.delete('nodeModules');
 
 // Bootstrap 4 has a dependency over jQuery & Popper.js:
 environment.plugins.prepend('Provide',
-  new ProvidePlugin({
+  new webpack.ProvidePlugin({
     $: 'jquery',
     jQuery: 'jquery',
     Popper: ['popper.js', 'default']
   })
 )
 
-export default environment
+module.exports = environment
