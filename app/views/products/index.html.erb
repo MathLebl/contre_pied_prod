@@ -17,7 +17,7 @@
         <div id="back-image-shopping" class="bg-contain bg-no-repeat bg-center m-auto" style="background-image: url('<%= image_path url_for (product.product_image) %>'); "></div>
         <hr class="line-shopping">
         <h5 class="card-name font-bold" style="width: fit-content"><span class="lg:text-base md:text-base"><%= product.shop_category.name %> - </span><span> <%= product.name %></span></h5>
-        <h5 class="card-descro text-sm" style="width: fit-content"><span> <%= product.description %></span></h5>
+        <h5 class="card-descro text-sm" style="width: fit-content"><span> <%= h truncate(product.description, length: 80, omission: '...') %></span></h5>
         <h6 class="card-style"><span class="text-sm"><%= humanized_money product.price %> <%= currency_symbol %></span></h6>
       </div>
     </div>
