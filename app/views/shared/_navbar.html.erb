@@ -37,7 +37,7 @@
       <% if @index %>
       <li class="nav-item bg-primary text-white m-1 md:mx-2 py-1 px-1 md:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center" id="cartCount">
         <%= link_to show_cart_products_path do %>
-        <i class="fas fa-shopping-cart"></i>
+          <%= image_tag "shop.png", class:'w-8',style: 'display:inline' %>
         
         <%= @cart_count if @cart_count > 0 %>
         <% end %>
@@ -78,10 +78,11 @@
       <% if @index %>
       <li class="nav-item bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center" id="cartCount">
         <%= link_to show_cart_products_path do %>
-        <i class="fas fa-shopping-cart"></i>
+          <%= image_tag "shop.png", class:'w-8',style: 'display:inline' %>
         <%= @cart_count %>
         <% end %>
         <% end %>
+      </li>
         <li class="dropdown inline-block relative">
           <button class="nav-item text-primary sm:ml-2 sm:mr-3 p-1 hover:text-secondary" id="dropdown-btn">
             <span class="mr-1"><i class="fas fa-ellipsis-v"></i></span>
