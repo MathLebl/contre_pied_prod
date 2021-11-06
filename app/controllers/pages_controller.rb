@@ -3,9 +3,23 @@ class PagesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def home
-    events =Event.all.order('date ASC').select { |event| event.date > DateTime.now }
-    @events = events.first(8)
+    # events =Event.all.order('date ASC').select { |event| event.date > DateTime.now }
+    # @events = events.first(8)
     @actus = Actu.all
+
+ @regions = Event.select(:region).group(:region).collect{|e| e.region}
+    @artists = Artist.all
+    @months = Event.select(:month).group(:month).collect{|e| e.month}
+    if params[:region].present?
+      events = Event.all.order('date ASC').select { |event| event.region == params[:region]}.select { |event| event.date > DateTime.now }
+    elsif params[:artist_id].present?
+      events = Event.order('date ASC').where(artist_id: params[:artist_id]).select { |event| event.date > DateTime.now }
+    elsif params[:month].present?
+      events = Event.order('date ASC').where(month: params[:month]).select { |event| event.date > DateTime.now }
+    else
+      events =Event.all.order('date ASC').select { |event| event.date > DateTime.now }
+    end
+    @events = events.first(8)
   end
 
   def legals

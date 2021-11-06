@@ -22,8 +22,22 @@
   <!-- Section Agenda -->
 
   <div class="w-full sm:w-2/3 sm:p-12 bg-secondary">
+  <div class="w-3/4 m-auto mb-4">
+
+  <form class="grid grid-flow-col grid-cols-1 grid-rows-4 sm:grid-cols-4 sm:grid-rows-1 sm:gap-2 m-auto lg:align-bottom">
+    <%= form_with url: events_path, method: :get, local: true do |form| %>
+    <%= form.select :region, @regions, {:include_blank => 'Où ?'}, {:class => 'shadow appearance-none border rounded py-2 px-4 m-2 font-bold text-gray-700 leading-tight focus:outline-none focus:shadow-outline'} %>
+    <%= form.collection_select :artist_id, @artists, :id, :name, {:include_blank => 'Qui ?'}, {:class => 'shadow appearance-none border rounded py-2 px-4 m-2 font-bold text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}  %>
+    <%= form.select :month, @months, {:include_blank => 'Quand ?'}, {:class => 'shadow appearance-none border rounded py-2 px-4 m-2 font-bold text-gray-700 leading-tight focus:outline-none focus:shadow-outline'} %>
+    <%= form.submit value:"Recherche", class:'bg-primary hover:bg-white hover:text-primary text-white font-bold py-2 px-4 m-2 rounded focus:outline-none focus:shadow-outline' %>
+    <% end %>
+  </form>
+</div>
     <table class="table-general">
       <%= render 'shared/event-table' %>
     </table>
+    <%= link_to events_path, class: "text-sm italic hover:text-white text-primary mt-4 font-semibold float-right" do %>
+      Voir toutes les dates
+    <% end %>
   </div>
 </div>
