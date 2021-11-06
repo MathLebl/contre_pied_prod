@@ -1,12 +1,12 @@
 <div class="list-wraper flex justify-center items-center w-full">
-  <div class="<%= "grid grid-cols-1 gap-1 md:grid-cols-2 md:gap-4" if @artists.count > 1 %> m-8">
+  <div class="<%= "grid grid-cols-1 gap-1 md:grid-cols-4 md:gap-4" if @artists.count > 1 %> m-8">
     <% @artists.each do |artist|%>
     <%= link_to artist.active == true ? (artist.category == "jeune_public" ? show_jp_artist_path(artist) : artist_path(artist)) : retraite_path  do %>
     <div class="list-card transform duration-200 <%= "hover:scale-110" if artist.active == true %> <%="inactive" if artist.active == false %> <%="jeunesse" if artist.category == "jeune_public" %>">
       <div class="card-body py-4 sm:p-8 relative">
-        <h5 class="card-name bg-white text-primary font-bold p-2 mb-4" style="width: fit-content"><%= artist.name %></h5>
+        <h5 class="card-name bg-white text-primary text-sm font-bold p-2 mb-4" style="width: fit-content"><%= artist.name %></h5>
         <div id="back-image" class="bg-cover bg-top" style="background-image: url('<%= image_path url_for (artist.image) %>')"></div>
-        <h6 class="card-style absolute bg-white text-primary font-bold p-2"><%= artist.style %></h6>
+        <h6 class="card-style absolute text-sm bg-white text-primary font-bold p-2"><%= artist.style %></h6>
         <% if artist.active == false %>
         <div id="inactive-flag" class="absolute text-white font-bold text-2xl invisible">
           <h2>En Retraite</h2>
