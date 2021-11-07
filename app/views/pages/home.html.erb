@@ -36,8 +36,10 @@
     <table class="table-general">
       <%= render 'shared/event-table' %>
     </table>
-    <%= link_to events_path, class: "text-sm italic hover:text-white text-primary mt-4 font-semibold float-right" do %>
-      Voir toutes les dates
+    <%= link_to events_path do %>
+      <div class="flex justify-center">
+      <p class = "text-lg italic hover:text-white text-primary mt-6 font-semibold">Voir toutes les dates</p>
+      </div>
     <% end %>
   </div>
 </div>
