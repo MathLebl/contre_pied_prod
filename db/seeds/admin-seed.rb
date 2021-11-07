@@ -14,7 +14,7 @@ user = User.new(
   zip_code: "01234",
   phone: "01234567"
   )
-# user.skip_confirmation!
+user.skip_confirmation!
 user.save!
 
 user = User.new(
@@ -29,7 +29,7 @@ user = User.new(
   zip_code: "01234",
   phone: "01234567"
   )
-# user.skip_confirmation!
+user.skip_confirmation!
 user.save!
 
 puts 'Admins done'

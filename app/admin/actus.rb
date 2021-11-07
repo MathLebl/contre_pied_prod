@@ -1,5 +1,5 @@
 ActiveAdmin.register Actu do
-  permit_params :title, :published_at, :video, :description, :user_id, :featured_image
+  permit_params :title, :published_at, :video, :description, :user_id, :featured_image, :link
   menu priority: 2
 
   scope :all
@@ -78,6 +78,7 @@ ActiveAdmin.register Actu do
   show do
     attributes_table do
       row :title
+      row :link
       row :description
       row "État" do |actu|
         actu.published_at? ? "Publié le #{ l actu.published_at}" : "Pas encore publiée"
@@ -100,6 +101,7 @@ ActiveAdmin.register Actu do
       f.input :video
       f.input :description, :as => :pagedown_text
       f.input :title
+      f.input :link
       f.actions
     end
   end

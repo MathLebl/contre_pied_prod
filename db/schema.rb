@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_18_125132) do
+ActiveRecord::Schema.define(version: 2021_11_07_155850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
     t.string "video"
     t.string "title"
     t.date "published_at"
+    t.string "link"
     t.index ["user_id"], name: "index_actus_on_user_id"
   end
 
