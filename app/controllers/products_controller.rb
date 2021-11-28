@@ -2,7 +2,20 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @products = Product.order(ranking: :asc)
+    if params[:artist] == 'goguettes'
+      @products = Product.where(artist_id: 1 )
+    elsif params[:artist] == 'valentin'
+      @products = Product.where(artist_id: 6 )
+    elsif params[:artist] == 'louise'
+      @products = Product.where(artist_id: 8 )
+    elsif params[:artist] == 'garance'
+      @products = Product.where(artist_id: 7 )
+    else
+      @products = Product.all
+
+    end
+
+    # @products = Product.order(ranking: :asc)
     @index = true
   end
 
@@ -11,7 +24,6 @@ class ProductsController < ApplicationController
     @session = session[:cart]
     @index = true
   end
-
   # Path pour ajout d'un produit dans le panier
   def add_to_cart
     @product = Product.find(params[:id])

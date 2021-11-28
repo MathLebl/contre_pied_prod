@@ -5,6 +5,13 @@
     <p class="text-xs lg:text-sm md:text-sm text-primary">Goodies, Cd, t-shirts... Tout est là !</p>
   </div>
 </div>
+<div class="flex m-auto justify-center">
+<%= link_to "Tous les articles", products_path(artist: ''), class:' bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center' %>
+<%= link_to "Les Goguettes", products_path(artist: 'goguettes'), class:' bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center' %>
+<%= link_to "Valentin Vander", products_path(artist: 'valentin'), class:' bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center' %>
+<%= link_to "Louise Thiolon", products_path(artist: 'louise'), class:' bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center' %>
+<%= link_to "Garance", products_path(artist: 'garance'), class:' bg-primary text-white m-1 sm:mx-2 sm:py-1 sm:px-3 hover:bg-secondary hover:text-primary flex justify-center items-center' %>
+</div>
 
 <div class="mb-20">
   <div class="grid grid-cols-3 gap-8 lg:gap-20 md:gap-10 mx-4 lg:mx-48 md:mx-12 py-8">
