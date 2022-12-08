@@ -2,16 +2,15 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# This file is the source Rails uses to define your schema when running `rails
-# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# This file is the source Rails uses to define your schema when running `bin/rails
+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
 # be faster and is potentially less error prone than running all of your
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_18_125132) do
-
+ActiveRecord::Schema[7.0].define(version: 2020_12_18_125132) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,8 +21,8 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
     t.bigint "resource_id"
     t.string "author_type"
     t.bigint "author_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
@@ -34,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
     t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
@@ -46,7 +45,7 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
     t.text "metadata"
     t.bigint "byte_size", null: false
     t.string "checksum", null: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
@@ -54,8 +53,8 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
     t.text "description"
     t.string "illustration"
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "video"
     t.string "title"
     t.date "published_at"
@@ -73,8 +72,8 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
     t.string "twitter"
     t.string "slug"
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "active", default: true
     t.string "facebook"
     t.string "soundcloud"
@@ -86,8 +85,8 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
   create_table "credits", force: :cascade do |t|
     t.string "name"
     t.bigint "artist_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "role"
     t.index ["artist_id"], name: "index_credits_on_artist_id"
   end
@@ -95,8 +94,8 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
   create_table "distributions", force: :cascade do |t|
     t.string "name"
     t.bigint "artist_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_distributions_on_artist_id"
   end
 
@@ -105,8 +104,8 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
     t.string "location"
     t.bigint "artist_id", null: false
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "ticket"
     t.string "city"
     t.string "region"
@@ -118,8 +117,8 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
   create_table "items", force: :cascade do |t|
     t.bigint "order_id", null: false
     t.bigint "product_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "tsize"
     t.integer "quantity"
     t.index ["order_id"], name: "index_items_on_order_id"
@@ -131,8 +130,8 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
     t.integer "amount_cents", default: 0, null: false
     t.string "checkout_session_id"
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "address"
     t.string "city"
     t.string "zip_code"
@@ -146,16 +145,16 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
   create_table "partenaires", force: :cascade do |t|
     t.string "name"
     t.bigint "artist_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_partenaires_on_artist_id"
   end
 
   create_table "presses", force: :cascade do |t|
     t.string "name"
     t.bigint "artist_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_presses_on_artist_id"
   end
 
@@ -164,8 +163,8 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
     t.string "name"
     t.bigint "shop_category_id", null: false
     t.string "photo_url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
     t.bigint "artist_id", null: false
     t.date "published_at"
@@ -177,16 +176,16 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
 
   create_table "shop_categories", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.float "weight"
   end
 
   create_table "sizes", force: :cascade do |t|
     t.string "name"
     t.bigint "product_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_sizes_on_product_id"
   end
 
@@ -194,16 +193,16 @@ ActiveRecord::Schema.define(version: 2020_12_18_125132) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "reset_password_sent_at", precision: nil
+    t.datetime "remember_created_at", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "admin", default: false, null: false
     t.string "name"
     t.string "first_name"
     t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
+    t.datetime "confirmed_at", precision: nil
+    t.datetime "confirmation_sent_at", precision: nil
     t.string "unconfirmed_email"
     t.string "address"
     t.string "city"
