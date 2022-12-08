@@ -1,9 +1,8 @@
 {
     "name": "contre_pied_prod",
     "private": true,
-    "scripts": {
-        "production": "cross-env NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider  node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-    },
+
+
     "dependencies": {
         "@rails/actioncable": "^6.0.0",
         "@rails/activestorage": "^6.0.0",
@@ -20,10 +19,6 @@
         "turbolinks": "^5.2.0"
     },
     "version": "0.1.0",
-    "engines": {
-        "node": "18.x"
-    },
-    "start": "react-scripts --openssl-legacy-provider start",
     "devDependencies": {
         "webpack-dev-server": "^4.2.1"
     }
