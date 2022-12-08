@@ -20,6 +20,7 @@
     "engines": {
         "node": "18.x"
     },
+    "start": "react-scripts --openssl-legacy-provider start",
     "devDependencies": {
         "webpack-dev-server": "^4.2.1"
     }
