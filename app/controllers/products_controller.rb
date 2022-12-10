@@ -5,13 +5,11 @@ class ProductsController < ApplicationController
     if params[:artist] == 'goguettes'
       @products = Product.where(artist_id: 1 ).sort_by { |d| d.ranking }
     elsif params[:artist] == 'valentin'
-      @products = Product.where(artist_id: 6 )
-    elsif params[:artist] == 'louise'
-      @products = Product.where(artist_id: 8 )
+      @products = Product.where(artist_id: 6 ).sort_by { |d| d.ranking }
     elsif params[:artist] == 'garance'
-      @products = Product.where(artist_id: 7 )
+      @products = Product.where(artist_id: 7 ).sort_by { |d| d.ranking }
     else
-      @products = Product.all
+      @products = Product.all.sort_by { |d| d.ranking }
 
     end
 
