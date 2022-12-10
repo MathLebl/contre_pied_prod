@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     if params[:artist] == 'goguettes'
-      @products = Product.where(artist_id: 1 )sort_by(&:ranking)
+      @products = Product.where(artist_id: 1 )
     elsif params[:artist] == 'valentin'
       @products = Product.where(artist_id: 6 )
     elsif params[:artist] == 'louise'
