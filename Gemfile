@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '3.1.2'
 
-gem 'actionpack', '~> 7.0', '>= 7.0.4'
+gem 'actionpack', '~> 7.0'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder'
